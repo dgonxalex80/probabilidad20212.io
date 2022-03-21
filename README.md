@@ -1,2 +1,3 @@
 # probabilidad20212.io
-Presentaciones curso de probabilidad y estadística 20212
+curso de probabilidad y estadística 20212
+modalidad aula invetida
