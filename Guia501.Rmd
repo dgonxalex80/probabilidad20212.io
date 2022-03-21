@@ -1,0 +1,61 @@
+---
+title: "**Modelo de regresión lineal simple**"
+author: "dgonzalez"
+subtitle: "**Módulo 5- Unidad 5.1**" 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,comment = NA)
+
+# colores
+c0="#0DA5A6" # VERDE CLARO
+c1="#E77C00" # NARANJA
+c2="#6666FF" # AZUL  
+c3="#4CBFBA" # VERDE CLARO  
+c4="#E09600" # AMARILLO  
+c5="#BC2B6A" # MORADO  
+
+```
+
+<span style="color:#E77C00">**En construcción**</span>
+
+# **Guía de aprendizaje 5.1**
+
+![](img/baner5.png)
+
+<br/><br/>
+
+<br/><br/>
+
+## **1. Introducción**
+
+Una de las aplicaciones mas importantes de la estadística corresponde a al modelo de regresión lineal. Esta técnica permite medir la relación que pueda existir entre una variable llamada variable respuesta  y un conjunto de variables independientes. Casos como la estimación de las ventas a partir de los gastos en publicidad, el consumo de un producto a partir de su precio, el precio de una casa a partir de sus características, la relación entre la resistencia a la compresión de un determinado concreto y la cantidad de uno de sus componentes,  entre otros
+
+El siguiente documento contiene los pasos que deberá realizar para  alcanzar el objetivo planteado
+
+<br/><br/>
+
+## **2. Objetivos de la unidad**
+
+Al finalizar la unidad el estudiante estará en capacidad de PROPONER soluciones mediante la CONSTRUCCIÓN, VALIDACIÓN DE SUPUESTOS e INTERPRETACIÓN de resultados obtenidos de modelos de regresión en situaciones reales que permitan la toma de decisiones informadas y la generación de políticas o conclusiones.
+
+<br/><br/>
+
+## **3. Duración**
+
+
+
+## **4. Cronograma de trabajo**
+
+
+## **5. Criterios de evaluación**
+
+
+
+## **6. Entregables** 

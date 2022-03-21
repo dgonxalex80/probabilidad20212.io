@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="dgonzalez" />
+
+
+<title>Tablas de frecuencia e indicadores estadísticos</title>
+
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+<style type="text/css">
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #adb5bd;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script type="text/javascript">
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.tab('show');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html"> </a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    PyE
+  </a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Módulo 0
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo0.html">Módulo 0</a>
+    </li>
+    <li>
+      <a href="Guia001.html">Guía 0.1</a>
+    </li>
+    <li>
+      <a href="Guia002.html">Guía 0.2</a>
+    </li>
+    <li>
+      <a href="Guia003.html">Guía 0.3</a>
+    </li>
+    <li>
+      <a href="Guia004.html">Guía 0.4</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Módulo 1
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo1.html">Módulo 1</a>
+    </li>
+    <li>
+      <a href="Guia101.html">Guía 1.1</a>
+    </li>
+    <li>
+      <a href="Guia102.html">Guía 1.2</a>
+    </li>
+    <li>
+      <a href="Guia103.html">Guía 1.3</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Módulo 2
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo2.html">Módulo 2</a>
+    </li>
+    <li>
+      <a href="Guia201.html">Guía 2.1</a>
+    </li>
+    <li>
+      <a href="Guia202.html">Guía 2.2</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Módulo 3
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo3.html">Módulo 3</a>
+    </li>
+    <li>
+      <a href="Guia301.html">Guía 3.1</a>
+    </li>
+    <li>
+      <a href="Guia302.html">Guía 3.2</a>
+    </li>
+    <li>
+      <a href="Guia303.html">Guía 3.3</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Módulo 4
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo4.html">Módulo 4</a>
+    </li>
+    <li>
+      <a href="Guia401.html">Guía 4.1</a>
+    </li>
+    <li>
+      <a href="Guia402.html">Guía 4.2</a>
+    </li>
+    <li>
+      <a href="Guia403.html">Guía 4.3</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Módulo 5
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="Modulo5.html">Módulo 5</a>
+    </li>
+    <li>
+      <a href="Guia501.html">Guía 5.1</a>
+    </li>
+    <li>
+      <a href="Guia502.html">Guía 5.2</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-code"></span>
+     
+    Código R
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="introduccionR.html">Introducción a R</a>
+    </li>
+    <li>
+      <a href="codigo101.html">Código u1.1</a>
+    </li>
+    <li>
+      <a href="codigo102.html">Código u1.2</a>
+    </li>
+    <li>
+      <a href="codigo103.html">Código u1.3</a>
+    </li>
+    <li>
+      <a href="codigo201.html">Código u2.1</a>
+    </li>
+    <li>
+      <a href="codigo301.html">Código u3.1</a>
+    </li>
+    <li>
+      <a href="codigo302.html">Código u3.2</a>
+    </li>
+    <li>
+      <a href="simulacion.html">Simulación</a>
+    </li>
+    <li>
+      <a href="codigo401.html">Código u4.1</a>
+    </li>
+    <li>
+      <a href="codigo402.html">Código u4.2</a>
+    </li>
+    <li>
+      <a href="codigo403.html">Código u4.3</a>
+    </li>
+    <li>
+      <a href="codigo501.html">Código u5.1</a>
+    </li>
+    <li>
+      <a href="codigo502.html">Código u5.2</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="fa fa-chess-pawn"></span>
+     
+    Monitoria
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="monitoria1.html">monitoria 1</a>
+    </li>
+    <li>
+      <a href="monitoria2.html">monitoria 2</a>
+    </li>
+    <li>
+      <a href="monitoria3.html">monitoria 3</a>
+    </li>
+    <li>
+      <a href="monitoria4.html">monitoria 4</a>
+    </li>
+    <li>
+      <a href="monitoria5.html">monitoria 5</a>
+    </li>
+  </ul>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore"><strong>Tablas de frecuencia e indicadores
+estadísticos</strong></h1>
+<h3 class="subtitle"><strong>Modulo 1- Unidad 1.2</strong></h3>
+<h4 class="author">dgonzalez</h4>
+
+</div>
+
+
+<div id="guía-de-aprendizaje-1.2" class="section level1">
+<h1><strong>Guía de aprendizaje 1.2</strong></h1>
+<p><img src="img/baner1.png" /></p>
+<p><br/><br/></p>
+<div id="introducción" class="section level2">
+<h2><strong>Introducción</strong></h2>
+<p>El <strong>Análisis Descriptivo</strong> permite examinar información
+contenida en una base de datos, procesarla y mediante la construcción de
+tablas, indicadores y gráficos y con esto elementos realizar un primer
+análisis de la información, permitiendo así tener una primera impresión
+de lo que dicen los datos, con la cual se pueden construir hipótesis que
+luego podrán ser verificadas.</p>
+<p>En este proceso es importante conocer el tipo de variable (
+cualitativa o cuantitativa) y su tipo de escala (nominal, ordinal en el
+caso de las cualitativas o de intervalo, de razón en el caso de las
+cuantitativas), con fin de seleccionar la manera adecuada de construir
+tablas que resuman la información e indicadores en cada caso.</p>
+<p>En esta unidad se tratara en primer lugar el resumen de información
+mediante tablas de frecuencia y en una segunda parte lo relacionado con
+los indicadores de posición, centro o tendencia, dispersión e
+indicadores de forma.</p>
+<p><br/><br/></p>
+</div>
+<div id="objetivos-de-la-unidad" class="section level2">
+<h2><strong>Objetivos de la unidad</strong></h2>
+<p>Al finalizar esta unidad el estudiante estará en capacidad de RESUMIR
+e INTERPRETAR información mediante la construcción de TABLAS DE
+FRECUENCIA, INDICADORES DESCRIPTIVOS que permitan un correcto análisis
+de datos.</p>
+<p><br/><br/></p>
+</div>
+<div id="duración" class="section level2">
+<h2><strong>Duración</strong></h2>
+<p>La presente unidad será desarrollada durante la segunda semana del
+semestre ( 31 de enero al 06 de febrero de 2022). Ademas del material
+suministrado contaran con el acompañamiento del profesor en dos sesiones
+(lunes, miércoles y viernes) y de manera asincrónica con foro de
+actividades académicas. Los entregables para esta unidad deberán
+enviarse a través de la plataforma Brightspace hasta el 06 de
+febrero.</p>
+<p>Para alcanzar los objetivos planteados se propone realizar las
+siguientes actividades</p>
+<p><br/><br/></p>
+</div>
+<div id="cronograma-de-trabajo" class="section level2">
+<h2><strong>Cronograma de trabajo</strong></h2>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="66%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Actividad104</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Trabajo individual</td>
+<td align="left"><strong>Actividad 104</strong> - <strong>Caso
+101</strong> : Realice las actividades consignadas en el caso101,
+adjunte y envíe las respuesta a la plataforma de Brightspace en formato
+pdf</td>
+</tr>
+<tr class="even">
+<td align="left">Recursos</td>
+<td align="left"><a href="https://youtu.be/dWVs-M7oCh4">Video
+indicadores estadísticos</a></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"><a href="https://youtu.be/n2UCDZNncls">Vídeo calculo
+indicadores con tablas de distribución</a></td>
+</tr>
+<tr class="even">
+<td align="left">Fecha</td>
+<td align="left">06 de febrero de 2022</td>
+</tr>
+<tr class="odd">
+<td align="left">Hora</td>
+<td align="left">23:59</td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<table>
+<colgroup>
+<col width="33%" />
+<col width="66%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Actividad105</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Trabajo individual</td>
+<td align="left"><strong>Actividad 105</strong> : A partir de la
+información contenida en la <strong>base de datos seleccionada en la
+Actividad 102</strong>, realice un análisis de al menos dos variables
+cualitativas y dos cuantitativas teniendo como soportes las tablas de
+frecuencia y los indicadores estadísticos correspondiente.</td>
+</tr>
+<tr class="even">
+<td align="left">Recursos</td>
+<td align="left">Base de datos actividad-1 Unidad 1.1</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Excel</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">RStudio</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Código u1.2</td>
+</tr>
+<tr class="even">
+<td align="left">Fecha</td>
+<td align="left">06 de febrero 2022</td>
+</tr>
+<tr class="odd">
+<td align="left">Hora</td>
+<td align="left">23:59 hora local</td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+</div>
+<div id="criterios-de-evaluación" class="section level2">
+<h2><strong>Criterios de evaluación</strong></h2>
+<ul>
+<li><p>Reconocer e interpretar las diferentes formas de resumir los
+datos a través de tablas de frecuencia para los casos de variables
+cuantitativas y para variables cualitativas.</p></li>
+<li><p>Calcular e interpretar los diferentes indicadores de posición,
+tendencia, dispersión y forma que permitan un correcto análisis de los
+datos</p></li>
+<li><p>Utilizar herramientas computacionales para el procesamiento de la
+información.</p></li>
+</ul>
+<p><br/> <br/></p>
+<p>Los entregables completos y enviados dentro de los tiempos
+establecidos otorgarán 25 puntos en cada caso, para un total de 50
+puntos.</p>
+<p><br/><br/></p>
+</div>
+<div id="entregables" class="section level2">
+<h2><strong>Entregables</strong></h2>
+<table>
+<colgroup>
+<col width="31%" />
+<col width="68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Entregable</th>
+<th align="left">Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Entregable 1:</td>
+<td align="left"><strong>Actividad104.pdf</strong> : Caso 101</td>
+</tr>
+<tr class="even">
+<td align="left">Entregable 2:</td>
+<td align="left"><strong>Actividad105.pdf</strong> : Aplicar lo
+aprendido a base de datos actividad102</td>
+</tr>
+<tr class="odd">
+<td align="left">Fecha</td>
+<td align="left">Domingo 06 de febrero de 2022</td>
+</tr>
+<tr class="even">
+<td align="left">Hora límite</td>
+<td align="left">23:59 hora local</td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/><br/><br/></p>
+</div>
+<div id="presentaciones" class="section level2">
+<h2><strong>Presentaciones</strong></h2>
+<p><br/><br/><br/></p>
+</div>
+<div id="caso-de-estudio-101" class="section level2">
+<h2><strong>Caso de estudio 101</strong></h2>
+<p><strong>Caso de estudio : CARACTERISTICAS DE LA CERVEZA</strong></p>
+<p><img src="img/cerveza.png" /></p>
+<p>La siguiente información recoge cinco de las principales
+características de un grupo de marcas de cerveza que fue recogida con la
+finalizad de clasificar los productos y además permita realizar un
+análisis descriptivo de las 69 marcas recogidas</p>
+<p>Inicialmente el director de investigación desea su apoyo en una
+primera etapa del análisis que consiste en resumir la información
+suministrada en tablas e indicadores que le permitan validar algunas de
+sus hipótesis.</p>
+<p>La base compartida contiene información sobre 69 marcas de cervezas
+que son distribuidas en la ciudad. Las variables recogidas corresponden
+a:</p>
+<ul>
+<li><p><strong>precio</strong> de la presentación en caja de seis
+botellas de 12 onzas,</p></li>
+<li><p>contendo de <strong>calorias</strong> congtenidas en una unidad
+de 12 onzas,</p></li>
+<li><p>porcentaje de contenido de <strong>alcohol</strong> por 12 onzas
+de contenido,</p></li>
+<li><p><strong>tipo</strong> de cerveza (1-lager artesanal, 2-clara
+artesanal, 3-lager importada, 4-cerveza normal y helada, y 5-cerveza
+baja en calorías y sin alcohol) y</p></li>
+<li><p>país de <strong>origen</strong> (1-nacional, 2-
+importada).</p></li>
+</ul>
+<p>Su trabajo consiste en escribir un primer informe basado en una
+evaluación descriptiva, que contenga las tablas que resumen la
+información para cada variable de base de datos y resumen de sus
+indicadores estadísticos.</p>
+<p>Finalmente adjunte un análisis de los resultados obtenidos.</p>
+<p><br/></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Producto</th>
+<th align="right">Precio</th>
+<th align="right">Calorías</th>
+<th align="right">Alcohol</th>
+<th align="right">Tipo</th>
+<th align="right">Origen</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">c1</td>
+<td align="right">6.24</td>
+<td align="right">159</td>
+<td align="right">5.2</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">c2</td>
+<td align="right">4.49</td>
+<td align="right">160</td>
+<td align="right">5.0</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">c2</td>
+<td align="right">5.96</td>
+<td align="right">160</td>
+<td align="right">4.9</td>
+<td align="right">1</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">…</td>
+<td align="right">……..</td>
+<td align="right">…………</td>
+<td align="right">……….</td>
+<td align="right">……..</td>
+<td align="right">……..</td>
+</tr>
+<tr class="odd">
+<td align="left">…</td>
+<td align="right">……..</td>
+<td align="right">…………</td>
+<td align="right">……….</td>
+<td align="right">……..</td>
+<td align="right">……..</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p><a
+href="https://github.com/dgonzalez80/pye20221.io/blob/main/beer.csv">DATOS:
+beer.csv</a></p>
+<p>Video : Como etiquetar una variable en RStudio</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IUaEOmKRmUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<pre class="r"><code># Cargar la base de datos
+library(readr)
+beer &lt;- read_delim(&quot;beer.csv&quot;, 
+                   delim = &quot;;&quot;, escape_double = FALSE, trim_ws = TRUE)
+
+# Recodificar variable origen
+beer$origen[beer$origen==0]=&quot;nacional&quot;
+beer$origen[beer$origen==1]=&quot;importada&quot;
+
+# Construir tablas de frecuencia
+table(beer$origen)
+summarytools::freq(beer$origen, cumul = FALSE)</code></pre>
+<p><br/><br/> <br/></p>
+</div>
+</div>
+<div id="recursos" class="section level1">
+<h1><strong>Recursos</strong></h1>
+<p><br/> <br/></p>
+<div id="que-es-un-indicador" class="section level3">
+<h3><strong>¿Que es un indicador?</strong></h3>
+<p><br/></p>
+<p><img src="img/tablero1.jpg" width="1000"></p>
+<p><br/></p>
+<p>Cuando nos subimos a un auto observamos un tablero con muchos
+indicadores que permiten al conductor validar el estado del vehículo.
+Todos los podemos visualizar al tiempo con el fin de darnos una idea del
+nivel de combustible, la temperatura, el estado de la batería, si alguna
+puerta esta abierta, la velocidad a la que se viaja, entre otros.</p>
+<p><br/></p>
+<p>Al igual que la situación anterior cuando nos enfrentamos a una
+análisis de datos, requerimos resumirlos en indicadores, tablas y
+gráficos que nos permitan un fácil análisis de ellos</p>
+<p><br/> <br/> <br/></p>
+</div>
+<div id="tablas-de-frecuencia" class="section level2">
+<h2><strong>Tablas de frecuencia</strong></h2>
+<p><br/></p>
+<div id="tablas-de-frecuencia-para-variables-cualitativas"
+class="section level3">
+<h3><strong>Tablas de frecuencia para variables
+cualitativas</strong></h3>
+<p><br/></p>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="36%" />
+<col width="40%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Categorías (c1)</th>
+<th align="left">frecuencia absoluta (c2)</th>
+<th align="left">frecuencia relativa (c3)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><br/></p>
+<p>Las distribuciones de frecuencia o también llamadas tablas de
+frecuencia nos sirven para agrupar los datos y así permitir resumir para
+poder tener una idea mas clara de sus características.</p>
+<p>Para las variables cualitativas la tabla posee 3 columnas :</p>
+<ul>
+<li><p>c1: los diferentes valores que toma la variable.</p></li>
+<li><p>c2: <strong>frecuencia absoluta</strong> que consiste en el
+conteo para cada uno de los valores distintos que toma la
+variable.</p></li>
+<li><p>c3: <strong>frecuencia relativa </strong> que corresponde al
+porcentaje la cantidad de datos para cada los valores</p></li>
+</ul>
+<p><br/> <br/></p>
+<pre class="r"><code># Forma simple
+data.frame(table(bpe$carrera))</code></pre>
+<pre><code>                    Var1 Freq
+1               Biología   13
+2       Ingeniería Civil   13
+3 Ingeniería de Sistemas   18
+4 Ingeniería Electrónica    8
+5    Ingeniería Mecánica   15</code></pre>
+<p><br/> <br/></p>
+<pre class="r"><code>#utilizando summarytools
+carrera=as.factor(bpe$carrera)
+summarytools::freq(carrera, cumul = FALSE)</code></pre>
+<pre><code>Frequencies  
+
+                               Freq   % Valid   % Total
+---------------------------- ------ --------- ---------
+                    Biología     13     19.40     19.40
+            Ingeniería Civil     13     19.40     19.40
+      Ingeniería de Sistemas     18     26.87     26.87
+      Ingeniería Electrónica      8     11.94     11.94
+         Ingeniería Mecánica     15     22.39     22.39
+                        &lt;NA&gt;      0                0.00
+                       Total     67    100.00    100.00</code></pre>
+<p>Nota: paquete <a
+href="https://cran.r-project.org/web/packages/summarytools/vignettes/Introduction.html">summarytools</a></p>
+<p><br/> <br/></p>
+</div>
+<div id="tablas-de-frecuencia-para-variables-cuantitativas"
+class="section level3">
+<h3><strong>Tablas de frecuencia para variables
+cuantitativas</strong></h3>
+<p>Para las variables cuantitativas las tablas de frecuencias tiene una
+presentación diferente a la vista anteriormente. Como se trata de
+variables con una gran número de valores diferentes, es necesario
+dividirlas por intervalos .</p>
+<p>Cuando tenemos los datos sin agrupar nos es difícil extraer
+información que nos permita hacer un análisis de los mismos</p>
+<pre class="r"><code>bpe$promedio</code></pre>
+<pre><code> [1] 4.07 3.39 4.50 4.62 4.16 4.12 3.52 4.35 3.45 3.98 4.26 4.17 4.53 4.14 3.88
+[16] 4.08 4.31 4.31 3.43 3.58 3.35 3.54 4.53 4.29 3.58 4.01 3.92 3.59 4.17 4.40
+[31] 3.86 3.44 4.30 3.94 3.59 3.47 4.48 3.74 4.33 3.91 3.56 3.96 4.44 4.03 4.24
+[46] 4.42 3.79 4.46 3.38 4.65 4.19 3.85 3.85 3.92 4.23 4.22 4.09 4.12 4.42 4.22
+[61] 4.26 4.06 4.20 4.30 3.85 4.30 4.52</code></pre>
+<p>Una primera aproximación pude ser el diagrama de tallos y hojas con
+consiste en separar los dígitos de los datos en dos : una primera parte
+que se repite llamada tallo y otra parte que tiene diversos valores.
+Este diagrama también nos permite ordenar los datos de menor a mayor</p>
+<pre class="r"><code>stem(bpe$promedio)</code></pre>
+<pre><code>
+  The decimal point is 1 digit(s) to the left of the |
+
+  32 | 589
+  34 | 34572468899
+  36 | 49
+  38 | 55568122468
+  40 | 1367892246779
+  42 | 022346690001135
+  44 | 0224680233
+  46 | 25</code></pre>
+<p>Una forma de construir una tabla de freciencias por intervalos es
+utilizando la funcion <code>graph.freq</code> del paquete agricolae</p>
+<pre class="r"><code>h2=with(bpe,graph.freq(promedio,plot=FALSE));t2=table.freq(h2);
+colnames(t2) = c(&quot;  LI  &quot;, &quot;  LS  &quot;, &quot;marca clase&#39;&quot;, &quot;Frec.Abs&quot;,&quot;Frec.Rel&quot;, &quot;Frec.Abs.Ac&quot;,&quot;Frec.Rel.Ac&quot;)
+t2</code></pre>
+<pre><code>    LI     LS   marca clase&#39; Frec.Abs Frec.Rel Frec.Abs.Ac Frec.Rel.Ac
+1    3.3    3.5          3.4        7     10.4           7        10.4
+2    3.5    3.7          3.6        7     10.4          14        20.9
+3    3.7    3.9          3.8        7     10.4          21        31.3
+4    3.9    4.1          4.0       12     17.9          33        49.3
+5    4.1    4.3          4.2       15     22.4          48        71.6
+6    4.3    4.5          4.4       13     19.4          61        91.0
+7    4.5    4.7          4.6        6      9.0          67       100.0</code></pre>
+<p>Frec.Abs : Frecuencia absoluta <br/> Frec.Rel : Frecuencia relativa
+<br/><br/> Frec.Abs.Ac : Frecuencia Absoluta Acumuada <br/> Frec.Rel.Ac
+: Frecuencia Relativa Acumulada</p>
+<p><br/> <br/></p>
+<pre class="r"><code>data(&quot;iris&quot;)
+summarytools::freq(iris$Species, cumul = FALSE, headings = FALSE)</code></pre>
+<pre><code>
+                   Freq   % Valid   % Total
+---------------- ------ --------- ---------
+          setosa     50     33.33     33.33
+      versicolor     50     33.33     33.33
+       virginica     50     33.33     33.33
+            &lt;NA&gt;      0                0.00
+           Total    150    100.00    100.00</code></pre>
+<p><br/> <br/> <br/></p>
+</div>
+</div>
+<div id="rango-percentil" class="section level2">
+<h2><strong>Rango percentil</strong></h2>
+<p><br/></p>
+<p>Es un número que divide la muestra en dos partes. <span
+class="math inline">\(x\)</span> % de los datos de la muestra son
+iguales o menores que <span class="math inline">\(P_x\)</span> y un
+<span class="math inline">\((100-x)\)</span> % por encima de el.</p>
+<p><img src="img/carrera.jpg" /></p>
+<p><br/></p>
+<p>Para ilustrar el concepto, pensemos en que participamos de una
+carrera y que el grupo está conformado por 100 corredores. El percentil
+dará cuenta de mi posición dentro del grupo. Por ejemplo si mi posición
+en la carrera en orden de llegada es la décima, indica que por detrás de
+mi están 90 atletas. Indica esto que soy el percentil 90 (<span
+class="math inline">\(P_{90}\)</span>).</p>
+<p><br/> <br/></p>
+<ul>
+<li><p>Participé en una carrera <strong>K10</strong> y ocupé el
+percentil 30 : <span class="math inline">\(P_{30}\)</span></p></li>
+<li><p>Mi nota en un examen de matemáticas ocupó el percentil 90 : <span
+class="math inline">\(P_{90}\)</span></p></li>
+<li><p>Que significa: <span class="math inline">\(P_{25}\)</span> ;
+<span class="math inline">\(P_{50}\)</span> ; <span
+class="math inline">\(P_{75}\)</span></p></li>
+</ul>
+<p><br/> <br/> <br/></p>
+<div id="diagrama-de-cajas" class="section level3">
+<h3><strong>Diagrama de cajas</strong></h3>
+<p><br/></p>
+<pre class="r"><code>ggplot(bpe, aes(x=promedio))+geom_boxplot()</code></pre>
+<p><img src="Guia102_files/figure-html/unnamed-chunk-8-1.png" width="1027.2" /></p>
+<p><br/></p>
+<p>atípico | <span class="math inline">\(LI=Q_{1}-
+1.5(Q_{3}-Q_{1})\)</span> | <span class="math inline">\(Q_{1}\)</span> |
+<span class="math inline">\(Q_{2}\)</span> | <span
+class="math inline">\(Q_{3}\)</span> | <span
+class="math inline">\(LS=Q_{3}+ 1.5(Q_{3}-Q_{1})\)</span> | atípico</p>
+<p><br/> <br/> <br/></p>
+<p>Con ayuda del diagrama de tallos y hojas es posible ubicar los
+percentiles en un conjunto de datos</p>
+<pre class="r"><code>stem(bpe$promedio)</code></pre>
+<pre><code>
+  The decimal point is 1 digit(s) to the left of the |
+
+  32 | 589
+  34 | 34572468899
+  36 | 49
+  38 | 55568122468
+  40 | 1367892246779
+  42 | 022346690001135
+  44 | 0224680233
+  46 | 25</code></pre>
+<p>Determine los percentiles :</p>
+<ul>
+<li><span class="math inline">\(P_{25}\)</span></li>
+<li><span class="math inline">\(P_{50}\)</span></li>
+<li><span class="math inline">\(P_{75}\)</span></li>
+<li><span class="math inline">\(P_{10}\)</span></li>
+</ul>
+<pre class="r"><code>quantile(bpe$promedio, c(0.25,.50,0.75,0.10))</code></pre>
+<pre><code> 25%  50%  75%  10% 
+3.85 4.12 4.30 3.50 </code></pre>
+</div>
+</div>
+<div id="características-de-los-datos" class="section level2">
+<h2><strong>Características de los datos</strong></h2>
+<p><br/></p>
+<table>
+<colgroup>
+<col width="31%" />
+<col width="33%" />
+<col width="35%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Central</th>
+<th align="left">Dispersión</th>
+<th align="left">Forma</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">media</td>
+<td align="left">rango</td>
+<td align="left">sesgo o asimetría</td>
+</tr>
+<tr class="even">
+<td align="left">mediana</td>
+<td align="left">varianza</td>
+<td align="left">curtosis</td>
+</tr>
+<tr class="odd">
+<td align="left">moda</td>
+<td align="left">desviación estándar</td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">media truncada</td>
+<td align="left">coeficiente de variación</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">rango medio</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">media armónica</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">media geométrica</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><br/> <br/></p>
+<div id="media-aritmética" class="section level3">
+<h3><strong>Media aritmética</strong></h3>
+<p><br/></p>
+<p><span class="math display">\[\widehat{x}= \frac{1}{n} \sum_{i=1}^{n}
+x_{i}\]</span></p>
+<p><br/></p>
+<p>Es una de los indicadores estadísticos mas conocidos</p>
+<p>Propiedades de la media :</p>
+<ul>
+<li><p>La suma de las desviaciones de los datos con respecto a la media
+es cero. <span class="math inline">\(\sum
+(x_{i}-\bar{x})=0\)</span>.</p></li>
+<li><p>La suma de los cuadrados de las desviaciones de los datos con
+respecto a un valor {} es mínimo cuando <span
+class="math inline">\(a=\bar{x}\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(x_{i}=k\)</span> para todo <span
+class="math inline">\(i\)</span>, entonces, <span
+class="math inline">\(\bar{x}=k\)</span>.</p></li>
+<li><p>Si todos los datos de una variable se multiplican por una
+constante <span class="math inline">\(k\)</span>, es decir <span
+class="math inline">\(y_{i}=kx_{i}\)</span>, entonces <span
+class="math inline">\(\bar{y}=k\bar{x}\)</span></p></li>
+<li><p>Si <span class="math inline">\(z_{i}=a x_{i}+b y_{i}\)</span>,
+donde: <strong>a</strong>, <strong>b</strong> constantes y <span
+class="math inline">\(x_{i}\)</span>, <span
+class="math inline">\(y_{i}\)</span> variables, entonces: <span
+class="math inline">\(\bar{z}=a\bar{x}+b\bar{y}\)</span>.</p></li>
+</ul>
+<p><br/> <br/></p>
+<p><strong>Ejemplo 1</strong></p>
+<pre class="r"><code>mean(mtcars$mpg,na.rm = TRUE)</code></pre>
+<pre><code>[1] 20.09062</code></pre>
+<p><br/> <br/></p>
+<p><strong>Ejemplo 2</strong></p>
+<pre class="r"><code>mean(bpe$promedio, na.rm = TRUE)</code></pre>
+<pre><code>[1] 4.04209</code></pre>
+<p><br/> <br/></p>
+<p><strong>Ejemplo 3</strong></p>
+<pre class="r"><code>x=1:10
+x</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<pre class="r"><code>cat(&quot;media :&quot;,mean(x))</code></pre>
+<pre><code>media : 5.5</code></pre>
+<p><br/> <br/></p>
+<p><strong>Ejemplo 4</strong></p>
+<pre class="r"><code>x=1:10
+x[10]=20
+x</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 20</code></pre>
+<pre class="r"><code>cat(&quot;media :&quot; ,mean(x))</code></pre>
+<pre><code>media : 6.5</code></pre>
+<p><br/> <br/></p>
+</div>
+<div id="mediana" class="section level3">
+<h3><strong>Mediana</strong></h3>
+<p><strong>Me</strong> :Es el número que divide la muestra en dos partes
+de igual proporción (50% : 50%). Es decir que corresponde a:</p>
+<p><span class="math inline">\(P_{50} = D_{5} = Q_{2}\)</span></p>
+<p>también corresponde a la linea central del diagrama de cajas.</p>
+<pre class="r"><code>median(bpe$promedio,na.rm = TRUE)</code></pre>
+<pre><code>[1] 4.12</code></pre>
+<p><br/> <br/></p>
+<pre class="r"><code>boxplot(bpe$promedio, las=1, horizontal = TRUE, col = c1)</code></pre>
+<p><img src="Guia102_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p><br/> <br/></p>
+<p>La <strong>Me</strong> corresponde a la linea central de a caja en el
+diagrama de cajas</p>
+<p>La mediana es mas robusta a los cambio en los datos extremos. En
+presencia de datos atípicos es mejor utilizar la mediana en lugar que la
+media.</p>
+<pre class="r"><code>x=1:10
+x</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+<pre class="r"><code>cat(&quot;media :&quot; ,median(x))</code></pre>
+<pre><code>media : 5.5</code></pre>
+<p><br/> <br/></p>
+<pre class="r"><code>x[10]=20
+x</code></pre>
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 20</code></pre>
+<pre class="r"><code>cat(&quot;media :&quot; ,median(x))</code></pre>
+<pre><code>media : 5.5</code></pre>
+<p><br/> <br/></p>
+</div>
+<div id="moda" class="section level3">
+<h3><strong>Moda</strong></h3>
+<p><strong>Mo</strong> : Dato o valor que más se repite. Es utilizada
+como medida de tendencia central en variables cualitativas o o en
+cuantitativas discretas con pocos valores. En una tabla o gráfico se
+puede distinguir fácilmente.</p>
+<pre class="r"><code>#utilizando summarytools
+summarytools::freq(bpe$carrera, cumul = FALSE, headings = FALSE)</code></pre>
+<pre><code>
+                               Freq   % Valid   % Total
+---------------------------- ------ --------- ---------
+                    Biología     13     19.40     19.40
+            Ingeniería Civil     13     19.40     19.40
+      Ingeniería de Sistemas     18     26.87     26.87
+      Ingeniería Electrónica      8     11.94     11.94
+         Ingeniería Mecánica     15     22.39     22.39
+                        &lt;NA&gt;      0                0.00
+                       Total     67    100.00    100.00</code></pre>
+<p>moda : <strong>Ingeniería de Sistemas</strong></p>
+<p><br/> <br/></p>
+</div>
+<div id="otras-medidas-de-centro" class="section level3">
+<h3><strong>Otras medidas de centro</strong></h3>
+<p><br/> <br/></p>
+</div>
+<div id="media-truncada" class="section level3">
+<h3><strong>Media truncada</strong></h3>
+<pre class="r"><code>mean(bpe$promedio, na.rm = TRUE, trim = 0.10)</code></pre>
+<pre><code>[1] 4.055091</code></pre>
+<p><br/> <br/></p>
+</div>
+<div id="rango-medio" class="section level3">
+<h3><strong>Rango medio</strong></h3>
+<p><span class="math inline">\(\frac{1}{2}(max(x)+min(x))\)</span></p>
+<pre class="r"><code>(max(bpe$promedio,na.rm = TRUE)+min(bpe$promedio,na.rm = TRUE))/2</code></pre>
+<pre><code>[1] 4</code></pre>
+<p><br/> <br/></p>
+</div>
+<div id="media-geométrica" class="section level3">
+<h3><strong>Media geométrica</strong></h3>
+<p>este indicador de tendencia central se utiliza para promediar tasa de
+crecimiento o de interés. Para encontrar su valor se multiplican los
+valores de <span class="math inline">\(n\)</span> tasas incrementadas en
+uno. A ese producto se le extrae la raíz n-esima.</p>
+<p><br/> <br/></p>
+</div>
+<div id="media-armónica" class="section level3">
+<h3><strong>Media armónica</strong></h3>
+<p>Este indicador corresponde al inverso de la media aritmética</p>
+<p><br/> <br/></p>
+</div>
+<div id="problema-reconocimiento-de-grupo" class="section level3">
+<h3><strong>Problema reconocimiento de grupo</strong></h3>
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>Grupo 1</strong></td>
+<td align="left"><strong>Grupo 2</strong></td>
+</tr>
+<tr class="even">
+<td align="left">Edades : 19, 22, 18, 21</td>
+<td align="left">Edades : 39, 38, 2, 1</td>
+</tr>
+<tr class="odd">
+<td align="left">Promedio : 20 años</td>
+<td align="left">Promedio : 20 años</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><img src="img/grupos.png" width="700"></p>
+<p>Hace falta otro indicador que nos oriente de cual grupo hablamos
+cuando solo tenemos como información : media = 20 años.</p>
+<p><br/> <br/></p>
+</div>
+</div>
+<div id="indicadores-de-dispersión" class="section level2">
+<h2><strong>Indicadores de Dispersión</strong></h2>
+<div id="rango" class="section level3">
+<h3><strong>Rango</strong></h3>
+<p><span class="math inline">\(r = max(x) - min(x)\)</span></p>
+<p>En caso de los dos grupos:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left"><strong>Grupo 1</strong></th>
+<th align="left"><strong>Grupo 1</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\bar{x} = 20\)</span>
+años</td>
+<td align="left"><span class="math inline">\(\bar{x} = 20\)</span>
+años</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(r = 4\)</span> años</td>
+<td align="left"><span class="math inline">\(r = 38\)</span> años</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Indicador muy útil cuando se deben realizar cálculos rápidos</p>
+<p><br/> <br/></p>
+</div>
+<div id="varianza" class="section level3">
+<h3><strong>Varianza</strong></h3>
+<p>Es la medida de dispersión más utilizada en estadística y está
+definida por</p>
+<p><span class="math display">\[s^{2}=\frac{1}{n-1} \sum_{i=1}^{n}
+(x_{i}-\bar{x})^{2}\]</span></p>
+<p><br/> <br/></p>
+<div id="propiedades-de-la-varianza" class="section level4">
+<h4><strong>Propiedades de la varianza</strong></h4>
+<ul>
+<li><p><span class="math inline">\(s^{2} = \frac{1}{n} \sum x_{i}^{2}-
+(\bar{x})^{2}\)</span></p></li>
+<li><p>La varianza es siempre no negativa <span
+class="math inline">\(s^{2} &gt;=0\)</span></p></li>
+<li><p>La varianza de una constante es cero <span
+class="math inline">\(s_{k}^{2}=0\)</span></p></li>
+<li><p>Si <span class="math inline">\(y_{i}=k x_{i}\)</span>, entonces
+<span class="math inline">\(s_{y}^{2}= k^{2} s_{x}\)</span></p></li>
+<li><p>Si <span class="math inline">\(y_{i}=x_{i} + k\)</span> ,
+entonces <span class="math inline">\(s_{y}^{2} = s_{x}\)</span></p></li>
+<li><p>Si <span class="math inline">\(z_{i} = a x_{i} + b
+y_{i}\)</span>, entonces <span class="math inline">\(s_{z}^{2}\)</span>
+= <span class="math inline">\(a^{2}s_{x}^{2}\)</span> + <span
+class="math inline">\(b^{2}s_{y}^{2}\)</span> + <span
+class="math inline">\(2ab\)</span> <span
+class="math inline">\(cov(xy)\)</span></p></li>
+</ul>
+<p>La varianza se puede interpretar como el promedio de las diferencias
+cuadradas entre cada uno de los datos y la media</p>
+<p>El problema de la varianza es su <strong>interpretación</strong></p>
+<p>Sus unidades son al cuadrado y en la mayoría de los casos no es
+posible interpretarlos. Por esta razón se optó por utilizar otra mediada
+de dispersión</p>
+<p><br/> <br/></p>
+</div>
+</div>
+<div id="desviación-estándar" class="section level3">
+<h3><strong>Desviación estándar</strong></h3>
+<p>Es la raíz cuadrada de la varianza</p>
+<p><span class="math display">\[s=\sqrt{s^{2}}\]</span></p>
+<p><strong>Nota</strong> : no aplican todas las propiedades de la
+varianza</p>
+<pre class="r"><code>cat( &quot;Varianza :&quot;,var(bpe$promedio), &quot;\n&quot; )</code></pre>
+<pre><code>Varianza : 0.1247895 </code></pre>
+<pre class="r"><code>cat(&quot;Desviación estándar :&quot;,sd(bpe$promedio))</code></pre>
+<pre><code>Desviación estándar : 0.3532556</code></pre>
+<p>Aunque la desviación estándar reduce el problema debido a tener las
+mismas unidades de la variable, es útil para comparación de dos
+grupos</p>
+<p><br/> <br/></p>
+</div>
+<div id="coeficiente-de-variación" class="section level3">
+<h3><strong>Coeficiente de variación</strong></h3>
+<p>Nos indica que tan grande o que tan pequeña es la desviación estándar
+con respecto a su media</p>
+<p><span class="math display">\[CV= \dfrac{s}{\bar{x}} \times 100 \%
+\]</span></p>
+<p>Existen diferentes reglas empíricas para la interpretación del
+coeficiente de variación. Una de ellas establece como límite el 20% para
+separar los grupos homogéneos de los heterogéneos Por lo general se
+utiliza un valor hasta el 20% para determinar que un grupo de datos son
+homogéneos, de lo contrario se calificará como heterogéneo.</p>
+<pre class="r"><code>cat(&quot;Coeficiente de variación :&quot;,sd(bpe$promedio)/mean(bpe$promedio)*100, &quot; %&quot;)</code></pre>
+<pre><code>Coeficiente de variación : 8.73943  %</code></pre>
+<p><br/> <br/></p>
+</div>
+</div>
+<div id="indicadores-de-forma" class="section level2">
+<h2><strong>Indicadores de forma</strong></h2>
+<div id="curtosis" class="section level3">
+<h3><strong>Curtosis</strong></h3>
+<p>Se mide a través del coeficiente de curtosis que mide cuan
+<strong>puntiaguda</strong> es una distribución respecto a la curva de
+la distribución normal entandar.</p>
+<p>De acuerdo con su valor, la puntudez de los datos puede clasificarse
+en tres grupos:</p>
+<ul>
+<li><p><strong>Leptocúrtica</strong>, con valores grandes para el
+coeficiente (CA&gt;0)</p></li>
+<li><p><strong>Mesocúrtica</strong>, con valores medianos para el
+coeficiente (CA=0)</p></li>
+<li><p><strong>Platicútrica</strong>, con valores pequeños para el
+coeficiente (CA&lt;0)</p></li>
+</ul>
+<p><img src="img/curtosis.png" width="500"></p>
+<p><br/> <br/></p>
+<pre class="r"><code>rapportools::kurtosis(bpe$promedio)</code></pre>
+<pre><code>[1] -0.9377956</code></pre>
+</div>
+<div id="asimetría-o-sesgo" class="section level3">
+<h3><strong>Asimetría o sesgo</strong></h3>
+<p>Mide que tanto la forma de la distribución de frecuencias de los
+datos es simétrica o no con respecto a la media. Esta característica de
+los datos se mide a través del coeficiente de asimetría o sesgo.</p>
+<ul>
+<li><p>Es <strong>simétrica</strong> si el valor del indicador es 0
+(<span class="math inline">\(\bar{x}=Me\)</span>)</p></li>
+<li><p>Es <strong>asimétrica a la izquierda</strong> si el valor del
+indicador es negativo (<span
+class="math inline">\(\bar{x}&lt;Me\)</span>)</p></li>
+<li><p>Es <strong>asimétrica a la derecha</strong> si el valor del
+indicador es positivo (<span
+class="math inline">\(\bar{x}&gt;Me\)</span>)</p></li>
+</ul>
+<p><img src="img/asimetria.png" width="700"></p>
+<ul>
+<li><strong>Asimetria negativa </strong> : Poco con poco, mucho con
+mucho</li>
+<li><strong>Simetrica</strong> : Poco con poco, poco con mucho, mucho al
+rededor de un centro</li>
+<li><strong>Asimetria positiva</strong> : Mucho con poco, poco con
+mucho</li>
+</ul>
+<pre class="r"><code>rapportools::skewness(bpe$promedio)</code></pre>
+<pre><code>[1] -0.385614</code></pre>
+<pre class="r"><code>summarytools::descr(bpe$promedio)</code></pre>
+<pre><code>Descriptive Statistics  
+value  
+N: 67  
+
+                     value
+----------------- --------
+             Mean     4.04
+          Std.Dev     0.35
+              Min     3.35
+               Q1     3.85
+           Median     4.12
+               Q3     4.30
+              Max     4.65
+              MAD     0.34
+              IQR     0.45
+               CV     0.09
+         Skewness    -0.39
+      SE.Skewness     0.29
+         Kurtosis    -0.94
+          N.Valid    67.00
+        Pct.Valid   100.00</code></pre>
+<pre class="r"><code>summarytools::descr(mtcars$mpg)</code></pre>
+<pre><code>Descriptive Statistics  
+value  
+N: 32  
+
+                     value
+----------------- --------
+             Mean    20.09
+          Std.Dev     6.03
+              Min    10.40
+               Q1    15.35
+           Median    19.20
+               Q3    22.80
+              Max    33.90
+              MAD     5.41
+              IQR     7.38
+               CV     0.30
+         Skewness     0.61
+      SE.Skewness     0.41
+         Kurtosis    -0.37
+          N.Valid    32.00
+        Pct.Valid   100.00</code></pre>
+<pre class="r"><code>d1=density(bpe$promedio, na.rm=TRUE); plot(d1)</code></pre>
+<p><img src="Guia102_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<pre class="r"><code>data(&quot;mtcars&quot;)
+d2=density(mtcars$mpg); plot(d2)</code></pre>
+<p><img src="Guia102_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><br/> <br/></p>
+</div>
+</div>
+<div id="actividades" class="section level2">
+<h2><strong>Actividades</strong></h2>
+<p><br/></p>
+<ul>
+<li><strong>Actividad 104</strong>: Realice las actividades consignadas
+en el <strong>Taller 1-01</strong>. Adjunte y envíe las respuesta a la
+plataforma de Brightspace en formato pdf.
+<ul>
+<li><strong>Nota</strong>: RMarkdown permite realizar el trabajo
+fácilmente</li>
+</ul></li>
+</ul>
+<p><br/></p>
+<ul>
+<li><strong>Actividad 105</strong> : A partir de la información
+contenida en la base de datos seleccionada en la <strong>Unidad
+1.1</strong>, realice un análisis de al menos una variable cualitativa y
+una cuantitativa teniendo como soportes las tablas de frecuencia y los
+indicadores estadísticos correspondiente.</li>
+</ul>
+<p><br/><br/><br/></p>
+</div>
+<div id="formulario" class="section level2">
+<h2><strong>Formulario</strong></h2>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="41%" />
+<col width="32%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Estadística</th>
+<th align="left">fórmula</th>
+<th align="left">código R</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><strong>centro</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">media aritmética</td>
+<td align="left"><span
+class="math inline">\(\displaystyle\dfrac{1}{n}\sum_{i=1}^{n}
+x_{i}\)</span></td>
+<td align="left"><code>mean(x)</code></td>
+</tr>
+<tr class="odd">
+<td align="left">mediana</td>
+<td align="left"><span class="math inline">\(Me = P_{50} =
+X_{n+1/2}\)</span></td>
+<td align="left"><code>median(x)</code></td>
+</tr>
+<tr class="even">
+<td align="left">moda</td>
+<td align="left"><span class="math inline">\(Mo\)</span> dato que más se
+repite</td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">media truncada</td>
+<td align="left">media calculada con el 90% central de los datos</td>
+<td align="left"><code>mean(x,trim=10/100)</code></td>
+</tr>
+<tr class="even">
+<td align="left">rango medio</td>
+<td align="left"><span
+class="math inline">\(rm=\dfrac{min\{x\}-max\{x\}}{2}\)</span></td>
+<td align="left"><code>max(x)-min(x)</code></td>
+</tr>
+<tr class="odd">
+<td align="left">media geométrica</td>
+<td align="left"><span class="math inline">\((x_{1} \times x_{2} \times
+x_{3} .... x_{n})^{1/n}\)</span></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">media armónica</td>
+<td align="left"><span
+class="math inline">\(\dfrac{n}{\dfrac{1}{x_{1}}+\dfrac{1}{x_{2}}+\dfrac{1}{x_{3}}+...+\dfrac{1}{x_{n}}}\)</span></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left"><strong>dispersión</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">rango</td>
+<td align="left"><span class="math inline">\(r=
+min\{x\}-max\{x\}\)</span></td>
+<td align="left"><code>max(x)-min(x)</code></td>
+</tr>
+<tr class="odd">
+<td align="left">varianza</td>
+<td align="left"><span class="math inline">\(s^{2} = \dfrac{1}{n-1}
+\displaystyle\sum_{i=1}^{n}(x_{i}-\bar{x})^{2}\)</span></td>
+<td align="left"><code>var(x)</code></td>
+</tr>
+<tr class="even">
+<td align="left">desviación estandar</td>
+<td align="left"><span class="math inline">\(s =
+\sqrt{s^{2}}\)</span></td>
+<td align="left"><code>sd(x)</code></td>
+</tr>
+<tr class="odd">
+<td align="left">coeficiente de variación</td>
+<td align="left"><span class="math inline">\(cv= \dfrac{s}{\bar{x}}
+\times 100\)</span> %</td>
+<td align="left"><code>sd(x)/mean(x)*100</code></td>
+</tr>
+<tr class="even">
+<td align="left"><strong>forma</strong></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="odd">
+<td align="left">coeficiente de curtosis</td>
+<td align="left"><span
+class="math inline">\(\displaystyle\dfrac{Q_{3}-Q_{1}}{P_{90}-P_{10}}\)</span></td>
+<td align="left"><code>rapportools::kurtosis(bpe$promedio)</code></td>
+</tr>
+<tr class="even">
+<td align="left">coeficiente de asimetría</td>
+<td align="left"><span
+class="math inline">\(\displaystyle\dfrac{3(\bar{x}-Me)}{s}\)</span></td>
+<td align="left"><code>rapportools::skewness(bpe$promedio)</code></td>
+</tr>
+<tr class="odd">
+<td align="left">percentil 25</td>
+<td align="left"><span class="math inline">\(X_{n \times
+0.25}\)</span></td>
+<td align="left"><code>quantile(x,0.25)</code></td>
+</tr>
+<tr class="even">
+<td align="left">percentil 50</td>
+<td align="left"><span class="math inline">\(X_{n \times
+0.50}\)</span></td>
+<td align="left"><code>quantile(x,0.50)</code></td>
+</tr>
+<tr class="odd">
+<td align="left">percentil 75</td>
+<td align="left"><span class="math inline">\(X_{n \times
+0.75}\)</span></td>
+<td align="left"><code>quantile(x,0.75)</code></td>
+</tr>
+<tr class="even">
+<td align="left">rango intercuartílico</td>
+<td align="left"><span class="math inline">\(Q_{3}-Q_{1}\)</span></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p><br/> <br/></p>
+</div>
+<div id="taller-121" class="section level2">
+<h2><strong>Taller 121</strong></h2>
+<div id="nivel-de-ansiedad" class="section level3">
+<h3><strong>Nivel de ansiedad</strong></h3>
+<p>Los siguientes datos corresponden al <strong>nivel de
+ansiedad</strong> de un grupo de estudiantes de la universidad valorada
+antes de la presentación del primer examen parcial. El investigador a
+cargo del proyecto utilizó una prueba para medir el nivel de ansiedad
+que permite puntajes entre 0 y 100. Los valores inferiores a 50 puntos
+se consideran como nivel bajo . Entre 50 y 80 , nivel medio y superiores
+a 80 se consideran altos.</p>
+<p>Otra variable importante en el análisis corresponde a la
+<strong>facultad</strong> a la que pertence el estudiante</p>
+<ol style="list-style-type: decimal">
+<li>Facultad de Ingeniería y Ciencias</li>
+<li>Facultad de Ciencias Económicas y Administrativas</li>
+<li>Facultad de Humanidades</li>
+<li>Facultad de Salud</li>
+</ol>
+<p>Los resultados obtenidos se presenta a continuación :</p>
+<pre class="r"><code>nivans=c(28,33,34,36,38,38,41,41,45,45,46,46,47,47,48,48,49,50,51,51,51,52,53,53,
+         53,54,54,54,55,55,55,56,56,56,57,57,58,60,61,61,61,62,63,64,64,65,65,65,
+         65,65,66,67,67,68,68,68,69,69,69,70,70,71,74,77,77,78,79,79,80,82,85,89,
+         90,96,58,90,77,71,41,55,53,65,57,56,68,56,50,36,70,57,41,62,48,67,33,52,
+         65,67,79,55,34,46,55,56,47,69,61,54,74,47,64,79,85,61,28,46,65,51,49,45,
+         78,96,68,38,77,34,69,69,38,65,63,68,48,53,82,61,51,45,66,65,64,70,89,51,
+         54,53,80,54,60,53)
+
+fac=c(2,1,2,2,4,3,4,2,4,2,4,1,1,1,1,1,1,2,3,3,3,3,1,2,1,2,2,1,1,2,3,2,3,2,2,3,3,
+      1,1,1,2,1,2,2,2,3,1,1,3,1,4,3,1,3,2,1,2,3,4,3,2,3,4,4,1,3,4,4,2,2,1,4,2,1,
+      2,4,1,1,1,3,4,1,1,1,1,1,3,3,3,3,1,1,1,2,2,1,3,1,1,1,3,2,2,2,2,1,2,2,1,3,2,
+      1,2,2,2,4,2,1,3,4,1,1,3,1,2,2,2,1,3,3,1,1,2,2,3,3,3,1,4,3,1,2,4,2,2,1,2,3,
+      2,2)
+
+data=data.frame(fac, nivans) # forma base de datos </code></pre>
+<p><br/><br/></p>
+</div>
+<div id="tablas-de-frecuencia-1" class="section level3">
+<h3>Tablas de frecuencia</h3>
+<ul>
+<li>Construya una tabla de frecuencia que le permita establecer las
+frecuencias en cada uno de los rangos descritos y analice los resultados
+obtenidos.</li>
+</ul>
+<p><strong>Primera forma</strong> : Utilizando el paquete
+<code>agricolae</code></p>
+<pre class="r"><code>h2=with(data,graph.freq(nivans,plot=FALSE))
+t2=table.freq(h2);
+colnames(t2) = c(&quot;  LI  &quot;, &quot;  LS  &quot;, &quot;marca clase&#39;&quot;, &quot;Frec.Abs&quot;,&quot;Frec.Rel&quot;, &quot;Frec.Abs.Ac&quot;,&quot;Frec.Rel.Ac&quot;)
+t2</code></pre>
+<pre><code>    LI     LS   marca clase&#39; Frec.Abs Frec.Rel Frec.Abs.Ac Frec.Rel.Ac
+1   28.0   36.5        32.25        9      6.0           9         6.0
+2   36.5   45.0        40.75        8      5.3          17        11.3
+3   45.0   53.5        49.25       35     23.3          52        34.7
+4   53.5   62.0        57.75       32     21.3          84        56.0
+5   62.0   70.5        66.25       40     26.7         124        82.7
+6   70.5   79.0        74.75       10      6.7         134        89.3
+7   79.0   87.5        83.25       10      6.7         144        96.0
+8   87.5   96.0        91.75        6      4.0         150       100.0</code></pre>
+<p><strong>Segunda forma</strong> : utilizando la función
+<code>hist</code></p>
+<pre class="r"><code>h=hist(data$nivans, breaks = c(20,29.99,39.99,49.99,59.99,69.99,79.99,89.99,100), plot=FALSE)
+LI=round(h$breaks[1:8],0) 
+LS=round(h$breaks[2:9],0) 
+ni=h$counts
+hi=h$counts/150
+Ni=cumsum(h$counts)
+Hi=Ni/150
+
+t=data.frame(LI,LS,ni,hi,Ni,Hi)
+t</code></pre>
+<pre><code>  LI  LS ni         hi  Ni         Hi
+1 20  30  2 0.01333333   2 0.01333333
+2 30  40 11 0.07333333  13 0.08666667
+3 40  50 22 0.14666667  35 0.23333333
+4 50  60 41 0.27333333  76 0.50666667
+5 60  70 44 0.29333333 120 0.80000000
+6 70  80 18 0.12000000 138 0.92000000
+7 80  90  8 0.05333333 146 0.97333333
+8 90 100  4 0.02666667 150 1.00000000</code></pre>
+<p><strong>Tercera forma</strong> : utilizando la funciones :
+<code>cut</code> y <code>cbind</code></p>
+<pre class="r"><code>nivans1=cut(data$nivans, breaks = c(20,29.99,39.99,49.99,59.99,69.99,79.99,89.99,100))
+t2=table(nivans1)
+t2=cbind(t2, t2/sum(t2),cumsum(t2), cumsum(t2)/sum(t2))
+colnames(t2)=c(&quot;n&quot;,&quot;h&quot;,&quot;N&quot;,&quot;H&quot;)
+t2</code></pre>
+<pre><code>          n          h   N          H
+(20,30]   2 0.01333333   2 0.01333333
+(30,40]  11 0.07333333  13 0.08666667
+(40,50]  22 0.14666667  35 0.23333333
+(50,60]  41 0.27333333  76 0.50666667
+(60,70]  44 0.29333333 120 0.80000000
+(70,80]  18 0.12000000 138 0.92000000
+(80,90]   8 0.05333333 146 0.97333333
+(90,100]  4 0.02666667 150 1.00000000</code></pre>
+<ul>
+<li>Cálculos las estadísticas descriptivas del nivel de ansiedad y
+describa los resultados en un párrafo</li>
+</ul>
+<pre class="r"><code>summarytools::descr(data$nivans)</code></pre>
+<pre><code>Descriptive Statistics  
+value  
+N: 150  
+
+                     value
+----------------- --------
+             Mean    59.51
+          Std.Dev    14.13
+              Min    28.00
+               Q1    51.00
+           Median    58.00
+               Q3    68.00
+              Max    96.00
+              MAD    14.08
+              IQR    17.00
+               CV     0.24
+         Skewness     0.19
+      SE.Skewness     0.20
+         Kurtosis    -0.20
+          N.Valid   150.00
+        Pct.Valid   100.00</code></pre>
+<p>El grupo observado corresponde a un total de 150 estudiantes de las
+cuatro facultades de la universidad (aun no estaba la Facultad de
+Habitat) y presentan un valor promedio de 59.5 puntos que corresponde a
+un nivel medio. Su coeficiente de variación (24%) muestra un poco de
+heterogeneidad en los valores alcanzados por los estudiantes, mientras
+que su forma se aproxima a una distribución simétrica</p>
+<p><br/><br/></p>
+<p>Tabla de frecuencias para variables cualitativas utilizando del
+paquete <code>summarytools</code> la función <code>freq</code></p>
+<pre class="r"><code>data$fac[data$fac==1]=&quot;Facultad de Ingeniería y Ciencias&quot;
+data$fac[data$fac==2]=&quot;Facultad de Ciencias Económicas y Administrativas&quot;
+data$fac[data$fac==3]=&quot;Facultad de Humanidades&quot;
+data$fac[data$fac==4]=&quot;Facultad de Salud&quot;
+summarytools::freq(data$fac, cumul = FALSE)</code></pre>
+<pre><code>Frequencies  
+
+                                                          Freq   % Valid   % Total
+------------------------------------------------------- ------ --------- ---------
+      Facultad de Ciencias Económicas y Administrativas     48     32.00     32.00
+                                Facultad de Humanidades     34     22.67     22.67
+                      Facultad de Ingeniería y Ciencias     51     34.00     34.00
+                                      Facultad de Salud     17     11.33     11.33
+                                                   &lt;NA&gt;      0                0.00
+                                                  Total    150    100.00    100.00</code></pre>
+<p>Los reultados indican una mayor proporción de estudiantes de la
+Facultad de Ingenieria y Ciencias (34%), mientras que la Facultad de
+Salud la menor (11.3%)</p>
+<p><br/><br/></p>
+<p><img src="img/person-1245959_1920.jpg" width="1000"></p>
+</div>
+<div id="lo-podemos-lograr" class="section level3">
+<h3><strong>Lo podemos lograr…</strong></h3>
+<div id="daniel-enrique-gonzález-gómez" class="section level4">
+<h4>Daniel Enrique González Gómez</h4>
+<p>Imagen tomada de : <a
+href="https://pixabay.com/es/images/search/paisaje/"
+class="uri">https://pixabay.com/es/images/search/paisaje/</a></p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

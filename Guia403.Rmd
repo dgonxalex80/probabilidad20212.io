@@ -1,0 +1,71 @@
+---
+title: "**Pruebas de hipótesis**"
+author: "dgonzalez"
+subtitle: "**Módulo 4- Unidad 4.3**" 
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,comment = NA)
+library(ggplot2)
+library(ggfortify)
+# library(ggdistribute)
+# colores
+c0="#0DA5A6" # VERDE CLARO
+c1="#E77C00" # NARANJA
+c2="#6666FF" # AZUL  
+c3="#4CBFBA" # VERDE CLARO  
+c4="#E09600" # AMARILLO  
+c5="#BC2B6A" # MORADO  
+  
+
+```
+
+<span style="color:#E77C00">**En construcción**</span>
+
+# **Guía de aprendizaje 4.3**
+
+![](img/baner4.png)
+
+<br/><br/>
+
+<br/><br/>
+
+## **1. Introducción**
+
+El origen de los estudios, relacionados con las pruebas de hipótesis estadísticas, se sitúa alrededor de 1738, cuando en un ensayo escrito por Daniel Bernoulli aparece el cálculo una estadística de prueba para ensayar su hipótesis en el campo de la astronomía. Entre 1915 y 1933 se desarrolla esta formulación gracias a los estudios realizados por tres grandes autores: Ronald Fisher, Jerzy Neyman y Egon Pearson. Hoy en día predomina la teoría de Neyman-Pearson (lema de Neyman-Pearson). 
+
+Una hipótesis estadística es una afirmación o conjetura acerca de los parámetros de la distribución de probabilidades de una población. Si la hipótesis estadística especifica completamente la distribución, entonces ella se llama Hipótesis Simple, de otra manera se llama Hipótesis Compuesta.
+
+Las pruebas de hipótesis constituyen una de las principales herramientas que  proporciona la estadística a un profesional de cualquier disciplina para darle un carácter científico a sus afirmaciones y decisiones.
+
+En esta unidad se plantea el siguiente objetivo, el cual podrá lograrse con el desarrollo de los trabajos planteados y documentación proporcionada.
+
+
+<br/><br/>
+
+## **2. Objetivos de la unidad**
+
+Al finalizar la unidad el estudiante estará en capacidad de IDENTIFICAR, CALCULAR, CONTRASTAR y CONCLUIR sobre una hipótesis estadística que le permita la elección de la prueba más potente para la verificación de una prueba de hipótesis, permitiéndole tomar decisiones informadas.
+
+<br/><br/>
+
+## **3. Duración**
+
+
+
+## **4. Cronograma de trabajo**
+
+
+## **5. Criterios de evaluación**
+
+
+
+## **6. Entregables** 
