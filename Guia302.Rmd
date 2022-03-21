@@ -23,6 +23,7 @@ c5="#BC2B6A" # MORADO
 cbox="#007FFF"  # AZUL BOX
 ```
 
+# **Guía de aprendizaje 3.2**
 
 ![](img/baner3.png)
 
@@ -735,18 +736,21 @@ d) Doscientos paquetes seleccionados aleatoriamente contienen cinco kilogramos d
 
 <br/><br/><br/>
 
-## **Videos**
+# **Videos**
 
 <br/><br/>
 
 ## **Caso Discreto-Discreto**
 
+<br/>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gvzybhu8GZ0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<br/><br/>
 
 ## **Caso Continua-Continua**
 
-<br/><br/>
+<br/>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/YYgn3BBqfuA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

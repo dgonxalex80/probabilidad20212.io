@@ -65,9 +65,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 |**Actividad 331**|**Poster** : Construir una poster  para cada uno de los modelos asignados que contenga sus principales características  |
 |                 | Trabajo en grupo de  2 estudiantes                                      |
 |Recurso          | [**Guía 3.3**](https://github.com/dgonzalez80/probabilidad20212.io/blob/main/talleres/Guia303.pdf)                                                            |
-|Videos           | [**Overleaf**](https://www.youtube.com/watch?v=wg3aVBMAyu8)             | 
-|                 | [**Porter en Latex**](https://www.youtube.com/watch?v=RLBNVC3McNw)      |
-|                 | [**Como hacer un poster**](https://www.youtube.com/watch?v=xDfs3BFK7_k) | 
+|Videos           | [**Trabajando con LaTeX en linea con Overleaf-Leonardo Ignacio Martinez Sandoval**](https://www.youtube.com/watch?v=wg3aVBMAyu8)             | 
 |Fecha            | 3 de abril                                                         |
 |Hora             | 23:59                                                                   |
 
