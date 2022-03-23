@@ -17,10 +17,11 @@ knitr::opts_chunk$set(echo = TRUE)
 
 # **Descripción actividad **
 
-Grupo A : Construir un  **poster**  
+<br/><br/>
 
-<br/>
-Grupo B : Construir un  **video** 
+### <span style="color:#BC2B6A">**Grupo A : Construir un  poster** </span>
+ 
+### <span style="color:#6666FF">**Grupo B : Construir un  video** </span> 
 
 <br/><br/>
 
@@ -34,9 +35,7 @@ Para cada uno de los modelos asignados que contenga sus principales caracteristi
 
 ##### * Aplicaciones en el campo de las ingeniería, ciencias, economía, salud...
 
-##### * Relaciones entre distribuciones univariadas.  
-
-[(Artículo)](http://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf)
+##### * Relaciones entre distribuciones univariadas.[(Artículo)](http://www.stat.rice.edu/~dobelman/courses/texts/leemis.distributions.2008amstat.pdf)
 
 ##### * Referencias bibliográficas 
 
