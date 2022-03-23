@@ -79,9 +79,8 @@ Para cada uno de los modelos asignados que contenga sus principales caracteristi
 | 5       | Alejandra Otero Marín       | Esteban Castro Castro            | Santiago Portillo      | 
 | 6       | Antonio Varona              | Juan David Rodríguez             | Camilo Tarazona        |  
 | 7       | Santiago Astudillo          | Maria Kanaseki                   | Isabella Llanos        | 
-| 8       | Edinson Pedroza             | Brayan Portilla                  | Yony Peña              |  
 | 9       | Juan Camilo Zúñiga          | Yuliam Obando                    | Nayerly Rojas          |  
-| 10      | Samuel Morales              | Juan Fernando Barrera            |                        |  
+| 10      | Samuel Morales              | Juan Fernando Barrera            | Brayan Portilla        |  
 | 11      | José Arango Gutierrez       | Sara Lucia Arango Rubio          | Andres Ceron Borja     |  
 | 12      | Sebastian Echeverry Lemos   | Isaac Grun Valencia              | Carlos Enrique Lenis Cruz|
 | 13      | Juan Solano Amaya           | Marlon TRochez Ramirez           |                        |
