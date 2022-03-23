@@ -550,7 +550,7 @@ f. Construya la gráfica de $f(x)$
 	
 <br/><br/>
 
-**6.** En un cargamento grande de llantas para automóviles, el 5 tiene imperfecciones. Se eligen de manera aleatoria 4 llantas para ser instalada en un automóvil.  (Sea X el número de llantas con imperfecciones. $X \sim binom(n=4, p=0.05$ )
+**6. Modelo binomial** En un cargamento grande de llantas para automóviles, el 5 tiene imperfecciones. Se eligen de manera aleatoria 4 llantas para ser instalada en un automóvil.  (Sea X el número de llantas con imperfecciones. $X \sim binom(n=4, p=0.05$ )
 
 a. ¿ Cuál es la probabilidad de que ninguna de las llantas tenga imperfecciones?
 	
@@ -560,7 +560,7 @@ c. ¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?
 
 <br/><br/>
 
-**7.** Los clientes llegan al mostrador de una tienda de acuerdo con una variable aleatoria Poisson con una frecuencia promedio de ocho clientes por hora. 
+**7. Modelo Poisson** Los clientes llegan al mostrador de una tienda de acuerdo con una variable aleatoria Poisson con una frecuencia promedio de ocho clientes por hora. 
 
 a. Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.
 	
@@ -595,6 +595,9 @@ b. La siguiente muestra contenga 18 o menos microorganismos.
 
 c. La siguiente muestra contenga exactamente dos microorganismos.
 
+<br/><br/>
+
+
 **11.** Una aéreolinea nacional tiene aviones de 100 asientos para el servicio de transporte nacional. Se estima que la probabilidad de que una persona llegue al vuelo es de 0.90, debido a lo cual  la aereolinea vende 105 tiquetes con el fin de minimizar la partida de aviones con sillas vacias. ¿cuál es la probabilidad de que todas las personas que lleguen para abordar el avión tengan asiento?   
 
 <br/><br/>
@@ -617,7 +620,7 @@ c. Se presenten menos de 2 grietas en 500 m
 
 ## <span style="color:#104E8B">**Taller 332**</span>
 
-**1.** Para una variable aleatoria $X\sim unif(x,a,b)$  con $a=10$ y $b=20$ determine:
+**1. Modelo uniforme** Para una variable aleatoria $X\sim unif(x,a,b)$  con $a=10$ y $b=20$ determine:
 
 a. Construya un bosquejo de la gráfica de la función de densidad de probabilidad $f_{_{X}}(x)$.
 
@@ -631,7 +634,7 @@ e. $E[X] $ y $V[X]$.
 
 <br/><br/>
 
-**2.** Para una variable $Z\sim N(0,1)$, determine el área: 
+**2. Modelo normal** Para una variable $Z\sim N(0,1)$, determine el área: 
 
 a.  A la derecha de z = - 0.85. 
 
@@ -645,7 +648,7 @@ Nota: en cada caso realice un  bosquejo del área que representa la probabilidad
 
 <br/><br/>
 
-**3.** Para una variable $Z\sim N(0,1)$, determine el área: 
+**3. Modelo normal estandar** Para una variable $Z\sim N(0,1)$, determine el área: 
 
 a.	A la izquierda de z = 0.56. 
 
@@ -659,7 +662,7 @@ Nota: En cada caso represente gráficamente los valores solicitados
 	
 <br/><br/>
 
-**4.** Para una variable aleatoria continua $X\sim norm(\mu=150, \sigma^{2}=1000)$ determine:
+**4. Modelo normal** Para una variable aleatoria continua $X\sim norm(\mu=150, \sigma^{2}=1000)$ determine:
 
 a. Realice un bosquejo de la gráfica de la función de  densidad de probabilidad de $X$
 
@@ -675,7 +678,7 @@ f. Determine el valor de $k$ que cumpla : $P(-k < X < k)= 0.95$.
 
 <br/><br/>
 
-**5.** Sea $X$ una variable aleatoria con distribución exponencial . ($X\sim exp(\lambda=2)$). Determine:
+**5. Modelo exponencial** Sea $X$ una variable aleatoria con distribución exponencial . ($X\sim exp(\lambda=2)$). Determine:
 
 a. $P(X \leq 0)$.
 
@@ -761,7 +764,7 @@ La organización mundial de la salud ha establecido rangos para este indice y lo
 
 **13.** Una de las dificultades que presentan las Empresas Municipales se relaciona con la reparación de rupturas de tubos de alcantarillados debido especialmente a la antigüedad de las tuberías y a las raíces de los árboles que los rompen y generan suspensiones en el servicio de agua. Para la reparación de estos daños la empresa contrata con terceros los arreglos. La empresa conoce que el tiempo de reparación (en horas) se puede modelar mediante una distribución gamma con parámetros $\alpha=2$ y $\beta=1/2$, pero además tienen como indicador de calidad que el tiempo máximo de reparación no debe exceder la hora. ¿que tan probable es que se cumpla esta política con las actuales condiciones?  
 			
-<br/><br/>
+<br/><br/><br/>
 
 ## <span style="color:#104E8B">**Taller 333**</span>
 

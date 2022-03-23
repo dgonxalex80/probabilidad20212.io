@@ -159,7 +159,7 @@ A continuación se presentan los modelos más comunes con sus principales caract
 
 Hemos clasificado como variables discretas aquellas cuyo rango $R_{X}$, corresponde a un conjunto de valores finito o infinito numerables. También es común que estas variables sean asociadas con el conteo, por lo que en su mayoría contienen la palabras **número de...**
 
-A continuación se presentan los principales modelos discretos.\\ 
+A continuación se presentan los principales modelos discretos.
 
 <br/><br/>
 
@@ -167,7 +167,7 @@ A continuación se presentan los principales modelos discretos.\\
 
 <br/>
 
-Empezaremos  enunciando el modelo Bernoulli, aunque algunos autores no lo reconocen como modelo, ayuda en la compresión de los modelos siguientes. Toma  su nombre del matemático Jacob Bernoulli.\\
+Empezaremos  enunciando el modelo Bernoulli, aunque algunos autores no lo reconocen como modelo, ayuda en la compresión de los modelos siguientes. Toma  su nombre del matemático Jacob Bernoulli.
 
 <br/><br/>
 
@@ -231,7 +231,6 @@ $$X =\left\lbrace
 y su función de distribución de probabilidad está dada por:
 
 $$f(x)= 0.2^{x} (1-0.2)^{1-x} ,\text{ si } x=0,1.$$
-
 $$E[X]=p =0.20$$ 
 
 $$V[X] =p(1-p)= 0.16$$
@@ -331,7 +330,7 @@ $$\begin{equation*}
 	\end{array}
 \end{equation*}$$
 
-En R se corre el siguiente código:\
+En R se corre el siguiente código:
 
 ```{r}
  dbinom(7,9,0.90)
@@ -423,9 +422,6 @@ dpois(0,2)
 ```
 
 
-
-
-
 <br/><br/>
 
 ## **hipergeometrico**
@@ -487,11 +483,16 @@ ggplot(dat) + geom_point(aes(x, fx),colour = "#BC2B6A", size = 3) +
 
 $\begin{eqnarray*}
 	P(X\geq 1)=1-P(X=0)
-	&=& 1 - \dfrac{\displaystyle\binom{5}{0}\displaystyle\binom{135}{5}}{\displaystyle\binom{140}{5}}\\
-	&=& 1-\Bigg[\frac{1  \times 346700277}{416965528} \Bigg] \\
-	&=& 1 - 0.83148427 \\
-	&=& 0.16851573
+	&=& 1 - \dfrac{\displaystyle\binom{5}{0}\displaystyle\binom{135}{20}}{\displaystyle\binom{140}{20}}\\
+	&=& 1-\big[ 0.4570594  \big] \\
+	&=& 0.5429406
 \end{eqnarray*}$
+
+
+```{r}
+
+phyper(0,5,135,20, lower.tail = FALSE)
+```
 
 <br/><br/>
 
@@ -575,6 +576,11 @@ $$\begin{eqnarray*}
 	&=& 1-[0.5+0.5 \times 0.5] \\
 	&=&0.25 
 \end{eqnarray*}$$
+
+```{r}
+dgeom(2, 0.50)
+0.50*0.50
+```
 
 <br/><br/>
 
@@ -998,6 +1004,11 @@ $$\begin{eqnarray*}
 	&=& 0.124652
 \end{eqnarray*}$$
 
+
+```{r}
+pgamma(10,3,0.5, lower.tail = FALSE)
+```
+
 <br/><br/>
 
 ## **Weibull** 
@@ -1061,7 +1072,8 @@ $$h(t)=\dfrac{f(t)}{1-F(t)} $$
 |:--:|:------------------------------------|
 | ![](img/ej11.png)| La duración de una batería se modela mediante una distribución Weibull con parámetros: $\alpha=0.1$ y $\beta=2$. Determine la probabilidad de que una batería dure más de 10 horas. Determine la proporción de baterías que durarán más de 10 horas. |
 
-<br/><br/>
+
+<br/>
 
 **Solución**
 
@@ -1072,6 +1084,7 @@ $$\begin{eqnarray*}
 	&=& 0.3089367 
 \end{eqnarray*}$$
 
+<br/><br/>
 
 En este caso también se puede obtener  la tasa de fallos esta determinada por:
 $$\begin{eqnarray*}
