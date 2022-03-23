@@ -1,5 +1,5 @@
 ---
-title: "Código 302"
+title: "Código 3.2"
 author: "dgonzalez "
 subtitle: "Módulo 3- Unidad 3.2" 
 output:

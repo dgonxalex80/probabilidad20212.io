@@ -1,5 +1,5 @@
 ---
-title: "Código"
+title: "Código 3.3"
 author: "dgonzalez "
 subtitle: "Módulo 1- Unidad 1.1" 
 output:
@@ -24,8 +24,6 @@ c5="#BC2B6A" # MORADO
 
 ```
 
-
-### <span style="color:#BC2B6A">**EN CONSTRUCCION**</span>
 
 # **Funciones modelos**
 
