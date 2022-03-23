@@ -62,7 +62,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 |Actividad        | Descripción                                                             | 
 |:----------------|:------------------------------------------------------------------------|
-|**Actividad 331**|**Poster** : Construir una poster  para cada uno de los modelos asignados que contenga sus principales características ([**Actividad331**](https://dgonxalex80.github.io/probabilidad20212.io/Actividad331.html))  |
+|**Actividad 331**|**Poster/Video** : Construir un poster/video  para cada uno de los modelos asignados que contenga sus principales características ([**Actividad331**](https://dgonxalex80.github.io/probabilidad20212.io/Actividad331.html))  |
 |                 | Trabajo en grupo de  2 estudiantes                                      |
 |Recurso          | [**Guía 3.3**](https://github.com/dgonzalez80/probabilidad20212.io/blob/main/talleres/Guia303.pdf)|
 |                 | [**Overleaf**](https://www.overleaf.com/)     | 
@@ -108,6 +108,8 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 
 # **Recursos**
+
+
 
 ## **Modelos especiales**
 
