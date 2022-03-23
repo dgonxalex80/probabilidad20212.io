@@ -12,7 +12,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE,comment = NA)
 ```
 
 # <span style="color:#104E8B">**Ejercicios propuestos U3.1**</span>
@@ -21,7 +21,7 @@ knitr::opts_chunk$set(echo = TRUE)
 ## <span style="color:#104E8B">**Taller 312**</span>
 <br/><br/>
 
- **3.1** Clasifique las siguientes variables aleatorias como discretas o continuas:
+ **1** Clasifique las siguientes variables aleatorias como discretas o continuas:
 
 + $X$ : el número de accidentes automovilísticos que ocurren al año en una ciudad determinada
 + $Y$ : el tiempo para  jugar 18 hoyos de golf
@@ -34,7 +34,7 @@ knitr::opts_chunk$set(echo = TRUE)
 <br/><br/>
 
 
-**3.14**  El tiempo que pasa, en horas, para que un radar detecte entre conductores sucesivos a los que exceden los límites de velocidad es una variable aleatoria continua con una  función de distribución acumulada:
+**2**  El tiempo que pasa, en horas, para que un radar detecte entre conductores sucesivos a los que exceden los límites de velocidad es una variable aleatoria continua con una  función de distribución acumulada:
 
 $$F_{_{X}}(x) = \left \{ 
 				\begin{matrix} 
@@ -51,7 +51,7 @@ Calcule la probabilidad de que el tiempo que  pase para que el radar detecte ent
   
 <br/><br/>
 
- **3.18** Una variable aleatoria continua $X$, que puede tomar valores entre $x=2$ y $x=5$, tiene una función de densidad data por $f(x)=2(1+x)/27$.  Calcule 
+ **3** Una variable aleatoria continua $X$, que puede tomar valores entre $x=2$ y $x=5$, tiene una función de densidad data por $f(x)=2(1+x)/27$.  Calcule 
  
  + $P(X < 4)$
  + $P(3 \leq X < 4)$
@@ -59,7 +59,7 @@ Calcule la probabilidad de que el tiempo que  pase para que el radar detecte ent
  
  <br/><br/>
  
- **3.33** Suponga que cierto tipo de pequeñas empresas de procesamiento de datos están tan especializadas que algunas tienen dificultades para obtener utilidades durante su primer año de operación. La función de densidad de probabilidad está dada por
+ **4** Suponga que cierto tipo de pequeñas empresas de procesamiento de datos están tan especializadas que algunas tienen dificultades para obtener utilidades durante su primer año de operación. La función de densidad de probabilidad está dada por
  
  $$f_{_{Y}}(y) = \left \{ 
 				\begin{matrix} 
@@ -76,15 +76,15 @@ Calcule la probabilidad de que el tiempo que  pase para que el radar detecte ent
  
  <br/><br/>
  
- **3.24** Calcule la distribución de probabilidad par el número de discos compactos de jazz, de una colección que consta de  5 de jazz, 2 de música clásica y 3 de rock, al seleccionar de esta colección 4 de manera aleatoria. Explique sus resultados utilizando una fórmula.
+ **5** Calcule la distribución de probabilidad par el número de discos compactos de jazz, de una colección que consta de  5 de jazz, 2 de música clásica y 3 de rock, al seleccionar de esta colección 4 de manera aleatoria. Explique sus resultados utilizando una fórmula.
  
 <br/><br/>
 
-**3.25** De una caja que contiene 4 monedad de 10 centavos y 2 monedas de 5 centavos se seleccionan 3 monedas de manera aleatoria  y sin reemplazo. calcule la distribución de probabilidad para el total $T$ de las 3 monedas .  Exprese la distribución de probabilidad de forma gráfica 
+**6** De una caja que contiene 4 monedad de 10 centavos y 2 monedas de 5 centavos se seleccionan 3 monedas de manera aleatoria  y sin reemplazo. calcule la distribución de probabilidad para el total $T$ de las 3 monedas .  Exprese la distribución de probabilidad de forma gráfica 
 
 <br/><br/>
 
-**3.31** Con base en las pruebas extensas, el fabricante de una lavadora determinó que el tiempo $Y$ (en años) para que el electrodoméstico requiera una reparación mayor se obtiene mediante la siguiente función de densidad de probabilidad :
+**7** Con base en las pruebas extensas, el fabricante de una lavadora determinó que el tiempo $Y$ (en años) para que el electrodoméstico requiera una reparación mayor se obtiene mediante la siguiente función de densidad de probabilidad :
 
  
   $$f_{_{Y}}(y) = \left \{ 
@@ -101,7 +101,7 @@ Calcule la probabilidad de que el tiempo que  pase para que el radar detecte ent
 
 <br/><br/>
 
-**3.65** Sea el número de llamadas telefónicas que recibe un conmutador durante un intervalo de 5 minutos una variable aleatoria $X$ con la siguiente función de distribución de probabilidad:
+**8** Sea el número de llamadas telefónicas que recibe un conmutador durante un intervalo de 5 minutos una variable aleatoria $X$ con la siguiente función de distribución de probabilidad:
 
 $$f(x)= \dfrac{exp\{-2\} 2^x}{x!} \mbox{ , } x = 01,2,3,4,5.... $$
 
@@ -112,7 +112,7 @@ $$f(x)= \dfrac{exp\{-2\} 2^x}{x!} \mbox{ , } x = 01,2,3,4,5.... $$
 
 <br/><br/>
 
-**3.72** El congestionamiento de pasajeros es un problema de servicio en los aeropuertos, en los cuales se instalan trenes para reducir la congestión.  cuando se usa el tren el tiempo $X$, en minutos, que toma viajar desde la terminal principal hasta una  explanada específica tiene la siguiente función de densidad:
+**9** El congestionamiento de pasajeros es un problema de servicio en los aeropuertos, en los cuales se instalan trenes para reducir la congestión.  cuando se usa el tren el tiempo $X$, en minutos, que toma viajar desde la terminal principal hasta una  explanada específica tiene la siguiente función de densidad:
 
 
  $$f_{_{X}}(x) = \left \{ 
@@ -386,6 +386,9 @@ b. Determine:
   
 c. Determine  $Cor[XY]$ ,  interprete su resultado  
 
+<br/>
+
+[**Solución Taller 301**](https://github.com/dgonzalez80/pye20221.io/blob/main/talleres/Taller301.pdf)
 
 <br/><br/><br/>
 
@@ -399,13 +402,14 @@ c. Determine  $Cor[XY]$ ,  interprete su resultado
 $$\begin{equation*}
 f_{_{X,Y}}(x,y)=\left\lbrace
 \begin{array}{ccl}
-2&;&  0 \leq x \leq 1;  0\leq y \leq 1 ; x + y \leq 1\\
+2 & ,  &  0 \leq x \leq 1 \\  
+  &    &  0\leq y \leq 1  \\
+  &    &  x + y  \leq 1   \\
+  &&\\
 0&;& \text{en otro caso.}
 \end{array}
 \right.
 \end{equation*}$$
-
-
 
 
 a. ¿Qué porcentaje de las muestras seleccionadas aleatoriamente tienen menos del setenta y cinco por ciento de ambas sustancias?
@@ -424,13 +428,12 @@ d. Una mezcla seleccionada aleatoriamente contiene el cincuenta por ciento de la
 $$
 f_{_{X,Y}}(x,y) = \left \{ 
 \begin{matrix} 
-k & \hspace{.3cm}	5 \leq x \leq 9 , \hspace{.3cm} 4 \leq y \leq 9 \\ 
+k & \hspace{.3cm}	5 \leq x \leq 9 \\ 
+  & \hspace{.3cm} 4 \leq y \leq 9 \\ 
 &\\
 0  & \mbox{en otro caso }
 \end{matrix}\right.  
 $$
-
-
 
 
 a. Determinar la función de densidad conjunta que modela la cantidad de maní y chocolate que contiene un paquete.
@@ -441,5 +444,732 @@ c. Cien paquetes contienen menos de seis kilogramos de maní, ¿cuántos de ello
 
 d. Doscientos paquetes seleccionados aleatoriamente contienen cinco kilogramos de chocolate, ¿cuántos de ellos contienen más de ocho kilogramos de maní?
 
-<br/><br/>	
+<br/>
+
+[**Solución Taller 322**](https://github.com/dgonzalez80/pye20221.io/blob/main/talleres/Solucion_Taller322.pdf)
+
+
+# <span style="color:#104E8B">**Ejercicios propuestos U3.3**</span>
+
+
+<br/><br/><br/>
+
+## <span style="color:#104E8B">**Taller 331**</span>
+
+<br/><br/>
+
+El siguiente taller tiene como objetivo el entendimiento de los diferentes modelos de probabilidad mas utiizados para **variables discretas** y utilizar el programa RStudio en su solución.
+
+
+**1. Modelo binomial**  Para una variable aleatoria con distribución binomial $X sim binom(x, n=10, p=0.5)$  Determine:  
+
+a. $P(X = 2)$
+
+b. $P(X \leq 2)$
+
+c. $P(3 \leq  X < 5)$
+
+d. $P(X \geq 8)$
+
+e. Construya la gráfica de $f(x)$
+
+
+```{r echo=FALSE}
+cat("(a) P(X=5)=",dbinom(5,10,0.5))
+cat("(b) P(X<=2)=",pbinom(2,10,0.5))
+cat("(c) P(3<=X<5)=",pbinom(4,10,0.5)-pbinom(2,10,0.5))
+cat("(d) P(X=>8)=", pbinom(7,10,0.5, lower.tail = FALSE))
+cat("(e.) gráfica de $f(x)$")
+
+x=0:10
+fx=dbinom(x,10,0.5)
+plot(x,fx, 
+     main = " Distribución binomial(n=10, p=0.50)",
+     pch=19) 
+grid()
+abline(v = 1:10,  lty = 2, col = "grey")
+```	
+
+<br/><br/>
+
+**2. Modelo geometrico**  Sea una variable geométrica $X \sim geomn,(x,p=0.05)$ . Determine :
+
+a. $P(X = 1)$
+	
+b. $P(X \leq 2)$
+	
+c. $P(X = 8)$
+	
+d. $P(X \geq 2)$  
+	
+e. Construya la gráfica de $f(x)$
+
+<br/><br/>
+
+**3. Modelo hipergeometrico** Suponga que $X$ tiene una distribución hipergeometrica con $N=100$, $n=4$ y $K=20$. ($X\sim hyper(x,N=100,n=4,k=20)$) Determine:
+
+a. $P(X = 1)$
+	
+b. $P(X = 6)$
+	
+c. $P(X \geq 1)$
+	
+d. $P(X = 4)$  
+	
+e. Construya la gráfica de $f(x)$
+
+<br/><br/>
+ 
+**4. Modelo Poisson** Suponga que $X$ tiene una distribución Poisson con media $lambda=4$ ($X \sim pois(x,lambda=4)$). Determine:	
+
+a. $P(X = 0)$
+	
+b. $P(X = 4)$
+	
+c. $P(X \geq 2)$
+	
+d. $P(X \leq 2)$  
+	
+e. Construya la gráfica de $f(x)$
+
+<br/><br/>
+
+**5. Modelo binomial negativo** Sea la variable $X$ con distribución binomial negativa con $N=100$ , $K=20$, $n=5$ ($X\sim nbinom(x,n,p,mu)$ ).	Determine:
+	
+a. $P(X = 0)$
+	
+b. $P(X = 6)$
+	
+c. $P(X \geq 10)$
+	
+d. $P(X \leq 12)$
+	
+e. $EX$ y $VX$  
+	
+f. Construya la gráfica de $f(x)$
+	
+<br/><br/>
+
+**6.** En un cargamento grande de llantas para automóviles, el 5 tiene imperfecciones. Se eligen de manera aleatoria 4 llantas para ser instalada en un automóvil.  (Sea X el número de llantas con imperfecciones. $X \sim binom(n=4, p=0.05$ )
+
+a. ¿ Cuál es la probabilidad de que ninguna de las llantas tenga imperfecciones?
+	
+b. ¿ Cuál es la probabilidad de que sólo una de las llantas tenga imperfecciones?
+	
+c. ¿ Cuál es la probabilidad de una o más llantas tenga imperfecciones?
+
+<br/><br/>
+
+**7.** Los clientes llegan al mostrador de una tienda de acuerdo con una variable aleatoria Poisson con una frecuencia promedio de ocho clientes por hora. 
+
+a. Calcule la probabilidad de que entre las 8 AM y las 9 AM lleguen exactamente cinco clientes.
+	
+b. Calcule la probabilidad de que entre las 2:30 PM y las 3:30 PM no lleguen más de tres clientes.
+	
+c. Calcule la probabilidad de que lleguen exactamente dos clientes dentro de un intervalo de dos horas continuas, por ejemplo entre 10 AM y 12 M.
+	
+d. Calcule el valor esperado del número de personas que llegan a la tienda entre las 2 PM y las 4:30 PM.
+		
+			
+<br/><br/>
+
+**8.** Se está desarrollando una nueva variedad de maíz en una extensión de experimentación agrícola. Se espera que tenga una tasa de germinación del 90. Para verificar esto, se plantan 20 semillas en suelos de idéntica composición y se les dedican los mismos cuidados. Si la cifra 90 es correcta, ¿cuántas semillas se espera que germinen? Si sólo germinan 15 o menos, ¿hay razón para sospechar de la cifra 90?
+
+<br/><br/>
+
+**9.** Un examen de Probabilidad consta de 100 preguntas de selección múltiple, cada una con cuatro opciones de respuesta. Maria responde cada pregunta al azar y sus respuestas son independientes 
+
+a. Si para aprobar el examen Juan debe responder mínimo 60 preguntas correctamente, calcule la probabilidad de que Maria apruebe el examen.
+	
+b. Calcule la probabilidad de que Maria  deba responder 10 preguntas hasta responder la primera pregunta correctamente.
+	
+c. ¿Cuál es el número esperado de preguntas que Maria responderá erróneamente hasta responder 5 preguntas correctamente?
+
+<br/><br/>
+
+**10.** Se sospecha que muchas muestras de agua, todas del mismo tamaño y tomadas del Hillbank River, han sido contaminadas por operarios irresponsables de una planta de tratamiento de aguas. Se contó el número de microorganismos conformes en cada muestra. El número medio de microorganismos por muestra fue de 15. Suponiendo que el número de microorganismos se distribuye según una distribución de Poisson, calcular la probabilidad de que:
+		
+a. La siguiente muestra contenga al menos 17 microorganismos.
+
+b. La siguiente muestra contenga 18 o menos microorganismos.
+
+c. La siguiente muestra contenga exactamente dos microorganismos.
+
+**11.** Una aéreolinea nacional tiene aviones de 100 asientos para el servicio de transporte nacional. Se estima que la probabilidad de que una persona llegue al vuelo es de 0.90, debido a lo cual  la aereolinea vende 105 tiquetes con el fin de minimizar la partida de aviones con sillas vacias. ¿cuál es la probabilidad de que todas las personas que lleguen para abordar el avión tengan asiento?   
+
+<br/><br/>
+
+**12** El número de grietas en un pavimento se estima en una grieta por cada 100m  en promedio. Se desea estimar la probabilidad de:
+
+a. Haya exactamente 8 grietas en una longitud de 500 m
+
+b. No se presente ninguna grieta en 100 m
+
+c. Se presenten menos de 2 grietas en 500 m 
+
+<br/><br/>
+
+**13**. Un sistema de seguridad para casas está diseñado para tener una confiabilidad del 95 . Suponga que 10 casas equipadas con este dispositivo sufrieron tentativa de robo. Se requiere calcular la probabilidad de que en siete de las nueve, la alarma se activará.
+
+
+
+<br/><br/>
+
+## <span style="color:#104E8B">**Taller 332**</span>
+
+**1.** Para una variable aleatoria $X\sim unif(x,a,b)$  con $a=10$ y $b=20$ determine:
+
+a. Construya un bosquejo de la gráfica de la función de densidad de probabilidad $f_{_{X}}(x)$.
+
+b. $P(X \leq 12)$. 
+
+c. $P(13\leq X <15)$. 
+
+d. $P(X\geq 18)$ . 
+
+e. $E[X] $ y $V[X]$.
+
+<br/><br/>
+
+**2.** Para una variable $Z\sim N(0,1)$, determine el área: 
+
+a.  A la derecha de z = - 0.85. 
+
+b.Entre z = 0.40 y z = 1.30.  
+
+c. Entre z = -0.30 y z = 0.90. 
+
+d.  Desde z = -1.50 hasta z = -0.45.
+
+Nota: en cada caso realice un  bosquejo del área que representa la probabilidad
+
+<br/><br/>
+
+**3.** Para una variable $Z\sim N(0,1)$, determine el área: 
+
+a.	A la izquierda de z = 0.56. 
+
+b. Entre z = - 2.93 y z = -2.06. 
+
+c. Entre z = -1.08 y z = 0.70. 
+
+d. Desde z = 0.96 hasta z = 1.62.
+
+Nota: En cada caso represente gráficamente los valores solicitados
+	
+<br/><br/>
+
+**4.** Para una variable aleatoria continua $X\sim norm(\mu=150, \sigma^{2}=1000)$ determine:
+
+a. Realice un bosquejo de la gráfica de la función de  densidad de probabilidad de $X$
+
+b. $P(X \leq 100)$. 
+
+c. $P(300 \leq X \leq 400)$.
+
+d. $P(X\geq 550)$.  
+
+e. Determine el valor de $k$ que cumpla : $P(-k < X < k)= 0.90$.
+
+f. Determine el valor de $k$ que cumpla : $P(-k < X < k)= 0.95$.
+
+<br/><br/>
+
+**5.** Sea $X$ una variable aleatoria con distribución exponencial . ($X\sim exp(\lambda=2)$). Determine:
+
+a. $P(X \leq 0)$.
+
+b. $P(X \geq 2)$.
+
+c. $P(1 < X < 2)$. 
+
+d. Realice un bosquejo de la gráfica de $f_{_{X}}(x)$
+
+<br/><br/>
+
+**6.** Doris  y Mauricio quedan en encontrarse entre las 5:00 pm y 6:00 pm en Unicentro. Sea $X$ el tiempo que transcurre entre las 5:00 pm y el momento en que llega Doris y $Y$ el tiempo que transcurre entre las 5:00 pm y el momento en que llega Mauricio. Suponga que X y Y son variables aleatorias independientes uniformemente distribuidas en el intervalo [0; 60]  en minutos. 
+
+a. Cuál es la distribución de probabilidad conjunta de X y Y?
+
+b. ¿Cuál es la probabilidad de que ambos lleguen entre las 5:30 y 5:40?
+
+c. Sea T = X − Y el tiempo que Mauricio espera a Doris. ¿Cuánto debe esperar en promedio Mauricio a Doris?
+
+d. Si Doris y Mauricio acuerdan además, que cada uno esperará al otro un máximo 10 minutos. Cuál es la probabilidad de que Mauricio y Doris se encuentren?
+
+<br/><br/>
+
+**7.** Para una variable aleatoria $Y$ que representa las puntuaciones obtenidas en una prueba y cuya distribución es aproximadamente normal con media de $480$ puntos y desviación estándar de $90$ puntos, determine: 
+
+a. ¿Cuál es la proporción de puntuaciones mayores a 700? 
+
+b. ¿Cuál es el 25o. percentil de las puntuaciones? 
+
+c. Si la puntuación de alguien es de 600, ¿en qué percentil se encuentra? 
+
+d. ¿Qué proporción de las puntuaciones se encuentra entre 420 y 520?
+
+<br/><br/>
+
+**8.** Suponga que la estatura de las personas en una población sigue la curva normal con media de 64.3 pulgadas y desviación estándar de 2.6 pulgadas. 
+
+a. ¿Qué proporción de personas en esa región tiene estatura entre 60 y 66 pulgadas? 
+
+b. La estatura de Juan es 0.5 de desviación estándar mayor a la media. ¿Qué proporción de personas miden más que Juan? 
+
+c. ¿Cuánto mide una persona cuya estatura se encuentra en el 90o. percentil? 
+
+d. Se elige aleatoriamente una persona de esta población. ¿Cuál es la probabilidad de que ella mida más de 67 pulgadas? 
+
+e. Se elige aleatoriamente a cinco personas de esta población. ¿Cuál es la probabilidad de que sólo una de ellas mida más de 67 pulgadas?
+
+<br/><br/>
+
+**9.** La resistencia de una aleación de aluminio se distribuye normalmente con media de 10 gigapascales (GPa) y desviación estándar de 1.4 GPa. 
+
+a. ¿Cuál es la probabilidad de que una muestra de esta aleación tenga resistencia mayor a 12 GPa? 
+
+b. Determine el primer cuartil de la resistencia de esta aleación. 
+
+c. Determine el 95o. percentil de la resistencia de esta aleación.
+
+<br/><br/>
+
+**10.** La vida útil de una bombilla de un vehículo opera en un ambiente a alta temperatura dada su cercania al motor del vehículo. Esta variable medida en años sigue aproximadamente una distribución lognormal con media $\mu=1.2  $ y varianza $\sigma^{2} =0.4$ .
+
+a. Determine el tiempo medio de vida de la bombilla
+
+b. Determine la probabilidad de que la bombilla dure entre 3 y 6 años
+
+c. Determine  el valor de la mediana
+
+d. Determine el percentil 95° de los tiempos de vida
+ 		
+
+<br/><br/>
+
+**11.**	Un indicador importante para el control del estado físico de una persona es el Indice de Masa Corporal (IMC).  Este indice se obtiene al dividir el valor de la masa  corporal de  una persona ($kg$) entre el cuadrado de la talla de la persona ($m^{2}$). En su artículo W.Bolch y E Farfan establecen que este indice (en $kg/m^{2}$)se distribuye  aproximadamente lognormal con media $\mu=3.215$ y $\sigma = 0.157$ para hombre con edad entre 17 y 25 años. 
+
+La organización mundial de la salud ha establecido rangos para este indice y los ha clasificado de acuerdo al riesgo así: De 25.0 a 29.9,  sobrepeso o no obeso ; Entre 30 a 34.9 : Obesidad clase 1 o de bajo riesgo. Más de 40: Obesidad clase 3 o de alto riesgo.  Con el fin de establecer una campaña sobre buenos hábitos en el deporte y la dieta el Centro de Bienestar Universitario desea conocer las proporciones de una población de jóvenes con estas edades, en cada uno de los rangos establecidos. 
+ 
+
+<br/><br/>
+
+**12.**	Un fabricante manifiesta que su producto principal (un ventilador para el  hogar ) dura más de 9000 horas.de uso. Que si algún cliente presenta una avería en su producto antes de este tiempo,el garantiza la entrega de otro de similares condiciones como parte de su estrategia de venta. Uno de  sus asesores le indica que no es adecuado realizar esta promoción y que será muy costosa realizarla. Con  el fin de validad quien tiene la razón, le entregan a Usted la siguiente información:  La variable  tiempo de vida de un ventilador de similares condiciones se puede modelar mediante una distribución Weibull con parámetros : $\alpha=1.5$ y $\beta=0.0001$ . ¿quien tiene la razón?
+
+<br/><br/>
+
+**13.** Una de las dificultades que presentan las Empresas Municipales se relaciona con la reparación de rupturas de tubos de alcantarillados debido especialmente a la antigüedad de las tuberías y a las raíces de los árboles que los rompen y generan suspensiones en el servicio de agua. Para la reparación de estos daños la empresa contrata con terceros los arreglos. La empresa conoce que el tiempo de reparación (en horas) se puede modelar mediante una distribución gamma con parámetros $\alpha=2$ y $\beta=1/2$, pero además tienen como indicador de calidad que el tiempo máximo de reparación no debe exceder la hora. ¿que tan probable es que se cumpla esta política con las actuales condiciones?  
+			
+<br/><br/>
+
+## <span style="color:#104E8B">**Taller 333**</span>
+
+Modelos especiales - Simulación 
+
+**METODO DE MONTECARLO** : Es un método no determinista o estadístico numérico, usado para aproximar expresiones matemáticas complejas y costosas de evaluar con exactitud. El método se llamó así en referencia al Casino de Montecarlo (Mónaco) por ser “la capital del juego de azar”, al ser la ruleta un generador simple de números aleatorios. El nombre y el desarrollo sistemático de los métodos de Montecarlo datan aproximadamente de 1944 y se mejoraron enormemente con el desarrollo de la computadora.  
+
+El uso de los métodos de Montecarlo como herramienta de investigación, proviene del trabajo realizado en el desarrollo de la bomba atómica durante la Segunda Guerra Mundial en el Laboratorio Nacional de Los Álamos en EE. UU. Este trabajo conllevaba la simulación de problemas probabilísticos de hidrodinámica concernientes a la difusión de neutrones en el material de fisión. Esta difusión posee un comportamiento eminentemente aleatorio.	(tomado de Wikipedia) 
+
+
+
+2. Dos diseños de un circuito de semiconductores están compitiendo entre sí. La duración del primero (en horas) se distribuye exponencialmente con $\lambda=10^{-4}$ y la duración del segundo tiene una distribución lognormal con $\mu=6$ y $\sigma^{2}=5.4$ 
+a. Utilice una muestra simulada de tamaño $1000$ para estimar la probabilidad de que un circuito con el primer diseño dure más que otro con el segundo diseño.
+b. Estime la probabilidad de que un circuito con el primer diseño  dure el doble del tiempo que otro con el segundo diseño.
+
+3. Se fabrican placas rectangulares cuyas longitudes en pulgadas se distribuyen como $N(2.0; 0.01)$ y cuyos anchos se distribuyen $N(3.0; 0.04)$. Suponga que las longitudes y los anchos son independientes. El área de una placa esta dada por $A=XY$.
+
+a. Utilice una muestra simulada de tamaño $1000$ para estimar la media y la varianza de $A$.
+b. Estime la probabilidad de que $P(5.9 <A<6.1)$.
+c. Construya una gráfica de distribución normal $(qqplot)$ para el área. ¿El área de una placa sigue una distribución normal?
+
+4. Un cable está compuesto por cuatro alambres. La fuerza de ruptura de cada alambre es una variable aleatoria distribuida normalmente con media de $10 kN$ y desviación estándar de $1 kN$ ($kN$=kiloNewton=$10^{3}N$). Utilizando el método de cable quebradizo, se estima que la fuerza del cable es igual a la fuerza de alambre más frágil multiplicada por el número de alambres.
+
+a. Utilice una muestra simulada de tamaño 1000 para estimar la fuerza media de este tipo de cable.
+b. Estime la mediana de la fuerza del cable.
+c. Estime la desviación estándar de la fuerza del cable.
+d. Para que sea aceptable en cierta aplicación, la probabilidad de que el cable se rompa con una carga de $28 kN$ debe ser menor a $0.01$. ¿Parece ser que el cable es aceptable? Explique.
+
+
+5. La duración de un láser (en horas) tiene una distribución lognormal con $\mu=8$ y $\sigma^{2}=2.4$. Dos de estos láser funcionan de forma independiente.
+a. Utilice una muestra de tamaño $1000$ para estimar la probabilidad de que la suma de las dos duraciones sea mayor a $20000$ horas.
+b. Estime la probabilidad de que ambos láser duren más de $3000$ horas.
+c. Estime la probabilidad de que ambos láser falle antes de las $10000$ horas.
+
+6. Estimación del valor de $\pi$ . LA siguiente figura sugiere como estimar el valor de $\pi$ con una simulación. En la figura, un circuíto con un áreaigual a $\pi/4$, está inscrito en un cuadrado cuya área es igual a 1. Se elige de forma aleatoria 100 puntos dentro del cuadrado . La probabilidad de que un punto esté dentro del círculo es igual a la pracción del área del cuadrado que abarca a este, la cual es $\pi/4$. Por tanto, se puede estimar el valor de $\pi/4$ al contar el número de puntos dentro del círculo, que es 79 para obtener la estimación de $\pi/4 \approx 0.76$ . De este último resultado se concluye que $\pi \approx 4(0.79) =3.14$ . Este ejercicio presenta un experimento de simulación que fue diseñado para estimar el valor de $\pi$ al generar 1000 puntos en el cuadrado.
+
+\includegraphics[scale=0.65]{simula6}
+
+a. Genere 1000 coordenadas $x$:  $X_{1}$, . . . , $X_{1000}$. Utilice la distribución uniforme con valor mínimo de $0$ y valor máximo de $1$. La distribución uniforme genera variables aleatorias que tienen la misma probabilidad de venir de cualquier parte del intervalo $(0, 1)$.
+b. Genere $1000$ coordenadas $y$ : $Y_{1}, . . . , Y_{1000}$, utilizando nuevamente la distribución uniforme con valor mínimo de $0$ y valor máximo de $1$.
+%
+c. Cada punto $(X_{i},Y_{i})$ se encuentra dentro del círculo si su distancia desde el centro $(0.5, 0.5)$ es menor a $0.5$. Para cada par $(X_{i},Y_{i})$ determine si la distancia desde el centro es menor a $0.5$. Esto último se puede realizar al calcular el valor $(X_{i}-0.5)^{2}+(Y_{i}-0.5)^{2}$, que es el cuadrado de la distancia, y al determinar si es menor que $0.25$.
+d. ¿Cuántos de los puntos están dentro del círculo? ¿Cuál es su estimación de $\pi$? (Nota: Con sólo 1000 puntos, es probable que su estimación sea inferior por 0.05 o más. Una simulación con 10000 y 100000 puntos tiene mayores probabilidades de dar como resultado una estimación muy cercana al valor verdadero
+
+9. Un sistema está compuesto por los componentes A y B conectados en serie, como lo muestra la siguiente figura. El tiempo de vida en meses del componente A sigue una distribución lognormal con $\mu=1$ y $\sigma=0.5$ y la distribución en meses del componente B tiene una distribución lognormal con $\mu=2$ y $\sigma=1$. El sistema solo funciona si A y B lo hacen.
+
+\includegraphics[scale=.7]{simula9} 
+
+
+
+a. Genere por simulación un gran número  (al menos $1000$) de los tiempos de vida del sistema
+b. Estime la media del tiempo de vida del sistema.
+c. Estime la probabilidad de que el sistema falle en dos meses.
+d. Estime el $20^{o}$ percentil ($P_{20}$) de los tiempos de vida del sistema.
+e. Construya una gráfica de probabilidad normal de los tiempo de vida del sistema. ¿Los tiempos de vida del sistema tienen una distribución aproximadamente normal?
+f. Construya un histograma de los tiempos de vida del sistema. ¿Está sesgado a la izquierda, sesgada a la derecha, o es aproximadamente simétrico?
+
+
+10. Un sistema está compuesto por dos subsistemas conectados en serie, como se muestra en la siguiente figura. Cada subsistema consiste en dos componentes conectados en paralelo. El subsistema AB falla cuando no funcionan $A$ y $B$. El subsistema CD falla cuando lo hacen $C$ y $D$. El sistema falla tan pronto como alguno de los dos subsistemas falla. Suponga que los tiempos de vida de los componentes, en meses, tienen las siguientes distribuciones: $A \sim Exp(1)$; $B\sim Exp(0.1)$; $C \sim Exp(0.2)$; $D\sim Exp(0.2)$ 
+\begin{center}
+\includegraphics[scale=.56]{simula10} 
+\end{center}
+
+a. Genere mediante simulación un gran número (al menos $1000$) de los tiempos de vida del sistema.
+b. Estime el tiempo de vida medio del sistema.
+c. Estime la mediana del tiempo de vida del sistema.
+d. Estime la probabilidad de que el sistema funcione más de seis meses.
+e. Estome el percentil $P_{90}$ de los tiempos de vida del sistema.
+f. Estime la probabilidad de que el subsistema AB falle antes de que lo haga el subsistema CD.
+
+
+11. La edad de una antigua pieza de materia orgánica se puede estimar a partir de la tasa a la que emite partículas beta como resultado del decaimiento del carbono-14. Por ejemplo , si X es el número de partículas emitidas durante diez minutos por un fragmento óseo con 10000 años de antigüedad  que contiene 1 g de carbono, entonces X tiene una distribución de Poisson con media $\lambda=45.62$ . Un arqueólogo descubrió un pequeño fragmento óseo que contiene 1 g de carbono. Si t es la edad desconocida del hueso, en años, el arqueólogo contar{a el número X de partículas emitidas en diez minutos y calculará una edad estimada $\widehat{t}$ con la fórmula:
+
+$$\widehat{t}=\dfrac{\ln 15.3 - \ln (X/10)}{0.0001210} $$ 
+
+El arqueólogo no lo sabe, pero el hueso tiene exactamente $100000$ años de antiguedad, por lo que $X$ tiene una distribución de Poisson con $\lambda=45.62$.
+
+a. Genere una muestra simulada de 10000 valores de $X$ y sus correspondientes valores de $\widehat{t}$.
+b. Estime la media de $\widehat{t}$.
+c. Estime la desviación estándar de $\widehat{t}$.
+d. Estime la probabilidad de que $\widehat{t}$ esté a 1000 años con una edad real de 10000 años.
+
+(Ejercicios tomados de Navidi(2006) Cap.4).
+
+
+## **Algunas soluciones en R**
+
+```{r, eval=FALSE}
+# Problema 3 Navidi(2006) Cap 4 ------
+X2=rnorm(1000,mean=2.0,sd=0.1)
+Y2=rnorm(1000,mean=3.0,sd=0.2)
+Z2=data.frame(X2,Y2)
+A2=apply(Z2,1,prod)
+mediaA=mean(A2)
+varianzaA=var(A2)
+B2=as.numeric(A2>5.9 & A2<6.1)
+Pro3c=sum(B2)/1000
+hist(A2)
+qqnorm(A2)
+```
+
+
+```{r, eval=FALSE}
+# Problema 3 Navidi(2006) Cap 4 ------
+X2=rnorm(1000,mean=2.0,sd=0.1)
+Y2=rnorm(1000,mean=3.0,sd=0.2)
+Z2=data.frame(X2,Y2)
+A2=apply(Z2,1,prod)
+mediaA=mean(A2)
+varianzaA=var(A2)
+B2=as.numeric(A2>5.9 & A2<6.1)
+Pro3c=sum(B2)/1000
+hist(A2)
+qqnorm(A2)
+```
+
+
+```{r, eval=FALSE}
+# Problema 1 Navidi(2006) Cap 4 --
+#a.-----------------------------
+# X Binomial(n=100, p=0.03)
+# Y Binomial(n=100, p=0.05)
+# b.-----------------------------
+X=rbinom(1000,size=100,prob=0.03)
+Y=rbinom(1000,size=100,prob=0.05)
+# c. ----------------------------
+Z=apply(data.frame(X,Y),1,sum)
+C=as.numeric(Z<10)
+Pro1c=sum(C)/1000
+# d.------------------------------
+W=apply(data.frame(X,-Y),1,sum)
+D=as.numeric(W>0)
+Pro1d=sum(D)/1000
+# e.------------------------------
+qqnorm(Z)
+qqline(Z)
+hist(Z)
+```
+
+
+```{r, eval=FALSE}
+# problema 9 Navidi(2006) Cap 4 ------
+# Generación de los tiempos de A
+A=rlnorm(1000,meanlog=1, sdlog=0.5)
+# Generación de los tiempos de B
+B=rlnorm(1000,meanlog=2, sdlog=1)
+# Estreuctura como sistema de 
+# los tiempos simulados
+AB=data.frame(A,B)
+# Generación de los tiempos del sistema
+minAB=apply(AB,1,min)
+# Calculo de la media de los tiempos 
+# del sistema
+mean(minAB)  
+# Cosntrucción de variable Bernoulli 
+# que toma valores de uno cuando se 
+# cumple condición
+D=as.numeric(minAB<2) 
+# Calculo de la probabilidad desde 
+# enfoque frecuentista
+Prob2=sum(D)/1000
+# Calculo de percentil 20
+quantile(minAB,.20)
+# Generación del histograma
+hist(minAB)
+# Generación del grafico de normalidad qqplot
+qqnorm(minAB)
+qqline(minAB)
+```
+
+```{r, eval=FALSE}
+# Punto 2 Navidi(2006) Cap 4-------------
+X2=rnorm(1000,mean=2.0,sd=0.1)
+Y2=rnorm(1000,mean=3.0,sd=0.2)
+Z2=data.frame(X2,Y2)
+A2=apply(Z2,1,prod)
+mediaA=mean(A2)
+varianzaA=var(A2)
+B2=as.numeric(A2>5.9 & A2<6.1)
+Pro3c=sum(B2)/1000
+hist(A2)
+```
+
+
+
+<br/><br/><br/>
+
+
+
+<br/><br/><br/>
+
+## **Formulario**
+
+<br/><br/>
+
+### **Distribución Bernoulli**
+
+\begin{equation*}
+f(x)=\left\lbrace
+\begin{array}{lll}
+p & \mbox{si } x=1 \\
+q & \mbox{si } x=0 \\
+0 & \mbox{en cualquier otro caso}
+\end{array}
+\right.
+\end{equation*}
+
+<br/><br/>
+
+$$E[X]= p$$
+
+$$V[X]= pq$$ 
+
+<br/><br/>
+
+### **Distribución binomial**
+
+\begin{equation*}
+f(x)=\displaystyle\binom{n}{x} p^{x} (1-p)^{n-x} , x=0,1,2, \ldots, n 
+\end{equation*}
+
+<br/><br/>
+
+$$E[X]=np$$
+
+$$V[X]= np(1-p) $$
+
+<p style="text-align:center;">
+$X$ : número de  éxitos en los $n$ ensayos 
+</p>
+
+<br/><br/>
+
+### **Distribución Poisson**
+
+\begin{equation*}
+f(x)=\dfrac{\lambda^{x}}{x!} \hspace{.2cm} e^{-\lambda} , x \geq 0 
+\end{equation*}
+
+<br/><br/>
+
+$$E[X]=\lambda$$
+
+$$V[X]=\lambda $$
+<p style="text-align:center;">
+$X$ : número de  eventos que ocurren por unidad de tiempo, longitud, superficie o volumen.
+</p>
+
+<br/><br/>
+
+### **Distribución geométrica**
+
+\begin{equation*}
+	f(x)=p(1-p)^{x-1} , x \geq 1 
+\end{equation*}
+
+<br/><br/>
+
+$$E[X]=\dfrac{1}{p}$$
+
+$$V[X]=\dfrac{1-p}{p^{2}}$$
+	
+<p style="text-align:center;">
+$X$: número del evento donde ocurre el primer éxito 
+</p>
+
+<br/><br/>
+
+### **Distribución hipergeometrica**
+
+\begin{equation*}
+f(x)=P(X=x)=\dfrac{\displaystyle\binom{R}{x} \displaystyle\binom{N-R}{n-x}}{\displaystyle\binom{N}{n}} ,{\text{ si } 0 \leq x \leq \min(n,R) }
+\end{equation*}
+
+<br/><br/>
+
+$$E[X]=\dfrac{nR}{N}$$
+
+$$V[X]=n\binom{R}{N} \Bigg(1-\dfrac{R}{N}\Bigg)\Bigg(\dfrac{N-n}{N-1}\Bigg)$$
+
+<p style="text-align:center;">
+$X$: número de éxitos encontrados en una muestra de tamaño $n$ (sin orden, sin repetición), extraída de una urna que contiene N elementos de los cuales K son éxitos.
+</p>
+
+<br/><br/>
+
+### **Distribución binomial negativa**
+
+\begin{equation*}
+f(x)=\displaystyle \binom{x-1}{r-1} p^{r} (1-p)^{x-r} , x= r, r+1, \ldots 
+\end{equation*}
+
+<br/><br/>
+
+$$E[X]=\dfrac{r}{p}$$
+
+$$V[X]=\dfrac{r(1-p)}{p^{2}}$$
+
+<p style="text-align:center;">
+$X$ : número del evento donde ocurre el r-esimo éxito 
+</p>
+
+<br/><br/>
+
+### **Distribución uniforme ($a,b)$**
+
+$$f(x)=\dfrac{1}{b-a} , \hspace{.3cm}\text{ para } a \leq x \leq b $$
+
+<br/><br/>
+
+$$ E[X]=\dfrac{a+b}{2}$$ 
+
+$$V[X]=\dfrac{(b-a)^{2}}{12}$$
+
+<br/><br/>
+
+### **Distribución Normal  ($\mu, \sigma^{2}$)**
+
+$$f(x)= \dfrac{1}{\sqrt{2\pi \sigma^{2}}} \hspace{.1cm} exp{\bigg(-\frac{1}{2\sigma^{2}}(x-\mu)^{2}\bigg)}, \hspace{.3cm} -\infty \leq x \leq \infty $$ 
+
+<br/><br/>
+
+$$E[X]=\mu$$
+
+$$V[X]=\sigma^{2}$$ 
+
+$$Z= \dfrac{X-\mu}{\sigma} \sim N(0,1)$$
+
+<br/><br/>
+
+### **Distribución exponencial ($\lambda$)**
+
+\begin{equation*}
+f(x)=\lambda e^{-\lambda x} , x > 0 
+\end{equation*}
+
+<br/><br/>
+
+$$E[X]=\dfrac{1}{\lambda}$$
+
+$$V[X]= \dfrac{1}{\lambda^{2}}$$
+
+$$F(x)=P(X \leq x)=1-e^{-\lambda x}$$ 
+
+<br/><br/>
+
+### **Distribución lognormal ($\mu, \sigma^{2}$)**
+
+$$f(x)= \dfrac{1}{\sqrt{2\pi \sigma^{2}}} \hspace{.01cm} exp{\bigg(-\frac{1}{2\sigma^{2}}(\ln(x)-\mu)^{2}\bigg)}, \hspace{.25cm} -\infty \leq x \leq \infty $$ 
+
+<br/><br/>
+
+$$E[X]=\exp(\mu+\sigma^{2}/2)$$ 
+
+$$V[X]=\exp(2\mu+\sigma^{2}) \exp(\sigma^{2})-1$$ 
+
+$$z = \dfrac{\ln(x) - \mu}{\sigma} \sim N(0,1) $$
+
+<br/><br/>
+
+### **Distribución gamma ($\alpha, \beta$)**
+
+\begin{equation*}
+f(x)=\dfrac{1}{\beta^{\alpha}\Gamma(\alpha)} x^{\alpha-1} \exp{\big(-x/\beta\big)},   x>0 , \alpha>0, \beta>0
+\end{equation*}	
+
+<br/><br/>
+
+$$E[X] =  \alpha \beta $$
+
+$$V[X] = \alpha \beta^{2} $$
+
+
+<br/><br/>
+
+### **Distribución Weibull ($\alpha, \beta$)**
+
+\begin{equation*}
+f(x)=\alpha \beta^{\alpha} x^{\alpha-1} e^{-(\beta x)^{\alpha}} ,\hspace{.3cm} x > 0 
+\end{equation*}
+
+<br/><br/>
+
+$$F(x)=1-\exp{\{-\alpha x^{\beta}\}}$$
+
+$$E[X]=\frac{1}{\beta} \hspace{.2cm}\Gamma\Bigg(1+\frac{1}{\alpha}\Bigg)$$
+
+$$V[X]=\frac{1}{\beta^{2}} \Bigg(\Gamma\Bigg(1+\frac{2}{\alpha}\Bigg)- \Bigg[\Gamma \Bigg(1+\frac{1}{\alpha}\Bigg)\Bigg]^{2}\Bigg) $$	
+
+<br/><br/>
+
+### **Aproximaciones**
+
++ binomial a la normal 	
+
+  + Si $X\sim binom(n,p)$ y si $np>10$ y $nq>10$, entonces se puede  aproximar $X \sim norm(np, np(1-p))$
+
+
++ Poisson a la normal
+
+  + Si $X \sim poiss(\lambda)$, donde $\lambda>10$, entonces se puede aproximar $X \sim norm(\lambda, \lambda)$ 
+
+<br/><br/>
+
+### **Tasa de fallas** 
+
+$$Z(t)= \dfrac{f(t)}{1-F(t)} $$
+
+<br/><br/>
+
 

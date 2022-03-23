@@ -106,7 +106,13 @@ navbar:
           href: monitoria4.html
         - text: "monitoria 5"
           href: monitoria5.html
-        
+    - text: "Actividad"
+      icon: fa-cogs
+      menu: 
+        - text: "Actividad 331"
+          href: Actividad331.html          
+        - text: "Actividad 332"
+          href: Actividad332.html
 output:
   html_document:
     theme: cosmos
