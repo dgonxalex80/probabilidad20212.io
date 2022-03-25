@@ -942,9 +942,9 @@ ensayos P(E). La probabilidad de fracaso es <span
 class="math inline">\((1-p)=q\)</span>,</p></li>
 <li><p>Los ensayos son independientes,</p></li>
 <li><p>La variable objeto de estudio <span
-class="math inline">\(X\)</span>, corresponde al número de éxitos
-obtenidos en los <span class="math inline">\(n\)</span>
-ensayos.</p></li>
+class="math inline">\(X\)</span>, corresponde al <strong>número de
+éxitos obtenidos en los <span class="math inline">\(n\)</span>
+ensayos</strong>.</p></li>
 <li><p>Se puede decir que la suma de <span
 class="math inline">\(n\)</span> variables independientes con
 distribución Bernoulli(<span class="math inline">\(p\)</span>), se
@@ -1058,7 +1058,10 @@ caso}  \end{array}  \right.  \end{equation*}\)</span></p>
 <p>Donde <span class="math inline">\(\lambda\)</span> es la cantidad
 promedio de ocurrencias en el periodo de interés.</p>
 <p><span class="math display">\[E[X]=\lambda\]</span></p>
-<p><span class="math display">\[V[X]=\lambda \]</span></p>
+<p><span class="math display">\[V[X]=\lambda \]</span> La variable
+objeto de estudio <span class="math inline">\(X\)</span> es el
+<strong>número de eventos que ocurren por unidad de tiempo, longitud,
+superficie o volumen</strong></p>
 </div>
 <p>La siguiente gráfica representa la distribución de masa de una
 variable de Poisson con media 2.</p>
@@ -1110,7 +1113,8 @@ class="math inline">\(n\)</span> objetos es seleccionada al azar (sin
 reemplazo) de la población de <span class="math inline">\(N\)</span>
 objetos, donde <span class="math inline">\(K \leq N\)</span> y $n N $.
 La variable de interés <span class="math inline">\(X\)</span>
-corresponde al número de éxitos obtenidos en la muestra. \</p>
+corresponde al <strong>número de éxitos obtenidos en la
+muestra</strong>. \</p>
 <p>Su función de masa de probabilidad esta dada por</p>
 <p><span class="math display">\[\begin{equation*}
         f(x)=\left\lbrace
@@ -1221,8 +1225,8 @@ esta variable son:</p>
 primer intento. Cuando el primer éxito ocurre en el evento dos, <span
 class="math inline">\(X\)</span> es igual a <span
 class="math inline">\(2\)</span>, es decir que la variable con
-distribución geométrica corresponde al numero del evento donde ocurre el
-primer éxito.</p>
+distribución geométrica corresponde al <strong>número del evento donde
+ocurre el primer éxito</strong>.</p>
 <p><br/></p>
 <div
 style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; color: #000000; background-color: #FFFFFF ; border-color: #000000;">
@@ -1239,7 +1243,8 @@ style="padding: 15px; border: 1px solid transparent; border-color: transparent; 
 <p><span class="math display">\[E[X]=\dfrac{1}{p}\]</span></p>
 <p><span class="math display">\[V[X]=\dfrac{1-p}{p^{2}} \]</span></p>
 </div>
-<p><br/><br/></p>
+<p>Nota: En R la variable corresponde al <strong>número de fracasos
+necesarios para obtener el primer exito</strong> <br/><br/></p>
 <p><strong>Distribución geométrica o de Pascal (<span
 class="math inline">\(p=0.5\)</span>)</strong></p>
 <p><img src="Guia303_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
@@ -1286,10 +1291,10 @@ style="padding: 15px; border: 1px solid transparent; border-color: transparent; 
 <p><strong>Distribución binomial negativa</strong></p>
 <p>Se considera una generalización de la distribución Geométrica. En
 este caso la variable objeto de estudio corresponde a <span
-class="math inline">\(X\)</span>: número de ensayos requeridos para
-obtener <span class="math inline">\(r\)</span> éxitos. Esta variable se
-obtiene al sumar <span class="math inline">\(r\)</span> variables con
-distribución Geométrica con igual parámetro <span
+class="math inline">\(X\)</span>: <strong>número de ensayos requeridos
+para obtener <span class="math inline">\(r\)</span> éxitos</strong>.
+Esta variable se obtiene al sumar <span class="math inline">\(r\)</span>
+variables con distribución Geométrica con igual parámetro <span
 class="math inline">\(p\)</span>.</p>
 <p>Su función de masa está dada por :</p>
 <p><span class="math display">\[\begin{equation*}
