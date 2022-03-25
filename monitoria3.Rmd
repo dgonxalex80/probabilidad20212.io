@@ -579,7 +579,7 @@ d. Calcule el valor esperado del número de personas que llegan a la tienda entr
 
 **9.** Un examen de Probabilidad consta de 100 preguntas de selección múltiple, cada una con cuatro opciones de respuesta. Maria responde cada pregunta al azar y sus respuestas son independientes 
 
-a. Si para aprobar el examen Juan debe responder mínimo 60 preguntas correctamente, calcule la probabilidad de que Maria apruebe el examen.
+a. Si para aprobar el examen Maria debe responder mínimo 60 preguntas correctamente, calcule la probabilidad de que Maria apruebe el examen.
 	
 b. Calcule la probabilidad de que Maria  deba responder 10 preguntas hasta responder la primera pregunta correctamente.
 	
