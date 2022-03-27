@@ -460,35 +460,66 @@ d. Doscientos paquetes seleccionados aleatoriamente contienen cinco kilogramos d
 
 El siguiente taller tiene como objetivo el entendimiento de los diferentes modelos de probabilidad mas utiizados para **variables discretas** y utilizar el programa RStudio en su solución.
 
+<br/><br/>
 
-**1. Modelo binomial**  Para una variable aleatoria con distribución binomial $X sim binom(x, n=10, p=0.5)$  Determine:  
+**1. Modelo binomial**  Para una variable aleatoria con distribución binomial $X sim binom(x, n=10, p=0.2)$  Determine:  
 
 a. $P(X = 2)$
 
+$$P(X=5) = \displaystyle\binom{10}{5} 0.2^{5} (1-0.2)^{10-5}$$
+
+```{r}
+dbinom(5,10,0.2)
+```
+
+
+<br/><br/>
+
 b. $P(X \leq 2)$
+
+$$P(X\leq 2) = \sum_{x=0}^{2}\displaystyle\binom{10}{x} 0.2^{x} (1-0.2)^{10-x} =f(0)+f(1)+f(2)$$
+
+```{r}
+pbinom(2,10,0.2)
+```
+
+
+<br/><br/>
 
 c. $P(3 \leq  X < 5)$
 
+$$P(3 \leq  X < 5) = F(4) - F(2) = f(3) + f(4)$$
+
+```{r}
+pbinom(4,10,0.2)-pbinom(2,10,0.2)
+```
+
+
+<br/><br/>
+
 d. $P(X \geq 8)$
+
+$$P(X \geq 8) = f(8) + f(9) + f(10) = 1 - F(1)$$
+
+```{r}
+pbinom(7,10,0.2, lower.tail = FALSE)
+```
+
+
+
+<br/><br/>
 
 e. Construya la gráfica de $f(x)$
 
-
-```{r echo=FALSE}
-cat("(a) P(X=5)=",dbinom(5,10,0.5))
-cat("(b) P(X<=2)=",pbinom(2,10,0.5))
-cat("(c) P(3<=X<5)=",pbinom(4,10,0.5)-pbinom(2,10,0.5))
-cat("(d) P(X=>8)=", pbinom(7,10,0.5, lower.tail = FALSE))
-cat("(e.) gráfica de $f(x)$")
-
+```{r }
 x=0:10
-fx=dbinom(x,10,0.5)
+fx=dbinom(x,10,0.2)
 plot(x,fx, 
-     main = " Distribución binomial(n=10, p=0.50)",
+     main = " Distribución binomial(n=10, p=0.20)",
      pch=19) 
 grid()
 abline(v = 1:10,  lty = 2, col = "grey")
-```	
+```
 
 <br/><br/>
 

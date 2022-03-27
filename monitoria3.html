@@ -1159,23 +1159,55 @@ U3.3</strong></span></h1>
 <p>El siguiente taller tiene como objetivo el entendimiento de los
 diferentes modelos de probabilidad mas utiizados para <strong>variables
 discretas</strong> y utilizar el programa RStudio en su solución.</p>
+<p><br/><br/></p>
 <p><strong>1. Modelo binomial</strong> Para una variable aleatoria con
 distribución binomial <span class="math inline">\(X sim binom(x, n=10,
-p=0.5)\)</span> Determine:</p>
+p=0.2)\)</span> Determine:</p>
 <ol style="list-style-type: lower-alpha">
-<li><p><span class="math inline">\(P(X = 2)\)</span></p></li>
-<li><p><span class="math inline">\(P(X \leq 2)\)</span></p></li>
-<li><p><span class="math inline">\(P(3 \leq X &lt; 5)\)</span></p></li>
-<li><p><span class="math inline">\(P(X \geq 8)\)</span></p></li>
-<li><p>Construya la gráfica de <span
-class="math inline">\(f(x)\)</span></p></li>
+<li><span class="math inline">\(P(X = 2)\)</span></li>
 </ol>
-<pre><code>(a) P(X=5)= 0.2460938</code></pre>
-<pre><code>(b) P(X&lt;=2)= 0.0546875</code></pre>
-<pre><code>(c) P(3&lt;=X&lt;5)= 0.3222656</code></pre>
-<pre><code>(d) P(X=&gt;8)= 0.0546875</code></pre>
-<pre><code>(e.) gráfica de $f(x)$</code></pre>
-<p><img src="monitoria3_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><span class="math display">\[P(X=5) = \displaystyle\binom{10}{5}
+0.2^{5} (1-0.2)^{10-5}\]</span></p>
+<pre class="r"><code>dbinom(5,10,0.2)</code></pre>
+<pre><code>[1] 0.02642412</code></pre>
+<p><br/><br/></p>
+<ol start="2" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X \leq 2)\)</span></li>
+</ol>
+<p><span class="math display">\[P(X\leq 2) =
+\sum_{x=0}^{2}\displaystyle\binom{10}{x} 0.2^{x} (1-0.2)^{10-x}
+=f(0)+f(1)+f(2)\]</span></p>
+<pre class="r"><code>pbinom(2,10,0.2)</code></pre>
+<pre><code>[1] 0.6777995</code></pre>
+<p><br/><br/></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(3 \leq X &lt; 5)\)</span></li>
+</ol>
+<p><span class="math display">\[P(3 \leq  X &lt; 5) = F(4) - F(2) = f(3)
++ f(4)\]</span></p>
+<pre class="r"><code>pbinom(4,10,0.2)-pbinom(2,10,0.2)</code></pre>
+<pre><code>[1] 0.289407</code></pre>
+<p><br/><br/></p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li><span class="math inline">\(P(X \geq 8)\)</span></li>
+</ol>
+<p><span class="math display">\[P(X \geq 8) = f(8) + f(9) + f(10) = 1 -
+F(1)\]</span></p>
+<pre class="r"><code>pbinom(7,10,0.2, lower.tail = FALSE)</code></pre>
+<pre><code>[1] 7.79264e-05</code></pre>
+<p><br/><br/></p>
+<ol start="5" style="list-style-type: lower-alpha">
+<li>Construya la gráfica de <span
+class="math inline">\(f(x)\)</span></li>
+</ol>
+<pre class="r"><code>x=0:10
+fx=dbinom(x,10,0.2)
+plot(x,fx, 
+     main = &quot; Distribución binomial(n=10, p=0.20)&quot;,
+     pch=19) 
+grid()
+abline(v = 1:10,  lty = 2, col = &quot;grey&quot;)</code></pre>
+<p><img src="monitoria3_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p><br/><br/></p>
 <p><strong>2. Modelo geometrico</strong> Sea una variable geométrica
 <span class="math inline">\(X \sim geomn,(x,p=0.05)\)</span> . Determine
