@@ -102,12 +102,12 @@ Para cada uno de los modelos asignados que contenga sus principales caracteristi
 | 7       | Miguel Cumbalaza Christian  | Riascos Joan Sandoval            |                        |   
 | 8       | Cristian Camilo Tabares     | Jean Paul Gonzalez               | Néstor José Lugo       |  
 | 9       | Deivi Muñoz                 | Fabian Antoyne Garcia Gallego    |                        |   
-|10       | Duvan Aristizabal Figueroa  | Jhoan Manuel Buitrago Chavez     | Victor Cañon Otiz      |   
+|10       | Duvan Aristizabal Figueroa  | Victor Cañon Otiz                |                        |   
 |11       | Santiago Caicedo Rojas      | Dilan Correa Ortiz               | Juan José Gómez Gómez  |  
-|12       | Maria Gomez Martinez        | Carlos Guerrero Betancourth      | Carlos Loaiza Cifuentes|   
+|12       | Maria Gomez Martinez        | Carlos Loaiza Cifuentes          |                        |
 |13       | Andres Loaiza Diaz          | Carlos Molina Rodriguez          | Cristian Riascos Ramirez|  
 |14       | Juan Rivera Cabrera         | Alvaro Vargas Garcia             |                        |   
-
+|15       |Jhoan Manuel Buitrago Chavez |Carlos Guerrero Betancourth       |                        |
 
 
 
