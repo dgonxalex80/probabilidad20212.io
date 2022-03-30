@@ -799,6 +799,97 @@ La organización mundial de la salud ha establecido rangos para este indice y lo
 
 ## <span style="color:#104E8B">**Taller 333**</span>
 
+<br/><br/>
+
+**1.** Para una variable $Z$ con distribución de probabilidad normal estandar determine el área bajo la curva:
+
+a. $P(Z < 1.32)$
+
+b. $P(Z > 1.45)$. 
+
+c. $P(Z > -2.15)$.
+
+d. $P(-2.34 < Z < 1.76)$.
+
+e. $P( -0.50 < Z < -1.35)$
+
+f. $P(0.60 > Z > 1.62)$
+
+g. $P(-1 < Z < 1)$
+
+h. $P(-2 < Z < 2)$
+
+<br/><br/>
+
+**2.** Asuma que $Z$ tiene una distribución normal estándar. Determine el valor de $z$ para las siguientes probabilidades:
+
+a. $P(Z < z) = 0.90$
+
+b. $P(Z < z ) = 0.50$
+
+c. $P(Z > z) = 0.10$
+
+d. $P(Z > z) = 0.90$
+
+e. $P(-z < Z < z) =0.95$
+
+f. $P(-z < Z < z) =0.99$
+
+g. $P(-z < Z < z) =0.68$
+
+h. $P(-z < Z < z) =0.9973$
+
+<br/><br/>
+
+**3.** Para una variable aleatoria $X$ con distribución normal con media 10 y desviación estándar de 2, determine:
+
+a. $P(X < 13)$
+
+b. $P(X > 9)$
+
+c. $P( 6 < X < 14)$
+
+d. $P( 2 < X < 4)$
+
+e. $P(-2 < X < 8)$
+
+**4.** Para $X \sim N(\mu=10, \sigma^{2}=4)$ determine el valor de $x$: 
+
+a. $P(X > x) = 0.50$
+
+b. $P(X > x) = 0.95$
+
+c. $P( x < X < 10) = 0.20$
+
+d. $P( -x < X-10 < x) = 0.95$
+
+e. $P(-x < X-10 < x) = 0.99$
+
+<br/><br/>
+
+**5.** Para una variable $X \sim N(5,16) determine:
+
+a. $P(X < 11)$
+
+b. $P(X > 0)$
+
+c. $P(3 < X < 7)$
+
+d. $P(-2 < X < 9)$
+
+e. $P(2 < X < 8)$
+
+f. $P(X > x) = 0.55$
+
+g. $P(x < X < 9) = 0.95$
+
+h. $P(3 < X < x) = 0.99$
+
+
+<br/><br/><br/>
+
+## <span style="color:#104E8B">**Taller 334**</span>
+
 Modelos especiales - Simulación 
 
 **METODO DE MONTECARLO** : Es un método no determinista o estadístico numérico, usado para aproximar expresiones matemáticas complejas y costosas de evaluar con exactitud. El método se llamó así en referencia al Casino de Montecarlo (Mónaco) por ser “la capital del juego de azar”, al ser la ruleta un generador simple de números aleatorios. El nombre y el desarrollo sistemático de los métodos de Montecarlo datan aproximadamente de 1944 y se mejoraron enormemente con el desarrollo de la computadora.  
