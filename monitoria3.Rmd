@@ -867,7 +867,7 @@ e. $P(-x < X-10 < x) = 0.99$
 
 <br/><br/>
 
-**5.** Para una variable $X \sim N(5,16) determine:
+**5.** Para una variable $X \sim N(5,16)$ determine:
 
 a. $P(X < 11)$
 
