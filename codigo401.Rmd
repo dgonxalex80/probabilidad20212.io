@@ -159,19 +159,19 @@ Se puede observar la convergencia de la distribución de la media muestral a una
 
 <br/><br/><br/>
 
-# **Distribución de la media muestral**
+# **Distribuciones muestrales**
 
 A continuación se presentan las principales características de la media muestral $\bar{x}$ y de la proporción muetral $\widehat{p}$.  En cada uno de los casos vamos a suponer el conocimiento de de una población pequeña.
 
 <br/><br/><br/>
 
-# **Media muestral**
+## **Media muestral**
 
 <br/><br/>
 
-**Propiedades de la media muestral**
+### **Propiedades de la media muestral**
 
-### Paso 1
+#### Paso 1
 
 Definir la  población
 
@@ -193,7 +193,7 @@ varianza=function(x){sum((x-media(x))^2)/(length(x))}
 
 <br/><br/>
 
-### Paso 2
+#### Paso 2
 
 Determinar la media y la varianza poblacional . La media y varianza poblacional de esta población estará dada por:
 
@@ -206,7 +206,7 @@ cat("\n")
 
 <br/><br/>
 
-### Paso 3
+#### Paso 3
 
 Se determinan todas las muestras que se pueden construir de la poblacion 
 
@@ -228,7 +228,7 @@ data.frame(poblacion_n2,mx)
 
 <br/><br/>
 
-### Paso 4
+#### Paso 4
 
 Determinar la  población de medias de tamaño $n=2$, cuando el proceso se realiza sin repetición
 
@@ -248,7 +248,7 @@ grid()
 
 <br/><br/>
 
-## **Conclusiones**
+### **Conclusiones**
 
 +  $E[\bar{X}] = E[X] = \mu$
 
@@ -260,15 +260,15 @@ $$V[\bar{X}] = \dfrac{V[X]}{n} \dfrac{(N-n)}{(N-1)}$$
 
 <br/><br/><br/>
 
-# **Proporción muestral**
+## **Proporción muestral**
 
 Otro parametro de intres es la proporcion muestral para lo cual tambien se define una población pequeña que facilite la compresión de sus propiedades. 
 
 <br/><br/><br/>
 
-**Propiedades de la proporción muesrtal**
+### **Propiedades de la proporción muesrtal**
 
-### Paso 1
+#### Paso 1
 
 Definir la  población
 
@@ -288,7 +288,7 @@ varianza=function(x){sum((x-media(x))^2)/(length(x))}
 
 <br/><br/>
 
-### Paso 2
+#### Paso 2
 
 Determinar la media y la varianza poblacioneales 
 
@@ -300,7 +300,7 @@ cat("media poblacional    :",media(poblacion_x),"\n")
 cat("varianza poblacional :",varianza(poblacion_x),"\n")
 cat("\n")
 ```
-### Paso 3
+#### Paso 3
 
 Se determinan todas las muestras que se pueden construir de la población 
 
@@ -319,7 +319,7 @@ cat("varianza de la proporcion muestral : ", varianza(p))
 
 <br/><br/>
 
-### Paso 4
+#### Paso 4
 
 Determinar la  población de medias de tamaño $n=2$, cuando el proceso se realiza sin repetición
 
