@@ -605,10 +605,10 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <tbody>
 <tr class="odd">
 <td align="left"><strong>Actividad411</strong></td>
-<td align="left">Construya un mapa mental con que contenga el siguiente grupo de palabras : <strong>población, parámetro, censo, muestra, muestreo, muestreo probabilistico, muestreo no probabilistico, muestreo aleatorio simple, muestreo aleatorio estratificado, muestreo por conglomerados, muestreo por juicio, muestreo por conveniciencia, muestreo bola de nieve, estimador puntual, estimador insesgado, estimador consistente, estimador eficiente, estimación por intervalos de confianza, pruebas de hipotesis</strong></td>
+<td align="left">Construya un mapa mental <strong>a mano</strong> con que contenga el siguiente grupo de palabras : <strong>población, parámetro, censo, muestra, muestreo, muestreo probabilistico, muestreo no probabilistico, muestreo aleatorio simple, muestreo aleatorio estratificado, muestreo por conglomerados, muestreo por juicio, muestreo por conveniciencia, muestreo bola de nieve, estimador puntual, estimador insesgado, estimador consistente, estimador eficiente, estimación por intervalos de confianza, pruebas de hipotesis</strong></td>
 </tr>
 <tr class="even">
-<td align="left">Trabajo pareja</td>
+<td align="left">Trabajo individual</td>
 <td align="left"></td>
 </tr>
 <tr class="odd">
@@ -673,8 +673,7 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 </div>
 <div id="presentaciones" class="section level2">
 <h2><strong>7. Presentaciones</strong></h2>
-<p><a href="https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_A.pdf">Presentación 1</a> <br/> <a href="https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_B.pdf">Presentación 2</a> <br/> <a href="https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_C.pdf">Presentación 3</a> <br/> <a href="https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_D.pdf">Presentación 4</a> <br/><br/> <a href="https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P-MUESTREO.pdf">Presentación 5</a> <br/><br/></p>
-<p><a href="https://javerianacaliedu-my.sharepoint.com/:x:/g/personal/dgonzalez_javerianacali_edu_co/EeC4j33wrR9LsMF3CDlgsVwBqFaMB2mJJHKNpyW3JcNowQ?e=nLULe4">base muestreo A</a> <br/> <a href="https://javerianacaliedu-my.sharepoint.com/:x:/g/personal/dgonzalez_javerianacali_edu_co/EewQn5ZPZqJFnJCWxmq5E9QBArU4ZmjWndyVYJE-wh9rHQ?e=nqSVtd">base muestreo B</a><br/></p>
+<p><a href="talleres/P_intro_inferencia_A.pdf">Presentacion A</a> <br/><br/> <a href="talleres/P_intro_inferencia_B.pdf">Presentacion B</a> <br/><br/> <a href="talleres/P_intro_inferencia_C.pdf">Presentacion C</a> <br/><br/> <a href="talleres/P_intro_inferencia_D.pdf">Presentacion D</a> <br/><br/> <a href="talleres/P-MUESTREO.pdf">Presentacion Muestreo</a></p>
 <p><br/><br/><br/><br/></p>
 </div>
 </div>
@@ -743,19 +742,23 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <h3><strong>Parámetro</strong></h3>
 <p>Es una caracterización numérica de la distribución de probabilidad de una variable aleatoria. Como ejemplo de parámetros tenemos a <span class="math inline">\(\mu\)</span>, <span class="math inline">\(\sigma^{2}\)</span> que determinan la función de probabilidad de una variable con distribución normal:</p>
 <p><span class="math display">\[f(x)=\frac{1}{\sqrt{2 \sigma^{2} \pi}} \exp{\Bigg(- \frac{1}{2 \sigma^{2}}\big(x-\mu\big)^{2}\Bigg)}\]</span></p>
-<p>Y suponemos que los valores correspondientes a estos parámetros son <span class="math inline">\(\mu=100\)</span> y <span class="math inline">\(\sigma^{2}=25\)</span> (<span class="math inline">\(\sigma=5\)</span>) respectivamente, entonces la función de distribución de probabilidad quedará determinada por : <span class="math display">\[f(x)=\frac{1}{\sqrt{50 \pi}} \exp{\Bigg(- \frac{1}{50}\big(x-100\big)^{2}\Bigg)}\]</span></p>
+<p>Y suponemos que los valores correspondientes a estos parámetros son <span class="math inline">\(\mu=100\)</span> y <span class="math inline">\(\sigma^{2}=25\)</span> (<span class="math inline">\(\sigma=5\)</span>) respectivamente, entonces la función de distribución de probabilidad quedará determinada por :</p>
+<p><span class="math display">\[f(x)=\frac{1}{\sqrt{50 \pi}} \exp{\Bigg(- \frac{1}{50}\big(x-100\big)^{2}\Bigg)}\]</span></p>
 <p><br/><br/></p>
 </div>
 <div id="estimador" class="section level3">
 <h3><strong>Estimador</strong></h3>
-<p>Es una función de los valores obtenidos en una muestra aleatoria que da como resultado un valor que corresponde a una aproximación del parámetro objeto de estudio. Generalmente se representa como <span class="math inline">\(\widehat{\theta}\)</span>. Como algunos ejemplos podemos citar: <span class="math display">\[\widehat{\mu}=\frac{1}{n}\sum_{i=1}^{n}x_{i}=\bar{x} \]</span> <span class="math display">\[\widehat{\sigma^{2}}=\frac{1}{n-1}\sum_{i=1}^{n}\big(x-\bar{x}\big)^{2} = s^{2}\]</span></p>
+<p>Es una función de los valores obtenidos en una muestra aleatoria que da como resultado un valor que corresponde a una aproximación del parámetro objeto de estudio. Generalmente se representa como <span class="math inline">\(\widehat{\theta}\)</span>. Como algunos ejemplos podemos citar:</p>
+<p><span class="math display">\[\widehat{\mu}=\frac{1}{n}\sum_{i=1}^{n}x_{i}=\bar{x} \]</span> <span class="math display">\[\widehat{\sigma^{2}}=\frac{1}{n-1}\sum_{i=1}^{n}\big(x-\bar{x}\big)^{2} = s^{2}\]</span></p>
 <p><br/><br/></p>
 </div>
 <div id="estimación" class="section level3">
 <h3><strong>Estimación</strong></h3>
 <p>Es la evaluación o generación del estimador para una muestra determinada.</p>
 <p>Como ejemplo podemos utilizar uno de los estimadores que estudiaremos : <span class="math inline">\(\widehat{\mu}= \bar{x}\)</span>, para una muestra dada</p>
-<p><span class="math display">\[ 630, 650, 710, 750, 790, 820, 860 \text{ y } 910\]</span> <span class="math display">\[\widehat{\mu}=\frac{1}{n}\sum_{i=1}^{n} x_{i} =\frac{1}{8}(630+650+...+910)=765\]</span> El valor del estimador de <span class="math inline">\(\mu\)</span> para esta muestra es <span class="math display">\[\widehat{\mu}=\bar{x}= 765\]</span>.</p>
+<p><br/></p>
+<p><span class="math display">\[ 630, 650, 710, 750, 790, 820, 860 \text{ y } 910\]</span> <br/></p>
+<p><span class="math display">\[\widehat{\mu}=\frac{1}{n}\sum_{i=1}^{n} x_{i} =\frac{1}{8}(630+650+...+910)=765\]</span> El valor del estimador de <span class="math inline">\(\mu\)</span> para esta muestra es <span class="math display">\[\widehat{\mu}=\bar{x}= 765\]</span>.</p>
 <p><br/><br/></p>
 </div>
 </div>
@@ -848,13 +851,15 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 </div>
 <div id="tamaño-muestral" class="section level3">
 <h3><strong>Tamaño muestral</strong></h3>
-<p>Una vez que las unidades muestrales han sido definidas y se ha acordado un proceso de aleatorización, debemos preguntarnos, cuántas unidades debemos seleccionar para tener una buena representación en la muestra.\</p>
+<p>Una vez que las unidades muestrales han sido definidas y se ha acordado un proceso de aleatorización, debemos preguntarnos, cuántas unidades debemos seleccionar para tener una buena representación en la muestra.</p>
 <p>Dado que cualquiera sea el proceso de selección de una muestra existe un costo asociado, el que en la mayoría de los casos constituye una exigencia ineludible, nuestro objetivo principal, será obtener el máximo de información con el menor tamaño de muestra que nos sea posible.</p>
 <p>El tamaño de la muestra <span class="math inline">\(n\)</span> es función de tres elementos que son: la varianza, la confiabilidad y el error de muestreo. Los dos últimos a criterio del investigador.</p>
 <p><span class="math display">\[n=\dfrac{z^{2}_{_{\alpha/2}} \sigma^{2}}{e^{2}}\]</span></p>
 <p>Donde:</p>
 <p><strong>Varianza</strong> (<span class="math inline">\(\sigma^{2}\)</span>): Caracteriza la variable a estimar. Entre mayor sea su valor, mayor deberá ser el tamaño de la muestra. En ocasiones es necesario realizar una prueba piloto que nos permita tener un valor para calcular <span class="math inline">\(n\)</span>. Otra alternativa puede ser el conocimiento empírico de expertos sobre el rango de la variable. Con este valor podemos estimar una aproximación de la desviación estándar como: <span class="math inline">\(\sigma =\)</span> rango/4.</p>
+<p><br/></p>
 <p><strong>Confiabilidad</strong> (<span class="math inline">\(z_{\alpha/2}\)</span> o percentil de la distribución normal estandar)b: Este concepto está relacionado con el grado de veracidad que tienen los resultados obtenidos. Si el estudio es repetido muchas veces, ¿ cuántas de estas coinciden con los resultados obtenidos?. Su valor está relacionado con el percentil de las distribución normal estándar, por ejemplo: una confiabilidad del 95% está relacionada con un valor de <span class="math inline">\(z=1.96\)</span>.</p>
+<p><br/></p>
 <p><strong>Error de muestreo</strong> (<span class="math inline">\(e\)</span>) : corresponde a la diferencia entre el valor de la característica en la población (parámetro) y el valor obtenido con la información de la muestra (estimador).Equivale al error que estamos en capacidad de tolerar en las unidades de la variable.</p>
 <p><br/><br/></p>
 <p><strong>Ejemplo de cálculo de tamaño de la muestra- Caso de una media</strong> : Suponga que deseamos determinar el tamaño de la muestra para estimar la media de la nota del curso de estadística, con una confianza del 95% y un error de muestreo de 0.2 puntos. Un estudio realizado el semestre pasado arrojó una varianza de 1.6.</p>
@@ -911,7 +916,7 @@ Ademas del material suministrado contaran con el acompañamiento del profesor en
 <p>El número de estratos depende del criterio de clasificación, es un problema intrínsecamente ligado a la investigación, por ejemplo, si se está trabajando con características de individuos, los estratos pueden elegirse en la siguiente forma:</p>
 <p>Estrato 1 <span class="math inline">\(\cdots\)</span> niños (menores de 14 años) Estrato 2 <span class="math inline">\(\cdots\)</span> jóvenes (15 - 25 años) Estrato 3 <span class="math inline">\(\cdots\)</span> adultos (26 años o mas)</p>
 <p>Otros criterios de clasificación pueden obedecer también, por ejemplo, a posiciones geográficas, en otros casos, cada estrato puede ser un sector de la ciudad de la provincia o de la región.</p>
-<p>Otro elemento interesante de considerar, en los estudios por muestreo estratificado, es que las conclusiones pueden darse no sólo a nivel poblacional, sino que independientemente a nivel de cada estrato.\</p>
+<p>Otro elemento interesante de considerar, en los estudios por muestreo estratificado, es que las conclusiones pueden darse no sólo a nivel poblacional, sino que independientemente a nivel de cada estrato.</p>
 <p><br/><br/></p>
 <p><strong>Muestreo Sistemático</strong></p>
 <p>Se forma una muestra sistemática seleccionando al azar una unidad y luego se seleccionan adicionalmente las unidades a intervalos igualmente espaciados (cada <span class="math inline">\(k\)</span> unidades de la población, <span class="math inline">\(k&gt;1\)</span>) hasta formar la muestra total.</p>

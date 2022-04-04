@@ -63,8 +63,8 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 |Actividad           | Descripción                    | 
 |:-------------------|:-----------------------------  |
-|**Actividad411**        | Construya un mapa mental con que contenga el siguiente grupo de palabras : **población, parámetro, censo, muestra, muestreo, muestreo probabilistico, muestreo no probabilistico, muestreo aleatorio simple, muestreo aleatorio estratificado, muestreo por conglomerados, muestreo por juicio, muestreo por conveniciencia, muestreo bola de nieve, estimador puntual, estimador insesgado, estimador consistente, estimador eficiente, estimación por intervalos de confianza, pruebas de hipotesis** |
-|Trabajo  pareja |    |
+|**Actividad411**        | Construya un mapa mental **a mano** con que contenga el siguiente grupo de palabras : **población, parámetro, censo, muestra, muestreo, muestreo probabilistico, muestreo no probabilistico, muestreo aleatorio simple, muestreo aleatorio estratificado, muestreo por conglomerados, muestreo por juicio, muestreo por conveniciencia, muestreo bola de nieve, estimador puntual, estimador insesgado, estimador consistente, estimador eficiente, estimación por intervalos de confianza, pruebas de hipotesis** |
+|Trabajo  individual |    |
 |Recursos | [Tablero realizado por 300MAE005 A 2020-2](https://padlet.com/dgonzalez80/lijxz9p7nvz5mm2q)|
 |Fecha    | abril 18  |
 |Hora     | 23:59     |
@@ -99,14 +99,12 @@ Los entregables completos y enviados dentro de los tiempos establecidos  otorgar
 
 ## **7. Presentaciones**
 
-[Presentación 1](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_A.pdf) <br/>
-[Presentación 2](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_B.pdf) <br/>
-[Presentación 3](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_C.pdf) <br/>
-[Presentación 4](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_intro_inferencia_D.pdf) <br/><br/>
-[Presentación 5](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P-MUESTREO.pdf)  <br/><br/>
 
-[base muestreo A](https://javerianacaliedu-my.sharepoint.com/:x:/g/personal/dgonzalez_javerianacali_edu_co/EeC4j33wrR9LsMF3CDlgsVwBqFaMB2mJJHKNpyW3JcNowQ?e=nLULe4) <br/>
-[base muestreo B](https://javerianacaliedu-my.sharepoint.com/:x:/g/personal/dgonzalez_javerianacali_edu_co/EewQn5ZPZqJFnJCWxmq5E9QBArU4ZmjWndyVYJE-wh9rHQ?e=nqSVtd)<br/>
+[Presentacion A](talleres/P_intro_inferencia_A.pdf) <br/><br/>
+[Presentacion B](talleres/P_intro_inferencia_B.pdf) <br/><br/>
+[Presentacion C](talleres/P_intro_inferencia_C.pdf) <br/><br/>
+[Presentacion D](talleres/P_intro_inferencia_D.pdf) <br/><br/>
+[Presentacion Muestreo](talleres/P-MUESTREO.pdf) 
 
 <br/><br/><br/><br/>
 
@@ -161,6 +159,7 @@ Es una caracterización numérica de la distribución de probabilidad de una var
 $$f(x)=\frac{1}{\sqrt{2 \sigma^{2} \pi}} \exp{\Bigg(- \frac{1}{2 \sigma^{2}}\big(x-\mu\big)^{2}\Bigg)}$$
 
 Y  suponemos que los valores correspondientes a estos parámetros son $\mu=100$ y $\sigma^{2}=25$   ($\sigma=5$) respectivamente, entonces la función de distribución de probabilidad quedará determinada por :
+
 $$f(x)=\frac{1}{\sqrt{50 \pi}} \exp{\Bigg(- \frac{1}{50}\big(x-100\big)^{2}\Bigg)}$$
 
 <br/><br/>
@@ -168,6 +167,7 @@ $$f(x)=\frac{1}{\sqrt{50 \pi}} \exp{\Bigg(- \frac{1}{50}\big(x-100\big)^{2}\Bigg
 ### **Estimador** 
 
 Es una función de los valores obtenidos en una muestra aleatoria que da como resultado un valor que corresponde a una aproximación del parámetro objeto de estudio. Generalmente se representa como $\widehat{\theta}$. Como algunos ejemplos podemos citar:
+
 $$\widehat{\mu}=\frac{1}{n}\sum_{i=1}^{n}x_{i}=\bar{x} $$
 $$\widehat{\sigma^{2}}=\frac{1}{n-1}\sum_{i=1}^{n}\big(x-\bar{x}\big)^{2} = s^{2}$$
 
@@ -179,7 +179,11 @@ Es la evaluación o generación del estimador para una muestra determinada.
 
 Como ejemplo podemos utilizar uno de los estimadores que estudiaremos :  $\widehat{\mu}= \bar{x}$, para una muestra dada
 
+<br/>
+
 $$ 630, 650, 710, 750, 790, 820, 860 \text{ y } 910$$
+<br/>
+
 $$\widehat{\mu}=\frac{1}{n}\sum_{i=1}^{n} x_{i} =\frac{1}{8}(630+650+...+910)=765$$
 El valor del estimador de $\mu$ para esta muestra es $$\widehat{\mu}=\bar{x}= 765$$.
 
@@ -246,7 +250,7 @@ Lo anterior significa que, en términos prácticos, la aleatoriedad debe garanti
 
 ###  **Tamaño muestral**
 
-Una vez que las unidades muestrales han sido definidas y se ha acordado un proceso de aleatorización, debemos preguntarnos, cuántas unidades debemos seleccionar para tener una buena representación en la  muestra.\\
+Una vez que las unidades muestrales han sido definidas y se ha acordado un proceso de aleatorización, debemos preguntarnos, cuántas unidades debemos seleccionar para tener una buena representación en la  muestra.
 
 Dado que cualquiera sea el proceso de selección de una muestra existe un costo asociado, el que en la mayoría de los casos constituye una exigencia ineludible, nuestro objetivo principal, será obtener el máximo de información con el menor tamaño de muestra que nos sea posible.
 
@@ -258,7 +262,11 @@ Donde:
 
 **Varianza** ($\sigma^{2}$):  Caracteriza la variable a estimar. Entre mayor sea su valor, mayor deberá ser el tamaño de la muestra. En ocasiones es necesario realizar una prueba piloto que nos permita tener un valor para calcular $n$. Otra alternativa puede ser el conocimiento empírico de expertos sobre el rango de la variable. Con este valor podemos estimar una aproximación de la desviación estándar como: $\sigma =$ rango/4. 
 
+<br/>
+
 **Confiabilidad** ($z_{\alpha/2}$ o percentil de la distribución normal estandar)b: Este concepto está relacionado con el grado de veracidad que tienen los resultados obtenidos. Si el estudio es repetido muchas veces, ¿ cuántas de estas coinciden con los resultados obtenidos?. Su valor está relacionado con el percentil de las distribución normal estándar, por ejemplo: una confiabilidad del 95% está relacionada con un valor de $z=1.96$.
+
+<br/>
 
 **Error de muestreo** ($e$) : corresponde a la diferencia entre el valor de la característica en la población (parámetro) y el valor obtenido con la información de la muestra (estimador).Equivale al error que estamos en capacidad de tolerar en las unidades de la variable.
 
@@ -361,7 +369,7 @@ Estrato 3 $\cdots$ adultos (26 años o mas)
 
 Otros criterios de clasificación pueden obedecer también, por ejemplo, a posiciones geográficas, en otros casos, cada estrato puede ser un sector de la ciudad de la provincia o de la región.
 
-Otro elemento interesante de considerar, en los estudios por muestreo estratificado, es que las conclusiones  pueden darse no sólo a nivel poblacional, sino que independientemente a nivel de cada estrato.\\
+Otro elemento interesante de considerar, en los estudios por muestreo estratificado, es que las conclusiones  pueden darse no sólo a nivel poblacional, sino que independientemente a nivel de cada estrato.
 
 <br/><br/>
 
