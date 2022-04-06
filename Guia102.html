@@ -925,7 +925,7 @@ t2</code></pre>
 7    4.5    4.7          4.6        6      9.0          67       100.0</code></pre>
 <p>Frec.Abs : Frecuencia absoluta <br/> Frec.Rel : Frecuencia relativa <br/><br/> Frec.Abs.Ac : Frecuencia Absoluta Acumuada <br/> Frec.Rel.Ac : Frecuencia Relativa Acumulada</p>
 <p><br/> <br/></p>
-<p>Si se requiere dividir el rango en intervalos determinados se utiliza la funcion <code>cut</code></p>
+<p>Si se requiere dividir el rango en intervalos determinados se utiliza la función <code>cut</code></p>
 <pre class="r"><code>c &lt;- cut(bpe$promedio, breaks = c(0, 0.99, 1.99, 2.99, 3.99, 5))
 levels(c) &lt;- c(&quot;[0-1)&quot;, &quot;[1-2)&quot;, &quot;[2-3)&quot;, &quot;[3-4)&quot;, &quot;[4-5]&quot;)
 table(c)</code></pre>

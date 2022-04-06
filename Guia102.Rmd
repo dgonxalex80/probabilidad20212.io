@@ -282,7 +282,7 @@ Frec.Rel.Ac : Frecuencia Relativa Acumulada
 
  <br/> <br/>
 
-Si se requiere dividir el rango en intervalos determinados se utiliza la funcion `cut` 
+Si se requiere dividir el rango en intervalos determinados se utiliza la función `cut` 
  
 ```{r}
 c <- cut(bpe$promedio, breaks = c(0, 0.99, 1.99, 2.99, 3.99, 5))
