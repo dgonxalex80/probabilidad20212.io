@@ -282,12 +282,26 @@ Frec.Rel.Ac : Frecuencia Relativa Acumulada
 
  <br/> <br/>
 
+Si se requiere dividir el rango en intervalos determinados se utiliza la funcion `cut` 
+ 
+```{r}
+c <- cut(bpe$promedio, breaks = c(0, 0.99, 1.99, 2.99, 3.99, 5))
+levels(c) <- c("[0-1)", "[1-2)", "[2-3)", "[3-4)", "[4-5]")
+table(c)
+```
+ 
+ 
+
 ```{r}
 data("iris")
 summarytools::freq(iris$Species, cumul = FALSE, headings = FALSE)
 ```
 
  <br/> <br/> <br/>
+ 
+
+ 
+ 
  
 ## **Rango percentil**
 

@@ -569,32 +569,21 @@ div.tocify {
 
 <div id="introducción" class="section level1">
 <h1><strong>1. Introducción</strong></h1>
-<p>Al tener una base de datos se requiere resumirlos en una tabla o en
-indicadores que faciliten su análisis, dependiendo el tipo de variable (
-cualitativas o cuantitativas) la tabla puede tener diferentes
-columnas.</p>
-<p>En el caso de los indicadores las variables cualitativas se les
-resumen en el nivel con mayor frecuencias a la que se le llama
-<strong>MODA</strong></p>
-<p>Las variables cuantitativas tiene un gran número de indicadores que
-se dividien en tres categorias:</p>
+<p>Al tener una base de datos se requiere resumirlos en una tabla o en indicadores que faciliten su análisis, dependiendo el tipo de variable ( cualitativas o cuantitativas) la tabla puede tener diferentes columnas.</p>
+<p>En el caso de los indicadores las variables cualitativas se les resumen en el nivel con mayor frecuencias a la que se le llama <strong>MODA</strong></p>
+<p>Las variables cuantitativas tiene un gran número de indicadores que se dividien en tres categorias:</p>
 <ul>
 <li>Indicadores de tendencia central</li>
 <li>Indicadores de dispersión</li>
 <li>Indicadores de forma</li>
 </ul>
-<p>A continuación se indica como realizar el proceso utilizando RStudio,
-bajo el supuesto que se cuenta con una base de datos que se ha importado
-en RStudio.</p>
+<p>A continuación se indica como realizar el proceso utilizando RStudio, bajo el supuesto que se cuenta con una base de datos que se ha importado en RStudio.</p>
 <p><br/><br/></p>
 </div>
 <div id="tablas-de-frecuencia" class="section level1">
 <h1><strong>2. Tablas de frecuencia</strong></h1>
-<p>Resumirlos datos en tablas facilita su análisis y también su
-representación gráfica. Varios gráficos están basados en tablas de
-frecuencia como veremos en la unidad 1.3</p>
-<p>Antes de empezar vamos a cargar la base construida en el código
-anterior y las dos bases de Dataset de R</p>
+<p>Resumirlos datos en tablas facilita su análisis y también su representación gráfica. Varios gráficos están basados en tablas de frecuencia como veremos en la unidad 1.3</p>
+<p>Antes de empezar vamos a cargar la base construida en el código anterior y las dos bases de Dataset de R</p>
 <ul>
 <li>Base de datos Colombia</li>
 </ul>
@@ -611,10 +600,7 @@ ventas &lt;- read_csv(&quot;data/ventas.csv&quot;)</code></pre>
 <p><br/><br/></p>
 <div id="tablas-variables-cualitativas" class="section level2">
 <h2><strong>Tablas variables cualitativas</strong></h2>
-<p>Iniciaremos con la construcción de tablas para variables cualitativas
-en escala nominal. Recordemos que las variables medidas en esta escala
-no presentan orden especial y en algunos casos son ordenadas de mayor a
-menor frecuencia</p>
+<p>Iniciaremos con la construcción de tablas para variables cualitativas en escala nominal. Recordemos que las variables medidas en esta escala no presentan orden especial y en algunos casos son ordenadas de mayor a menor frecuencia</p>
 <p>Utilizaremos en este caso la función <strong>table()</strong></p>
 <pre class="r"><code>table(ventas$Metodo_Pago)</code></pre>
 <pre><code>
@@ -622,10 +608,7 @@ American Express         Discover       MasterCard        Star Card
                4                8               28              140 
             Visa 
               20 </code></pre>
-<p>El resultado corresponde a un conteo de cada uno de los valores de la
-variable. En caso de que se requiera calcular la proporción que
-corresponde cada caso utilizamos la función :
-<strong>prop.table()</strong> y se la aplicamos a la tabla anterior</p>
+<p>El resultado corresponde a un conteo de cada uno de los valores de la variable. En caso de que se requiera calcular la proporción que corresponde cada caso utilizamos la función : <strong>prop.table()</strong> y se la aplicamos a la tabla anterior</p>
 <pre class="r"><code>t1=table(ventas$Metodo_Pago)
 prop.table(t1)</code></pre>
 <pre><code>
@@ -633,8 +616,7 @@ American Express         Discover       MasterCard        Star Card
             0.02             0.04             0.14             0.70 
             Visa 
             0.10 </code></pre>
-<p>Si utilizamos la función <strong>freq</strong> del paquete
-summarytools, la salida es una tabla más elaborada</p>
+<p>Si utilizamos la función <strong>freq</strong> del paquete summarytools, la salida es una tabla más elaborada</p>
 <pre class="r"><code>summarytools::freq(ventas$Metodo_Pago, cumul = F)</code></pre>
 <pre><code>Frequencies  
 
@@ -651,32 +633,16 @@ summarytools, la salida es una tabla más elaborada</p>
 </div>
 <div id="tablas-variables-cuantitativas" class="section level2">
 <h2><strong>Tablas variables cuantitativas</strong></h2>
-<p>Para el caso de las variables cuantitativas que presentan muchos
-valores difentes construir una tabla como las anteriores no tiene
-sentido, pues salen muchas categorias probablemente con frecuencia
-uno.</p>
-<p>En este caso es necesario construir rangos que den sentido y que
-permitan resumir la información para una facil interpretación.</p>
-<p>El ejemplo a continuación da cuenta de ello. Supongamos que queremos
-analizar la variable edad y para ello debemos establecer los limites y
-cuantos intervalo vamos aconstruir. En este caso tenemos tres
-alternativas posible_</p>
+<p>Para el caso de las variables cuantitativas que presentan muchos valores difentes construir una tabla como las anteriores no tiene sentido, pues salen muchas categorias probablemente con frecuencia uno.</p>
+<p>En este caso es necesario construir rangos que den sentido y que permitan resumir la información para una facil interpretación.</p>
+<p>El ejemplo a continuación da cuenta de ello. Supongamos que queremos analizar la variable edad y para ello debemos establecer los limites y cuantos intervalo vamos aconstruir. En este caso tenemos tres alternativas posible_</p>
 <ol style="list-style-type: decimal">
-<li>Tomar los intervalos construidos en un estudio anterior con cual
-queremos comparar los nuestros</li>
-<li>Tomar intervalos de acuerdo a estudios anteriores o teorias sobre el
-tema</li>
-<li>Tomar intervalos de igual longitud. En este caso existen diferentes
-alternativas para establecer el numero de intervalos a construir. Uno de
-ellos indica como respuesta a este interrogante la formula construida
-por Sturgues (se puede conocer mediante la función
-nclass.Sturges(variable) ) que es utilizada por otras funcione en R</li>
+<li>Tomar los intervalos construidos en un estudio anterior con cual queremos comparar los nuestros</li>
+<li>Tomar intervalos de acuerdo a estudios anteriores o teorias sobre el tema</li>
+<li>Tomar intervalos de igual longitud. En este caso existen diferentes alternativas para establecer el numero de intervalos a construir. Uno de ellos indica como respuesta a este interrogante la formula construida por Sturgues (se puede conocer mediante la función nclass.Sturges(variable) ) que es utilizada por otras funcione en R</li>
 </ol>
 <p>En el caso de la variable Edad procederemos asi:</p>
-<p>Consultados los ciclos de la vida tenemos: + Primera Infancia (0-5
-años) + Infancia (6 - 11 años) + Adolescencia (12 - 17 años) + Juventud
-(18 - 26 años) + Adultez (27- 59 años) + Persona Mayor (60 años o mas)
-envejecimiento y vejez</p>
+<p>Consultados los ciclos de la vida tenemos: + Primera Infancia (0-5 años) + Infancia (6 - 11 años) + Adolescencia (12 - 17 años) + Juventud (18 - 26 años) + Adultez (27- 59 años) + Persona Mayor (60 años o mas) envejecimiento y vejez</p>
 <pre class="r"><code>Colombia$edadR[Colombia$edad&lt;=5]=&quot;1. (0  a 5  años]&quot;
 Colombia$edadR[Colombia$edad&gt;5 &amp; Colombia$edad&lt;=11]=&quot;2. (5  a 11 años]&quot;
 Colombia$edadR[Colombia$edad&gt;11 &amp; Colombia$edad&lt;=17]=&quot;3. (11 a 17 años]&quot; 
@@ -697,8 +663,7 @@ summarytools::freq(Colombia$edadR)</code></pre>
                      &lt;NA&gt;         0                               0.00         100.00
                     Total   6074155    100.00         100.00    100.00         100.00</code></pre>
 <p>Esta tabla nos permite identificar los rangos de mayor frecuencia</p>
-<p>Tambien podemo realizar una tabla sin tener que realizar la
-recodificación. Esto se logra con la función <strong>hist()</strong></p>
+<p>Tambien podemo realizar una tabla sin tener que realizar la recodificación. Esto se logra con la función <strong>hist()</strong></p>
 <pre class="r"><code>h=hist(Colombia$edad)</code></pre>
 <p><img src="codigo102_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <pre class="r"><code>h$breaks   # puntos de corte</code></pre>
@@ -714,12 +679,8 @@ recodificación. Esto se logra con la función <strong>hist()</strong></p>
 [11] 1.393935e-02 1.246876e-02 9.368217e-03 6.481297e-03 4.683977e-03
 [16] 3.253259e-03 2.285552e-03 1.320249e-03 5.608352e-04 1.391140e-04
 [21] 1.919609e-05 2.041436e-06 3.951167e-07</code></pre>
-<p>Seria de interés tambien construir una tabla con las edades de las
-personas fallecidas por covid en Colombia, para lo cual debemos primero
-seleccionar la base de datos de las fallecidas y luego en ello construir
-la tabla</p>
-<p>En este caso vamos a seleccionar los rangos de edad y luego
-construimos la tabla</p>
+<p>Seria de interés tambien construir una tabla con las edades de las personas fallecidas por covid en Colombia, para lo cual debemos primero seleccionar la base de datos de las fallecidas y luego en ello construir la tabla</p>
+<p>En este caso vamos a seleccionar los rangos de edad y luego construimos la tabla</p>
 <pre class="r"><code>Fallecidos=subset(Colombia, estado==&quot;fallecido&quot;)
 breaks=seq(0,110, by=10)
 Edad.fallecidos=cut(Fallecidos$edad, breaks)
@@ -782,13 +743,8 @@ prop.table(tabla1)</code></pre>
 </div>
 <div id="indicadores-descriptivos" class="section level1">
 <h1><strong>3. Indicadores descriptivos </strong></h1>
-<p>Un indicador es un numero que resumen o representa un grupo de
-valores. El poder resumir una gran cantidad de valores en unos pocos,
-facilita el realizar un análisis de ellos</p>
-<p>En el caso de las variables cualitativas en escala nominal, se pueden
-representar por el valor mas frecuente. A este valor se le conoce como
-<strong>Moda</strong> y lo podemos ver claramente en una tabla de
-frecuencias</p>
+<p>Un indicador es un numero que resumen o representa un grupo de valores. El poder resumir una gran cantidad de valores en unos pocos, facilita el realizar un análisis de ellos</p>
+<p>En el caso de las variables cualitativas en escala nominal, se pueden representar por el valor mas frecuente. A este valor se le conoce como <strong>Moda</strong> y lo podemos ver claramente en una tabla de frecuencias</p>
 <p>En el caso de las variables cuantitativas debemos de construirlos</p>
 <pre class="r"><code>summary(Colombia$edad)</code></pre>
 <pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
@@ -842,22 +798,16 @@ N: 6074155
          Kurtosis        -0.18
           N.Valid   6074155.00
         Pct.Valid       100.00</code></pre>
-<p><br/><br/> <strong>YA ESTAMOS LISTOS PARA INTERPRETAR LA
-INFORMACION</strong></p>
+<p><br/><br/> <strong>YA ESTAMOS LISTOS PARA INTERPRETAR LA INFORMACION</strong></p>
 </div>
 <div id="documentos-pdf-con-rmarkdown" class="section level1">
 <h1><strong>4. Documentos pdf con Rmarkdown</strong></h1>
-<p>A través de RStudio se pueden construir documentos en formatos
-<strong>PDF</strong>, <strong>DOC</strong>, <strong>HTML</strong> entre
-otros. En esta ocasión se describe como realizar un informe utilizando
-para ello un archivo Rmd en RStudio.</p>
+<p>A través de RStudio se pueden construir documentos en formatos <strong>PDF</strong>, <strong>DOC</strong>, <strong>HTML</strong> entre otros. En esta ocasión se describe como realizar un informe utilizando para ello un archivo Rmd en RStudio.</p>
 <p>Inicialmente en RStudio abrimos un nuevo archivo en formato Rmd</p>
 <p>File/New File/ R Markdown…</p>
 <p>Al hacerlo se despliega la siguiente ventana</p>
 <p><img src="img/Rmd1.png" width="300" /></p>
-<p>En este caso seleccionamos <strong>PDF</strong> para abrir una
-plantilla que nos ofrece el programa para orientar nuestros primeros
-pasos</p>
+<p>En este caso seleccionamos <strong>PDF</strong> para abrir una plantilla que nos ofrece el programa para orientar nuestros primeros pasos</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rl1xsFMxJuY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <p><br/><br/><br/></p>
@@ -868,12 +818,9 @@ date: &quot;3/8/2021&quot;
 output: pdf_document
 ---</code></pre>
 <p><br/></p>
-<p>El primer bloque contiene información sobre el titulo del documento,
-el autor, la fecha y el formato de salida</p>
+<p>El primer bloque contiene información sobre el titulo del documento, el autor, la fecha y el formato de salida</p>
 <p>Podemos tambien abregar un subtitulo: subtitle: “Subtitulo”</p>
-<p>Despues de este bloque encontramos el cuerpo del documento que puede
-contener texto escrito de manera normal, código html, código Markdown y
-LaTeX</p>
+<p>Despues de este bloque encontramos el cuerpo del documento que puede contener texto escrito de manera normal, código html, código Markdown y LaTeX</p>
 <p>Algunas de las principales instrucciones para empezar son</p>
 <div id="titulos" class="section level3">
 <h3>Titulos</h3>
@@ -900,24 +847,16 @@ LaTeX</p>
 <li>Punto 2</li>
 <li>Punto 3</li>
 </ol>
-<p>Permite tambien escribir ecuaciones en codigo LaTeX, como por
-ejemplo</p>
+<p>Permite tambien escribir ecuaciones en codigo LaTeX, como por ejemplo</p>
 <pre><code>$$\dfrac{1}{n}\sum_{i=1}^{n} x_{i} = \bar{x}$$</code></pre>
-<p><span class="math display">\[\dfrac{1}{n}\sum_{i=1}^{n} x_{i} =
-\bar{x}\]</span></p>
-<p>Una de sus principales ventajas es el de permitir correr código
-<strong>R</strong> y de otros lenguajes como Phyton, SQL, entre
-otros</p>
-<p>Para ello utilizamos el botón <strong>+c</strong> ubicado en la barra
-superior de la ventana <strong>Source</strong></p>
+<p><span class="math display">\[\dfrac{1}{n}\sum_{i=1}^{n} x_{i} = \bar{x}\]</span></p>
+<p>Una de sus principales ventajas es el de permitir correr código <strong>R</strong> y de otros lenguajes como Phyton, SQL, entre otros</p>
+<p>Para ello utilizamos el botón <strong>+c</strong> ubicado en la barra superior de la ventana <strong>Source</strong></p>
 <p><img src="img/Rmd2.png" width="120" /></p>
-<p>Dentro de este bloque podemos correr codigo R y asi ubicar dentro del
-documento tablas, indicadores o gráficos</p>
+<p>Dentro de este bloque podemos correr codigo R y asi ubicar dentro del documento tablas, indicadores o gráficos</p>
 <p><img src="img/Rmd3.png" width="400" /></p>
-<p>En la siguiente página pueden encotrar resumen de varios paquetes de
-R dentro de los cuales está RMardown</p>
-<p><a href="https://www.rstudio.com/resources/cheatsheets/"
-class="uri">https://www.rstudio.com/resources/cheatsheets/</a></p>
+<p>En la siguiente página pueden encotrar resumen de varios paquetes de R dentro de los cuales está RMardown</p>
+<p><a href="https://www.rstudio.com/resources/cheatsheets/" class="uri">https://www.rstudio.com/resources/cheatsheets/</a></p>
 </div>
 </div>
 

@@ -611,18 +611,10 @@ div.tocify {
 
 <div id="introducción" class="section level1">
 <h1><strong>Introducción</strong></h1>
-<p>La visualización de datos es una de las partes más importantes del
-análisis de datos, que permite de manera gráfica representar la
-información con el fin de poder resumirlos e interpretarlos</p>
+<p>La visualización de datos es una de las partes más importantes del análisis de datos, que permite de manera gráfica representar la información con el fin de poder resumirlos e interpretarlos</p>
 <p>Algunas consideraciones</p>
 <p><br/><br/></p>
 <table>
-<colgroup>
-<col width="19%" />
-<col width="20%" />
-<col width="33%" />
-<col width="25%" />
-</colgroup>
 <thead>
 <tr class="header">
 <th align="left">Tipo de variable</th>
@@ -712,8 +704,7 @@ información con el fin de poder resumirlos e interpretarlos</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Nota</strong>: Además de estas formas de representación
-gráfica existen otras formas que combinan variables como:</p>
+<p><strong>Nota</strong>: Además de estas formas de representación gráfica existen otras formas que combinan variables como:</p>
 <ul>
 <li>Mapas</li>
 <li>Diagrama de Mosaico</li>
@@ -762,8 +753,7 @@ names(ev)=c(&quot;MR&quot;,&quot;R&quot;,&quot;B&quot;,&quot;MB&quot;,&quot;E&qu
 barplot(ev, col=c(&quot;red&quot;,&quot;yellow&quot;,&quot;orange&quot;,&quot;green&quot;,&quot;blue&quot;), 
         main = &quot;Evaluación proceso de inducción&quot;,
         las=1)</code></pre>
-<p><img src="codigo103_files/figure-html/unnamed-chunk-4-1.png" width="672" />
-<br/><br/><br/></p>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-4-1.png" width="672" /> <br/><br/><br/></p>
 </div>
 <div id="gráfico-de-barras-2" class="section level2">
 <h2><strong>3. Gráfico de barras 2 </strong></h2>
@@ -824,8 +814,7 @@ stem(nf)</code></pre>
         col=&quot;dodgerblue3&quot;,
         ylim = c(0,30))
 abline(v=3,col=&quot;red&quot;)</code></pre>
-<p><img src="codigo103_files/figure-html/unnamed-chunk-10-1.png" width="672" />
-<br/><br/><br/></p>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-10-1.png" width="672" /> <br/><br/><br/></p>
 </div>
 <div id="diagrama-de-densidad" class="section level2">
 <h2><strong>7. Diagrama de densidad</strong></h2>
@@ -912,86 +901,62 @@ plot(density(x))</code></pre>
 </div>
 <div id="paquetes-adicionales" class="section level1">
 <h1><strong>Paquetes adicionales</strong></h1>
-<p>Hasta el momento se ha utilizado R base para la elaboración de
-gráficos, a continuación se presentan algunos paquetes que mejoran la
-construcción de gráficos y su visualización :</p>
+<p>Hasta el momento se ha utilizado R base para la elaboración de gráficos, a continuación se presentan algunos paquetes que mejoran la construcción de gráficos y su visualización :</p>
 <p><br/><br/></p>
 <div id="ggplot2." class="section level2">
 <h2><strong>ggplot2</strong>.</h2>
 <p><img src="img/ggplot2.png" /></p>
-<p>Este paquete de R permite la construcción de gráficos utilizando para
-ello una “grámatica” de los grafocos, la cual incorpora componentes como
-: los datos (data), un conjunto de coordenadas ( ), una serie de
-geometrias (geoms)</p>
+<p>Este paquete de R permite la construcción de gráficos utilizando para ello una “grámatica” de los grafocos, la cual incorpora componentes como : los datos (data), un conjunto de coordenadas ( ), una serie de geometrias (geoms)</p>
 <p>Componentes de un gráfico en ggplot2:</p>
 <ul>
 <li><p><strong>Data</strong>: capa de los datos</p></li>
-<li><p><strong>Aesthetics</strong>: capa estetica (aes), definimos las
-variables a utilizar en el gráfico</p></li>
-<li><p><strong>Geometries</strong>: capa de geometrias, se define el
-tipo de gráfica a realizar</p></li>
-<li><p><strong>Facets</strong>: capa de facetas, permite detallar la
-gráfica por categorias</p></li>
-<li><p><strong>Statistics</strong>: capa de estadística, permite agregar
-modelos</p></li>
-<li><p>*<strong>Coordinates</strong>: capa de coordenadas, permite
-ajustar las escalas de los ejes</p></li>
-<li><p><strong>Theme</strong>: capas de características del gráfico que
-no dependen de los datos</p></li>
+<li><p><strong>Aesthetics</strong>: capa estetica (aes), definimos las variables a utilizar en el gráfico</p></li>
+<li><p><strong>Geometries</strong>: capa de geometrias, se define el tipo de gráfica a realizar</p></li>
+<li><p><strong>Facets</strong>: capa de facetas, permite detallar la gráfica por categorias</p></li>
+<li><p><strong>Statistics</strong>: capa de estadística, permite agregar modelos</p></li>
+<li><p>*<strong>Coordinates</strong>: capa de coordenadas, permite ajustar las escalas de los ejes</p></li>
+<li><p><strong>Theme</strong>: capas de características del gráfico que no dependen de los datos</p></li>
 </ul>
 <p><br/><br/></p>
 <p>Para empezar, inicialmente se instalar el paquete</p>
 <pre class="r"><code>install.packages(&quot;ggplo2&quot;)</code></pre>
 <p>Y luego habilitarlo para su uso</p>
 <pre class="r"><code>library(ggplot2)</code></pre>
-<p>Se empieza con el primero de los lienzo, donde se declara la data que
-vamos a utilizar</p>
+<p>Se empieza con el primero de los lienzo, donde se declara la data que vamos a utilizar</p>
 <p><img src="img/ge_data.png" style="width:50.0%" /></p>
 <pre class="r"><code>fig=ggplot(data=casas)
 fig</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
-<p>Como segundo paso se definen las variables que se van a utilizar en
-la construcción del gráfico</p>
+<p>Como segundo paso se definen las variables que se van a utilizar en la construcción del gráfico</p>
 <p><img src="img/ge_aes.png" style="width:50.0%" /></p>
 <pre class="r"><code>fig=ggplot(data=casas,  aes(x=area.con , y=precio))
 fig</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
-<p>Luego de tener definida la base y las variables a utilizar se indica
-la geometria a utilizar, en este caso se trata de puntos</p>
+<p>Luego de tener definida la base y las variables a utilizar se indica la geometria a utilizar, en este caso se trata de puntos</p>
 <p><img src="img/ge_geom.png" style="width:50.0%" /></p>
 <pre class="r"><code>fig=ggplot(data=casas,  aes(x=area.con , y=precio))+
   geom_point()
 fig</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
 <p>Otros elementos a utilizar son :</p>
-<div
-id="facet-que-nos-ayuda-a-visualizar-el-gráfico-por-factor-construyendo-la-gráfica-para-cada-mes-en-este-caso"
-class="section level3">
-<h3><strong>facet</strong> que nos ayuda a visualizar el gráfico por
-factor, construyendo la gráfica para cada mes en este caso</h3>
+<div id="facet-que-nos-ayuda-a-visualizar-el-gráfico-por-factor-construyendo-la-gráfica-para-cada-mes-en-este-caso" class="section level3">
+<h3><strong>facet</strong> que nos ayuda a visualizar el gráfico por factor, construyendo la gráfica para cada mes en este caso</h3>
 <p><img src="img/ge_facet.png" style="width:50.0%" /></p>
 <pre class="r"><code>fig=ggplot(data=casas,  aes(x=area.con , y=precio))+
   geom_point() + facet_wrap(~ mes)
 fig</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
 </div>
-<div
-id="stat-permite-realizar-modelos-lineales-y-mostrar-asi-la-relación-existente-entre-las-variables"
-class="section level3">
-<h3><strong>stat</strong> permite realizar modelos lineales y mostrar
-asi la relación existente entre las variables</h3>
+<div id="stat-permite-realizar-modelos-lineales-y-mostrar-asi-la-relación-existente-entre-las-variables" class="section level3">
+<h3><strong>stat</strong> permite realizar modelos lineales y mostrar asi la relación existente entre las variables</h3>
 <p><img src="img/ge_stats.png" style="width:50.0%" /></p>
 <pre class="r"><code>fig=ggplot(data=casas,  aes(x=area.con , y=precio))+
   geom_point() + facet_wrap(~ mes)+stat_smooth(method = &quot;loess&quot; , formula =y ~ x)
 fig</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
 </div>
-<div
-id="coordinates-la-cual-permite-ajustar-los-ejes-por-ejemplo-podemos-determian-el-rango-de-que-queremos-presentar-en-la-gráfica"
-class="section level3">
-<h3><strong>coordinates</strong> la cual permite ajustar los ejes , por
-ejemplo podemos determian el rango de que queremos presentar en la
-gráfica</h3>
+<div id="coordinates-la-cual-permite-ajustar-los-ejes-por-ejemplo-podemos-determian-el-rango-de-que-queremos-presentar-en-la-gráfica" class="section level3">
+<h3><strong>coordinates</strong> la cual permite ajustar los ejes , por ejemplo podemos determian el rango de que queremos presentar en la gráfica</h3>
 <p><img src="img/ge_coord.png" style="width:50.0%" /></p>
 <pre class="r"><code>fig=ggplot(data=casas,  aes(x=area.con , y=precio)) + geom_point() +
         facet_wrap(~ mes) + 
@@ -1000,10 +965,8 @@ gráfica</h3>
 fig</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
 </div>
-<div id="themes-finalmente-la-capa-del-tema-o-fondo-de-la-gráfica"
-class="section level3">
-<h3><strong>themes</strong> finalmente la capa del tema o fondo de la
-gráfica</h3>
+<div id="themes-finalmente-la-capa-del-tema-o-fondo-de-la-gráfica" class="section level3">
+<h3><strong>themes</strong> finalmente la capa del tema o fondo de la gráfica</h3>
 <p><img src="img/ge_themes.png" style="width:50.0%" /></p>
 <pre class="r"><code>fig=ggplot(data=casas,  aes(x=area.con , y=precio)) + geom_point() +
         facet_wrap(~ mes) + 
@@ -1069,13 +1032,9 @@ data %&gt;%
 <div id="highcharter" class="section level2">
 <h2><strong>highcharter</strong></h2>
 <p><img src="img/highcharter.png" /></p>
-<p>Este es un paquete especializado en la creación de gráficos dinámicos
-que emplea inrnamente javascript.</p>
-<p>Este paquete permite crear varios tipos de gráficos como: diagramas
-de dispersión, de burbuja, de línea, serie de tiempo, mapas de calor,
-treemap, gráficos de barras, redes, entre otros.</p>
-<p>Gran parte de los gráficos se realizan con la función : ** hchart()
-** que es aplicada a objetos</p>
+<p>Este es un paquete especializado en la creación de gráficos dinámicos que emplea inrnamente javascript.</p>
+<p>Este paquete permite crear varios tipos de gráficos como: diagramas de dispersión, de burbuja, de línea, serie de tiempo, mapas de calor, treemap, gráficos de barras, redes, entre otros.</p>
+<p>Gran parte de los gráficos se realizan con la función : ** hchart() ** que es aplicada a objetos</p>
 <p>Inicialmente se instala el paquete por una única vez</p>
 <pre class="r"><code># install.packages(&quot;highcharter&quot;)</code></pre>
 <p>Luego se carga para utilizar sus funciones</p>
@@ -1136,9 +1095,7 @@ lines(deny)
 polygon(denx, col = rgb(0.78, 0.89, 1, alpha = 0.6))
 polygon(deny, col = rgb(0.41, 0.44, 1, alpha = 0.6))</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-37-1.png" width="672" /></p>
-<p>Tomado de : <a
-href="https://r-charts.com/es/distribucion/ggbeeswarm/"
-class="uri">https://r-charts.com/es/distribucion/ggbeeswarm/</a></p>
+<p>Tomado de : <a href="https://r-charts.com/es/distribucion/ggbeeswarm/" class="uri">https://r-charts.com/es/distribucion/ggbeeswarm/</a></p>
 </div>
 <div id="plotly" class="section level2">
 <h2><strong>plotly</strong></h2>
@@ -1150,8 +1107,7 @@ class="uri">https://r-charts.com/es/distribucion/ggbeeswarm/</a></p>
 <p><br/><br/></p>
 <div id="gráficos-de-radar" class="section level3">
 <h3><strong>gráficos de radar</strong></h3>
-<p>Paquete para el trabajo en Estadística Medica que se utiliza para la
-construcción de un diagrama de radar</p>
+<p>Paquete para el trabajo en Estadística Medica que se utiliza para la construcción de un diagrama de radar</p>
 <pre class="r"><code># install.packages(&quot;fmsb&quot;)
 library(fmsb)
 
@@ -1165,8 +1121,7 @@ radarchart(df,
            cglty = 1, cglcol = &quot;gray&quot;,
            pcol = 4, plwd = 2,
            pfcol = rgb(0, 0.4, 1, 0.25)) </code></pre>
-<p><img src="codigo103_files/figure-html/unnamed-chunk-38-1.png" width="672" />
-<br/><br/></p>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-38-1.png" width="672" /> <br/><br/></p>
 <pre class="r"><code># install.packages(&quot;fmsb&quot;)
 library(fmsb)
 # matriz de datos
@@ -1225,8 +1180,7 @@ plot &lt;- ggplot(data,aes(x = variable,y = value,
           plot.subtitle = element_text(size = 12))
 
 plot # imprime grafico</code></pre>
-<p><img src="codigo103_files/figure-html/unnamed-chunk-40-1.png" width="672" />
-<br/><br/></p>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-40-1.png" width="672" /> <br/><br/></p>
 </div>
 </div>
 <div id="calendr" class="section level2">
@@ -1256,18 +1210,14 @@ calendR(year = 2021,
         months.size = 6,
         papersize=&quot;A3&quot;) # tamaño nombre del mes</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-41-1.png" width="672" /></p>
-<p>Tomado de : <a href="https://r-charts.com/es/ranking/radar-chart/"
-class="uri">https://r-charts.com/es/ranking/radar-chart/</a></p>
+<p>Tomado de : <a href="https://r-charts.com/es/ranking/radar-chart/" class="uri">https://r-charts.com/es/ranking/radar-chart/</a></p>
 <p><br/><br/><br/></p>
 </div>
 </div>
 <div id="mapas" class="section level1">
 <h1><strong>Mapas</strong></h1>
-<p>En el siguiente enlace encontrará los archivos para la construcción
-de los mapas en formato .shp (debe copiar los cuatro archivos)</p>
-<p>Archivos .shp : <a
-href="https://sites.google.com/site/seriescol/shapes"
-class="uri">https://sites.google.com/site/seriescol/shapes</a></p>
+<p>En el siguiente enlace encontrará los archivos para la construcción de los mapas en formato .shp (debe copiar los cuatro archivos)</p>
+<p>Archivos .shp : <a href="https://sites.google.com/site/seriescol/shapes" class="uri">https://sites.google.com/site/seriescol/shapes</a></p>
 <p>A continuación el código para el mapa de Cali sin información</p>
 <p><br/></p>
 <div id="mapa-de-cali" class="section level3">
@@ -1278,28 +1228,21 @@ require(raster)
 
 cali=shapefile(&quot;map/cali/cali.shp&quot;)  # importa mapa en formato .shp
 plot(cali)                      # gráfico de Cali</code></pre>
-<p><img src="codigo103_files/figure-html/unnamed-chunk-42-1.png" width="672" />
-<br/></p>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-42-1.png" width="672" /> <br/></p>
 </div>
 <div id="mapa-de-cali-con-indice" class="section level3">
 <h3><strong>Mapa de Cali con indice</strong></h3>
-<p>Para mostrar la información se debe incorporar un vector al objeto
-<strong>cali</strong> que contiene la información para el mapa. este
-objeto en formato lista tiene incorporada una data que contiene varias
-columnas al cual se le adiciona la información a publicar.</p>
-<p>En el caso de Cali tiene 22 comunas se adiciona un vector con 22
-valores con el nombre de indice</p>
+<p>Para mostrar la información se debe incorporar un vector al objeto <strong>cali</strong> que contiene la información para el mapa. este objeto en formato lista tiene incorporada una data que contiene varias columnas al cual se le adiciona la información a publicar.</p>
+<p>En el caso de Cali tiene 22 comunas se adiciona un vector con 22 valores con el nombre de indice</p>
 <p><br/><br/></p>
 <pre class="r"><code>cali=shapefile(&quot;map/cali/cali.shp&quot;)  # importa mapa en formato .shp
 cali@data$indice=rnorm(22)      # se genera variable a ilustrar
 spplot(cali[,21]) </code></pre>
-<p><img src="codigo103_files/figure-html/unnamed-chunk-43-1.png" width="672" />
-<br/><br/></p>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-43-1.png" width="672" /> <br/><br/></p>
 </div>
 <div id="mapa-de-colombia" class="section level3">
 <h3><strong>Mapa de Colombia</strong></h3>
-<p>Para el caso de Colombia se obtiene el archivo depto.shp que contiene
-la información de Colombia por departamentos (33)</p>
+<p>Para el caso de Colombia se obtiene el archivo depto.shp que contiene la información de Colombia por departamentos (33)</p>
 <p><br/><br/></p>
 <pre class="r"><code>require(sp)
 require(rgdal)
@@ -1307,10 +1250,7 @@ require(raster)
 
 mapco=shapefile(&quot;map/colombia/depto.shp&quot;)  # importa mapa en formato .shp
 plot(mapco)                      # gráfico de Colombia</code></pre>
-<p><img src="codigo103_files/figure-html/unnamed-chunk-44-1.png" width="672" />
-<br/> Para representar información en el mapa seden ingresar una vector
-con 33 valores, igual numero de departamentos en el mismo orden en que
-se encuentran los nombre de los departamento en el archivo mapco</p>
+<p><img src="codigo103_files/figure-html/unnamed-chunk-44-1.png" width="672" /> <br/> Para representar información en el mapa seden ingresar una vector con 33 valores, igual numero de departamentos en el mismo orden en que se encuentran los nombre de los departamento en el archivo mapco</p>
 <p><br/></p>
 <pre class="r"><code>mapco$NOMBRE_DPT</code></pre>
 <pre><code> [1] &quot;ANTIOQUIA&quot;                                              
@@ -1347,15 +1287,8 @@ se encuentran los nombre de los departamento en el archivo mapco</p>
 [32] &quot;VICHADA&quot;                                                
 [33] &quot;ARCHIPIELAGO DE SAN ANDRES PROVIDENCIA Y SANTA CATALINA&quot;</code></pre>
 <p><br/></p>
-<p>Si se quiere representar un mapa con las muertes causadas por covid
-en Colombia por departamento debemos crear una tabla con la información
-relacionada con esta variable por departamento en el mismo orden
-contenida en el archivo <strong>depto.shp</strong> y adicionarla como
-variable : <a href="mailto:mapcol@data"
-class="email">mapcol@data</a>$muertes</p>
-<p>De la base de datos abiertos Colombia se obtiene la siguiente
-información correspondiente al número de fallecidos por Covid19, durante
-el periodo marzo 2019 a agosto 25 de 2021</p>
+<p>Si se quiere representar un mapa con las muertes causadas por covid en Colombia por departamento debemos crear una tabla con la información relacionada con esta variable por departamento en el mismo orden contenida en el archivo <strong>depto.shp</strong> y adicionarla como variable : <a href="mailto:mapcol@data$muertes" class="email">mapcol@data$muertes</a></p>
+<p>De la base de datos abiertos Colombia se obtiene la siguiente información correspondiente al número de fallecidos por Covid19, durante el periodo marzo 2019 a agosto 25 de 2021</p>
 <pre class="r"><code># colombia=readRDS(&quot;data/Colombia.RDS&quot;)
 # colombia$departamento_nom= str_to_upper(colombia$departamento_nom)
 # t=table(colombia$departamento_nom,colombia$estado)
@@ -1383,8 +1316,7 @@ spplot(mapco[,6], col.regions = mi.palette, cuts = 6)  # mapa</code></pre>
 </div>
 <div id="tmap" class="section level2">
 <h2><strong>tmap</strong></h2>
-<p><a href="https://www.jstatsoft.org/article/view/v084i06"
-class="uri">https://www.jstatsoft.org/article/view/v084i06</a></p>
+<p><a href="https://www.jstatsoft.org/article/view/v084i06" class="uri">https://www.jstatsoft.org/article/view/v084i06</a></p>
 <p><br/><br/><br/></p>
 </div>
 </div>
@@ -1394,10 +1326,8 @@ class="uri">https://www.jstatsoft.org/article/view/v084i06</a></p>
 x=rnorm(100,100,20)
 plot(density(x))</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
-<div id="margenes-de-la-grafica-cbottom-left-top-right"
-class="section level3">
-<h3><strong>margenes de la grafica c(bottom, left, top,
-right)</strong></h3>
+<div id="margenes-de-la-grafica-cbottom-left-top-right" class="section level3">
+<h3><strong>margenes de la grafica c(bottom, left, top, right)</strong></h3>
 <pre class="r"><code>par(mar = c(5, 4, 4, 2) + 0.1)
 x=rnorm(100,100,20)
 plot(density(x))</code></pre>
@@ -1422,10 +1352,8 @@ hist(x)
 plot(x,y)</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-51-1.png" width="672" /></p>
 </div>
-<div id="margenes-exteriores-cbottom-left-top-right"
-class="section level3">
-<h3><strong>margenes exteriores c(bottom, left, top,
-right)</strong></h3>
+<div id="margenes-exteriores-cbottom-left-top-right" class="section level3">
+<h3><strong>margenes exteriores c(bottom, left, top, right)</strong></h3>
 <pre class="r"><code>par(mfrow = c(2, 2),   # matriz de graficos 2x2
     oma = c(3, 5, 2, 4) )  # margenes de la imagen
 plot(density(x))
@@ -1443,48 +1371,35 @@ plot(density(x),cex.lab=.8,  # tamaño de etiqueta ejes
                 cex.main=1.5, # tamaño del titulo
                 cex.sub=1)    # tamaño del subtitulo</code></pre>
 <p><img src="codigo103_files/figure-html/unnamed-chunk-53-1.png" width="672" /></p>
-<p><a href="https://r-charts.com/es/r-base/margenes/"
-class="uri">https://r-charts.com/es/r-base/margenes/</a></p>
+<p><a href="https://r-charts.com/es/r-base/margenes/" class="uri">https://r-charts.com/es/r-base/margenes/</a></p>
 </div>
 <div id="flexdashboard" class="section level1">
 <h1><strong>Flexdashboard</strong></h1>
-<p>Este paquete permite la construcción de tableros que pueden ser
-publicados en formato html. A continuación se describen las principales
-características y la forma que podemos construir un tablero</p>
+<p>Este paquete permite la construcción de tableros que pueden ser publicados en formato html. A continuación se describen las principales características y la forma que podemos construir un tablero</p>
 <p>Iniciaremos cargando el paquete (por una única vez)</p>
 <pre class="r"><code>install.packages(&quot;flexdashboard&quot;)</code></pre>
-<p>Tambien debemos activarlo, aunque este procedimiento viene en el
-formato que nos proporciona RStudio</p>
+<p>Tambien debemos activarlo, aunque este procedimiento viene en el formato que nos proporciona RStudio</p>
 <pre class="r"><code>library(flexdashboard)</code></pre>
-<p>Inicialmente utilizamos la plantilla que para este propósito tiene
-RStudio, entrando por el menú : <strong>File/ New file /
-RMarkdown..</strong></p>
+<p>Inicialmente utilizamos la plantilla que para este propósito tiene RStudio, entrando por el menú : <strong>File/ New file / RMarkdown..</strong></p>
 <p><img src="img/flexdashboard1.png" style="width:50.0%" /></p>
 <p><img src="img/flexdashboard2.png" style="width:50.0%" /></p>
-<p>Este procedimiento genera un formato para un tablero que puede ser
-modificado o ajustado a nuestras necesidades</p>
+<p>Este procedimiento genera un formato para un tablero que puede ser modificado o ajustado a nuestras necesidades</p>
 <p><img src="img/flexdashboard3.png" style="width:60.0%" /></p>
 <p>En este formato podemos distinguir varias partes :</p>
 <ul>
-<li>Encabezado : donde se define la estructura del tablero y los
-temas</li>
-<li>Bloque setup . Donde colocamos las instrucciones generales de R ,
-como puede ser cargar las bases de datos que seran utilizadas durante
-todo el documento, ademas de cargar las librerias necesarias<br />
+<li>Encabezado : donde se define la estructura del tablero y los temas</li>
+<li>Bloque setup . Donde colocamos las instrucciones generales de R , como puede ser cargar las bases de datos que seran utilizadas durante todo el documento, ademas de cargar las librerias necesarias<br />
 </li>
 <li>Definicion de columnas o filas del tablero y hojas del tablero</li>
 <li>Bloques de R con el contenido</li>
 </ul>
 <div id="uso-de-color" class="section level2">
 <h2><strong>Uso de color</strong></h2>
-<p><a href="https://r-charts.com/colors/"
-class="uri">https://r-charts.com/colors/</a></p>
+<p><a href="https://r-charts.com/colors/" class="uri">https://r-charts.com/colors/</a></p>
 </div>
 <div id="algunos-paquetes" class="section level2">
 <h2><strong>Algunos paquetes</strong></h2>
-<p><a
-href="https://www.computerworld.com/article/2921176/great-r-packages-for-data-import-wrangling-visualization.html">Selección
-de paquetes de Sharpm Machis</a></p>
+<p><a href="https://www.computerworld.com/article/2921176/great-r-packages-for-data-import-wrangling-visualization.html">Selección de paquetes de Sharpm Machis</a></p>
 </div>
 </div>
 
