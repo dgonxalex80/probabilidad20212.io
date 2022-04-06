@@ -14,6 +14,10 @@ knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, comment = N
 library(psych)
 library(summarytools)
 
+# install.packages("devtools")
+devtools::install_github("dgonxalex80/paqueteDEG")
+library(paqueteDEG)
+
 # colores
 c0="#0DA5A6" # VERDE CLARO
 c1="#E77C00" # NARANJA
@@ -423,3 +427,38 @@ base2
 <br/><br/>
 
 Para los casos de los muestreos estratificado y muestreo por conglomerados se utiliza el muestreo aleatorio simple como base. 
+
+
+# **PaqueteDEG**
+
+1. Instalación del paquete.
+
+El paquete paqueteDEG en construcción permitirá realizar algunos cálculos del tamaño de la muestra y tutoriales. Para su instalación corremos el siguiente código
+
+```{r, eval=FALSE}
+# install.packages("devtools")  # solo si no  esta instalado
+devtools::install_github("dgonxalex80/paqueteDEG")
+```
+
+2. Calculo del tamaño de la muestra para la estimación de una media poblacional
+
+Ejemplo:
+
+Determinar el tamaño de la muestra para estimar la media de una variable, en una población de tamaño $N = 2000$ con varianza conocida igual a $\sigma^{2}=3025$, con una confianza del 95% y un error de muestreo de 5 unidades
+
+Solución: 
+
+Información del problema :
+
++ $\sigma^{2}=3025$  -->  $\sigma = 55$
++ $N = 2000$
++ Confianza del 95% : Percentil 97.5 = $z_{_{\alpha/2}} = 1.96$
++ Error de muestreo : $e = 5$ 
+
+$$n = \dfrac{ z_{_{\alpha/2}} \times \sigma^{2} }{e^{2}} =\dfrac{1.96^{2} \times 3025 }{5^{2}} =464.83 \sim 465$$
+
+```{r, eval=FALSE}
+library(paqueteDEG)
+sizemu(1.96, 3025,5)
+```
+
