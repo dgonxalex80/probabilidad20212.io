@@ -82,7 +82,7 @@ La edad de una antigua pieza de materia orgánica se puede estimar a partir de l
 	
 $$\widehat{t}=\dfrac{\ln 15.3 - \ln (X/10)}{0.0001210} $$ 
 	
-El arqueólogo no lo sabe, pero el hueso tiene exactamente $100000$ años de antiguedad, por lo que $X$ tiene una distribución de Poisson con $\lambda=45.62$.
+El arqueólogo no lo sabe, pero el hueso tiene exactamente $10000$ años de antiguedad, por lo que $X$ tiene una distribución de Poisson con $\lambda=45.62$.
 
 
 ![](img/piezas.png)
