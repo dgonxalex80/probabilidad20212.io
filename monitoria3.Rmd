@@ -769,7 +769,7 @@ c. Determine el 95o. percentil de la resistencia de esta aleación.
 
 <br/><br/>
 
-**10.** La vida útil de una bombilla de un vehículo opera en un ambiente a alta temperatura dada su cercania al motor del vehículo. Esta variable medida en años sigue aproximadamente una distribución lognormal con media $\mu=1.2  $ y varianza $\sigma^{2} =0.4$ .
+**10.** La vida útil de una bombilla de un vehículo opera en un ambiente a alta temperatura dada su cercania al motor del vehículo. Esta variable medida en años sigue aproximadamente una distribución lognormal con media $\mu=1.2$ y varianza $\sigma^{2} =0.4$ .
 
 a. Determine el tiempo medio de vida de la bombilla
 
