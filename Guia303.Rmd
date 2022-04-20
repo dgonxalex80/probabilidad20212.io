@@ -1134,3 +1134,7 @@ $$\begin{eqnarray*}
 + [t-Student](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/1.png)
 + [F-Fisher](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/Distribucion%20fisher%20(1).pdf)
 
+
+## Tabla 
+
+[Tabla normal estandar](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/tabla_normal.pdf)
