@@ -546,6 +546,9 @@ div.tocify {
     <li>
       <a href="Actividad332.html">Actividad 332</a>
     </li>
+    <li>
+      <a href="SEP_parteA.html">SEP-parte A</a>
+    </li>
   </ul>
 </li>
       </ul>
@@ -569,7 +572,13 @@ div.tocify {
 
 <div id="propiedad-de-los-estimadores" class="section level1">
 <h1><strong>Propiedad de los estimadores</strong></h1>
-<p>Para una variable con distribución uniforme <span class="math inline">\(unif(a=0, b=20)\)</span> se desea determinar los siguientes estimadores del parámetro <span class="math inline">\(b\)</span></p>
+<p>Para una variable con distribución uniforme <span class="math inline">\(unif(a=0, b=20)\)</span> se desea determinar las propiedades de los siguientes estimadores del parámetro <span class="math inline">\(b\)</span></p>
+<ul>
+<li><p><span class="math inline">\(\widehat{\theta_{1}} = 2 \bar{x}\)</span></p></li>
+<li><p><span class="math inline">\(\widehat{\theta_{2}} = \max\{x\}\)</span></p></li>
+<li><p><span class="math inline">\(\widehat{\theta_{3}} = \dfrac{(n+1)}{n} \max\{x\}\)</span></p></li>
+</ul>
+<p><br/><br/></p>
 <pre class="r"><code># uniforme
 library(ggplot2)
 x= c(0,20) 
@@ -579,13 +588,10 @@ ggplot(data=dat,aes(x=x, y=fx))+
   scale_y_continuous(limits=c(0,.05))+
   geom_line(size = 1,colour = &#39;red&#39;) </code></pre>
 <p><img src="codigo401_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
-<ul>
-<li><p><span class="math inline">\(\widehat{\theta_{1}} = 2 \bar{x}\)</span></p></li>
-<li><p><span class="math inline">\(\widehat{\theta_{2}} = \max\{x\}\)</span></p></li>
-<li><p><span class="math inline">\(\widehat{\theta_{3}} = \dfrac{(n+1)}{n} \max\{x\}\)</span></p></li>
-</ul>
+<p>Para ello se realiza una simulación, para posteriormente evaluar los estimadores propuestos y determinar sus propiedades.</p>
 <p><br/><br/></p>
-<pre class="r"><code>n=10
+<pre class="r"><code>library(ggplot2)
+n=10
 m=1000*n
 Y=matrix(runif(m, min=0, max=20), ncol=n) # matriz de datos m x n
 Mx=apply(Y,1,mean)
@@ -594,12 +600,31 @@ T1=2*Mx
 T2=Max
 T3=((n+1)/n)*T2
 T123=data.frame(T1,T2,T3)
-boxplot(T123, main=&quot;propiedades de los estimadores&quot;)
-abline(h=20, col=&quot;red&quot;)</code></pre>
+
+boxplot(T123, las=1, main=&quot;Comparación estimadores con n=10&quot;)
+abline(h=20,  col=&quot;red&quot;)</code></pre>
 <p><img src="codigo401_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>apply(T123,2,mean)</code></pre>
 <pre><code>      T1       T2       T3 
-19.90470 18.16817 19.98498 </code></pre>
+19.96035 18.08392 19.89231 </code></pre>
+<p>Para un tamaño de muestra n=10 se observa que los mejores resultados se obtienen con T3. Este estimador se puede clasificar como INSESGADO y EFICIENTE, pues ademas que su promedio está muy cerca de 20, tiene la menor varianza</p>
+<pre class="r"><code>n=100
+m=1000*n
+Y=matrix(runif(m, min=0, max=20), ncol=n) # matriz de datos m x n
+Mx=apply(Y,1,mean)
+Max=apply(Y,1,max)
+T1=2*Mx
+T2=Max
+T3=((n+1)/n)*T2
+T123=data.frame(T1,T2,T3)
+
+boxplot(T123, las=1, main=&quot;Comparación estimadores con n=100&quot;)
+abline(h=20,  col=&quot;red&quot;)</code></pre>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<pre class="r"><code>apply(T123,2,mean)</code></pre>
+<pre><code>      T1       T2       T3 
+20.00661 19.80206 20.00008 </code></pre>
+<p>Los resutados indican que el mejor estimador de b corresponde a T3. Sin embargo el estimador T2 que era insesgado al aumentar el tamaño de la muestra pasando de n=10 a n=100 se observa que su promedio se acerca mas a 20 que corresponde al valor del parametro</p>
 <p><br/><br/><br/><br/></p>
 </div>
 <div id="teorema-central-del-límite" class="section level1">
@@ -658,7 +683,7 @@ plot(d30, main=&quot; &quot;, xlab = &quot;n=30&quot;)
 plot(d50, main=&quot; &quot;, xlab = &quot;n=50&quot;)
 plot(d100, main=&quot; &quot;, xlab = &quot;n=100&quot;)
 plot(d1000,main=&quot; &quot;, xlab=&quot;n=1000&quot;)</code></pre>
-<p><img src="codigo401_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <pre class="r"><code># histogramas  de comparacion--------------------------
 hist(X1,  main = &quot;n=1&quot;, freq=FALSE)
 hist(Mx2, main =&quot;n=2&quot;, freq=FALSE) 
@@ -667,7 +692,7 @@ hist(Mx30, main = &quot;n=30&quot;,freq=FALSE)
 hist(Mx50, main = &quot;n=50&quot;,freq=FALSE) 
 hist(Mx100, main = &quot;n=100&quot;, freq=FALSE) 
 hist(Mx1000, main = &quot;n=1000&quot;, freq = FALSE) </code></pre>
-<p><img src="codigo401_files/figure-html/unnamed-chunk-3-2.png" width="672" /></p>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-4-2.png" width="672" /></p>
 <pre class="r"><code># histogramas  de comparacion--------------------------
 qqnorm(X1) ; qqline(X1, col=&quot;red&quot;)
 qqnorm(Mx2) ; qqline(Mx2, col=&quot;red&quot;)
@@ -676,7 +701,7 @@ qqnorm(Mx30) ; qqline(Mx30, col=&quot;red&quot;)
 qqnorm(Mx50) ; qqline(Mx50, col=&quot;red&quot;)
 qqnorm(Mx100) ; qqline(Mx100, col=&quot;red&quot;)
 qqnorm(Mx1000) ; qqline(Mx1000, col=&quot;red&quot;)</code></pre>
-<p><img src="codigo401_files/figure-html/unnamed-chunk-3-3.png" width="672" /></p>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-4-3.png" width="672" /></p>
 <p>Se puede observar la convergencia de la distribución de la media muestral a una distribución normal al aumentarse el tamaño de la muestra</p>
 <p><br/><br/><br/></p>
 </div>
@@ -755,7 +780,7 @@ data.frame(poblacion_n2,mx)</code></pre>
 <pre><code>Compara los resultados obtenidos con los respectivos valores de la población </code></pre>
 <pre class="r"><code> plot(poblacion_n2, pch=19)
  grid()</code></pre>
-<p><img src="codigo401_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
 <div id="paso-4" class="section level4">
@@ -776,7 +801,7 @@ data.frame(poblacion_n2,mx)</code></pre>
 <pre><code>media poblacionalde la media muestral     : 3 </code></pre>
 <pre><code>varianza poblacional de la media muestral : 0.75</code></pre>
 <pre><code>Compara los resultados obtenidos con los respectivos valores de la población </code></pre>
-<p><img src="codigo401_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="codigo401_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
 <p><br/><br/></p>
 </div>
 </div>
@@ -901,13 +926,13 @@ data.frame(muestra,p)</code></pre>
 <p>Para seleccionar una muestra de una variables, supongamos que se distinguen por un Id del 1 al 1000, utilizamos la funcion <strong>sample</strong> para seleccionar la muestra:</p>
 <pre class="r"><code>x&lt;-seq(1,1000,1)
 sample(x, 20)</code></pre>
-<pre><code> [1] 488 677 687 996 447 251 865 596 453  83 370 478 592 108  46 192 264 852 146
-[20] 547</code></pre>
+<pre><code> [1] 750 175 984 670 518 442 883 403 269 245 654 754 103 895 190 707 211 272 908
+[20] 156</code></pre>
 <p>En este caso se ha seleccionado una muestra de tamaño <span class="math inline">\(n=10\)</span> de una población de <span class="math inline">\(N=1000\)</span> unidades. Dato que la población es muy grande es poco probable que un valor salga repetido, por lo que se conoce como muestreo sin repetición.</p>
 <p>Es posible realizar un muestreo con repetición en el caso de que la población sea demasiado pequeña (este tipo de muestreos se llaman bootstrap o remuestreo) :</p>
 <pre class="r"><code>x&lt;-1:10
 sample(x, 20, replace = TRUE)</code></pre>
-<pre><code> [1]  4  4  1 10  4  8 10  9  4  7 10  2  8  3  8  6  6  2  8  1</code></pre>
+<pre><code> [1]  5  4  6  4 10  4  6  3  5  6  2  6  2  3  9  5  2  6  4  3</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="muestreo-sistemático" class="section level3">
@@ -917,26 +942,26 @@ a=100
 ids=S.SY(N, a)
 ids</code></pre>
 <pre><code>      [,1]
- [1,]   67
- [2,]  167
- [3,]  267
- [4,]  367
- [5,]  467
- [6,]  567
- [7,]  667
- [8,]  767
- [9,]  867
-[10,]  967
-[11,] 1067
-[12,] 1167
-[13,] 1267
-[14,] 1367
-[15,] 1467
-[16,] 1567
-[17,] 1667
-[18,] 1767
-[19,] 1867
-[20,] 1967</code></pre>
+ [1,]   34
+ [2,]  134
+ [3,]  234
+ [4,]  334
+ [5,]  434
+ [6,]  534
+ [7,]  634
+ [8,]  734
+ [9,]  834
+[10,]  934
+[11,] 1034
+[12,] 1134
+[13,] 1234
+[14,] 1334
+[15,] 1434
+[16,] 1534
+[17,] 1634
+[18,] 1734
+[19,] 1834
+[20,] 1934</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="ejemplo-muestreo-aleatorio-simple" class="section level3">
@@ -973,31 +998,31 @@ a=N/n
 ids=S.SY(N, a)
 ids</code></pre>
 <pre><code>      [,1]
- [1,]    1
- [2,]   19
- [3,]   37
- [4,]   55
- [5,]   73
- [6,]   91
- [7,]  109
- [8,]  127
- [9,]  145
-[10,]  163</code></pre>
+ [1,]    5
+ [2,]   23
+ [3,]   41
+ [4,]   59
+ [5,]   77
+ [6,]   95
+ [7,]  113
+ [8,]  131
+ [9,]  149
+[10,]  167</code></pre>
 <pre class="r"><code>base2=base_muestreo[ids,]
 base2</code></pre>
 <pre><code># A tibble: 10 × 3
       ID CAR      NF
    &lt;int&gt; &lt;chr&gt; &lt;dbl&gt;
- 1     1 CIV     3  
- 2    19 IND     2.4
- 3    37 MAT     3.9
- 4    55 CIV     3.7
- 5    73 MAT     4.8
- 6    91 IND     4.5
- 7   109 IND     4.1
- 8   127 CIV     2.5
- 9   145 CIV     3.1
-10   163 MAT     3.8</code></pre>
+ 1     5 ELE     4.2
+ 2    23 IND     3.8
+ 3    41 CIV     3.1
+ 4    59 IND     0.8
+ 5    77 BIO     3.2
+ 6    95 BIO     3  
+ 7   113 IND     3.3
+ 8   131 IND     3  
+ 9   149 CIV     3.6
+10   167 CIV     1.4</code></pre>
 <p><br/><br/></p>
 <p>Para los casos de los muestreos estratificado y muestreo por conglomerados se utiliza el muestreo aleatorio simple como base.</p>
 </div>
@@ -1024,8 +1049,6 @@ devtools::install_github(&quot;dgonxalex80/paqueteDEG&quot;)</code></pre>
 <li>Error de muestreo : <span class="math inline">\(e = 5\)</span></li>
 </ul>
 <p><span class="math display">\[n = \dfrac{ z_{_{\alpha/2}} \times \sigma^{2} }{e^{2}} =\dfrac{1.96^{2} \times 3025 }{5^{2}} =464.83 \sim 465\]</span></p>
-<pre class="r"><code>library(paqueteDEG)
-sizemu(1.96, 3025,5)</code></pre>
 </div>
 
 

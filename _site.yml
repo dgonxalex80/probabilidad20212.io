@@ -113,6 +113,9 @@ navbar:
           href: Actividad331.html          
         - text: "Actividad 332"
           href: Actividad332.html
+        - text: "SEP-parte A"
+          href: SEP_parteA.html
+          
 output:
   html_document:
     theme: cosmos

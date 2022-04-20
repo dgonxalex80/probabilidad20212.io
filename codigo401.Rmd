@@ -40,8 +40,17 @@ base_muestreo <- read_delim("data/base_muestreo.csv",
 
 # **Propiedad de los estimadores**
 
-Para una variable con distribución uniforme $unif(a=0, b=20)$ se desea determinar los siguientes 
-estimadores del parámetro $b$
+Para una variable con distribución uniforme $unif(a=0, b=20)$ se desea determinar las propiedades de los siguientes  estimadores del parámetro $b$
+
+
+* $\widehat{\theta_{1}} = 2 \bar{x}$ 
+
+* $\widehat{\theta_{2}} = \max\{x\}$
+
+* $\widehat{\theta_{3}} = \dfrac{(n+1)}{n} \max\{x\}$
+
+<br/><br/>
+
 
 
 ```{r}
@@ -55,15 +64,15 @@ ggplot(data=dat,aes(x=x, y=fx))+
   geom_line(size = 1,colour = 'red') 
 ```
 
-* $\widehat{\theta_{1}} = 2 \bar{x}$ 
 
-* $\widehat{\theta_{2}} = \max\{x\}$
+Para ello se realiza una simulación, para posteriormente evaluar los estimadores propuestos y determinar sus propiedades.
 
-* $\widehat{\theta_{3}} = \dfrac{(n+1)}{n} \max\{x\}$
+
 
 <br/><br/>
 
 ```{r}
+library(ggplot2)
 n=10
 m=1000*n
 Y=matrix(runif(m, min=0, max=20), ncol=n) # matriz de datos m x n
@@ -73,10 +82,39 @@ T1=2*Mx
 T2=Max
 T3=((n+1)/n)*T2
 T123=data.frame(T1,T2,T3)
-boxplot(T123, main="propiedades de los estimadores")
-abline(h=20, col="red")
+
+boxplot(T123, las=1, main="Comparación estimadores con n=10")
+abline(h=20,  col="red")
 apply(T123,2,mean)
 ```
+
+Para un tamaño de muestra n=10 se observa que los mejores resultados se obtienen con T3. Este estimador se puede clasificar como INSESGADO y EFICIENTE, pues ademas que su promedio está muy cerca de 20, tiene la menor varianza
+
+
+```{r}
+n=100
+m=1000*n
+Y=matrix(runif(m, min=0, max=20), ncol=n) # matriz de datos m x n
+Mx=apply(Y,1,mean)
+Max=apply(Y,1,max)
+T1=2*Mx
+T2=Max
+T3=((n+1)/n)*T2
+T123=data.frame(T1,T2,T3)
+
+boxplot(T123, las=1, main="Comparación estimadores con n=100")
+abline(h=20,  col="red")
+apply(T123,2,mean)
+
+
+
+
+
+
+```
+
+
+Los resutados indican que el mejor estimador de b corresponde a T3. Sin embargo el estimador T2 que era insesgado al aumentar el tamaño de la muestra pasando de n=10 a n=100 se observa que su promedio se acerca mas a 20 que corresponde al valor del parametro 
 
 <br/><br/><br/><br/>
 
@@ -457,8 +495,5 @@ Información del problema :
 
 $$n = \dfrac{ z_{_{\alpha/2}} \times \sigma^{2} }{e^{2}} =\dfrac{1.96^{2} \times 3025 }{5^{2}} =464.83 \sim 465$$
 
-```{r, eval=FALSE}
-library(paqueteDEG)
-sizemu(1.96, 3025,5)
-```
+
 

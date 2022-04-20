@@ -1,0 +1,51 @@
+---
+title: "Segunda evaluación parcial - parte A"
+author: "dgonzalez80"
+date: " "
+output:
+  html_document:
+    toc: yes
+    toc_depth: 2
+    toc_float: yes
+    theme: cosmo
+---
+
+A partir del problema de la actividad 332 (problema de simulación asignado), realice un **vídeo a manera de sustentación**  del mismo.
+
+<br/><br/>
+
+**Requisitos**:
+
+   + Contextualización del problema (presentación del enunciado)
+   + Metodologóa empleada para su solución
+   + Solución del problema
+   + Conclusiones y/o recomendaciones 
+   + En el vídeo se debe visualizar al presentador (camara encendida)  
+   + El video debe tener una duración no mayor a 5 minutos
+   
+
+En la plataforma de Brightspace se debe colocar compartir el enlace del vídeo ( es posible alojar el video en OneDrive del correo institucional, YouTube, Google Drive  y compartir el enlace)
+
+<br/><br/>
+
+**Rubrica**
+
+<br/>
+
++ Se realiza presentación del problema (contexto)
++ Se sustenta metodología empleada (resolución)
++ Se presenta conclusiones y/o recomendaciones (cierre)
++ Se evidencia conocimiento del tema por parte del presentador (comunicación)
++ El video queda bien realizado (calidad y duración del video)
+
+<br/><br/>
+
+**Entrega **
+
+<br/>
+
+Fecha : Viernes 22 de abril de 2022 <br/> 
+
+Hora : <br/>
+Grupo A : 9:00 am <br/>  
+Grupo B : 11:00 am 
