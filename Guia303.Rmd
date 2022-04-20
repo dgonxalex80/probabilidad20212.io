@@ -1097,10 +1097,40 @@ $$\begin{eqnarray*}
 	&=& 0.01174619
 \end{eqnarray*}$$
 
+<br/><br/>
 
 ## **Posters Discretas**
 
++ [binomial](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Distribucion%20Binomial%20-%20Juan%20Jose%20Solano%20e%20Isaac%20Grun.pdf)
++ [binomial negativa](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Distribucion%20binomial%20negativa.pdf)
++ [Poisson](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Poster%20Discreto%20D.%20Velasco%2C%20M.%20Ram%C3%ADrez%2C%20V.%20S%C3%A1nchez%20(1).pdf)
++ [Poisson](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/%C2%BFConoces%20algun%20MODELO%20ESTADISTICO%20aQUI%20TE%20PRESENTAMOS%20EL%20METODO%20(1).pdf)
++ [binomial negativa](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Distribuciones%20estad%C3%ADsticas%20(1).pdf)
++ [geométrica](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Distribuci%C3%B3n%20Geom%C3%A9trica.pdf)
++ [geometrica](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Distribuci%C3%B3n%20geom%C3%A9trica.pdf)
++ [geométrica](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/Distribuci%C3%B3n%20geom%C3%A9trica.pdf)
++ [geométrica](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/Modelo%20de%20probabilidad%20geometrica.pdf)
++ [hipergeométrica](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Distribucion%20fisher.pdf)
++ [hipergeométrica](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Distribuci%C3%B3n%20Hipergeom%C3%A9trica%20(2).pdf)
++ [hipergeométrica](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Poster%20Hipergeom%C3%A9trica%20y%20gamma.pdf)
++ [hipergeométrica](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/Distribuci%C3%B3n%20Hipergeom%C3%A9trica.pdf)
++ [hipergeométrica](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/Hipergeometrica.pdf)
 
+<br/><br/>
 
 ## **Posters Continuas**
+
++ [normal](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/PROBABILIDAD%20Y%20ESTADISTICA.pdf)
++ [normal](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/Distribucion%20normal%20-%20Juan%20Jose%20Solano%20e%20Isaac%20Grun.pdf)
++ [lognormal](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/Poster%20continua%20D.%20Velasco%2C%20M.%20Ram%C3%ADrez%2C%20V.%20S%C3%A1nchez.pdf)
++ [beta](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Distribucion%20Beta.pdf)
++ [beta](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/Distribucion%20Beta%20(1).pdf)
++ [gamma](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Distribuci%C3%B3n%20gamma.pdf)
++ [gamma](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Modelo%20de%20probabilidad%20gamma.pdf)
++ [gamma](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/Distribuci%C3%B3n%20gamma.pdf)
++ [Gumbel](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/Distribucion%20de%20gumbel.pdf)
++ [Caychy](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/Distribuci%C3%B3n%20de%20Cauchy.pdf)
++ [ji-cuadrado](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Discretas/Ji-cuadrado.pdf)
++ [t-Student](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/1.png)
++ [F-Fisher](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/pdf/P-Distribuciones%20Continuas/Distribucion%20fisher%20(1).pdf)
 
