@@ -245,7 +245,7 @@ Determine:
 Cuando el profesor de Probabilidad y Estadística se preparaba para imprimir el cuestionario del segundo examen parcial, fue enterado por la secretaria del departamento que la máquina fotocopiadora se había averiado y que el técnico había acabado de llegar en ese instante y empezado a repararla. El profesor debe contar con por lo menos 10 minutos extras - tiempo de fotocopiado de 35 exámenes, organizar sus respectivas hojas de respuestas, sumado tiempo de su desplazamiento hasta el salón de clase, arreglo de las mesas y entrega de los cuestionarios a los estudiantes. Al mirar el reloj, el profesor observa que faltan 20 minutos para la hora en que debe empezar el examen y decide esperar a que el técnico repare la fotocopiadora. ¿Es acertada o no la decisión que tomó el profesor? Justifique su respuesta.   
 
 
-
+### [**Solución**](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/talleres/Solucion_Taller_303.pdf)
 <br/><br/>
 
 ## <span style="color:#104E8B">**Taller 314**</span>
@@ -335,6 +335,9 @@ Problemas tomados de Mongomery(2003)
 
 El estudio afirma también que los jóvenes en promedio reciben al rededor de 12 llamadas por día, valor que es considerado muy alto, debido a que a esa edad por lo regular no se tienen actividades económicas que lo ameriten. También mencionan que debido a que se ha logrado identificar la función de distribución de probabilidad es fácil establecer que se trata de una variable con un comportamiento homogéneo. ¿Está de acuerdo con la información suministrada en el artículo? . Justifique su respuesta. 
 
+<br/><br/>
+
+### [**Solución**](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/talleres/Solucion_Taller_304.pdf)
 
 <br/><br/><br/>
 
@@ -645,9 +648,11 @@ c. Se presenten menos de 2 grietas en 500 m
 
 **13**. Un sistema de seguridad para casas está diseñado para tener una confiabilidad del 95 . Suponga que 10 casas equipadas con este dispositivo sufrieron tentativa de robo. Se requiere calcular la probabilidad de que en siete de las nueve, la alarma se activará.
 
-
-
 <br/><br/>
+
+### [**Solución**](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/talleres/Solucion_Taller_%20307.pdf)
+
+<br/><br/><br/>
 
 ## <span style="color:#104E8B">**Taller 332**</span>
 
@@ -794,6 +799,10 @@ La organización mundial de la salud ha establecido rangos para este indice y lo
 <br/><br/>
 
 **13.** Una de las dificultades que presentan las Empresas Municipales se relaciona con la reparación de rupturas de tubos de alcantarillados debido especialmente a la antigüedad de las tuberías y a las raíces de los árboles que los rompen y generan suspensiones en el servicio de agua. Para la reparación de estos daños la empresa contrata con terceros los arreglos. La empresa conoce que el tiempo de reparación (en horas) se puede modelar mediante una distribución gamma con parámetros $\alpha=2$ y $\beta=1/2$, pero además tienen como indicador de calidad que el tiempo máximo de reparación no debe exceder la hora. ¿que tan probable es que se cumpla esta política con las actuales condiciones?  
+			
+<br/><br/>
+
+### [**Solución**](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/talleres/Solucion_Taller_%20308.pdf)			
 			
 <br/><br/><br/>
 
