@@ -19,15 +19,18 @@ muestra1<- read_delim("data/base_muestreo.csv",delim = ";",escape_double = FALSE
 
 # **Simulación**
 
+Con el fin de entender el concepto de confianza se propone la simulacion como estrategia. Inicialmente se genera de manera simulada un conjunto de 100 muestras (m=100) cada una de tamaño n=200, de una población con distribución normal con $\mu=30$ y varianza $\sigma^2=10$ y un valor de confianza del 95% ($\alpha=0.05$)
+
+La gráfica dibuja los 100 intervalos de confianza en el cual se pueden observar algunos unos pocos que no contienen el parametro ($\mu=30$)
 <br/><br/>
 
 ## **Confianza**
 
-```{r}
+```{r, fig.height=8, fig.width=4}
 m= 100 ## número de experimentos
-n=100 ## tamaño de muestra
-mux=100 # media poblacion 
-sdx=20  # desviacion poblacion
+n=300 ## tamaño de muestra
+mux=30 # media poblacion 
+sdx=sqrt(50)  # desviacion poblacion
 a=0.05
 x=rnorm(n*m, mux, sdx)
 muestras=matrix(x, nrow = m)

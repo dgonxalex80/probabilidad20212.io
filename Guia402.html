@@ -571,8 +571,6 @@ confianza</strong></h1>
 </div>
 
 
-<p><span style="color:#E77C00"><strong>En
-construcción</strong></span></p>
 <div id="guía-de-aprendizaje-4.2" class="section level1">
 <h1><strong>Guía de aprendizaje 4.2</strong></h1>
 <p><img src="img/baner4.png" /></p>
@@ -1575,12 +1573,12 @@ mx=apply(b,1,mean)                 # se calculan m medias por fila</code></pre>
 <pre class="r"><code>ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC método 1
 ic1</code></pre>
 <pre><code>    2.5%    97.5% 
-4.721429 6.554929 </code></pre>
+4.719750 6.408893 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC método 2
 ic2</code></pre>
 <pre><code>   97.5%     2.5% 
-4.534351 6.367851 </code></pre>
+4.640601 6.329744 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>hist(mx, las=1, main=&quot; &quot;, ylab = &quot; &quot;, xlab = &quot; &quot;, col=c3)
 abline(v=ic1, col=&quot;red&quot;)

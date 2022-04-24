@@ -572,13 +572,22 @@ div.tocify {
 
 <div id="simulación" class="section level1">
 <h1><strong>Simulación</strong></h1>
-<p><br/><br/></p>
+<p>Con el fin de entender el concepto de confianza se propone la
+simulacion como estrategia. Inicialmente se genera de manera simulada un
+conjunto de 100 muestras (m=100) cada una de tamaño n=200, de una
+población con distribución normal con <span
+class="math inline">\(\mu=30\)</span> y varianza <span
+class="math inline">\(\sigma^2=10\)</span> y un valor de confianza del
+95% (<span class="math inline">\(\alpha=0.05\)</span>)</p>
+<p>La gráfica dibuja los 100 intervalos de confianza en el cual se
+pueden observar algunos unos pocos que no contienen el parametro (<span
+class="math inline">\(\mu=30\)</span>) <br/><br/></p>
 <div id="confianza" class="section level2">
 <h2><strong>Confianza</strong></h2>
 <pre class="r"><code>m= 100 ## número de experimentos
-n=100 ## tamaño de muestra
-mux=100 # media poblacion 
-sdx=20  # desviacion poblacion
+n=300 ## tamaño de muestra
+mux=30 # media poblacion 
+sdx=sqrt(50)  # desviacion poblacion
 a=0.05
 x=rnorm(n*m, mux, sdx)
 muestras=matrix(x, nrow = m)
@@ -603,7 +612,7 @@ abline(v = mux, lty = 2) ## la media poblacional.
 for(i in 1:100) {
   segments(ICa[1,i], i, ICa[2,i], i)
 }</code></pre>
-<p><img src="codigo402_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><img src="codigo402_files/figure-html/unnamed-chunk-1-1.png" width="384" /></p>
 <p><br/><br/><br/></p>
 </div>
 </div>
@@ -650,7 +659,7 @@ ic.var=function(x,a){
 }
 x1=rnorm(100)
 ic.var(x1, 0.05)</code></pre>
-<pre><code>## [1] 0.8320104 1.4564729</code></pre>
+<pre><code>## [1] 0.701357 1.227758</code></pre>
 </div>
 <div id="ic-comparación-varianzas" class="section level2">
 <h2><strong>IC comparación varianzas</strong></h2>
