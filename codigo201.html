@@ -572,17 +572,30 @@ div.tocify {
 
 <div id="experimentos-aleatorios" class="section level1">
 <h1><strong>Experimentos aleatorios</strong></h1>
-<p>Como se menciona en la Guía 2.1, un <strong>Experimento aleatorio</strong> se puede definir como una acción que podemos repetir en iguales condiciones muchas veces y cuyo resultado no conocemos anticipadamente</p>
-<p>Un ejemplo de ello es cuando estamos jugando parques y un jugador lanza dos dados, el resultado solo es posible de observar después de haber realizado la acción de lanzarlos.</p>
-<p>Al conjunto de todos los posibles valores que puede tomar el experimento aleatorio se le denomina <strong>Espacio muestral</strong>, que se denota por la letra mayuscula <strong>S</strong>.</p>
+<p>Como se menciona en la Guía 2.1, un <strong>Experimento
+aleatorio</strong> se puede definir como una acción que podemos repetir
+en iguales condiciones muchas veces y cuyo resultado no conocemos
+anticipadamente</p>
+<p>Un ejemplo de ello es cuando estamos jugando parques y un jugador
+lanza dos dados, el resultado solo es posible de observar después de
+haber realizado la acción de lanzarlos.</p>
+<p>Al conjunto de todos los posibles valores que puede tomar el
+experimento aleatorio se le denomina <strong>Espacio muestral</strong>,
+que se denota por la letra mayuscula <strong>S</strong>.</p>
 <p><img src="img/dados.gif" /></p>
 <p><br/></p>
 <p>Para este ejemplo :</p>
-<p><span class="math display">\[S=\{ 2,3,4,5,6,7,8,9,10,11,12 \}\]</span></p>
+<p><span class="math display">\[S=\{ 2,3,4,5,6,7,8,9,10,11,12
+\}\]</span></p>
 <div id="lanzamiento-de-un-dados" class="section level2">
 <h2><strong>Lanzamiento de un dados</strong></h2>
-<p>Para simular el lanzamiento de un dado utilizaremos la función <code>sample(x, size, replace = FALSE, prob = NULL)</code>, con parámetros: <code>x</code> : valores del espacio muestral; <code>size</code> : tamaño de la muestra y <code>replace</code> : para determinar si la selección se realiza con remplazo o sin remplazo.</p>
-<p><code>sample(1:6,200, replace = TRUE)</code>, da un resultado una muestra de 200 valores enteros entre 1 y 6, con repetición.</p>
+<p>Para simular el lanzamiento de un dado utilizaremos la función
+<code>sample(x, size, replace = FALSE, prob = NULL)</code>, con
+parámetros: <code>x</code> : valores del espacio muestral;
+<code>size</code> : tamaño de la muestra y <code>replace</code> : para
+determinar si la selección se realiza con remplazo o sin remplazo.</p>
+<p><code>sample(1:6,200, replace = TRUE)</code>, da un resultado una
+muestra de 200 valores enteros entre 1 y 6, con repetición.</p>
 <pre class="r"><code>n=200
 x=sample(1:6,n, replace = TRUE)
 td1=prop.table(table(x))
@@ -591,8 +604,17 @@ barplot(td1, las=1)</code></pre>
 </div>
 <div id="lanzamiento-de-dos-dados" class="section level2">
 <h2><strong>Lanzamiento de dos dados</strong></h2>
-<p>En este caso utilizamos la función <code>sample</code> dos veces y se obtienen dos vectores que representan los resultados del dado1 y del dado2 respectivamente. Con estos resultados se construye una <code>data.frame</code> de dos columnas por n filas. En ella cada fila de dos componentes conforma una muestra con dos valores.</p>
-<p>Para obtener la suma de los valores de los dos dados, utilizamos la función <code>apply(X, MARGIN, FUN, ..., simplify = TRUE)</code> indicando con <code>MARGIN=1</code> que la operación (siguiente parámetro) se realizará por filas. Por último en el parámetro <code>FUN</code> se asigna la función a realizar. En resumen : <code>suma=apply(dados, 1, sum)</code></p>
+<p>En este caso utilizamos la función <code>sample</code> dos veces y se
+obtienen dos vectores que representan los resultados del dado1 y del
+dado2 respectivamente. Con estos resultados se construye una
+<code>data.frame</code> de dos columnas por n filas. En ella cada fila
+de dos componentes conforma una muestra con dos valores.</p>
+<p>Para obtener la suma de los valores de los dos dados, utilizamos la
+función <code>apply(X, MARGIN, FUN, ..., simplify = TRUE)</code>
+indicando con <code>MARGIN=1</code> que la operación (siguiente
+parámetro) se realizará por filas. Por último en el parámetro
+<code>FUN</code> se asigna la función a realizar. En resumen :
+<code>suma=apply(dados, 1, sum)</code></p>
 <pre class="r"><code>n=20000000
 d1=sample(1:6,n, replace = TRUE)
 d2=sample(1:6,n, replace = TRUE)
@@ -620,7 +642,8 @@ barplot(table(t), las=1, cex.axis=0.7)</code></pre>
 </div>
 <div id="urna" class="section level2">
 <h2><strong>Urna</strong></h2>
-<p>Para simular la extracción de bolas de una urna, se utilizan las funciones sample y rep mostradas en el siguiente ejemplo :</p>
+<p>Para simular la extracción de bolas de una urna, se utilizan las
+funciones sample y rep mostradas en el siguiente ejemplo :</p>
 <ul>
 <li>Simulación de urna con: 3 bolas Blancas, 5 Rojas y 4 Azules
 <ul>
@@ -638,8 +661,12 @@ barplot(table(t), las=1, cex.axis=0.7)</code></pre>
 </div>
 <div id="tablas-de-contingencia" class="section level1">
 <h1><strong>Tablas de contingencia</strong></h1>
-<p>Las tablas de contingencia o tablas cruzadas se basan en las tablas de frecuencia para dos variables cualitativas o cuantitativas con pocos valores. En ellas se representan probabilidades conjuntas, marginales y condicionales</p>
-<p>Inicialmente construimos una tabla con los valores de las frecuencias relativas conjuntas</p>
+<p>Las tablas de contingencia o tablas cruzadas se basan en las tablas
+de frecuencia para dos variables cualitativas o cuantitativas con pocos
+valores. En ellas se representan probabilidades conjuntas, marginales y
+condicionales</p>
+<p>Inicialmente construimos una tabla con los valores de las frecuencias
+relativas conjuntas</p>
 <pre class="r"><code>x=c(20,60,100,30,140,50)
     m=matrix(x,ncol=2)
     rownames(m)=c(&quot;Adminitrativo&quot;,&quot;Operativo&quot;,&quot;Vendedor&quot;)
@@ -656,13 +683,15 @@ Adminitrativo    20     30  50
 Operativo        60    140 200
 Vendedor        100     50 150
 Sum             180    220 400</code></pre>
-<p>Para convertirlas en probabilidades utilizamos la función <code>prop.table()</code></p>
+<p>Para convertirlas en probabilidades utilizamos la función
+<code>prop.table()</code></p>
 <pre class="r"><code>prop.table(m)</code></pre>
 <pre><code>              Mujer Hombre
 Adminitrativo  0.05  0.075
 Operativo      0.15  0.350
 Vendedor       0.25  0.125</code></pre>
-<p>Esta función también se utiliza para calcular las probabilidades condicionales por filas</p>
+<p>Esta función también se utiliza para calcular las probabilidades
+condicionales por filas</p>
 <pre class="r"><code>prop.table(m,1)</code></pre>
 <pre><code>                  Mujer    Hombre
 Adminitrativo 0.4000000 0.6000000
@@ -676,7 +705,8 @@ Operativo     0.3333333 0.6363636
 Vendedor      0.5555556 0.2272727</code></pre>
 <div id="ejemplo" class="section level2">
 <h2><strong>Ejemplo</strong></h2>
-<div id="ubicación-por-estado-contagiados-de-covid-en-colombia" class="section level3">
+<div id="ubicación-por-estado-contagiados-de-covid-en-colombia"
+class="section level3">
 <h3>Ubicación por estado contagiados de Covid en Colombia</h3>
 <pre class="r"><code>Colombia= readRDS(&quot;data/Colombia.RDS&quot;)
 t21=table(Colombia$ubicacion, Colombia$estado)

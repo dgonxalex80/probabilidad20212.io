@@ -12,7 +12,7 @@
 <meta name="author" content="dgonzalez" />
 
 
-<title>Código</title>
+<title>Código 8</title>
 
 <script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -563,15 +563,152 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Código</h1>
-<h3 class="subtitle">Módulo 1- Unidad 1.1</h3>
+<h1 class="title toc-ignore">Código 8</h1>
+<h3 class="subtitle">Módulo 4- Unidad 4.2</h3>
 <h4 class="author">dgonzalez</h4>
 
 </div>
 
 
-<div id="en-construccion" class="section level3">
-<h3><span style="color:#BC2B6A"><strong>EN CONSTRUCCION</strong></span></h3>
+<div id="simulación" class="section level1">
+<h1><strong>Simulación</strong></h1>
+<p><br/><br/></p>
+<div id="confianza" class="section level2">
+<h2><strong>Confianza</strong></h2>
+<pre class="r"><code>m= 100 ## número de experimentos
+n=100 ## tamaño de muestra
+mux=100 # media poblacion 
+sdx=20  # desviacion poblacion
+a=0.05
+x=rnorm(n*m, mux, sdx)
+muestras=matrix(x, nrow = m)
+
+icm=function(xx){
+  mxx=mean(xx)
+  sdxx=sd(xx)
+  p=1-a/2
+  lsxx=mxx+pnorm(p)*sdxx/sqrt(n)
+  lixx=mxx-pnorm(p)*sdxx/sqrt(n)
+  return(c(lixx,lsxx))
+}
+
+ICa=apply(muestras, 1,icm)
+
+plot(1:100, type = &quot;n&quot;,
+     xlim = range(ICa),
+     ylab = &quot;Muestreos&quot;, 
+     las=1, 
+     xlab=&quot; &quot;)
+abline(v = mux, lty = 2) ## la media poblacional.
+for(i in 1:100) {
+  segments(ICa[1,i], i, ICa[2,i], i)
+}</code></pre>
+<p><img src="codigo402_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p><br/><br/><br/></p>
+</div>
+</div>
+<div id="estimaciones" class="section level1">
+<h1><strong>Estimaciones</strong></h1>
+<p><br/><br/></p>
+<div id="ic-para-una-media" class="section level2">
+<h2><strong>IC para una media</strong></h2>
+<p>Intervalo de confianza para una media</p>
+<p>Como ejemplo se estima un IC para la la nota final de los estudiantes
+que cursaron la asignatura de Matemáticas Fundamentales, para una
+muestra de n=180</p>
+<pre class="r"><code>t.test(muestra1$NF,conf.level = 0.95)$conf.int</code></pre>
+<pre><code>## [1] 3.002329 3.305449
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<p><br/><br/></p>
+</div>
+<div id="ic-para-una-proporción" class="section level2">
+<h2><strong>IC para una proporción</strong></h2>
+<p>Intervalo de confianza para una proporción</p>
+<p>Como ejemplo se estima un intervalo de confianza para una muestra de
+tamaño 1000 para la proporción de fallecidos por covid en el Valle</p>
+<pre class="r"><code>ingciv=as.numeric(muestra1$CAR==&quot;CIV&quot;)
+t1=table(ingciv)
+prop.test(t1[1],180, conf.level = 0.95)$conf.int</code></pre>
+<pre><code>## [1] 0.5636621 0.7080843
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<p><br/><br/></p>
+</div>
+<div id="ic-para-una-varianza" class="section level2">
+<h2><strong>IC para una varianza</strong></h2>
+<p>Para calcular el intervalo de confianza para una varianza, he creado
+la siguiente función, dado que no está disponible en R</p>
+<pre class="r"><code># parametros de entrada : x variable 
+#                         a alpha (confianza del 95% : a=0.05) 
+
+ic.var=function(x,a){
+  n=length(x)
+    per.chi2=qchisq(c(1-a/2, a/2), n-1)   # percentiles chi-cuadrado para 95% de confianza
+  icvar=(n-1)*var(x)/per.chi2
+  return(icvar)
+}
+x1=rnorm(100)
+ic.var(x1, 0.05)</code></pre>
+<pre><code>## [1] 0.7299626 1.2778335</code></pre>
+</div>
+<div id="ic-comparación-varianzas" class="section level2">
+<h2><strong>IC comparación varianzas</strong></h2>
+<p>Intervalo de confianza para la comparación de varianzas</p>
+<p>Como ejemplo se toman dos muestras de las edades para las personas
+contagiadas por covid en el Valle</p>
+<pre class="r"><code>nota.civ=c(3,1.5,1,4.7,1.7,3.1,3,2.6,3.4,3.3,4.7,2.3,3.7,1.1,2.4,3.6,3.1,0.9,1.2,0.8,3.1,2.5,2.2,3.2,2,2.2,2,3.6,2.5,2.3,3.1,2.2,4,3,3.6,2.4,4.1,3.7,3,2.4,3,3.8,2.1,3,3.9,2,4.1,1.7,3,4.1,1.4,3.2,4.4,3.2,3.8,2.2,2.3,4.5,4.5,2.5,3.6,4.4,1.7,1.7)
+nota.ind=c(3.5,3.3,2.4,4.6,3.8,2.5,3.1,3.5,4.7,1.2,3.2,0.7,0.8,3.4,4.1,1.5,3.2,4.2,3.7,1.3,3.2,4.7,3,4.6,2.4,4.5,4.4,4.3,3.9,4.3,3.1,1.8,3.1,4.3,3.1,2.6,3.1,4.1,4.3,3.5,3.3,3.7,3.6,2.4,3.5,4.3,3.3,2.2,3.5,4.5,4.1,0.9,3,2,3.8,2.1,2)
+
+var.test(nota.civ, nota.ind)$conf.int </code></pre>
+<pre><code>## [1] 0.5374026 1.5023015
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<p><br/><br/></p>
+</div>
+<div id="ic-medias-grupos-independientes" class="section level2">
+<h2><strong>IC medias grupos independientes</strong></h2>
+<p>Intervalo de confianza para la comparación de medias grupos
+independientes, suponiendo <strong>varianzas iguales</strong></p>
+<p>Como ejemplo se toman dos muestras para comparar la edad de las
+personas contagiadas por covid en dos grupos independientes</p>
+<pre class="r"><code>t.test(nota.civ, nota.ind,
+       mu = 0, 
+       paired = FALSE, 
+       var.equal = TRUE,
+       conf.level = 0.95 )$conf.int </code></pre>
+<pre><code>## [1] -0.737599195  0.006404019
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<p><br/><br/></p>
+<p>Intervalo de confianza para la comparación de medias grupos
+independientes, con <strong>varianza diferentes</strong></p>
+<p>En este caso se toman dos muestras de grupos independientes, solo se
+realiza el procedimiento para mostrar la sintaxis en el caso de que las
+varianza sean diferentes</p>
+<pre class="r"><code> t.test(nota.civ, nota.ind,
+       mu = 0, 
+       paired = FALSE, 
+       var.equal = FALSE,
+       conf.level = 0.95 )$conf.int</code></pre>
+<pre><code>## [1] -0.738826758  0.007631582
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+<p><br/><br/><br/></p>
+</div>
+<div id="ic-comparación-proporciones" class="section level2">
+<h2><strong>IC comparación proporciones</strong></h2>
+<p>Comparación de proporciones</p>
+<p>Para el ejemplo se toma una muestra de tamaño 1000 y se compara las
+proporciones de personas contagiadas y con estado grave y con estado
+moderado</p>
+<pre class="r"><code>nciv=65
+nind=58
+prop.test(c(nciv,nind),c(180,180), conf.level = 0.95)$conf.int</code></pre>
+<pre><code>## [1] -0.06456736  0.14234513
+## attr(,&quot;conf.level&quot;)
+## [1] 0.95</code></pre>
+</div>
 </div>
 
 

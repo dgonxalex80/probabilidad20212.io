@@ -575,7 +575,14 @@ div.tocify {
 <p><br/><br/><br/></p>
 <div id="ejemplo-1" class="section level3">
 <h3><strong>Ejemplo 1</strong></h3>
-<p>El número de veces que falla una máquina <span class="math inline">\(X\)</span> con <span class="math inline">\(R_{X}=\{1,2,3\}\)</span> durante un dia y el número de veces en que el operario requiere llamar al técnico para su arreglo esta dado por <span class="math inline">\(Y\)</span> con <span class="math inline">\(R_{Y}=\{1,2,3\}\)</span>. Su función de probabilidad conjunta para <span class="math inline">\(X,Y\)</span> está dada por :</p>
+<p>El número de veces que falla una máquina <span
+class="math inline">\(X\)</span> con <span
+class="math inline">\(R_{X}=\{1,2,3\}\)</span> durante un dia y el
+número de veces en que el operario requiere llamar al técnico para su
+arreglo esta dado por <span class="math inline">\(Y\)</span> con <span
+class="math inline">\(R_{Y}=\{1,2,3\}\)</span>. Su función de
+probabilidad conjunta para <span class="math inline">\(X,Y\)</span> está
+dada por :</p>
 <table>
 <thead>
 <tr class="header">
@@ -644,7 +651,8 @@ g(x) 0.10 0.35 0.55  1.0</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="representación-gráfica-de-fxy" class="section level3">
-<h3><strong>Representación gráfica de <span class="math inline">\(f(x,y)\)</span></strong></h3>
+<h3><strong>Representación gráfica de <span
+class="math inline">\(f(x,y)\)</span></strong></h3>
 <p>Para construir la gráfica de X y Y debemos crear los vectores</p>
 <table>
 <tbody>
@@ -765,13 +773,21 @@ Rho=CovXY/sqrt(Vx*Vy)</code></pre>
 <h1><strong>Caso Continuo-continuo</strong></h1>
 <p><br/><br/></p>
 <p><strong>Ejemplo 2</strong></p>
-<p>Una empresa prestadora se servicios a domicilio tienen dos lineas telefónicas para que los clientes puedan realizar sus pedidos. Sea X y Y la proporción del tiempo en que las lineas se encuentran ocupadas. La función de densidad conjunta que modela <span class="math inline">\(f(x,y)\)</span> esta dada por:</p>
-<p><span class="math display">\[f(x,y) = \left \{ \begin{matrix} \dfrac{3}{2}(x^{2}+y^{2}) &amp; \mbox{ } 0 \leq x \leq 1\\ 
+<p>Una empresa prestadora se servicios a domicilio tienen dos lineas
+telefónicas para que los clientes puedan realizar sus pedidos. Sea X y Y
+la proporción del tiempo en que las lineas se encuentran ocupadas. La
+función de densidad conjunta que modela <span
+class="math inline">\(f(x,y)\)</span> esta dada por:</p>
+<p><span class="math display">\[f(x,y) = \left \{ \begin{matrix}
+\dfrac{3}{2}(x^{2}+y^{2}) &amp; \mbox{ } 0 \leq x \leq 1\\
                                      &amp; \mbox{ } 0 \leq y \leq 1 \\
                                      &amp;\\
-                                   0 &amp; \mbox{ en otro caso }\end{matrix}\right.  \]</span> <br/><br/></p>
+                                   0 &amp; \mbox{ en otro caso
+}\end{matrix}\right.  \]</span> <br/><br/></p>
 <p>Inicialmente se verifica la condición :</p>
-<p><span class="math inline">\(\displaystyle\int_{0}^{1} \displaystyle\int_{0}^{1} \dfrac{3}{2}(x^{2}+y^{2}) \:dx \:dy = 1\)</span></p>
+<p><span class="math inline">\(\displaystyle\int_{0}^{1}
+\displaystyle\int_{0}^{1} \dfrac{3}{2}(x^{2}+y^{2}) \:dx \:dy =
+1\)</span></p>
 <pre class="r"><code>library(cubature) 
 fxy &lt;- function(x) { 3/2*(x[1]^2 + x[2]^2)} # 
 adaptIntegrate(fxy, lowerLimit = c(0, 0), upperLimit = c(1, 1))</code></pre>
@@ -786,7 +802,9 @@ $functionEvaluations
 
 $returnCode
 [1] 0</code></pre>
-<p>basado en : <a href="http://homepages.math.uic.edu/~jyang06/stat401/handouts/handout8.pdf" class="uri">http://homepages.math.uic.edu/~jyang06/stat401/handouts/handout8.pdf</a></p>
+<p>basado en : <a
+href="http://homepages.math.uic.edu/~jyang06/stat401/handouts/handout8.pdf"
+class="uri">http://homepages.math.uic.edu/~jyang06/stat401/handouts/handout8.pdf</a></p>
 <p><br/><br/></p>
 <p>Ahora su representación gráfica</p>
 <pre class="r"><code>x=seq(0,1,length=10)
@@ -797,7 +815,9 @@ persp(x,y,z,theta = 20, phi = 20,expand=0.5, col = &quot;red&quot;,
       xlab = &quot;x&quot;, ylab =&quot;y&quot;, zlab = &quot;f(x,y)&quot;,
       main=&quot; &quot;, col.main=&quot;blue&quot;)</code></pre>
 <p><img src="codigo302_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p>Nota: basada en : <a href="https://estadistica-dma.ulpgc.es/cursoR4ULPGC/9e-grafPersp.html" class="uri">https://estadistica-dma.ulpgc.es/cursoR4ULPGC/9e-grafPersp.html</a></p>
+<p>Nota: basada en : <a
+href="https://estadistica-dma.ulpgc.es/cursoR4ULPGC/9e-grafPersp.html"
+class="uri">https://estadistica-dma.ulpgc.es/cursoR4ULPGC/9e-grafPersp.html</a></p>
 <p><br/><br/></p>
 <div id="otras-alternativas" class="section level3">
 <h3><strong>Otras alternativas</strong></h3>
@@ -808,10 +828,12 @@ persp(x,y,z,theta = 20, phi = 20,expand=0.5, col = &quot;red&quot;,
 </div>
 <div id="otros-gráficos" class="section level2">
 <h2><strong>Otros gráficos</strong></h2>
-<p><span class="math display">\[f(x,y) = \left \{ \begin{matrix} \dfrac{2}{3}\Big(x+2y\Big) &amp; \mbox{ } 0 \leq x \leq 1\\ 
+<p><span class="math display">\[f(x,y) = \left \{ \begin{matrix}
+\dfrac{2}{3}\Big(x+2y\Big) &amp; \mbox{ } 0 \leq x \leq 1\\
                                      &amp; \mbox{ } 0 \leq y \leq 1 \\
                                      &amp;\\
-                                   0 &amp; \mbox{ en otro caso }\end{matrix}\right.  \]</span></p>
+                                   0 &amp; \mbox{ en otro caso
+}\end{matrix}\right.  \]</span></p>
 <pre class="r"><code>library(&quot;scatterplot3d&quot;)
 x &lt;- c(0,1,1,0,0) 
 y &lt;- c(0,0,1,1,0) 
@@ -834,7 +856,9 @@ z1=c(0,1,2,1)
 polygon(s$xyz.convert(x1,y1,z1),col=&quot;#8080FF99&quot;) # morado </code></pre>
 <p><img src="codigo302_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
 <p><br/><br/></p>
-<p><span class="math display">\[P(X \geq 0.5 ; Y \geq 0.5) = \int_{0.5}^{1} \int_{0.5}^{1} \dfrac{2}{3}\Big(x+2y\Big) \:dx \:dy\]</span></p>
+<p><span class="math display">\[P(X \geq 0.5 ; Y \geq 0.5) =
+\int_{0.5}^{1} \int_{0.5}^{1} \dfrac{2}{3}\Big(x+2y\Big) \:dx
+\:dy\]</span></p>
 <pre class="r"><code>library(&quot;scatterplot3d&quot;)
 x &lt;- c(0,1,1,0,0) 
 y &lt;- c(0,0,1,1,0) 
@@ -869,8 +893,10 @@ z7=c(0,0,1.5,1)
 polygon(s$xyz.convert(x7,y7,z7)) # </code></pre>
 <p><img src="codigo302_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
 <p><br/><br/></p>
-<p><span class="math display">\[f_{XY}(x,y)=\left\{\begin{matrix}\ \dfrac{48}{49} xy^{2} &amp; 3\leq x \leq 4, \hspace{.5cm} 0.5 \leq y \leq 1 \\ &amp; \\
- 0 &amp; \mbox{para cualquier otro caso} \end{matrix}\right.\]</span></p>
+<p><span class="math display">\[f_{XY}(x,y)=\left\{\begin{matrix}\
+\dfrac{48}{49} xy^{2} &amp; 3\leq x \leq 4, \hspace{.5cm} 0.5 \leq y
+\leq 1 \\ &amp; \\
+0 &amp; \mbox{para cualquier otro caso} \end{matrix}\right.\]</span></p>
 <pre class="r"><code> library(lattice)
 x=seq(3,4,by=0.03)
 y=seq(0.5,1,by=0.03)
