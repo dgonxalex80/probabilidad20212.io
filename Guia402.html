@@ -632,8 +632,8 @@ siguientes actividades</p>
 <tr class="odd">
 <td align="left"><strong>Actividad 1</strong></td>
 <td align="left">Construir un <strong>mapa mental</strong> sobre
-intervalos de confianza elaborado <strong>a mano</strong>, el cual
-deberá ser entregado en formato pdf</td>
+<strong>intervalos de confianza</strong> elaborado <strong>a
+mano</strong>, el cual deberá ser entregado en formato pdf</td>
 </tr>
 <tr class="even">
 <td align="left">Trabajo individual</td>
@@ -1573,12 +1573,12 @@ mx=apply(b,1,mean)                 # se calculan m medias por fila</code></pre>
 <pre class="r"><code>ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC método 1
 ic1</code></pre>
 <pre><code>    2.5%    97.5% 
-4.719750 6.408893 </code></pre>
+4.764286 6.454286 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC método 2
 ic2</code></pre>
-<pre><code>   97.5%     2.5% 
-4.640601 6.329744 </code></pre>
+<pre><code>  97.5%    2.5% 
+4.68282 6.37282 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>hist(mx, las=1, main=&quot; &quot;, ylab = &quot; &quot;, xlab = &quot; &quot;, col=c3)
 abline(v=ic1, col=&quot;red&quot;)
@@ -1925,15 +1925,28 @@ align="left"><code>nmu(1.96,345,2)     # nmu(z,sigma2,error)</code></td>
 </iframe>
 <p><br/><br/><br/><br/></p>
 </div>
-<div id="tutorial" class="section level1">
-<h1><strong>Tutorial</strong></h1>
+<div id="tutoriales" class="section level1">
+<h1><strong>Tutoriales</strong></h1>
 <p><br/><br/></p>
-<p>El siguiente código permite la activación de tutorial <br/><br/></p>
+<p>El siguiente código permite la activación de tutoriales :</p>
+<ul>
+<li>Taller-intervalos1</li>
+<li>Taller-intervalos2</li>
+</ul>
+<p><br/><br/></p>
 <pre class="r"><code>install.packages(&quot;learnr&quot;) # solo una vez
 install.packages(&#39;remotes&#39;)  # solo una vez
 library(remotes) # solo una vez
-install_github(&quot;dgonxalex80/paquetepye&quot;, force = TRUE) # solo una vez
-learnr::run_tutorial(&quot;Taller_Intervalos&quot;, &quot;paqueteDEG&quot;)</code></pre>
+install_github(&quot;dgonxalex80/paqueteDEG&quot;, force = TRUE) # solo una vez
+
+learnr::run_tutorial(&quot;Taller-Intervalos1&quot;, &quot;paqueteDEG&quot;)</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>install.packages(&quot;learnr&quot;) # solo una vez
+install.packages(&#39;remotes&#39;)  # solo una vez
+library(remotes) # solo una vez
+install_github(&quot;dgonxalex80/paqueteDEG&quot;, force = TRUE) # solo una vez
+
+learnr::run_tutorial(&quot;Taller-Intervalos2&quot;, &quot;paqueteDEG&quot;)</code></pre>
 </div>
 
 

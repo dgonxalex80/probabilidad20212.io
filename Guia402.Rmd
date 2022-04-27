@@ -72,7 +72,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 |Actividad      | Descripción                    | 
 |:--------------|:-----------------------------  |
-|**Actividad 1**    |Construir un **mapa mental** sobre intervalos de confianza elaborado **a mano**, el cual deberá ser entregado en formato pdf|
+|**Actividad 1**    |Construir un **mapa mental** sobre **intervalos de confianza** elaborado **a mano**, el cual deberá ser entregado en formato pdf|
 |Trabajo individual |  |
 |Fecha          | 2 de mayo  de 2022 |
 |Hora           | 23:59 hora local       |
@@ -836,21 +836,34 @@ $$n = \dfrac{N n_{0}}{N+n_{0}-1}$$
 
 <br/><br/><br/><br/>
 
-# **Tutorial**
+# **Tutoriales**
 
 <br/><br/>
 
-El siguiente código permite la activación de tutorial 
+El siguiente código permite la activación de tutoriales :
+
++ Taller-intervalos1
++ Taller-intervalos2
+
 <br/><br/>
 
 ```{r eval=FALSE}
 install.packages("learnr") # solo una vez
 install.packages('remotes')  # solo una vez
 library(remotes) # solo una vez
-install_github("dgonxalex80/paquetepye", force = TRUE) # solo una vez
-learnr::run_tutorial("Taller_Intervalos", "paqueteDEG")
+install_github("dgonxalex80/paqueteDEG", force = TRUE) # solo una vez
+
+learnr::run_tutorial("Taller-Intervalos1", "paqueteDEG")
 ```
 
+<br/><br/>
 
+```{r eval=FALSE}
+install.packages("learnr") # solo una vez
+install.packages('remotes')  # solo una vez
+library(remotes) # solo una vez
+install_github("dgonxalex80/paqueteDEG", force = TRUE) # solo una vez
 
+learnr::run_tutorial("Taller-Intervalos2", "paqueteDEG")
+```
 
