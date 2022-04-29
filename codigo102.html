@@ -14,7 +14,7 @@
 
 <title>Código 102</title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -921,6 +921,32 @@ documento tablas, indicadores o gráficos</p>
 R dentro de los cuales está RMardown</p>
 <p><a href="https://www.rstudio.com/resources/cheatsheets/"
 class="uri">https://www.rstudio.com/resources/cheatsheets/</a></p>
+</div>
+<div id="otros-formatos-de-tablas" class="section level2">
+<h2><strong>Otros formatos de tablas</strong></h2>
+<pre class="r"><code>df &lt;- data.frame(
+  id = 1:10,
+  name = c(&quot;Bob&quot;, &quot;Ashley&quot;, &quot;James&quot;, &quot;David&quot;, &quot;Jenny&quot;,
+    &quot;Hans&quot;, &quot;Leo&quot;, &quot;John&quot;, &quot;Emily&quot;, &quot;Lee&quot;),
+  age = c(28, 27, 30, 28, 29, 29, 27, 27, 31, 30),
+  grade = c(&quot;C&quot;, &quot;A&quot;, &quot;A&quot;, &quot;C&quot;, &quot;B&quot;, &quot;B&quot;, &quot;B&quot;, &quot;A&quot;, &quot;C&quot;, &quot;C&quot;),
+  test1_score = c(8.9, 9.5, 9.6, 8.9, 9.1, 9.3, 9.3, 9.9, 8.5, 8.6),
+  test2_score = c(9.1, 9.1, 9.2, 9.1, 8.9, 8.5, 9.2, 9.3, 9.1, 8.8),
+  final_score = c(9, 9.3, 9.4, 9, 9, 8.9, 9.25, 9.6, 8.8, 8.7),
+  registered = c(TRUE, FALSE, TRUE, FALSE, TRUE, TRUE, TRUE, FALSE, FALSE, FALSE),
+  stringsAsFactors = FALSE)
+df</code></pre>
+<pre><code>   id   name age grade test1_score test2_score final_score registered
+1   1    Bob  28     C         8.9         9.1        9.00       TRUE
+2   2 Ashley  27     A         9.5         9.1        9.30      FALSE
+3   3  James  30     A         9.6         9.2        9.40       TRUE
+4   4  David  28     C         8.9         9.1        9.00      FALSE
+5   5  Jenny  29     B         9.1         8.9        9.00       TRUE
+6   6   Hans  29     B         9.3         8.5        8.90       TRUE
+7   7    Leo  27     B         9.3         9.2        9.25       TRUE
+8   8   John  27     A         9.9         9.3        9.60      FALSE
+9   9  Emily  31     C         8.5         9.1        8.80      FALSE
+10 10    Lee  30     C         8.6         8.8        8.70      FALSE</code></pre>
 </div>
 </div>
 

@@ -13,7 +13,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,comment = NA)
 library(readr)
-# library(paquetepye)
+library(paqueteDEG)
 # colores
 c0="#0DA5A6" # VERDE CLARO
 c1="#E77C00" # NARANJA
@@ -29,6 +29,8 @@ library(readr)
 #datos <- read_csv("data/Datos_PyE.csv")
 #datos$notafin=as.numeric(datos$notafin)
 muestra1<- read_delim("data/base_muestreo.csv",delim = ";",escape_double = FALSE, trim_ws = TRUE)
+Colombia <- read_csv("data/Colombia.csv")
+
 ```
 
 # **Guía de aprendizaje 4.2**
@@ -247,7 +249,7 @@ $$n = \displaystyle\frac{z_{\alpha/2}^{2}\sigma^{2}}{e^{2}}$$
 			
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej2.png){width=120%} | Se desea estimar la media de las personas que han fallecido por Covid en Colombia, con una confianza del 98% y un error de muestro de 1 año. ¿Qué tamaño deberá tener la muestra para cumplir con estas condiciones?
+| ![](img/ej2.png){width=120%} | Se desea estimar la media de las personas que han fallecido por Covid19 en Colombia, con una confianza del 98% y un error de muestreo de 1 persona . ¿Qué tamaño deberá tener la muestra para cumplir con estas condiciones?
 
 <br/><br/>
 
@@ -255,27 +257,22 @@ $$n = \displaystyle\frac{z_{\alpha/2}^{2}\sigma^{2}}{e^{2}}$$
 
 Información:
 Confianza  : 98%  ($z_{\alpha/2}$)
-error de muestro : 1 año ($|\bar{x}-\mu| < e$)
+error de muestro : 3 una personas ($|\bar{x}-\mu| < e$)
 varianza : no tenemos la varianza y por tanto tenemos 3 alternativas :(1) mediante un estudio previo similar obtener el valor de la varianza,  (2) realizar una muestra piloto  que puede ser de n=40 y con ella estimar la varianza $s^{2}$, (3) preguntando a un experto sobre el valor del mínimo y el máximo de la variable se puede estimar la desviación estándar ($s=\frac{\max\{x\}+\min\{x\}}{2}$)   
 
 ```{r}
 # varianza
-s2.nota=var(muestra1$NF, na.rm = TRUE)
-# confianza
-alpha=1-.98
-za1.2=qnorm(1-alpha/2)
+s2.nota=var(sample(Colombia$edad, 100))
+# confianza : 1-a
+a=1-.98
 # error de nuestre
-e=1 # año
+e=3 # personas 
 
 # tamaño de muestra
-n=(za1.2)^2*(s2.nota)/(e^2)
-
+n=paqueteDEG::sizemu(qnorm(1-a/2),s2.nota,e)
 round(n,0)  # redondeo a entero
 ```
-```{r}
-# library(paquetepye)
-# nmu(qnorm(0.99),s2.edad,1)
-```
+
 
 
 <br/><br/><br/>
@@ -312,6 +309,8 @@ Supuesto:
 ```{r}
 prop.test(340,500)$conf.int
 ```
+
+
 De acuerdo con el resultado anterior, se puede afirmar con una confianza del 95% que entre el 63.7% y el 72.0% de las familias tienen una suscripción a HBO
 
 
@@ -331,7 +330,7 @@ Donde :
 
 |    |                                     |
 |:--:|:------------------------------------|
-| ![](img/ej4.png){width=120%} | Una empresa requiere realizar un estudio para establecer las proporción de fallas diarias que presta la empresa al presentar un servicio . El gerente encargado del estudio decide que la tasa de error máximo tolerable debe ser del 5% y el nivel de confianza del 99% . Con esta información una firma de consultora presenta una propuesta a la empresa por valor de \$110.2 millones para realizar el estudio y justifica su costo así: Por costos administrativos y de logística corresponde un valor de \$55.4 millones y cada encuesta realizada tiene un valor de $50 mil pesos. El Director de la empresa le encarga a usted revisar la información darle un concepto sobre la propuesta realizada por la firma de auditores a la mayor brevedad
+| ![](img/ej4.png){width=120%} | Una empresa requiere realizar un estudio para establecer las proporción de fallas diarias que presta la empresa al presentar un servicio . El gerente encargado del estudio decide que la tasa de error máximo tolerable debe ser del 5% y el nivel de confianza del 99% . Con esta información una firma de consultora presenta una propuesta a la empresa por valor de \$ 110.2 millones para realizar el estudio y justifica su costo así: Por costos administrativos y de logística corresponde un valor de \$ 55.4 millones y cada encuesta realizada tiene un valor de $50 mil pesos. El Director de la empresa le encarga a usted revisar la información darle un concepto sobre la propuesta realizada por la firma de auditores a la mayor brevedad
 
 <br/><br/>
 
@@ -343,10 +342,12 @@ Información de la solicitud:
   + Valor costos administrativos y logísticos : 25.4 millones
   + Valor encuestas : 110.2-55.4 = 54.8 millones
   + Número de encuestas propuestas a realizar : 1096
+  + nivel de confianza 99%
+  + error de muestreo 0.05
   
 ```{r}
-library(paquetepye)
-np(qnorm(0.995),0.5,0.05)
+library(paqueteDEG)
+paqueteDEG::sizep(qnorm(0.995),0.5,0.05)
 ```
 De acuerdo con la información sumunistrada por la empresa, el tamaño de muestra apropiado para la estimación de la proporción, suponiendo varianza máxima es de $n=664$, por tal razón la propuesta realiza por la empresa consultora excede en   432 encuesta que presentan un sobre costo de \$21.6 millones
   
@@ -389,14 +390,14 @@ $X\sim N(\mu,\sigma^{2})$
 ```{r}
 ecopetrol=c(2810, 2810,	2825, 2769, 2734, 2706,	2699, 2671, 2550, 2590,	2570, 2529,	2520, 2566,	2615, 2620, 2550, 2572,	2553, 2570,	2593, 2606)	
 
-ic.var=function(x){
-  n=length(x)
-  per.chi2=qchisq(c(0.975, 0.025), n-1)   # percentiles chi-cuadrado para 95% de confianza
-  icvar=(n-1)*var(x)/per.chi2
-  return(icvar)
-}
-ic.var(ecopetrol)        # intervalo de confianza para la varianza
-sqrt(ic.var(ecopetrol))  # intervalo de confianza para la desviación estandar
+cat("IC_var :", 
+    paqueteDEG::ic.var(ecopetrol)
+    )
+ # intervalo de confianza para la varianza
+cat("\n")
+cat("IC_sd :",
+    sqrt(paqueteDEG::ic.var(ecopetrol)) 
+    )# intervalo de confianza para la desviación estandar
 ```
 <br/><br/>
 
@@ -801,10 +802,10 @@ $$n = \dfrac{N n_{0}}{N+n_{0}-1}$$
 
 ![](img/Nota_R.png){width=10%}
 
-| parámetro        | código R                                       |
-|:----------------:|:-----------------------------------------------|
-|$\mu$             | `t.test(x, coef.level= 1−a)$conf.int`          |
-|$p$               | `prop.test(x,n, conf.level=0.95)$conf.int`          |
+| parámetro        | código R                                                |
+|:----------------:|:--------------------------------------------------------|
+|$\mu$             | `t.test(x, coef.level= 1−a)$conf.int`                   |
+|$p$               | `prop.test(x,n, conf.level=0.95)$conf.int`              |
 |$\mu_{1}-\mu_{2}$ | `t.test(datos1,datos2, paired=T)$conf.int`              |
 |                  | `t.test(datos1 datos2, var.equal=T)$conf.int`           |
 |                  | `t.test(datos1 datos2, var.equal=F)$conf.int`           |
@@ -812,10 +813,10 @@ $$n = \dfrac{N n_{0}}{N+n_{0}-1}$$
 |$\dfrac{\sigma^{2_{1}}}{\sigma^{2}_{2}}$|`var.test(datos1 datos2)$conf.int` |
 |                  | `install.packages("devtools")`                          |
 |                  | `devtools::install_github("dgonzalez80/paquetepye")`    |
-|                  |  `library(paquetepye)`                                   |
-|                  | `nmu(1.96,345,2)     # nmu(z,sigma2,error)`               |
-|                  | `np(1.96,0.5,0.05) # np(z,prob,error)`                  |
-|                  | `no(385,2000)   #  n0(n,N)`                          |
+|                  |  `library(paqueteDEG)`                                  |
+|                  | `paqueteDEG::sizemu(1.96,345,2)     # sizemu(z,sigma2,error)`|
+|                  | `paqueteDEG::sizep(1.96,0.5,0.05)   # sizep(z,prob,error)`   |
+|                  | `paqueteDEG::adjusted_size(385,2000) # adjusted_size(n,N)`   |
 
 
 </div>

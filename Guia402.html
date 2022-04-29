@@ -14,7 +14,7 @@
 
 <title>Estimación por intervalos de confianza</title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -892,42 +892,35 @@ class="math inline">\((1-\alpha)\%\)</span> de que el error no exceda
 <tr class="odd">
 <td align="center"><img src="img/ej2.png" style="width:120.0%" /></td>
 <td align="left">Se desea estimar la media de las personas que han
-fallecido por Covid en Colombia, con una confianza del 98% y un error de
-muestro de 1 año. ¿Qué tamaño deberá tener la muestra para cumplir con
-estas condiciones?</td>
+fallecido por Covid19 en Colombia, con una confianza del 98% y un error
+de muestreo de 1 persona . ¿Qué tamaño deberá tener la muestra para
+cumplir con estas condiciones?</td>
 </tr>
 </tbody>
 </table>
 <p><br/><br/></p>
 <p><strong>Solución</strong></p>
 <p>Información: Confianza : 98% (<span
-class="math inline">\(z_{\alpha/2}\)</span>) error de muestro : 1 año
-(<span class="math inline">\(|\bar{x}-\mu| &lt; e\)</span>) varianza :
-no tenemos la varianza y por tanto tenemos 3 alternativas :</p>
-<ul>
-<li><ol style="list-style-type: decimal">
-<li>mediante un estudio previo similar obtener el valor de la
-varianza,<br />
-</li>
-</ol></li>
-<li><ol start="2" style="list-style-type: decimal">
-<li>realizar una muestra piloto que puede ser de n=40 y con ella estimar
-la varianza <span class="math inline">\(s^{2}\)</span>,</li>
-</ol></li>
-<li><ol start="3" style="list-style-type: decimal">
-<li>preguntando a un experto sobre el valor del mínimo y el máximo de la
-variable se puede estimar la desviación estándar (<span
-class="math inline">\(s=\frac{\max\{x\}+\min\{x\}}{2}\)</span>)</li>
-</ol></li>
-</ul>
+class="math inline">\(z_{\alpha/2}\)</span>) error de muestro : 3 una
+personas (<span class="math inline">\(|\bar{x}-\mu| &lt; e\)</span>)
+varianza : no tenemos la varianza y por tanto tenemos 3 alternativas
+:(1) mediante un estudio previo similar obtener el valor de la varianza,
+(2) realizar una muestra piloto que puede ser de n=40 y con ella estimar
+la varianza <span class="math inline">\(s^{2}\)</span>, (3) preguntando
+a un experto sobre el valor del mínimo y el máximo de la variable se
+puede estimar la desviación estándar (<span
+class="math inline">\(s=\frac{\max\{x\}+\min\{x\}}{2}\)</span>)</p>
 <pre class="r"><code># varianza
-s2.NF=var(muestra1$NF, na.rm = TRUE)
-a=0.02  # 1-a : nivel de confianza
-z=qnorm(1-a/2) # percentil normal
-e=0.1 # error de muestreo
+s2.nota=var(sample(Colombia$edad, 100))
+# confianza : 1-a
+a=1-.98
+# error de nuestre
+e=3 # personas 
 
-paqueteDEG::sizemu(z,s2.NF,e)</code></pre>
-<pre><code>[1] 574.6503</code></pre>
+# tamaño de muestra
+n=paqueteDEG::sizemu(qnorm(1-a/2),s2.nota,e)
+round(n,0)  # redondeo a entero</code></pre>
+<pre><code>[1] 195</code></pre>
 <p><br/><br/><br/></p>
 </div>
 <div id="intervalos-de-confianza-para-la-proporción"
@@ -1012,9 +1005,9 @@ establecer las proporción de fallas diarias que presta la empresa al
 presentar un servicio . El gerente encargado del estudio decide que la
 tasa de error máximo tolerable debe ser del 5% y el nivel de confianza
 del 99% . Con esta información una firma de consultora presenta una
-propuesta a la empresa por valor de $110.2 millones para realizar el
+propuesta a la empresa por valor de $ 110.2 millones para realizar el
 estudio y justifica su costo así: Por costos administrativos y de
-logística corresponde un valor de $55.4 millones y cada encuesta
+logística corresponde un valor de $ 55.4 millones y cada encuesta
 realizada tiene un valor de $50 mil pesos. El Director de la empresa le
 encarga a usted revisar la información darle un concepto sobre la
 propuesta realizada por la firma de auditores a la mayor brevedad</td>
@@ -1023,16 +1016,13 @@ propuesta realizada por la firma de auditores a la mayor brevedad</td>
 </table>
 <p><br/><br/></p>
 <p><strong>Solución</strong></p>
-<p>Información de la solicitud:</p>
-<ul>
-<li>Objetivo : Analizar la propuesta realizada por la firma externa</li>
-<li>Valor total : 110.2 millones</li>
-<li>Valor costos administrativos y logísticos : 25.4 millones</li>
-<li>Valor encuestas : 110.2-55.4 = 54.8 millones</li>
-<li>Número de encuestas propuestas a realizar : 1096</li>
-</ul>
+<p>Información de la solicitud: + Objetivo : Analizar la propuesta
+realizada por la firma externa + Valor total : 110.2 millones + Valor
+costos administrativos y logísticos : 25.4 millones + Valor encuestas :
+110.2-55.4 = 54.8 millones + Número de encuestas propuestas a realizar :
+1096 + nivel de confianza 99% + error de muestreo 0.05</p>
 <pre class="r"><code>library(paqueteDEG)
-sizep(qnorm(0.995),0.5,0.05)</code></pre>
+paqueteDEG::sizep(qnorm(0.995),0.5,0.05)</code></pre>
 <pre><code>[1] 663.4897</code></pre>
 <p>De acuerdo con la información sumunistrada por la empresa, el tamaño
 de muestra apropiado para la estimación de la proporción, suponiendo
@@ -1087,16 +1077,16 @@ para la desviación estandar de los precios de los últimos 22 dias
 <p><br/><br/></p>
 <pre class="r"><code>ecopetrol=c(2810, 2810, 2825, 2769, 2734, 2706, 2699, 2671, 2550, 2590, 2570, 2529, 2520, 2566, 2615, 2620, 2550, 2572, 2553, 2570, 2593, 2606) 
 
-ic.var=function(x){
-  n=length(x)
-  per.chi2=qchisq(c(0.975, 0.025), n-1)   # percentiles chi-cuadrado para 95% de confianza
-  icvar=(n-1)*var(x)/per.chi2
-  return(icvar)
-}
-ic.var(ecopetrol)        # intervalo de confianza para la varianza</code></pre>
-<pre><code>[1]  5734.598 19785.968</code></pre>
-<pre class="r"><code>sqrt(ic.var(ecopetrol))  # intervalo de confianza para la desviación estandar</code></pre>
-<pre><code>[1]  75.72713 140.66260</code></pre>
+cat(&quot;IC_var :&quot;, 
+    paqueteDEG::ic.var(ecopetrol)
+    )</code></pre>
+<pre><code>IC_var : 9810.519 10202.94</code></pre>
+<pre class="r"><code> # intervalo de confianza para la varianza
+cat(&quot;\n&quot;)</code></pre>
+<pre class="r"><code>cat(&quot;IC_sd :&quot;,
+    sqrt(paqueteDEG::ic.var(ecopetrol)) 
+    )# intervalo de confianza para la desviación estandar</code></pre>
+<pre><code>IC_sd : 99.04807 101.0096</code></pre>
 <p><br/><br/></p>
 <p>Se estima con una confianza del 95% que la desviación estándar del
 precio de las acciones de Ecopetrol está entre $ 75.7 y $ 140.0</p>
@@ -1578,13 +1568,13 @@ mx=apply(b,1,mean)                 # se calculan m medias por fila</code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC método 1
 ic1</code></pre>
-<pre><code>   2.5%   97.5% 
-4.71000 6.49875 </code></pre>
+<pre><code>    2.5%    97.5% 
+4.764286 6.475714 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC método 2
 ic2</code></pre>
 <pre><code>   97.5%     2.5% 
-4.586167 6.374917 </code></pre>
+4.586269 6.297697 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>hist(mx, las=1, main=&quot; &quot;, ylab = &quot; &quot;, xlab = &quot; &quot;, col=c3)
 abline(v=ic1, col=&quot;red&quot;)
@@ -1831,24 +1821,11 @@ class="math inline">\(pq=0.5(1-0.5)=0.25\)</span></p></li>
 <li><p><span class="math inline">\(e\)</span> : error de muestreo <span
 class="math inline">\((|\widehat{p}-p|&lt; e)\)</span>.</p></li>
 </ul>
-<pre class="r"><code># Tamaño de muestra para estimar una proporcion
-#  Confianza del 95% : z=1.96
-#  Varianza maxima   : p=0.50
-# error de muestreo  : 0.03
-
-n1=paqueteDEG::sizep(1.96,0.50,0.03)     # sizemu(z,p,error)
-n1</code></pre>
-<pre><code>[1] 1067.111</code></pre>
 <p><br/><br/><br/></p>
 <p>En todos los casos si n/N&gt;0.05, debes de corregir por un factor de
 población finita</p>
 <p><span class="math display">\[n = \dfrac{N
 n_{0}}{N+n_{0}-1}\]</span></p>
-<pre class="r"><code># Suponga que N =2000
-# como n/N &gt; 0.05 , debemos corregir el valor de n
-
- paqueteDEG::adjusted_size(1068,2000)</code></pre>
-<pre><code>[1] 696.446</code></pre>
 <p><br/><br/><br/><br/></p>
 <div
 style="padding: 15px; border: 1px solid transparent; border-color: transparent; margin-bottom: 20px; border-radius: 4px; 
@@ -1859,7 +1836,7 @@ style="padding: 15px; border: 1px solid transparent; border-color: transparent; 
 <table>
 <colgroup>
 <col width="24%" />
-<col width="75%" />
+<col width="76%" />
 </colgroup>
 <thead>
 <tr class="header">
@@ -1911,7 +1888,7 @@ class="math inline">\(\dfrac{\sigma^{2_{1}}}{\sigma^{2}_{2}}\)</span></td>
 <tr class="odd">
 <td align="center"></td>
 <td
-align="left"><code>devtools::install_github("dgonxalex80/paqueteDEG")</code></td>
+align="left"><code>devtools::install_github("dgonzalez80/paquetepye")</code></td>
 </tr>
 <tr class="even">
 <td align="center"></td>
@@ -1920,17 +1897,17 @@ align="left"><code>devtools::install_github("dgonxalex80/paqueteDEG")</code></td
 <tr class="odd">
 <td align="center"></td>
 <td
-align="left"><code>sizemu(1.96,345,2)     # sizemu(z,sigma2,error)</code></td>
+align="left"><code>paqueteDEG::sizemu(1.96,345,2)     # sizemu(z,sigma2,error)</code></td>
 </tr>
 <tr class="even">
 <td align="center"></td>
 <td
-align="left"><code>sizep(1.96,0.5,0.05) # sicep(z,prob,error)</code></td>
+align="left"><code>paqueteDEG::sizep(1.96,0.5,0.05)   # sizep(z,prob,error)</code></td>
 </tr>
 <tr class="odd">
 <td align="center"></td>
 <td
-align="left"><code>adjusted_size(385,2000)   #  adjuste_size(n,N)</code></td>
+align="left"><code>paqueteDEG::adjusted_size(385,2000) # adjusted_size(n,N)</code></td>
 </tr>
 </tbody>
 </table>
