@@ -14,7 +14,7 @@
 
 <title>Estimación por intervalos de confianza</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -920,7 +920,7 @@ e=3 # personas
 # tamaño de muestra
 n=paqueteDEG::sizemu(qnorm(1-a/2),s2.nota,e)
 round(n,0)  # redondeo a entero</code></pre>
-<pre><code>[1] 195</code></pre>
+<pre><code>[1] 183</code></pre>
 <p><br/><br/><br/></p>
 </div>
 <div id="intervalos-de-confianza-para-la-proporción"
@@ -1569,12 +1569,12 @@ mx=apply(b,1,mean)                 # se calculan m medias por fila</code></pre>
 <pre class="r"><code>ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC método 1
 ic1</code></pre>
 <pre><code>    2.5%    97.5% 
-4.764286 6.475714 </code></pre>
+4.719750 6.401607 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC método 2
 ic2</code></pre>
 <pre><code>   97.5%     2.5% 
-4.586269 6.297697 </code></pre>
+4.593836 6.275693 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>hist(mx, las=1, main=&quot; &quot;, ylab = &quot; &quot;, xlab = &quot; &quot;, col=c3)
 abline(v=ic1, col=&quot;red&quot;)

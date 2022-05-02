@@ -15,8 +15,8 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,comment = NA)
 library(ggplot2)
-library(ggfortify)
-library(ggdistribute)
+library(ggfortify) 
+library(ggdistribute) # https://github.com/iamamutt/ggdistribute
 # colores
 c0="#0DA5A6" # VERDE CLARO
 c1="#E77C00" # NARANJA
@@ -125,7 +125,8 @@ Además de ellos  podrá complementar el tema con los capítulos 6 del libro de 
 
 # **Recursos**
 
-![](img/decision.png)
+<img src="img/decision.png" alt="" width="80%" height="80%" />
+
 <br/><br/>
 
 ## **Introducción**
@@ -138,6 +139,7 @@ El origen de los estudios, relacionados con las pruebas de hipótesis estadísti
 
 
 ![](img/prueba.jpg)
+
 Tomada de : https://pixabay.com/es/
 
 

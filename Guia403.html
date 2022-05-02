@@ -14,7 +14,7 @@
 
 <title>Pruebas de hipótesis</title>
 
-<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -750,7 +750,8 @@ PdeH</a></p>
 </div>
 <div id="recursos-1" class="section level1">
 <h1><strong>Recursos</strong></h1>
-<p><img src="img/decision.png" /> <br/><br/></p>
+<p><img src="img/decision.png" alt="" width="80%" height="80%" /></p>
+<p><br/><br/></p>
 <div id="introducción-1" class="section level2">
 <h2><strong>Introducción</strong></h2>
 <p><img src="img/pruebas1.png" /></p>
@@ -762,8 +763,8 @@ para ensayar su hipótesis en el campo de la astronomía. Entre 1915 y
 por tres grandes autores: Ronald Fisher(2), Jerzy Neyman(3) y Egon
 Pearson(4). Hoy en día predomina la teoría de Neyman-Pearson (lema de
 Neyman-Pearson).</p>
-<p><img src="img/prueba.jpg" /> Tomada de : <a
-href="https://pixabay.com/es/"
+<p><img src="img/prueba.jpg" /></p>
+<p>Tomada de : <a href="https://pixabay.com/es/"
 class="uri">https://pixabay.com/es/</a></p>
 <p>Una hipótesis estadística es una afirmación o conjetura acerca de los
 parámetros de la distribución de probabilidades de una población. Si la
@@ -1490,12 +1491,12 @@ t.test(pant, pdes,
 
 data:  pant and pdes
 t = 1.2736, df = 15, p-value = 0.8889
-alternative hypothesis: true difference in means is less than 0
+alternative hypothesis: true mean difference is less than 0
 95 percent confidence interval:
      -Inf 19.75467
 sample estimates:
-mean of the differences 
-                 8.3125 </code></pre>
+mean difference 
+         8.3125 </code></pre>
 <p><br/></p>
 <p><strong>Conclusión</strong></p>
 <p>Como el valor-p ( 0.8889) es mayor que nuestro nivel de significancia
@@ -1916,6 +1917,7 @@ valor-p)</p>
 puede afirmar que las personas tienen la creencia que el deporte afecta
 positivamente su imagen.</p>
 <pre class="r"><code>library(BSDA)</code></pre>
+<pre><code>Loading required package: lattice</code></pre>
 <pre><code>
 Attaching package: &#39;BSDA&#39;</code></pre>
 <pre><code>The following object is masked from &#39;package:datasets&#39;:
@@ -2481,7 +2483,8 @@ runs.test(y)</code></pre>
     Runs Test
 
 data:  y
-statistic = 0, runs = 51, n1 = 50, n2 = 50, n = 100, p-value = 1
+statistic = 0.20102, runs = 52, n1 = 50, n2 = 50, n = 100, p-value =
+0.8407
 alternative hypothesis: nonrandomness</code></pre>
 <p><strong>Conclusión</strong></p>
 <p>Como el valor-p (0.3149) es mayor al nivel de significancia, no se
@@ -2516,7 +2519,7 @@ plot(density(x), main=&quot; &quot;, las=1, xlab = &quot; &quot;, ylab=&quot; &q
     Shapiro-Wilk normality test
 
 data:  x
-W = 0.99361, p-value = 0.5442</code></pre>
+W = 0.99491, p-value = 0.737</code></pre>
 <p>Esta prueba no requiere la instalación de paquetes adicionales, pues
 está disponible en la configuración básica de R</p>
 <p>Como el valor-p es superior al nivel de significancia <span
@@ -2532,19 +2535,19 @@ jb.norm.test(x)  # Test de normalidad de Jarque-Bera</code></pre>
     Jarque-Bera test for normality
 
 data:  x
-JB = 2.0272, p-value = 0.3105</code></pre>
+JB = 0.80845, p-value = 0.6485</code></pre>
 <pre class="r"><code>kurtosis.norm.test(x)</code></pre>
 <pre><code>
     Kurtosis test for normality
 
 data:  x
-T = 2.9429, p-value = 0.869</code></pre>
+T = 3.2221, p-value = 0.495</code></pre>
 <pre class="r"><code>skewness.norm.test(x)   </code></pre>
 <pre><code>
     Skewness test for normality
 
 data:  x
-T = 0.24495, p-value = 0.1455</code></pre>
+T = -0.10918, p-value = 0.5095</code></pre>
 <pre class="r"><code># install.packages(&quot;nortets&quot;)
 library(nortest)
 
@@ -2553,13 +2556,13 @@ lillie.test(x) # Kolmogorov-Smirnov</code></pre>
     Lilliefors (Kolmogorov-Smirnov) normality test
 
 data:  x
-D = 0.044129, p-value = 0.4469</code></pre>
+D = 0.047851, p-value = 0.3198</code></pre>
 <pre class="r"><code>pearson.test(x) # chi-cuadrado de Pearson</code></pre>
 <pre><code>
     Pearson chi-square normality test
 
 data:  x
-P = 6.72, p-value = 0.945</code></pre>
+P = 12.16, p-value = 0.5935</code></pre>
 <p><br/><br/></p>
 <p><br/><br/><br/><br/></p>
 </div>
