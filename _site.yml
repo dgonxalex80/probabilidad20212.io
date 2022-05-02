@@ -115,6 +115,8 @@ navbar:
           href: Actividad332.html
         - text: "SEP-parte A"
           href: SEP_parteA.html
+        - text: "Trabajo Final"
+          href: Guia_Trabajo.html
           
 output:
   html_document:
