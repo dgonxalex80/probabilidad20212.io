@@ -391,12 +391,12 @@ $X\sim N(\mu,\sigma^{2})$
 ecopetrol=c(2810, 2810,	2825, 2769, 2734, 2706,	2699, 2671, 2550, 2590,	2570, 2529,	2520, 2566,	2615, 2620, 2550, 2572,	2553, 2570,	2593, 2606)	
 
 cat("IC_var :", 
-    paqueteDEG::ic.var(ecopetrol)
+    paqueteDEG::intervalo.var(ecopetrol)
     )
  # intervalo de confianza para la varianza
 cat("\n")
 cat("IC_sd :",
-    sqrt(paqueteDEG::ic.var(ecopetrol)) 
+    sqrt(paqueteDEG::intervalo.var(ecopetrol)) 
     )# intervalo de confianza para la desviación estandar
 ```
 <br/><br/>

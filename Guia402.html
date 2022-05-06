@@ -550,7 +550,7 @@ div.tocify {
       <a href="SEP_parteA.html">SEP-parte A</a>
     </li>
     <li>
-      <a href="Guia_Trabajo.html">Trabajo Final</a>
+      <a href="Trabajo_Final.html">Trabajo Final</a>
     </li>
   </ul>
 </li>
@@ -1081,13 +1081,13 @@ para la desviación estandar de los precios de los últimos 22 dias
 <pre class="r"><code>ecopetrol=c(2810, 2810, 2825, 2769, 2734, 2706, 2699, 2671, 2550, 2590, 2570, 2529, 2520, 2566, 2615, 2620, 2550, 2572, 2553, 2570, 2593, 2606) 
 
 cat(&quot;IC_var :&quot;, 
-    paqueteDEG::ic.var(ecopetrol)
+    paqueteDEG::intervalo.var(ecopetrol)
     )</code></pre>
 <pre><code>IC_var : 9810.519 10202.94</code></pre>
 <pre class="r"><code> # intervalo de confianza para la varianza
 cat(&quot;\n&quot;)</code></pre>
 <pre class="r"><code>cat(&quot;IC_sd :&quot;,
-    sqrt(paqueteDEG::ic.var(ecopetrol)) 
+    sqrt(paqueteDEG::intervalo.var(ecopetrol)) 
     )# intervalo de confianza para la desviación estandar</code></pre>
 <pre><code>IC_sd : 99.04807 101.0096</code></pre>
 <p><br/><br/></p>
