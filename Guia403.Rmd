@@ -1160,7 +1160,7 @@ El paquete `paquetepye` si debe ser instalado cada vez que sea utilizado con el 
 ```{r eval=FALSE}
 install.packages("learnr") # solo una vez
 install.packages("devtools") # solo una vez
-devtools::install_github("dgonzalez80/paqueteDEG")
+devtools::install_github("dgonxalex80/paqueteDEG")
 learnr::run_tutorial("Taller_pruebas1", "paqueteDEG")
 ```
 
