@@ -63,7 +63,7 @@ Unión del $A$ con el conjunto $B$.\hspace{.4cm} $A \cup B$, $\overline{A}$ ,$A 
 |:--:|:------------------------------------|
 | ![](img/ej1.png)|Supongamos los siguientes conjuntos : $A = \{a,e,i,o,u \}$ y $B = \{1,2,3,4,5,6,7,8,9,0\}$ |
  
- $A \cup B \{a,e,i,o,u, 1,2,3,4,5,6,7,8,9,0 \}$ 
+ $A \cup B = \{a,e,i,o,u, 1,2,3,4,5,6,7,8,9,0 \}$ 
  
  <br/><br/>
  
