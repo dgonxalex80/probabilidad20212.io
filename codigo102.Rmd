@@ -79,7 +79,7 @@ Utilizaremos en este caso  la función **table()**
 ```{r}
 ft1=table(ventas$Metodo_Pago)%>% 
         as.data.frame()
-colnames(ft1)=c("Tipo de tarjeta", "Frecuencia")
+colnames(ft1)=c("Tipo de tarjeta", "Frecuencia Absoluta")
 ft1=flextable(ft1)
 
 set_flextable_defaults(
@@ -333,7 +333,6 @@ Para ello utilizamos el botón **+c** ubicado en la barra superior de la ventana
 Dentro de este bloque podemos correr codigo R y asi ubicar dentro del documento tablas, indicadores o gráficos
 
 ![](img/Rmd3.png){width=400px} 
-
 
 En la siguiente página pueden encotrar resumen de varios paquetes de R dentro de los cuales está RMardown
 
