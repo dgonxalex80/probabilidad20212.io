@@ -13,7 +13,8 @@ output:
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, comment = NA)
 library(psych)
 library(summarytools)
-
+library(flextable)
+library(tidyverse)
 # colores
 c0="#0DA5A6" # VERDE CLARO
 c1="#E77C00" # NARANJA
@@ -76,13 +77,48 @@ Iniciaremos con la construcción de tablas para variables cualitativas en escala
 Utilizaremos en este caso  la función **table()**
 
 ```{r}
-table(ventas$Metodo_Pago)
+ft1=table(ventas$Metodo_Pago)%>% 
+        as.data.frame()
+colnames(ft1)=c("Tipo de tarjeta", "Frecuencia")
+ft1=flextable(ft1)
+
+set_flextable_defaults(
+  font.size = 10, font.family = "Helvetica",
+  font.color = "#333333",
+  table.layout = "fixed",
+  border.color = "gray",
+  padding.top = 3, padding.bottom = 3,
+  padding.left = 4, padding.right = 4)
+
+ft1 <- ft1 %>%
+    width(j = 1,  width = 2) %>%
+    width(j = 2, width = 1)
+ft1
+
+
 ```
 El resultado corresponde a un conteo de cada uno de los valores de la variable.  En caso de que se requiera calcular la proporción que corresponde cada caso utilizamos la función : **prop.table()** y se la aplicamos a la tabla anterior
 
 ```{r}
-t1=table(ventas$Metodo_Pago)
-prop.table(t1)
+ft2=table(ventas$Metodo_Pago)%>%
+       prop.table() %>% 
+          as.data.frame()
+colnames(ft2)=c("Tipo de tarjeta", "Frecuencia relativa")
+ft2=flextable(ft2)
+
+set_flextable_defaults(
+  font.size = 10, font.family = "Helvetica",
+  font.color = "#333333",
+  table.layout = "fixed",
+  border.color = "gray",
+  padding.top = 3, padding.bottom = 3,
+  padding.left = 4, padding.right = 4)
+
+ft2 <- ft2 %>%
+    width(j = 1,  width = 2) %>%
+    width(j = 2, width = 1)
+ft2
+
 ```
 Si utilizamos la función **freq** del paquete summarytools, la salida es una tabla más elaborada 
 
@@ -142,7 +178,7 @@ En este caso vamos a seleccionar los rangos de edad y luego construimos la tabla
 
 ```{r}
 Fallecidos=subset(Colombia, estado=="fallecido")
-breaks=seq(0,110, by=10)
+breaks=seq(0,110, by=20)
 Edad.fallecidos=cut(Fallecidos$edad, breaks)
 summarytools::freq(Edad.fallecidos)
 ```
@@ -165,9 +201,14 @@ data.frame(LI,LS,FreAbs,FreRel, FreAbAc, FreRAc)
 ```{r}
 table(Colombia$ubicacion, Colombia$estado)
 ```
+
+
 ```{r}
-tabla1=table(Colombia$ubicacion, Colombia$estado)
-prop.table(tabla1)
+tabla1=table(Colombia$ubicacion, Colombia$estado) %>% 
+            prop.table()*100 
+            
+                         
+tabla1
 ```
 
 
