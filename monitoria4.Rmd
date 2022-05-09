@@ -298,3 +298,25 @@ De acuerdo con los resultados podría decirse que la campaña realizada es efect
 ```{r }
 prop.test(c(40,50), c(200,200),  conf.level = 0.95)
 ```
+
+
+# **Taller 432**
+
+
+# **Actividad M&M**
+
+El sitio web de la compañía Mars publica los siguientes porcentajes de los distintos colores de sus dulces M&M para la variedad de chocolate candies de 49.3 g.
+
+
+```{r, echo=FALSE, out.width="40%", fig.align = "center"}
+knitr::include_graphics("img/peanutmm.jpg")
+```
+
+|café  | amarillo | rojo | azul | naranja | verde |
+|:----:|:--------:|:----:|:----:|:-------:|:------|
+| 13%  | 14%      | 13%  | 24%  | 20%     | 16%   |
+
+
+Con la información recogia por los estudiantes en la hoja electrónica ubicada el [sitio](https://docs.google.com/spreadsheets/d/16h5EjYzy1MKBS4z11CQyOeseCM08i7Hzyyqk-EAFjGY/edit?usp=sharing)  se puede afirmar que los datos obtenidos respaldan la información suministrada por la compañia en su pagina?. Use una prueba de hipótesis apropiada. Adjunte el proceso realizado
+
+
