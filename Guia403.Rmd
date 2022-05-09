@@ -361,7 +361,7 @@ p
 
 <br/><br/>
 
-**Regla 2**: Si $\alpha <$ **valor-p** entonces rechazamos $H_{0}$, se **acepta** $H_{a}$. Si por el contrario $\alpha >$ valor-p, no rechazamos $H_{0}$, **asumimos** 	que $H_{0}$ es verdad. 
+**Regla 2**: Si $\alpha >$ **valor-p** entonces rechazamos $H_{0}$, se **acepta** $H_{a}$. Si por el contrario $\alpha >$ valor-p, no rechazamos $H_{0}$, **asumimos** 	que $H_{0}$ es verdad. 
 
 <br/><br/><br/>
 
