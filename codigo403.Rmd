@@ -51,7 +51,7 @@ shapiro.test(w)  # verificación de normalidad
 
 <br/><br/><br/>
 
-### **Prueba de hipótesis para una media**
+**Prueba de hipótesis para una media**
 
 <br/>
 
@@ -273,7 +273,7 @@ t.test(g1,g2)
 
 # **Pruebas no paramétricas**
 
-## **de rachas**
+**de rachas**
 
 ```{r}
 
@@ -287,7 +287,7 @@ runs.test(rachas,alternative = "left.sided",threshold = 0.5,pvalue = "exact",plo
 
 <br/><br/><br/>
 
-# **Pruebas de normalidad**
+**Pruebas de normalidad**
 
 Existen varias pruebas de hipótesis para verificar si una variable tiene un comportamiento aproximadamente normal.En todos los casos las hipótesis planteadas son:
 
@@ -308,7 +308,7 @@ plot(density(x), las=1)
 
 <br/><br/>
 
-## **Shapiro Wilk**
+**Shapiro Wilk**
 
 ```{r}
 shapiro.test(x)
@@ -318,7 +318,7 @@ Esta prueba no requiere la instalación de paquetes adicionales, está disponibl
 
 <br/><br/>
 
-## **Paquete normtest**
+**Paquete normtest**
 
 Las siguientes pruebas requieren instalar y cargar el paquete: `normtest`
 
@@ -329,7 +329,7 @@ Las siguientes pruebas requieren instalar y cargar el paquete: `normtest`
 
 <br/><br/>
 
-## **Jarque-Bera ajustado**
+**Jarque-Bera ajustado**
 
 ```{r}
 ajb.norm.test(x)	
@@ -337,7 +337,7 @@ ajb.norm.test(x)
 
 <br/><br/>
 
-## **Frosini**
+**Frosini**
 
 ```{r}
 frosini.norm.test(x)	
@@ -345,7 +345,7 @@ frosini.norm.test(x)
 
 <br/><br/>
 
-## **Geary**
+**Geary**
 
 ```{r}
 geary.norm.test(x)	
@@ -353,7 +353,7 @@ geary.norm.test(x)
 
 <br/><br/>
 
-## **Hagazy-Green 1**
+**Hagazy-Green 1**
 
 ```{r}
 hegazy1.norm.test(x)	
@@ -361,7 +361,7 @@ hegazy1.norm.test(x)
 
 <br/>
 
-## **Hagazy-Green 2**
+**Hagazy-Green 2**
 
 ```{r}
 hegazy2.norm.test(x)
@@ -369,7 +369,7 @@ hegazy2.norm.test(x)
 
 <br/><br/>
 
-## **Jarque-Bera**
+**Jarque-Bera**
 
 ```{r}
 jb.norm.test(x)	
@@ -377,7 +377,7 @@ jb.norm.test(x)
 
 <br/><br/>
 
-## **de kurtosis**
+**de kurtosis**
 
 ```{r}
 kurtosis.norm.test(x)
@@ -385,7 +385,7 @@ kurtosis.norm.test(x)
 
 <br/><br/>
 
-## **de sesgo**
+**de sesgo**
 
 ```{r}
 skewness.norm.test(x)	
@@ -393,7 +393,7 @@ skewness.norm.test(x)
 
 <br/><br/>
 
-## **Spiegelhalter**
+**Spiegelhalter**
 
 ```{r}
 spiegelhalter.norm.test(x)	
@@ -401,7 +401,7 @@ spiegelhalter.norm.test(x)
 
 <br/><br/>
 
-## **Weisberg-Bingham**
+**Weisberg-Bingham**
 
 ```{r}
 wb.norm.test(x)	
@@ -409,7 +409,7 @@ wb.norm.test(x)
 
 <br/><br/><br/>
 
-## **Paquete nortest**
+### **Paquete nortest**
 
 Las siguientes pruebas requieren instalar y cargar el paquete: `nortest`
 
@@ -420,7 +420,7 @@ Las siguientes pruebas requieren instalar y cargar el paquete: `nortest`
 
 <br/>
 
-## **Anderson-Darling**
+**Anderson-Darling**
 
 ```{r}
 ad.test(x)
@@ -428,7 +428,7 @@ ad.test(x)
 
 <br/>
 
-## **Cramer-von Mises**
+**Cramer-von Mises**
 
 ```{r}
 cvm.test(x)
@@ -437,7 +437,7 @@ cvm.test(x)
 
 <br/>
 
-## **Lilliefors (Kolmogorov-Smirnov)**
+**Lilliefors (Kolmogorov-Smirnov)**
 
 ```{r}
 lillie.test(x)
@@ -445,7 +445,7 @@ lillie.test(x)
 
 <br/>
 
-## **chi-cuadrado de Pearson**
+**chi-cuadrado de Pearson**
 
 ```{r}
 pearson.test(x)
@@ -453,7 +453,7 @@ pearson.test(x)
 
 <br/>
 
-## **Shapiro-Francia**
+**Shapiro-Francia**
 
 ```{r}
 sf.test(x)

@@ -123,7 +123,7 @@ Además de ellos  podrá complementar el tema con los capítulos 6 del libro de 
 
 <br/><br/><br/><br/>
 
-# **Recursos**
+# **PdeH paramétricas**
 
 <img src="img/decision.png" alt="" width="80%" height="80%" />
 
@@ -156,23 +156,23 @@ Desde el punto de vista clásico, todas las pruebas de hipótesis trabajan en ba
 
 <br/><br/>
 
-## **Conceptos básicos** 
+### **Conceptos básicos** 
 
 <br/><br/>
 
-## **Hipótesis Nula (Ho)** 
+### **Hipótesis Nula (Ho)** 
 
 Es la hipótesis a probar, ésta NO se rechaza si de la muestra no se obtiene suficiente evidencia para rechazarla.
 
 <br/><br/>
 
-## **Hipótesis Alterna (Ha)** 
+### **Hipótesis Alterna (Ha)** 
 
 La hipótesis $Ho$ se contrasta con la hipótesis Ha, y ésta última corresponde a valores alternativos del parámetro planteados en la hipótesis nula. La hipótesis $Ha$ se considera cierta si existe suficiente evidencia para rechazar la hipótesis nula.
 
 <br/><br/>
 
-## **Estadístico de Prueba**  
+### **Estadístico de Prueba**  
 
 Es una función de la muestra que contiene información sobre el parámetro de interés, la que nos permite decidir sobre el rechazo de la hipótesis nula, $Ho$ . Es tambien una variable aleatoria que sigue una función de distribución conocida como por ejemplo:
 
@@ -180,7 +180,7 @@ Para una muestra determinada se obtiene un valor del estadístico de prueba, a p
 
 <br/><br/>
 
-## **Región de Rechazo (RdeR)**  
+### **Región de Rechazo (RdeR)**  
 
 También llamada región crítica (RC), define los valores del estadístico de prueba para los cuales la información muestral contradice la hipótesis nula. Estos valores nos permitirán adoptar una regla de decisión consistente. Una prueba de una hipótesis estadística es un procedimiento que permite, mediante el contraste entre la información muestral y lo propuesto en una hipótesis, decidir sobre
 su rechazo. 
@@ -190,13 +190,13 @@ su rechazo.
 
 <br/><br/>
 
-## **Regla de Decisión (RD)**  
+### **Regla de Decisión (RD)**  
 
 De esta manera, como una regla de decisión, si para una muestra particular el estadístico de prueba (valor calculado) cae dentro de la región crítica, rechazaremos la hipótesis nula $H_{o}$ en favor de la hipótesis alternativa $H_{a}$. En cambio, si el valor calculado no cae dentro de la RC, no podremos rechazar la hipótesis nula y por tanto decimos que la información contenida en la muestra no ofrece suficiente evidencia estadística que nos permita rechazar $Ho$, ASUMIMOS que la hipótesis nula es cierta. 
 
 <br/><br/>
 
-## **Errores asociados**
+### **Errores asociados**
 
 Cuando se decide ya sea en favor o en contra de una determinada prueba de hipótesis, es posible estar en una de las cuatro situaciones descritas en la siguiente tabla:
 
@@ -236,20 +236,20 @@ $$P(\text{No rechazar} Ho | Ho \text{ es falsa}) $$
 
 <br/><br/>
 
-## **Nivel de significancia ($\alpha$)**  
+### **Nivel de significancia ($\alpha$)**  
 
 No es posible minimizar simultáneamente, las probabilidades de los errores tipo I y II, ya que en la medida que uno disminuye el otro aumenta, como se muestra en la figura siguiente, en la que claramente se ve que la reducción del área $\alpha$ (probabilidad de error tipo I), implica el aumento del área $\beta$ (probabilidad de error tipo II).
 
 
 <br/><br/><br/><br/>
 
-## **Pruebas paramétricas**
+**Pruebas paramétricas**
 
 Se llaman pruebas de hipótesis metrificaras debido a que para su realización se deben verificar el cumplimiento de supuestos sobre parámetros. 
 
 <br/><br/>
 
-## **Una población**
+### **Una población**
 
 Los parámetros más importante a los que se les realizan pruebas de hipótesis son : $\mu$, $p$ y $\sigma^{2}$, en el caso de una población :  
 
@@ -365,7 +365,7 @@ p
 
 <br/><br/><br/>
 
-## **Valor-p** 
+### **Valor-p** 
 
 El valor-p corresponde al área delimitada por el $EdeP$ en el sentido que indica la $RdeR$ de la prueba a contrastar. Es decir que corresponde a la probilidad  máxima de cometer error tipo I.
 
@@ -622,7 +622,7 @@ Analizando el resultado de la prueba t-Student, el valor-p resultante (3.781e-12
 
 <br/><br/><br/><br/>
 
-### **diferencia de proporciones**
+## **Diferencia de proporciones**
 
 |    |                                     |
 |:--:|:------------------------------------|
@@ -649,7 +649,7 @@ Como el valor-p ( 0.4896) es mayor al nivel de significancia, no se rechaza la h
 
 <br/><br/><br/><br/>
 
-## **Pruebas no paramétricas**
+# **PdeH no paramétricas**
 
 Hasta el momento nos hemos dedicado a la estadística parametrica, que exige la estimación de parámetros y de la comprobación de supuestos sobre las distribuciones de las variables, como por ejemplo que se distribuyan normal.
 
@@ -741,7 +741,7 @@ SIGN.test(x.img,md=15,alternative = "greater")
 
 <br/><br/>
 
-## **P. chi-cuadrado de bondad de ajuste **
+## **P. $\chi^{2}$ de bondad de ajuste **
 
 |            |                                                                 |
 |:---------- |:----------------------------------------------------------------|
@@ -799,7 +799,7 @@ chisq.test(x=obs.nf,p=esp.nf)
 
 <br/><br/>
 
-## **P. chi-cuadrado de independencia**
+## **P. $\chi^{2}$ de independencia**
 
 <br/><br/>
 
@@ -848,7 +848,7 @@ Como p-value = 0.1543 lo podemos considerar grande, no se rechaza $Ho$, asumimos
 
 <br/><br/><br/>
 
-### **P. de Wilcoxon**
+## **P. de Wilcoxon**
 
 |            |                                                                 |
 |:---------- |:----------------------------------------------------------------|
@@ -951,7 +951,7 @@ En este caso se utiliza el coeficiente de correlación de Sperman para valorar l
 
 <br/><br/>
 
-## **P. de rachas**
+## **P. de Rachas**
 
 |    |                                     |
 |:--:|:------------------------------------|
@@ -1029,7 +1029,7 @@ pearson.test(x) # chi-cuadrado de Pearson
 
 <br/><br/><br/><br/>
 
-## **Resumen**
+# **Resumen**
 
 <br/><br/>
 
@@ -1074,7 +1074,7 @@ pearson.test(x) # chi-cuadrado de Pearson
 ![](img/pruebas.png)
 <br/><br/>
 
-## **Código R**
+# **Código R**
 
 |                   |                                                          |
 |:------------------|:---------------------------------------------------------|
@@ -1133,7 +1133,7 @@ pearson.test(x) # chi-cuadrado de Pearson
 
 
 
-## **Videos**
+# **Videos**
 
 <br/><br/>
 
@@ -1146,7 +1146,8 @@ pearson.test(x) # chi-cuadrado de Pearson
 ## **Video no paramétricas**
 <iframe width="560" height="315" src="https://www.youtube.com/embed/m3YIdS2TVHk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## **Tutorial**
+
+# **Tutorial**
 
 <br/><br/>
 
