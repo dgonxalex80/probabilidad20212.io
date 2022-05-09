@@ -824,8 +824,8 @@ chisq.test(x=obs.nf,p=esp.nf)
 
 |                                                                                |
 |:-------------------------------------------------------------------------------|
-| $Ho$ : Las variables lugar de residencia e calificación son independientes     |
-| $Ha$ : Las variables lugar de residencia e calificación no son independientes  |
+| $Ho$ : Las variables lugar de residencia y calificación son independientes     |
+| $Ha$ : Las variables lugar de residencia y calificación no son independientes  |
 |                                                                                |
 
 El siguiente código da solución a la constrastación de las hipótesis
