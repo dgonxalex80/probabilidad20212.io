@@ -337,7 +337,7 @@ A un nivel de significancia de $0.05$ pruebe la hipótesis de que la distribuci�
 
 Una muestra aleatoria de 90 adultos se ckasifica de acuerdo al genero y el número de horas que dedica a ver la televisión durante una semana:
 
-| horas \ genero   | Masculino      | Femenino         |
+|         genero   | Masculino      | Femenino         |
 |-----------------:|:--------------:|:----------------:|
 | más de 25 horas  | 15             | 29               |
 | menos de 25 horas| 27             | 19               |
