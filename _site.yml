@@ -117,6 +117,8 @@ navbar:
           href: SEP_parteA.html
         - text: "Trabajo Final"
           href: Trabajo_Final.html
+        - text: "Caso C&A"
+          href: casoCyA.html
           
 output:
   html_document:
