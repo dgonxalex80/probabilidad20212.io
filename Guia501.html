@@ -754,7 +754,7 @@ aleatorias, las cuales se puede medir a través del coeficiente de
 correlación (<span class="math inline">\(\rho\)</span>), el cual puede
 presentar valores desde -1 hasta 1 como se representa en las siguientes
 gráficas :</p>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-1-1.png" width="768" /><img src="Guia501_files/figure-html/unnamed-chunk-1-2.png" width="768" /><img src="Guia501_files/figure-html/unnamed-chunk-1-3.png" width="768" /><img src="Guia501_files/figure-html/unnamed-chunk-1-4.png" width="768" /><img src="Guia501_files/figure-html/unnamed-chunk-1-5.png" width="768" /></p>
+<p><img src="Guia501_files/figure-html/b1-1.png" width="768" /><img src="Guia501_files/figure-html/b1-2.png" width="768" /><img src="Guia501_files/figure-html/b1-3.png" width="768" /><img src="Guia501_files/figure-html/b1-4.png" width="768" /><img src="Guia501_files/figure-html/b1-5.png" width="768" /></p>
 <p><br/><br/></p>
 <p>La primera gráfica y la última gráfica representan relaciones
 perfectas entre dos variables, que tan solo se presentan cuando la
@@ -934,14 +934,14 @@ y=c(16.2,8.5,15,17,24.2,11.2,15,7.1,3.5,11.5,10.7,9.2)
 
 plot(x,y, xlab = &quot;Ingresos&quot;, ylab = &quot;Consumo&quot;,
 pch=21, bg=&quot;blue&quot;, xlim=c(0,35), ylim=c(0,25), las=1)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b2-1.png" width="672" /></p>
 <p><br/><br/></p>
 <p>En la gráfica se puede observar una nube de puntos que sugieren una
 relación positiva entre las dos variables. El objetivo entonces es
 determinar una ecuación que permita estimar esta relación que en este
 caso se representa por una linea recta (<span
 class="math inline">\(y=a+bx\)</span>).</p>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b3-1.png" width="672" /></p>
 <p><br/><br/></p>
 <p>Esta recta representa la relación lineal entre las dos variables, en
 este caso tiene una pendiente positiva que mide la magnitud del cambio
@@ -1051,7 +1051,8 @@ heteriscedastucidad</td>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>lmtest::gqtest(y~x)</code></pre>
+<pre class="r"><code>library(lmtest)
+gqtest(y~x)</code></pre>
 <pre><code>
     Goldfeld-Quandt test
 
@@ -1398,7 +1399,7 @@ producto final</p>
     x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995, 1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995, 1.955)
 
 plot(x,y, xlab = &quot;peso inicial&quot;, ylab = &quot;peso final&quot;, pch=21, bg=&quot;blue&quot;, las=1)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b12-1.png" width="672" /></p>
 <p><br/><br/></p>
 <p>En la gráfica se puede observar que existe una posible relación
 positiva entre las variables, la cual se puede representar a través de
@@ -1702,7 +1703,7 @@ suponer la varianza de los errores es constante.</p>
 <pre class="r"><code># Diagrama de dispersión X vs Y
         plot(y,x, main=&quot;Diagrama de dispersión&quot;,xlab=&quot;X:Peso inicial&quot;, 
              ylab=&quot;Y:Peso final&quot;, pch=19)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b20-1.png" width="672" /></p>
 <pre class="r"><code># Estimación por MCO
         regresion=lm(y~x)
         summary(regresion)</code></pre>
@@ -1730,7 +1731,7 @@ F-statistic: 119.8 on 1 and 23 DF,  p-value: 1.356e-10</code></pre>
 x            1.0540506 1.5453740</code></pre>
 <pre class="r"><code>        plot(y~x, xlab = &quot;Peso inicial&quot;, ylab = &quot;Peso final&quot;, pch=19)
         abline(regresion)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b21-1.png" width="672" /></p>
 <pre class="r"><code># Analisis de la varianza
         anova(regresion)</code></pre>
 <pre><code>Analysis of Variance Table
@@ -1744,20 +1745,20 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 <pre class="r"><code># Residuos
         residuos &lt;- rstandard(regresion)
         valores.ajustados &lt;- fitted(regresion)
-        plot(valores.ajustados, residuos)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-23-1.png" width="672" /></p>
+        plot(valores.ajustados, residuos, pch=19)</code></pre>
+<p><img src="Guia501_files/figure-html/b23-1.png" width="672" /></p>
 <pre class="r"><code># Diagnostico de normalidad
         qqnorm(residuos, main=&quot;Normalidad de los Residuales&quot;)
         qqline(residuos)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
-<pre class="r"><code>        plot(y,x, xlab = &quot;peso-F&quot;, ylab = &quot;peso-b&quot;)
+<p><img src="Guia501_files/figure-html/b24-1.png" width="672" /></p>
+<pre class="r"><code>        plot(y,x, xlab = &quot;peso-F&quot;, ylab = &quot;peso-b&quot;, pch=19)
         abline(y~x)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-24-2.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b24-2.png" width="672" /></p>
 <pre class="r"><code># validación de supuestos del modelo
         residuos=rstandard(regresion)
         valores.ajustados &lt;- fitted(regresion)
-        plot(valores.ajustados, residuos)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+        plot(valores.ajustados, residuos,  pch=19)</code></pre>
+<p><img src="Guia501_files/figure-html/b25-1.png" width="672" /></p>
 <pre class="r"><code>        lmtest::dwtest(y~x)</code></pre>
 <pre><code>
     Durbin-Watson test
@@ -1864,21 +1865,21 @@ X^{*}\)</span></td>
 </table>
 <p><br/></p>
 <pre class="r"><code>curve(.2*x^2, from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;blue&quot;, lwd=2, main=&quot;(1a)&quot;)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b26-1.png" width="672" /></p>
 <pre class="r"><code>curve(.2*x^1, from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;red&quot;, lwd=2, main=&quot;(1b)&quot;)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-26-2.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b26-2.png" width="672" /></p>
 <pre class="r"><code>curve(.2*x^0.1, from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;green&quot;, lwd=2, main=&quot;(1c)&quot;)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-26-3.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b26-3.png" width="672" /></p>
 <pre class="r"><code>curve(exp(-2*x), from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;blue&quot;, lwd=2, main=&quot;(1a)&quot;)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b27-1.png" width="672" /></p>
 <pre class="r"><code>curve(exp(2*x), from=1, to=20, n=500, xlab=&quot;x&quot;, ylab=&quot;y&quot;,col=&quot;green&quot;, lwd=2, main=&quot;(1c)&quot;)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-27-2.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b27-2.png" width="672" /></p>
 <pre class="r"><code>curve(2-3*log(x), from=1, to=20, n=500, xlab=&quot;xvalue&quot;, ylab=&quot;yvalue&quot;,col=&quot;blue&quot;, lwd=2, main=&quot;(1a)&quot;)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-28-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b28-1.png" width="672" /></p>
 <pre class="r"><code>curve(2+log(x), from=1, to=20, n=500, xlab=&quot;xvalue&quot;, ylab=&quot;yvalue&quot;,col=&quot;red&quot;, lwd=2, main=&quot;(1b)&quot;)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-28-2.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b28-2.png" width="672" /></p>
 <pre class="r"><code>curve(2+3*log(x), from=1, to=20, n=500, xlab=&quot;xvalue&quot;, ylab=&quot;yvalue&quot;,col=&quot;green&quot;, lwd=2, main=&quot;(1c)&quot;)</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-28-3.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b28-3.png" width="672" /></p>
 <p><br/></p>
 <p>El realizar el diagrama de dispersión y visualizar la relación entre
 <span class="math inline">\(x\)</span> y <span
@@ -1911,9 +1912,9 @@ trabajo</td>
 </table>
 <pre class="r"><code>x=c(939,5796,289,283,138,2698,663,1069,5945,4159,1266,1481,4716)
 y=c(251,4690,124,294,138,1085,345,355,5753,1377,802,945,2327)
-plot(x,y)
+plot(x,y, las=1,  pch=19)
 grid()</code></pre>
-<p><img src="Guia501_files/figure-html/unnamed-chunk-29-1.png" width="672" /></p>
+<p><img src="Guia501_files/figure-html/b29-1.png" width="672" /></p>
 <p>En la gráfica se visualiza una relación con una leve curvatura que
 puede hacer pensar que la relación entre las variables no es del todo
 lineal.</p>

@@ -115,7 +115,7 @@ Tomado de : [wikipedia](https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal)
 En unidades anteriores se estudiaron relaciones entre dos variables aleatorias, las cuales se puede medir a través del coeficiente de correlación ($\rho$),  el cual puede presentar valores desde  -1  hasta 1 como se representa en las siguientes gráficas :
 	
 
-```{r, echo=FALSE, fig.height=4, fig.width=8}
+```{r b1, echo=FALSE, fig.height=4, fig.width=8}
 gen.corr.data<- function(rho,n){
   x <- rnorm(n)
   z <- rnorm(n)
@@ -277,7 +277,7 @@ Para que la estimación por MCO sea valida y utilizada, se deben verificar que s
 
 El primer paso corresponde a construir una gráfica de dispersión, con el fin de poder visualizar el tipo de relación que se puede percibir entre las dos variables
 
-```{r}
+```{r b2}
 x=c(24.3,12.5,31.2,28,35.1,10.5,23.2,10,8.5,15.9,14.7,15)
 y=c(16.2,8.5,15,17,24.2,11.2,15,7.1,3.5,11.5,10.7,9.2)
 
@@ -291,7 +291,7 @@ En la gráfica se puede observar una nube de  puntos que sugieren una relación 
 
 
 
-```{r, echo=FALSE}
+```{r b3, echo=FALSE}
 plot(x,y, xlab = "Ingresos", ylab = "Consumo",
 pch=21, bg="blue", xlim=c(0,35), ylim=c(0,25), las=1)
 regresion=lm(y ~ x)
@@ -304,7 +304,7 @@ Esta recta representa la relación lineal entre  las dos variables, en este caso
 
 Para encontrar la los valores estimados del intercepto y de la pendiente, utilizaremos el método de mínimos cuadrados ordinario (MCO) 
 
-```{r}
+```{r b4}
 regresion=lm(y ~ x)
 summary(regresion)
 ```
@@ -330,7 +330,7 @@ Los supuestos a validar se deben verificar sobre los residuales $\widehat{u_{i}}
 
 
 
-```{r}
+```{r b5}
 yhat=predict(regresion)
 u=yhat-y
 u
@@ -349,7 +349,7 @@ El valor esperado de los errores es cero $E[u]=0$
 
 
 
-```{r}
+```{r b6}
 
 summary(u)
 t.test(u, mu=0)
@@ -372,8 +372,9 @@ Prueba de Goldfeld-Quandt
 |$Ha$ : existe heteriscedastucidad                          |
 
 
-```{r}
-lmtest::gqtest(y~x)
+```{r b7}
+library(lmtest)
+gqtest(y~x)
 ```
 
 
@@ -389,7 +390,7 @@ Los errores se distribuyen normal $u\sim$ $N(0,\sigma^{2})$}\\
 |$Ho$ : $u \sim norm$                                       |
 |$Ha$ : $u no \sim  norm$                                   |
 
-```{r}
+```{r b8}
 shapiro.test(u)
 ```
 
@@ -407,7 +408,7 @@ Los errores son independientes $E[u_i,u_j]=0$}\\
 
 
 
-```{r}
+```{r b9}
 lmtest::dwtest(y~x)
 ```
 	
@@ -419,7 +420,7 @@ Después de verificar el cumplimiento de los supuestos sobre los errores se pasa
 
 Las pruebas a realizar corresponden a la validación si los resultados obtenidos sobre el intercepto y la pendiente son significativamente diferentes de cero:
 
-```{r}
+```{r b10}
 summary(regresion)
 ```
 
@@ -441,7 +442,7 @@ $Ha: \beta_{j}$ es diferente de cero
 Esta prueba se fundamenta en la comparación de dos varianza : La varianza relacionada con el modelo ($\sigma^{2}$) y la varianza relacionada con los errores ($\sigma^{2}_{u}$).
 
 
-```{r}
+```{r b11}
 anova(regresion)
 ```
 
@@ -489,7 +490,7 @@ Antes de realizar la estimación debemos visualizar mediante un diagrama de disp
 
 <br/>
 
-```{r}
+```{r b12}
 	y=c(2.745, 2.700, 2.690, 2.680, 2.675, 2.670, 2.665, 2.660, 2.655, 2.655, 2.650, 2.650, 2.645, 2.635, 2.630, 2.625, 2.625, 2.620, 2.615, 2.615, 2.615, 2.615, 2.590, 2.590, 2.565)
 	x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995, 1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995, 1.955)
 
@@ -554,7 +555,7 @@ $$\begin{eqnarray*}
 
 Mediante operaciones matriciales podemos obtener los estimadores de los coeficientes así:
 	
-```{r}
+```{r b13}
 y=c(2.745, 2.700, 2.690, 2.680, 2.675, 2.670, 2.665, 2.660, 2.655, 2.655, 2.650, 2.650, 2.645, 2.635, 2.630, 2.625, 2.625, 2.620, 2.615, 2.615, 2.615, 2.615, 2.590, 2.590, 2.565)
 x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995, 1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995, 1.955)
 	
@@ -578,7 +579,7 @@ El signo esperado para el coeficiente $b_{1}$, está de acuerdo con los resultad
 	Para realizar la estimación de los coeficientes en R se debe correr el siguiente codigo:
 
 
-```{r}
+```{r b14}
 regresion=lm(y~x)
 summary(regresion)
 ```
@@ -641,7 +642,7 @@ Es necesario antes de utilizar el modelo, verificar el cumplimiento de los anter
 		
 Listado 1. Supuesto de modelo completo
 
-```{r}
+```{r b15}
 residuos=regresion$residuals
 summary(residuos)
 t.test(residuos)
@@ -653,7 +654,7 @@ Por un lado el  promedio de los residuales es cercano a cero y por otro lado la 
 
 Listado 2   Supuesto de no autocorrelación de errores 
 
-```{r, warning=FALSE, message=FALSE}
+```{r b16, warning=FALSE, message=FALSE}
 # Es necesario cargar el paquete 
 library(lmtest)
 dwtest(y~x)
@@ -662,7 +663,7 @@ Los resultados indican que no se cumple el supuesto de no autocorrelacion, los e
 
 Listado 3 Supuesto de normalidad de los errores
 
-```{r}
+```{r b17}
 	shapiro.test(residuos)
 ```
 
@@ -670,7 +671,7 @@ El valor-p correspondiente a la prueba de Shapiro-Wilk indica que los errores se
 		
 Listado 4	
 
-```{r}
+```{r b18}
 # Supuesto de varianza constante de errores o homoscedasticidad
 summary(
 lm(residuos^2 ~ x))
@@ -683,7 +684,7 @@ Para la verificación del supuesto de homoscedasticidad indica que la variable i
 		
 ***Código R**
 
-```{r}
+```{r b19}
 y=c(2.745, 2.700, 2.690, 2.680, 2.675, 2.670, 2.665, 2.660, 2.655, 2.655, 2.650, 2.650, 2.645, 2.635, 2.630, 2.625, 2.625, 2.620, 2.615, 2.615, 2.615, 2.615, 2.590, 2.590, 2.565)
 		x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995, 1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995, 1.955)
 		
@@ -692,14 +693,14 @@ y=c(2.745, 2.700, 2.690, 2.680, 2.675, 2.670, 2.665, 2.660, 2.655, 2.655, 2.650,
 ```
 
 
-```{r}
+```{r b20}
 # Diagrama de dispersión X vs Y
 		plot(y,x, main="Diagrama de dispersión",xlab="X:Peso inicial", 
 		     ylab="Y:Peso final", pch=19)
 ```
 
 
-```{r}
+```{r b21}
 # Estimación por MCO
 		regresion=lm(y~x)
 		summary(regresion)
@@ -709,34 +710,34 @@ y=c(2.745, 2.700, 2.690, 2.680, 2.675, 2.670, 2.665, 2.660, 2.655, 2.655, 2.650,
 ```
 
 
-```{r}
+```{r b22}
 # Analisis de la varianza
 		anova(regresion)
 ```
 
 
-```{r}
+```{r b23}
 # Residuos
 		residuos <- rstandard(regresion)
 		valores.ajustados <- fitted(regresion)
-		plot(valores.ajustados, residuos)
+		plot(valores.ajustados, residuos, pch=19)
 ```
 
 
-```{r}
+```{r b24}
 # Diagnostico de normalidad
 		qqnorm(residuos, main="Normalidad de los Residuales")
 		qqline(residuos)
-		plot(y,x, xlab = "peso-F", ylab = "peso-b")
+		plot(y,x, xlab = "peso-F", ylab = "peso-b", pch=19)
 		abline(y~x)
 ```
 
 
-```{r}
+```{r b25}
 # validación de supuestos del modelo
 		residuos=rstandard(regresion)
 		valores.ajustados <- fitted(regresion)
-		plot(valores.ajustados, residuos)
+		plot(valores.ajustados, residuos,  pch=19)
 		lmtest::dwtest(y~x)
 		lmtest::bgtest(y~x)
 		lmtest::resettest(y~x , power=2, type="regressor")
@@ -766,7 +767,7 @@ A continuación se presentan algunas formas de linealización que permiten la es
 
 <br/>
 
-```{r}
+```{r b26}
 curve(.2*x^2, from=1, to=20, n=500, xlab="x", ylab="y",col="blue", lwd=2, main="(1a)")
 curve(.2*x^1, from=1, to=20, n=500, xlab="x", ylab="y",col="red", lwd=2, main="(1b)")
 curve(.2*x^0.1, from=1, to=20, n=500, xlab="x", ylab="y",col="green", lwd=2, main="(1c)")
@@ -774,13 +775,13 @@ curve(.2*x^0.1, from=1, to=20, n=500, xlab="x", ylab="y",col="green", lwd=2, mai
 
 
 
-```{r}
+```{r b27}
 curve(exp(-2*x), from=1, to=20, n=500, xlab="x", ylab="y",col="blue", lwd=2, main="(1a)")
 curve(exp(2*x), from=1, to=20, n=500, xlab="x", ylab="y",col="green", lwd=2, main="(1c)")
 ```
 
 
-```{r}
+```{r b28}
 curve(2-3*log(x), from=1, to=20, n=500, xlab="xvalue", ylab="yvalue",col="blue", lwd=2, main="(1a)")
 curve(2+log(x), from=1, to=20, n=500, xlab="xvalue", ylab="yvalue",col="red", lwd=2, main="(1b)")
 curve(2+3*log(x), from=1, to=20, n=500, xlab="xvalue", ylab="yvalue",col="green", lwd=2, main="(1c)")
@@ -803,10 +804,10 @@ curve(2+3*log(x), from=1, to=20, n=500, xlab="xvalue", ylab="yvalue",col="green"
 |$y$: costos de construcción ( miles de dolares)   |
 |$x$: horas-persona trabajo                        |
  
-```{r}
+```{r b29}
 x=c(939,5796,289,283,138,2698,663,1069,5945,4159,1266,1481,4716)
 y=c(251,4690,124,294,138,1085,345,355,5753,1377,802,945,2327)
-plot(x,y)
+plot(x,y, las=1,  pch=19)
 grid()
 ```
  
@@ -819,7 +820,7 @@ Inicialmente se realiza la estimación lineal con el fin de poder comparar los o
 
 #### Modelo  lin-lin
 
-```{r}
+```{r b30}
 modelo1=lm(y~x)
 summary(modelo1)
 ```
@@ -828,7 +829,7 @@ summary(modelo1)
 #### Modelo log-lin
 
 
-```{r}
+```{r b31}
 modelo2=lm(log(y)~x)
 summary(modelo2)
 ```
@@ -837,7 +838,7 @@ summary(modelo2)
 #### Modelo log -log
 
 
-```{r}
+```{r b32}
 modelo3=lm(log(y)~log(x))
 summary(modelo3)
 ```
@@ -846,7 +847,7 @@ summary(modelo3)
 
 #### Modelo lin log
 
-```{r}
+```{r b33}
 modelo4=lm(y~log(x))
 summary(modelo4)
 ```
@@ -882,7 +883,7 @@ Retomando el Ejemplo 1 tenemos. En el supongamos que deseamos estimar un interva
 
 <br/>
 
-```{r}
+```{r b34}
 x=c(24.3,12.5,31.2,28,35.1,10.5,23.2,10,8.5,15.9,14.7,15)
 y=c(16.2,8.5,15,17,24.2,11.2,15,7.1,3.5,11.5,10.7,9.2)
 		
@@ -909,7 +910,7 @@ $S_{xx}=\displaystyle\sum_{i=1}^{n} (x_{i}-\bar{x})^{2}$
 	
 
 
-```{r}
+```{r b35}
 predict(object=regresion, newdata=nuevo, interval="confidence", level=0.95)
 ```
 
@@ -964,7 +965,7 @@ El paquete `paquetepye` si debe ser instalado cada vez que sea utilizado con el 
 
 **Taller regresion1**
 
-```{r, eval=FALSE}
+```{r b36, eval=FALSE}
 # se deben instalar los paquetes en caso de no haberlo hecho antes
 install.packages("learnr") # solo una vez
 install.packages('remotes')  # solo una vez
@@ -979,7 +980,7 @@ learnr::run_tutorial("Taller_regresion1", "paqueteDEG") # correr instructivo 1
 
 **Taller regresion2**
 
-```{r, eval=FALSE}
+```{r b37, eval=FALSE}
 # codigo para cargar instructivo Taller_regresion1
 library(remotes) 
 library(devtools)  
