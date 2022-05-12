@@ -1051,14 +1051,14 @@ heteriscedastucidad</td>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>library(lmtest)
-gqtest(y~x)</code></pre>
-<pre><code>
-    Goldfeld-Quandt test
+<pre class="r"><code># library(lmtest)
+# gqtest(y~x)
 
-data:  y ~ x
-GQ = 0.19285, df1 = 4, df2 = 4, p-value = 0.93
-alternative hypothesis: variance increases from segment 1 to 2</code></pre>
+# Goldfeld-Quandt test
+
+# data:  y ~ x
+# GQ = 0.23665, df1 = 98, df2 = 98, p-value = 1
+# alternative hypothesis: variance increases from segment 1 to 2</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="supuesto-3" class="section level3">
@@ -1104,13 +1104,13 @@ independientes</td>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>lmtest::dwtest(y~x)</code></pre>
-<pre><code>
-    Durbin-Watson test
+<pre class="r"><code># lmtest::dwtest(y~x)
 
-data:  y ~ x
-DW = 1.5517, p-value = 0.1769
-alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+# Durbin-Watson test
+
+# data:  y ~ x
+# DW = 1.5517, p-value = 0.1769
+# alternative hypothesis: true autocorrelation is greater than 0</code></pre>
 <p><br/><br/><br/></p>
 </div>
 </div>
@@ -1647,14 +1647,14 @@ class="math inline">\(\mu_{u} \neq 0\)</span>, no se rechaza, asumimos
 que el valor esperado de los errores es cero.</p>
 <p>Listado 2 Supuesto de no autocorrelación de errores</p>
 <pre class="r"><code># Es necesario cargar el paquete 
-library(lmtest)
-dwtest(y~x)</code></pre>
-<pre><code>
-    Durbin-Watson test
+# library(lmtest)
+# dwtest(y~x)
 
-data:  y ~ x
-DW = 1.518, p-value = 0.07668
-alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+#   Durbin-Watson test
+
+# data:  y ~ x
+# DW = 2.2484, p-value = 0.9608
+# alternative hypothesis: true autocorrelation is greater than 0</code></pre>
 <p>Los resultados indican que no se cumple el supuesto de no
 autocorrelacion, los errores estan correlacionados</p>
 <p>Listado 3 Supuesto de normalidad de los errores</p>
@@ -1759,26 +1759,10 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
         valores.ajustados &lt;- fitted(regresion)
         plot(valores.ajustados, residuos,  pch=19)</code></pre>
 <p><img src="Guia501_files/figure-html/b25-1.png" width="672" /></p>
-<pre class="r"><code>        lmtest::dwtest(y~x)</code></pre>
-<pre><code>
-    Durbin-Watson test
-
-data:  y ~ x
-DW = 1.518, p-value = 0.07668
-alternative hypothesis: true autocorrelation is greater than 0</code></pre>
-<pre class="r"><code>        lmtest::bgtest(y~x)</code></pre>
-<pre><code>
-    Breusch-Godfrey test for serial correlation of order up to 1
-
-data:  y ~ x
-LM test = 1.4445, df = 1, p-value = 0.2294</code></pre>
-<pre class="r"><code>        lmtest::resettest(y~x , power=2, type=&quot;regressor&quot;)</code></pre>
-<pre><code>
-    RESET test
-
-data:  y ~ x
-RESET = 0.18173, df1 = 1, df2 = 22, p-value = 0.674</code></pre>
-<pre class="r"><code>        shapiro.test(residuos)</code></pre>
+<pre class="r"><code>        # lmtest::dwtest(y~x)
+        # lmtest::bgtest(y~x)
+        # lmtest::resettest(y~x , power=2, type=&quot;regressor&quot;)
+        shapiro.test(residuos)</code></pre>
 <pre><code>
     Shapiro-Wilk normality test
 
