@@ -106,7 +106,7 @@ En esta unidad estudiaremos la relación que puede existir entre dos variables o
 |:-------------------:|:--------------------------------------------------|
 |![](img/Galton.jpg)  | *La primera forma de regresión lineal documentada fue el método de los mínimos cuadrados que fue publicada por Legendre en 1805, Gauss publicó un trabajo en donde desarrollaba de manera más profunda el método de los mínimos cuadrados y en dónde se incluía una versión del teorema de Gauss-Márkov. El término regresión se utilizó por primera vez en el estudio de variables antropométricas de Francis Galton: al comparar la estatura de padres e hijos, donde resultó que los hijos cuyos padres tenían una estatura muy superior al valor medio, tendían a igualarse a este, mientras que aquellos cuyos padres eran muy bajos tendían a reducir su diferencia respecto a la estatura media; es decir, "regresaban" al promedio. La constatación empírica de esta propiedad se vio reforzada más tarde con la justificación teórica de ese fenómeno.*
 
-*El término lineal se emplea para distinguirlo del resto de técnicas de regresión, que emplean modelos basados en cualquier clase de función matemática. Los modelos lineales son una explicación simplificada de la realidad, mucho más ágiles y con un soporte teórico mucho más extenso por parte de la matemática y la estadística.*                                                  |
+*El término lineal se emplea para distinguirlo del resto de técnicas de regresión, que emplean modelos basados en cualquier clase de función matemática. Los modelos lineales son una explicación simplificada de la realidad, mucho más ágiles y con un soporte teórico mucho más extenso por parte de la matemática y la estadística.*| 
 
 Tomado de : [wikipedia](https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal)
 
@@ -648,7 +648,7 @@ $Cor[u_{i},u_{i-1}]=0$. Los errores no están auto-correlacionados. El supuesto 
 
 $u \sim N(0, \sigma^{2})$ . Para verificar este supuesto se puede construir una gráfica de los residuales $qqnorm$ y una prueba de hipótesis de normalidad
 
-Es necesario antes de utilizar el modelo, verificar el cumplimiento de los anteriores supuestos.\\
+Es necesario antes de utilizar el modelo, verificar el cumplimiento de los anteriores supuestos.
 
 <br/><br/><br/>
 
