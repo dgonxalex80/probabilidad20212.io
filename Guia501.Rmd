@@ -13,7 +13,7 @@ output:
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE,comment = NA)
 library(lmtest)
-
+ausentismo<-paqueteDEG::ausentismo
 # colores
 c0="#0DA5A6" # VERDE CLARO
 c1="#E77C00" # NARANJA
@@ -96,9 +96,9 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **Modelo de Regresión lineal**
+## **Modelo de Regresión lineal simple **
 
-## **Introducción**
+### **Introducción**
 
 En esta unidad estudiaremos la relación que puede existir entre dos variables o una variable y un conjunto de variables, mediante la construcción de un modelo lineal que represente dicha relación. Se partirá de un modelo general (modelo de Regresión Lineal Múltiple) y se tratará como caso particular el modelo de dos variables también llamado Modelo de Regresión Lineal Simple MRLS.
 
@@ -114,6 +114,7 @@ Tomado de : [wikipedia](https://es.wikipedia.org/wiki/Regresi%C3%B3n_lineal)
 
 En unidades anteriores se estudiaron relaciones entre dos variables aleatorias, las cuales se puede medir a través del coeficiente de correlación ($\rho$),  el cual puede presentar valores desde  -1  hasta 1 como se representa en las siguientes gráficas :
 	
+
 
 ```{r b1, echo=FALSE, fig.height=4, fig.width=8}
 gen.corr.data<- function(rho,n){
@@ -324,7 +325,7 @@ Para validar estos resultados, para poder ser utilizados se debe:
 
 <br/><br/><br/>
 
-## **Validación de supuestos**
+### **Validación de supuestos**
 
 Los supuestos a validar se deben verificar sobre los residuales $\widehat{u_{i}}$ que corresponde a la diferencia entre $\widehat{y_{i}}$ y $y$ y que son las realizaciones de los errores.(  $\widehat{u_{i}} = \widehat{y_{i}}-y_{i}$)
 
@@ -338,7 +339,7 @@ u
 
 <br/><br/>
 
-### **Supuesto 1** 
+#### **Supuesto 1** 
 
 El valor esperado de los errores es cero $E[u]=0$
 
@@ -357,7 +358,7 @@ t.test(u, mu=0)
 
 <br/><br/>
 
-### **Supuesto 2** 
+#### **Supuesto 2** 
 
 
 
@@ -386,7 +387,7 @@ Prueba de Goldfeld-Quandt
 
 <br/><br/>
 
-### **Supuesto 3** 
+#### **Supuesto 3** 
 
 Los errores se distribuyen normal $u\sim$ $N(0,\sigma^{2})$}\\
 
@@ -403,7 +404,7 @@ shapiro.test(u)
 	
 <br/><br/>
 
-### **Supuesto 4**
+#### **Supuesto 4**
 
 Los errores son independientes $E[u_i,u_j]=0$}\\
 
@@ -427,7 +428,7 @@ Los errores son independientes $E[u_i,u_j]=0$}\\
 	
 <br/><br/><br/>
 
-## **P.de significancia individuales** 
+### **P.de significancia individuales** 
 
 Después de verificar el cumplimiento de los supuestos sobre los errores se pasa a analizar los resultados de la estimación.
 
@@ -445,7 +446,7 @@ summary(regresion)
 
 <br/><br/>
 
-## **ANOVA**
+### **Analisis de Varianza -ANOVA**
 
 La ANOVA corresponde a una prueba de hipótesis conjunta sobre todos las pendientes del modelo de manera  conjunta:
 
@@ -618,7 +619,7 @@ Finalmente la salida reporta el valor del estadístico  F (119.8) y su valor-p a
 	
 <br/><br/><br/>
 
-## **Validación de supuestos**
+#### **Validación de supuestos**
 	
 El método de MCO, no requiere ningún supuesto de tipo estadístico, pues es un método que se basa en la optimización matemática. Sin embargo cuando se requiere realizar inferencia - construcción de intervalos de confianza o la realización de pruebas de hipótesis asociadas con los resultados obtenidos -  es necesario plantear y verificar el cumplimiento de supuestos estadístico sobre las variables que intervienen en el modelo. Algunos de ellos se realizan sobre las variables independientes y otros sobre la variable no observable error ($u$). Haremos énfasis sobre el cumplimiento de los siguientes supuestos, pues su violación genera estimaciones ineficientes y sesgados.
 
@@ -700,12 +701,108 @@ Para la verificación del supuesto de homoscedasticidad indica que la variable i
 
 <br/><br/>
 
-		
+## **Modelo de Regresión Lineal Múltiple**
+
+
+Se requiere modelar el numero de días que un trabajador se ausenta de su puesto de trabajo durante un año, para lo cual se tienen en cuenta las siguientes variables :
+
+|            |                                                   |
+|:-----------|:--------------------------------------------------|
+| Taller     | si la persona trabaja en el taller (1)  o no  (0) |
+| sexo       | hombre (1) , mujer (0                             |
+| edad       | edad del trabajador en año                        |    
+| antigüedad | años de trabajo en la empresa                     |  
+| salario    | cuanto devenga el trabajador (U$)                 |
+
+
+$$y_{i} = \beta_{0} + \beta_{1} Taller_{i} + \beta_{2} sexo_{i} + \beta_{3} edad_{i} + \beta_{4} antiguedad_{i} + \beta_{5} salario_{i} + u$$ 
+
+para $i=1,.....n$
+
+```{r}
+library(readr)
+data=read_delim("data/ausentismo.csv", delim = ";", escape_double = FALSE, trim_ws = TRUE)
+
+round(cov(data), 2) # matriz de varianzas-covarianzas
+round(cor(data), 2) # matriz de correlaciones
+```
+
+
+```{r}
+# Estimación del modelo
+attach(data)
+modelo1=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
+summary(modelo1)
+```
+
+
+```{r}
+# diagnostico
+coefficients(modelo1) # coeficientes estimados
+yhat=fitted(modelo1) # valores estimados
+u=residuals(modelo1) # residuales
+anova(modelo1) # tabla de anova
+vcov(modelo1) # matriz de varianzas covarianza de parámetros ( de los betas)
+```
+
+
+```{r}
+# Stepwise Regression
+library(MASS)
+modelo2=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
+step=stepAIC(modelo2, direction="both")
+step$anova # display results
+```
+
+
+```{r}
+modelo3=lm(ausen ~ taller + sexo + antg + sala , data=data)
+summary(modelo3)
+```
+
+
+```{r}
+modelo4=lm(ausen ~ sexo + antg + sala , data=data)
+summary(modelo4)
+
+uhat=modelo4$residuals
+#-----------------------------------------------------------------
+# Examen de normalidad de errores
+shapiro.test(uhat)
+
+# Supuesto de no autocorrelacion
+# install.packages("lmtest")
+library(lmtest)
+# Prueba de D-W  - autocorrelacion
+# Ho: los erreres no estan autocorrelacionados
+dwtest(modelo4)
+
+# Supuesto de homoscedasticidad
+# Prueba de Goldfeld-Quandt
+# Ho no existe heteroscedasticidad
+gqtest(modelo4)
+
+# Supuesto de correcta especificacion
+# Prueba de especificacion
+# Prueba RESET
+resettest(modelo4, power=2, type="regressor")
+```
+
+
+```{r}
+modelo5=lm(ausen ~ antg + sala , data=data)
+summary(modelo5)
+
+```
+
+
+
+
 ***Código R**
 
 ```{r b19}
 y=c(2.745, 2.700, 2.690, 2.680, 2.675, 2.670, 2.665, 2.660, 2.655, 2.655, 2.650, 2.650, 2.645, 2.635, 2.630, 2.625, 2.625, 2.620, 2.615, 2.615, 2.615, 2.615, 2.590, 2.590, 2.565)
-		x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995, 1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995, 1.955)
+x=c(2.080, 2.045, 2.050, 2.005, 2.035, 2.035, 2.020, 2.005, 2.010, 2.000, 2.000, 2.005, 2.015, 1.990, 1.990, 1.995, 1.985, 1.970, 1.985, 1.990, 1.995, 1.990, 1.975, 1.995, 1.955)
 		
 		# Descriptivas
 		summary(y); summary(x)
