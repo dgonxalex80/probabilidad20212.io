@@ -576,9 +576,480 @@ div.tocify {
 
 
 <hr />
-<div id="en-construccion" class="section level3">
-<h3><span style="color:#BC2B6A"><strong>EN
-CONSTRUCCION</strong></span></h3>
+<div id="taller-regresión-lineal-simple" class="section level2">
+<h2><strong>Taller Regresión Lineal Simple</strong></h2>
+<p><br/></p>
+<div id="problema-1" class="section level3">
+<h3><strong>Problema 1</strong></h3>
+<p>Con el fin de estimar la relación que exite entre el nivel de
+ingresos de una persona y el nivel de consumo , un investigador
+recolectó la siguiente información:</p>
+<table>
+<colgroup>
+<col width="5%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="6%" />
+<col width="7%" />
+<col width="7%" />
+<col width="7%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">id</th>
+<th align="right">1</th>
+<th align="right">2</th>
+<th align="right">3</th>
+<th align="right">4</th>
+<th align="right">5</th>
+<th align="right">6</th>
+<th align="right">7</th>
+<th align="right">8</th>
+<th align="right">9</th>
+<th align="right">10</th>
+<th align="right">11</th>
+<th align="right">12</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Ing</td>
+<td align="right">24.3</td>
+<td align="right">12.5</td>
+<td align="right">31.2</td>
+<td align="right">28.0</td>
+<td align="right">35.1</td>
+<td align="right">10.5</td>
+<td align="right">23.2</td>
+<td align="right">10.0</td>
+<td align="right">835</td>
+<td align="right">15.9</td>
+<td align="right">14.7</td>
+<td align="right">15.0</td>
+</tr>
+<tr class="even">
+<td align="left">Con</td>
+<td align="right">16.2</td>
+<td align="right">8.5</td>
+<td align="right">15.0</td>
+<td align="right">17.0</td>
+<td align="right">24.2</td>
+<td align="right">11.2</td>
+<td align="right">15.0</td>
+<td align="right">7.1</td>
+<td align="right">3.5</td>
+<td align="right">11.5</td>
+<td align="right">10.7</td>
+<td align="right">9.2</td>
+</tr>
+</tbody>
+</table>
+<p>Donde : + Id: identificador del hogar + Ing : Ingresos familiares +
+Con : Consumo en viveres</p>
+<p>Realice un analisis de regresión que permita estimar la relación
+entre el consumo (Con) y los ingresos familiares (Ing).</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">id</th>
+<th align="right">x</th>
+<th align="right">y</th>
+<th align="right">x2</th>
+<th align="right">y2</th>
+<th align="right">xy</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="right">23.4</td>
+<td align="right">16.2</td>
+<td align="right">547.56</td>
+<td align="right">262.44</td>
+<td align="right">393.66</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="right">12.5</td>
+<td align="right">8.5</td>
+<td align="right">156.25</td>
+<td align="right">72.25</td>
+<td align="right">106.25</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="right">31.2</td>
+<td align="right">15.0</td>
+<td align="right">973.44</td>
+<td align="right">225.00</td>
+<td align="right">468.00</td>
+</tr>
+<tr class="even">
+<td align="left">4</td>
+<td align="right">28.0</td>
+<td align="right">17.0</td>
+<td align="right">784.00</td>
+<td align="right">289.00</td>
+<td align="right">476.00</td>
+</tr>
+<tr class="odd">
+<td align="left">5</td>
+<td align="right">35.1</td>
+<td align="right">24.2</td>
+<td align="right">1232.01</td>
+<td align="right">585.64</td>
+<td align="right">849.42</td>
+</tr>
+<tr class="even">
+<td align="left">6</td>
+<td align="right">10.5</td>
+<td align="right">11.2</td>
+<td align="right">110.25</td>
+<td align="right">125.44</td>
+<td align="right">117.60</td>
+</tr>
+<tr class="odd">
+<td align="left">7</td>
+<td align="right">23.2</td>
+<td align="right">15.0</td>
+<td align="right">538.24</td>
+<td align="right">225.00</td>
+<td align="right">348.00</td>
+</tr>
+<tr class="even">
+<td align="left">8</td>
+<td align="right">10.0</td>
+<td align="right">7.1</td>
+<td align="right">100.00</td>
+<td align="right">50.41</td>
+<td align="right">71.00</td>
+</tr>
+<tr class="odd">
+<td align="left">9</td>
+<td align="right">8.5</td>
+<td align="right">3.5</td>
+<td align="right">72.25</td>
+<td align="right">12.25</td>
+<td align="right">29.75</td>
+</tr>
+<tr class="even">
+<td align="left">10</td>
+<td align="right">15.9</td>
+<td align="right">11.5</td>
+<td align="right">252.81</td>
+<td align="right">132.25</td>
+<td align="right">182.85</td>
+</tr>
+<tr class="odd">
+<td align="left">11</td>
+<td align="right">14.7</td>
+<td align="right">10.7</td>
+<td align="right">216.09</td>
+<td align="right">114.49</td>
+<td align="right">157.29</td>
+</tr>
+<tr class="even">
+<td align="left">12</td>
+<td align="right">15.0</td>
+<td align="right">9.2</td>
+<td align="right">225.00</td>
+<td align="right">84.64</td>
+<td align="right">138.00</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr class="even">
+<td align="left">suma</td>
+<td align="right">228.90</td>
+<td align="right">149.10</td>
+<td align="right">5250.83</td>
+<td align="right">2178.81</td>
+<td align="right">3337.82</td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+</div>
+<div id="resumen-de-formulas" class="section level3">
+<h3><strong>Resumen de formulas</strong></h3>
+<p><br/><br/></p>
+<p>Modelo de regresión lineal simple : <span class="math inline">\(Y_{i}
+= \beta_{0} + \beta_{1} X_{i} + u_{i}\)</span></p>
+<p><br/></p>
+<p>Modelo estimado : $ = = + x_{i} = b_{0} + b_{1} x_{i}$</p>
+<p><br/></p>
+<p>Residuales : <span class="math inline">\(e_{i} =\widehat{u_{i}} =
+y_{i} - \widehat{y_{i}}\)</span></p>
+<p><br/></p>
+<p>Suma de cuadrados de los errores : <span class="math inline">\(SCE =
+\sum_{i=1}^{n} e^{2} = \sum_{i=1}^{n} (y_{i} -
+\widehat{y_{i}})^{2}\)</span></p>
+<p><br/><br/></p>
+<p><strong>Método de Mínimos Cuadrados Ordinarios (MCO)</strong></p>
+<p><strong>Objetivo</strong> : Encontrar los valores de <span
+class="math inline">\(\beta_{0}\)</span> y <span
+class="math inline">\(\beta_{1}\)</span> que minimecen la Suma de
+Cuadrado de los Erroeres (SCE).</p>
+<p><strong>Ecuaciones normales</strong>: Con el fin de estimar los
+valores de los coeficienes se plantean dos ecuaciones con dos
+incognitas. Estas ecuaciones se obtienen al derivar parcialmente la SCR
+con respecto a los dos coeficentes.</p>
+<p><span class="math display">\[\dfrac{\partial SCE}{\partial \beta_{0}}
+= -2 \sum_{i=1}^{n}(y_{i}- \beta_{0}-\beta_{1} x_{i}) = 0 \]</span></p>
+<p><span class="math display">\[\dfrac{\partial SCE}{\partial \beta_{1}}
+= -2 \sum_{i=1}^{n}(y_{i}- \beta_{0}-\beta_{1} x_{i}) x_{i} =
+0\]</span></p>
+<p><span class="math display">\[n \beta_{0} + \beta_{1} \sum_{i=1}^{n}
+x_{i} = \sum_{i=1}^{n} y_{i}\]</span></p>
+<p><span class="math display">\[\beta_{0} \sum_{i=1}^{n} x_{i} +
+\beta_{1} \sum_{i=1}^{n} x_{1}^{2} = \sum_{i=1}^{n}
+x_{i}y_{i}\]</span></p>
+<p><br/><br/></p>
+<div id="solución" class="section level4">
+<h4>Solución :</h4>
+<p><span class="math display">\[\begin{eqnarray*}
+b_{1} = \dfrac{n \displaystyle\sum_{i=1}^{n} x_{i}y_{i}-
+\Big(\displaystyle\sum_{i=1}^{n} x_{i} \displaystyle\sum_{i=1}^{n}
+y_{i}\Big)}{n \displaystyle\sum_{i=1}^{n} x_{i}^{2}-
+\Big(\displaystyle\sum_{i=1}^{n} x_{i}\Big)^{2}}
+\end{eqnarray*}\]</span> <span class="math display">\[\begin{equation*}
+b_{0}= \bar{y} - b_{1} \bar{x}
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+\dfrac{149.10}{12}-0.55817 \dfrac{228.90}{12} = 1.77788
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+S_{xx} = \displaystyle\sum_{i=1}^{n} (x_{i}- \bar{x})^{2} =
+\sum_{i=1}^{n} x_{i}^{2} - \dfrac{\Big(\displaystyle\sum_{i=1}^{n} x
+\Big)^{2}}{n}
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+S_{xx} = 5280.83-\dfrac{(228.90)^{2}}{12} = 884.5625
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+S_{yy} = \displaystyle\sum_{i=1}^{n} (y_{i}- \bar{y})^{2} =
+\sum_{i=1}^{n} y_{i}^{2} - \dfrac{\Big(\displaystyle\sum_{i=1}^{n} y_{i}
+\Big)^{2}}{n}
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+S_{yy} = 2178.81-\dfrac{(149.0)^{2}}{12} = 326.2425
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+S_{xy} = \displaystyle\sum_{i=1}^{n} (y_{i}- \bar{y})(x_{i}- \bar{x}) =
+\sum_{i=1}^{n} x_{i}y_{i} - \dfrac{\Big(\displaystyle\sum_{i=1}^{n}
+x_{i} \displaystyle\sum_{i=1}^{n} y_{i} \Big)}{n}
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+S_{xy} = 3337.82-\dfrac{228.90 \times 149.10}{12} = 493.7375
+\end{equation*}\]</span></p>
+<p><br/><br/> #### <strong>Suma de Cuadrados de los Errores
+(Residuales)</strong></p>
+<p><span class="math display">\[\begin{eqnarray*}
+SCE =\s
+um_{i=1}^{n} u_{i}^{2}=\sum_{i=1}^{n} (y_{i}-\widehat{y_{i}})^{2}=
+S_{yy} - b_{1} S_{xy}
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+SCE = 326.2425 -0.55817 \times 493.7375 = 50.65304
+\end{equation*}\]</span></p>
+<p><span class="math display">\[\begin{equation*}
+s^{2} =\dfrac{SCE}{n-2} = \dfrac{Syy - b_{1} S_{xy}}{n-2} =
+%\dfrac{50.65304}{10}= 5.65304
+\end{equation*}\]</span> % <span
+class="math display">\[\begin{eqnarray*}
+IC_{\beta_{1}} : b_{1}  t_{v=n-2; \alpha/2} \dfrac{s}{\sqrt{S_{xx}}}
+\end{eqnarray*}\]</span></p>
+<p><span class="math display">\[\begin{eqnarray*}
+T_{0} = \dfrac{b_{1}- \beta_{1o}}{s/\sqrt{S_{xx}}}
+\end{eqnarray*}\]</span></p>
+<p>$H_{0}: <em>{1}=</em>{2}=…_{k} = 0 $ <span
+class="math inline">\(H_{a}:\)</span> algun <span
+class="math inline">\(\beta_{i}\)</span> es diferente de cero</p>
+<p><br/><br/></p>
+</div>
+</div>
+<div id="pruebas-de-hipotesis-individuales" class="section level3">
+<h3><strong>Pruebas de hipotesis individuales</strong></h3>
+<p><br/></p>
+<div id="prueba-de-hipotesis-individual-para-el-intercepto"
+class="section level4">
+<h4><strong>Prueba de hipotesis individual para el
+intercepto</strong></h4>
+<p><span class="math inline">\(H_{0}: \beta_{0} = 0\)</span> <span
+class="math inline">\(H_{a}: \beta_{0} \neq 0\)</span></p>
+<p>Estadístico de prueba</p>
+<p><span class="math display">\[\begin{eqnarray*}
+t=\dfrac{b_{0}-0}{s \sqrt{\dfrac{\displaystyle\sum_{i=1}^{n}x_{i}^{2}}{n
+S_{xx}}}} = \dfrac{1.77788-0}{\sqrt{5.065}\sqrt{\dfrac{5250.83}{12
+\times 884.5625}}} = 1.123
+\end{eqnarray*}\]</span> Valor-p</p>
+<pre class="r"><code>2*pt(-1.123,11)</code></pre>
+<pre><code>## [1] 0.2853501</code></pre>
+<p><br/><br/></p>
+</div>
+<div id="prueba-de-hipotesis-individual-para-la-pendiente"
+class="section level4">
+<h4><strong>Prueba de hipotesis individual para la
+pendiente</strong></h4>
+<p><span class="math inline">\(H_{0}: \beta_{1} = 0\)</span> <span
+class="math inline">\(H_{a}: \beta_{1} \neq 0\)</span></p>
+<p>Estadistico de prueba:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+t=\dfrac{b_{1}-0}{\dfrac{s}{\sqrt{S_{xx}}}} =
+\dfrac{0.55817}{\sqrt{5.0652/884.5625}} = 7.376
+\end{eqnarray*}\]</span></p>
+<pre class="r"><code>2*pt(-7.376,11)</code></pre>
+<pre><code>## [1] 1.401564e-05</code></pre>
+<p><br/><br/></p>
+</div>
+</div>
+<div id="intervalo-de-confianza-para-la-media-mu_yx_0"
+class="section level3">
+<h3><strong>Intervalo de confianza para la media <span
+class="math inline">\(\mu_{Y|x_{0}}\)</span></strong></h3>
+<p><span class="math display">\[\begin{eqnarray*}
+\widehat{y_{0}} \pm t_{\alpha/2} s \sqrt{\dfrac{1}{n}
+\dfrac{(x_{0}-\bar{x})^{2}}{S_{xx}}}  
+\end{eqnarray*}\]</span> <span class="math inline">\(v=n-k\)</span>
+grados de libertad</p>
+<p><br/><br/></p>
+<div id="intervalo-de-confianza-para-predicción-para-y_0"
+class="section level4">
+<h4><strong>Intervalo de confianza para predicción para <span
+class="math inline">\(y_{0}\)</span></strong></h4>
+<p><span class="math display">\[\begin{eqnarray*}
+\widehat{y_{0}} \pm  t_{\alpha/2} s \sqrt{1+\dfrac{1}{n}
+\dfrac{(x_{0}-\bar{x})^{2}}{S_{xx}}}}
+\end{eqnarray*}\]</span></p>
+<p><span class="math inline">\(v=n-k\)</span> grados de libertad</p>
+<pre class="r"><code>x=c(24.3,12.5,31.2,28,35.1,10.5,23.2, 10,8.5,15.9,14.7,15)
+y=c(16.2,8.5,15,17,24.2,11.2,15,7.1,3.5,11.5,10.7,9.2)
+regresion=lm(y ~ x)
+summary(regresion)</code></pre>
+<pre><code>## 
+## Call:
+## lm(formula = y ~ x)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -4.1928 -0.5426  0.0088  0.8500  3.5613 
+## 
+## Coefficients:
+##             Estimate Std. Error t value Pr(&gt;|t|)    
+## (Intercept)  1.77788    1.58292   1.123    0.288    
+## x            0.55817    0.07567   7.376 2.38e-05 ***
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 2.251 on 10 degrees of freedom
+## Multiple R-squared:  0.8447, Adjusted R-squared:  0.8292 
+## F-statistic: 54.41 on 1 and 10 DF,  p-value: 2.38e-05</code></pre>
+<pre class="r"><code>plot(x,y, xlab = &quot;Ingresos&quot;, ylab = &quot;Consumo&quot;)
+abline(regresion)</code></pre>
+<p><img src="monitoria5_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<br/><br/><br/></p>
+</div>
+</div>
+<div id="anova-análisis-de-varianza" class="section level3">
+<h3><strong>ANOVA ( Análisis de Varianza )</strong></h3>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="15%" />
+<col width="15%" />
+<col width="22%" />
+<col width="20%" />
+<col width="8%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Fuentes de variación</th>
+<th align="right">grados de libertad</th>
+<th align="right">Suma de Cuadrados</th>
+<th align="right">Cuadrados Medios</th>
+<th align="right">F</th>
+<th align="right">Valor-p</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Regresión</td>
+<td align="right"><span class="math inline">\(k-1\)</span></td>
+<td align="right"><span class="math inline">\(b_{1} S_{xy}\)</span></td>
+<td align="right"><span
+class="math inline">\(\dfrac{SCReg}{(k-1)}\)</span></td>
+<td align="right"><span
+class="math inline">\(\dfrac{CMReg}{CMRes}\)</span></td>
+<td align="right"><span class="math inline">\(1-pf\)</span></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="right"><span class="math inline">\(2-1\)</span></td>
+<td align="right">275.590</td>
+<td align="right">275.590</td>
+<td align="right"><span
+class="math inline">\(\dfrac{275.590}{5.0652}=54.408\)</span></td>
+<td align="right">0.0000</td>
+</tr>
+<tr class="odd">
+<td align="left">Residuales</td>
+<td align="right"><span class="math inline">\(n-k\)</span></td>
+<td align="right"><span class="math inline">\(S_{yy}-b_{1}
+S_{xy}\)</span></td>
+<td align="right"><span
+class="math inline">\(\dfrac{SCRes}{(n-k)}\)</span></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="right"><span class="math inline">\(12-1\)</span></td>
+<td align="right">50.652</td>
+<td align="right">5.0652</td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="right"><span class="math inline">\(n-1\)</span></td>
+<td align="right"><span class="math inline">\(S_{yy}\)</span></td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="right"><span class="math inline">\(12-1\)</span></td>
+<td align="right">326.2425</td>
+<td align="right"></td>
+<td align="right"></td>
+<td align="right"></td>
+</tr>
+</tbody>
+</table>
+<p><br/><br/></p>
+<pre class="r"><code>anova(regresion)</code></pre>
+<pre><code>## Analysis of Variance Table
+## 
+## Response: y
+##           Df  Sum Sq Mean Sq F value   Pr(&gt;F)    
+## x          1 275.590 275.590  54.408 2.38e-05 ***
+## Residuals 10  50.652   5.065                     
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+</div>
 </div>
 
 
