@@ -788,7 +788,10 @@ entre el consumo (Con) y los ingresos familiares (Ing).</p>
 <p>Modelo de regresión lineal simple : <span class="math inline">\(Y_{i}
 = \beta_{0} + \beta_{1} X_{i} + u_{i}\)</span></p>
 <p><br/></p>
-<p>Modelo estimado : $ = = + x_{i} = b_{0} + b_{1} x_{i}$</p>
+<p>Modelo estimado : <span
+class="math inline">\(\widehat{E[Y_{i}|X_{i}]} = \widehat{y_{i}}
+=\widehat{\beta_{0}} + \widehat{\beta_{1}} x_{i} = b_{0} + b_{1}
+x_{i}\)</span></p>
 <p><br/></p>
 <p>Residuales : <span class="math inline">\(e_{i} =\widehat{u_{i}} =
 y_{i} - \widehat{y_{i}}\)</span></p>
@@ -818,7 +821,7 @@ x_{i} = \sum_{i=1}^{n} y_{i}\]</span></p>
 x_{i}y_{i}\]</span></p>
 <p><br/><br/></p>
 <div id="solución" class="section level4">
-<h4>Solución :</h4>
+<h4><strong>Solución</strong> :</h4>
 <p><span class="math display">\[\begin{eqnarray*}
 b_{1} = \dfrac{n \displaystyle\sum_{i=1}^{n} x_{i}y_{i}-
 \Big(\displaystyle\sum_{i=1}^{n} x_{i} \displaystyle\sum_{i=1}^{n}
@@ -854,12 +857,14 @@ x_{i} \displaystyle\sum_{i=1}^{n} y_{i} \Big)}{n}
 <p><span class="math display">\[\begin{equation*}
 S_{xy} = 3337.82-\dfrac{228.90 \times 149.10}{12} = 493.7375
 \end{equation*}\]</span></p>
-<p><br/><br/> #### <strong>Suma de Cuadrados de los Errores
-(Residuales)</strong></p>
+<p><br/><br/></p>
+</div>
+<div id="suma-de-cuadrados-de-los-errores-residuales"
+class="section level4">
+<h4><strong>Suma de Cuadrados de los Errores (Residuales)</strong></h4>
 <p><span class="math display">\[\begin{eqnarray*}
-SCE =\s
-um_{i=1}^{n} u_{i}^{2}=\sum_{i=1}^{n} (y_{i}-\widehat{y_{i}})^{2}=
-S_{yy} - b_{1} S_{xy}
+SCE =\sum_{i=1}^{n} u_{i}^{2}=\sum_{i=1}^{n}
+(y_{i}-\widehat{y_{i}})^{2}= S_{yy} - b_{1} S_{xy}
 \end{eqnarray*}\]</span></p>
 <p><span class="math display">\[\begin{equation*}
 SCE = 326.2425 -0.55817 \times 493.7375 = 50.65304
@@ -874,8 +879,8 @@ IC_{\beta_{1}} : b_{1}  t_{v=n-2; \alpha/2} \dfrac{s}{\sqrt{S_{xx}}}
 <p><span class="math display">\[\begin{eqnarray*}
 T_{0} = \dfrac{b_{1}- \beta_{1o}}{s/\sqrt{S_{xx}}}
 \end{eqnarray*}\]</span></p>
-<p>$H_{0}: <em>{1}=</em>{2}=…_{k} = 0 $ <span
-class="math inline">\(H_{a}:\)</span> algun <span
+<p><span class="math inline">\(H_{0}: \beta_{1}=\beta_{2}=...\beta_{k} =
+0\)</span> <br/> <span class="math inline">\(H_{a}:\)</span> algun <span
 class="math inline">\(\beta_{i}\)</span> es diferente de cero</p>
 <p><br/><br/></p>
 </div>
@@ -887,7 +892,7 @@ class="math inline">\(\beta_{i}\)</span> es diferente de cero</p>
 class="section level4">
 <h4><strong>Prueba de hipotesis individual para el
 intercepto</strong></h4>
-<p><span class="math inline">\(H_{0}: \beta_{0} = 0\)</span> <span
+<p><span class="math inline">\(H_{0}: \beta_{0} = 0\)</span> <br/> <span
 class="math inline">\(H_{a}: \beta_{0} \neq 0\)</span></p>
 <p>Estadístico de prueba</p>
 <p><span class="math display">\[\begin{eqnarray*}
@@ -896,7 +901,7 @@ S_{xx}}}} = \dfrac{1.77788-0}{\sqrt{5.065}\sqrt{\dfrac{5250.83}{12
 \times 884.5625}}} = 1.123
 \end{eqnarray*}\]</span> Valor-p</p>
 <pre class="r"><code>2*pt(-1.123,11)</code></pre>
-<pre><code>## [1] 0.2853501</code></pre>
+<pre><code>[1] 0.2853501</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="prueba-de-hipotesis-individual-para-la-pendiente"
@@ -911,7 +916,7 @@ t=\dfrac{b_{1}-0}{\dfrac{s}{\sqrt{S_{xx}}}} =
 \dfrac{0.55817}{\sqrt{5.0652/884.5625}} = 7.376
 \end{eqnarray*}\]</span></p>
 <pre class="r"><code>2*pt(-7.376,11)</code></pre>
-<pre><code>## [1] 1.401564e-05</code></pre>
+<pre><code>[1] 1.401564e-05</code></pre>
 <p><br/><br/></p>
 </div>
 </div>
@@ -930,40 +935,128 @@ class="section level4">
 <h4><strong>Intervalo de confianza para predicción para <span
 class="math inline">\(y_{0}\)</span></strong></h4>
 <p><span class="math display">\[\begin{eqnarray*}
-\widehat{y_{0}} \pm  t_{\alpha/2} s \sqrt{1+\dfrac{1}{n}
-\dfrac{(x_{0}-\bar{x})^{2}}{S_{xx}}}}
+\widehat{y_{0}} \pm t_{\alpha/2} s \sqrt{1+
+\dfrac{1}{n} \dfrac{(x_{0}-\bar{x})^{2}}{S_{xx}}}  
 \end{eqnarray*}\]</span></p>
 <p><span class="math inline">\(v=n-k\)</span> grados de libertad</p>
 <pre class="r"><code>x=c(24.3,12.5,31.2,28,35.1,10.5,23.2, 10,8.5,15.9,14.7,15)
 y=c(16.2,8.5,15,17,24.2,11.2,15,7.1,3.5,11.5,10.7,9.2)
-regresion=lm(y ~ x)
-summary(regresion)</code></pre>
-<pre><code>## 
-## Call:
-## lm(formula = y ~ x)
-## 
-## Residuals:
-##     Min      1Q  Median      3Q     Max 
-## -4.1928 -0.5426  0.0088  0.8500  3.5613 
-## 
-## Coefficients:
-##             Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)  1.77788    1.58292   1.123    0.288    
-## x            0.55817    0.07567   7.376 2.38e-05 ***
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-## 
-## Residual standard error: 2.251 on 10 degrees of freedom
-## Multiple R-squared:  0.8447, Adjusted R-squared:  0.8292 
-## F-statistic: 54.41 on 1 and 10 DF,  p-value: 2.38e-05</code></pre>
-<pre class="r"><code>plot(x,y, xlab = &quot;Ingresos&quot;, ylab = &quot;Consumo&quot;)
-abline(regresion)</code></pre>
-<p><img src="monitoria5_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+regresion=lm(y ~ x)  # estimacion del modelo por MCO
+summary(regresion)   #  resumen del modelo</code></pre>
+<pre><code>
+Call:
+lm(formula = y ~ x)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-4.1928 -0.5426  0.0088  0.8500  3.5613 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  1.77788    1.58292   1.123    0.288    
+x            0.55817    0.07567   7.376 2.38e-05 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 2.251 on 10 degrees of freedom
+Multiple R-squared:  0.8447,    Adjusted R-squared:  0.8292 
+F-statistic: 54.41 on 1 and 10 DF,  p-value: 2.38e-05</code></pre>
+<p><br/><br/></p>
+<p>En el resumen se puede visializar la siguiente informacion :</p>
+<p><br/></p>
+<ul>
+<li><p>Resumen de los residuales :</p>
+<ul>
+<li><p>mínimo (-4.19),</p></li>
+<li><p><span class="math inline">\(Q_{1}\)</span> (-0.54),</p></li>
+<li><p><span class="math inline">\(Me\)</span> (0.0088),</p></li>
+<li><p><span class="math inline">\(Q_{3}\)</span> (0.85) y</p></li>
+<li><p>maximo (3.56).</p></li>
+</ul></li>
+</ul>
+<p><br/></p>
+<ul>
+<li><p>Estimacion de los coeficientes :</p>
+<ul>
+<li><p><span class="math inline">\(\widehat{\beta_{_{0}}} =
+1.77788\)</span> y</p></li>
+<li><p><span class="math inline">\(\widehat{\beta_{_{1}}} =
+0.55817\)</span></p></li>
+</ul></li>
+</ul>
+<p><br/></p>
+<ul>
+<li>Pruebas de significancia individuales</li>
+</ul>
+<table>
+<colgroup>
+<col width="30%" />
+<col width="35%" />
+<col width="19%" />
+<col width="14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="center">Ho</th>
+<th align="center">Ha</th>
+<th align="center">valor-p</th>
+<th align="left">Decisión</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="center"><span class="math inline">\(H_{o} : \beta_{_{0}}
+=0\)</span></td>
+<td align="center"><span class="math inline">\(H_{a} : \beta_{_{0}} \neq
+0\)</span></td>
+<td align="center"><span class="math inline">\(0.288\)</span></td>
+<td align="left">Se asume que <span
+class="math inline">\(\beta_{_{0}}=0\)</span></td>
+</tr>
+<tr class="even">
+<td align="center"><span class="math inline">\(H_{o} : \beta_{_{1}}
+=0\)</span></td>
+<td align="center"><span class="math inline">\(H_{a} : \beta_{_{1}} \neq
+0\)</span></td>
+<td align="center"><span class="math inline">\(0.0000\)</span></td>
+<td align="left"><span class="math inline">\(\beta_{_{1}} \neq
+0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>Aunque el resultado indique que <span
+class="math inline">\(\beta_{_{0}} =0\)</span>, el intercepto no debe
+excluirse del modelo dado que el forzar que la linea de regresión pase
+por el origen, genera un sesgo en la estimación de la pendiente <span
+class="math inline">\(\beta_{_{1}}\)</span></p>
+<p>De estos resultados se tienen que el modelo estimado es :</p>
+<p><span class="math display">\[\widehat{y} = 1.77788 + 0.55827
+x\]</span></p>
+<p><br/><br/></p>
+<pre class="r"><code>plot(x,y, xlab = &quot;Ingresos&quot;, ylab = &quot;Consumo&quot;) # grafico de dispersion
+abline(regresion)                              # grafica de la linea de regresion</code></pre>
+<p><img src="monitoria5_files/figure-html/unnamed-chunk-4-1.png" width="672" />
 <br/><br/><br/></p>
 </div>
 </div>
 <div id="anova-análisis-de-varianza" class="section level3">
 <h3><strong>ANOVA ( Análisis de Varianza )</strong></h3>
+<p>El analisis de varianza se utiiza para determinar la significancia
+global del modelo cuando existen varias variables independientes ( mas
+de una pendiente) y se emplea para derminar si de manera conjunta todas
+las pendientes son cero (<span class="math inline">\(Ho: \beta_{i}
+=0\)</span>) o se por el contario al menos una de ellas es diferente de
+cero (<span class="math inline">\(Ha\)</span>)</p>
+<p>En este caso se construye unna prueba F mediante la separacion de las
+sumas de cuadrados totales en dos parates : Suma de cuadrados debia a la
+regresion (SCReg) y la suma de cuadrados de los residuales (SCRes) : SCT
+= SCReg + SCRes. (326.2425 = 275.590 + 50.652 )</p>
+<p>Con estos valores divididos entre sus respectivos grados de libertad
+se encentranlos cuadrados medios, que corresponden a dos varianzas. La
+division de estos dos valores genera el estadistico F de esta prueba (F=
+275.590/5.0652 = 54.408). Finalmente se puede calcular el valor-p
+(<code>pf(54.408,1,10, lower.tail=FALSE)</code>)</p>
+<p><br/><br/></p>
 <table>
 <colgroup>
 <col width="16%" />
@@ -1041,14 +1134,36 @@ class="math inline">\(\dfrac{SCRes}{(n-k)}\)</span></td>
 </table>
 <p><br/><br/></p>
 <pre class="r"><code>anova(regresion)</code></pre>
-<pre><code>## Analysis of Variance Table
-## 
-## Response: y
-##           Df  Sum Sq Mean Sq F value   Pr(&gt;F)    
-## x          1 275.590 275.590  54.408 2.38e-05 ***
-## Residuals 10  50.652   5.065                     
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<pre><code>Analysis of Variance Table
+
+Response: y
+          Df  Sum Sq Mean Sq F value   Pr(&gt;F)    
+x          1 275.590 275.590  54.408 2.38e-05 ***
+Residuals 10  50.652   5.065                     
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
+<p><br/><br/></p>
+<p>Para el caso de la regresión lineal simple esta prueba (ANOVA),
+genera los mismos resultados que la prueba t realizada sobre <span
+class="math inline">\(\beta_{_{1}}\)</span>.</p>
+<p>Se presenta una equivalencia de : <span class="math inline">\(t^2 =
+F\)</span></p>
+<p><br/><br/></p>
+<p>Despues de realizar la estimación y las pruebas de significancia
+individuales es necesario la validación de los supuestos sobre los
+errores :</p>
+<ul>
+<li>Valor esperado de los erroes igual a cero</li>
+<li>Varianza constante de los errores (homoscedasticidad)</li>
+<li>Normalidad de los errores</li>
+<li>Independencia de los errores (no autocorrelacion de errores)</li>
+</ul>
+<p>Despues de esto se puede utilizar el modelo para la estimación de la
+variable dependiente o para la interprestacion de las pendientes como
+valoración del efecto que genera un cambio unitario de la variable
+independiente sobre la variable dependiente.</p>
+<p>En esta caso podemos decir que un incremento de un peso en los
+ingresos genera un increento de 0.55 sobre el consumo</p>
 </div>
 </div>
 

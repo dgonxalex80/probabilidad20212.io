@@ -12,7 +12,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = TRUE, comment = NA)
 ```
 
 ## **Taller Regresión Lineal  Simple**
@@ -63,7 +63,7 @@ Modelo de regresión lineal simple : $Y_{i} = \beta_{0} + \beta_{1} X_{i} + u_{i
 
 <br/>
 
-Modelo estimado : $ \widehat{E[Y_{i}|X_{i}]} = \widehat{y_{i}} =\widehat{\beta_{0}} + \widehat{\beta_{1}} x_{i} = b_{0} + b_{1} x_{i}$
+Modelo estimado : $\widehat{E[Y_{i}|X_{i}]} = \widehat{y_{i}} =\widehat{\beta_{0}} + \widehat{\beta_{1}} x_{i} = b_{0} + b_{1} x_{i}$
 
 <br/>
 
@@ -92,7 +92,7 @@ $$\beta_{0} \sum_{i=1}^{n} x_{i} + \beta_{1} \sum_{i=1}^{n} x_{1}^{2} = \sum_{i=
 
 <br/><br/>
 
-#### Solución : 
+#### **Solución** : 
 
 \begin{eqnarray*}
 b_{1} = \dfrac{n \displaystyle\sum_{i=1}^{n} x_{i}y_{i}- \Big(\displaystyle\sum_{i=1}^{n} x_{i} \displaystyle\sum_{i=1}^{n} y_{i}\Big)}{n \displaystyle\sum_{i=1}^{n} x_{i}^{2}- \Big(\displaystyle\sum_{i=1}^{n} x_{i}\Big)^{2}}
@@ -132,11 +132,11 @@ S_{xy} = 3337.82-\dfrac{228.90 \times 149.10}{12} = 493.7375
 \end{equation*}
 
 <br/><br/>
+
 ####  **Suma de Cuadrados de los Errores (Residuales)**
 
 \begin{eqnarray*}
-SCE =\s
-um_{i=1}^{n} u_{i}^{2}=\sum_{i=1}^{n} (y_{i}-\widehat{y_{i}})^{2}= S_{yy} - b_{1} S_{xy} 
+SCE =\sum_{i=1}^{n} u_{i}^{2}=\sum_{i=1}^{n} (y_{i}-\widehat{y_{i}})^{2}= S_{yy} - b_{1} S_{xy} 
 \end{eqnarray*}
 
 \begin{equation*}
@@ -155,7 +155,7 @@ IC_{\beta_{1}} : b_{1}  t_{v=n-2; \alpha/2} \dfrac{s}{\sqrt{S_{xx}}}
 T_{0} = \dfrac{b_{1}- \beta_{1o}}{s/\sqrt{S_{xx}}}
 \end{eqnarray*}
 
-$H_{0}: \beta_{1}=\beta_{2}=...\beta_{k} = 0 $ 
+$H_{0}: \beta_{1}=\beta_{2}=...\beta_{k} = 0$ <br/>
 $H_{a}:$ algun $\beta_{i}$ es diferente de cero
 
 <br/><br/>
@@ -166,7 +166,7 @@ $H_{a}:$ algun $\beta_{i}$ es diferente de cero
 
 #### **Prueba de hipotesis individual para el intercepto** 
 
-$H_{0}: \beta_{0} = 0$ 
+$H_{0}: \beta_{0} = 0$ <br/>
 $H_{a}: \beta_{0} \neq 0$
 
 Estadístico de prueba
@@ -208,26 +208,80 @@ $v=n-k$  grados de libertad
 
 <br/><br/>
 
-#### **Intervalo de confianza para predicción para $y_{0}$** 
+#### **Intervalo de confianza para predicción para $y_{0}$**
 
 \begin{eqnarray*}
-\widehat{y_{0}} \pm  t_{\alpha/2} s \sqrt{1+\dfrac{1}{n} \dfrac{(x_{0}-\bar{x})^{2}}{S_{xx}}}} 
+\widehat{y_{0}} \pm t_{\alpha/2} s \sqrt{1+
+\dfrac{1}{n} \dfrac{(x_{0}-\bar{x})^{2}}{S_{xx}}}  
 \end{eqnarray*}
 
 $v=n-k$  grados de libertad
 
 ```{r}
-
 x=c(24.3,12.5,31.2,28,35.1,10.5,23.2, 10,8.5,15.9,14.7,15)
 y=c(16.2,8.5,15,17,24.2,11.2,15,7.1,3.5,11.5,10.7,9.2)
-regresion=lm(y ~ x)
-summary(regresion)
-plot(x,y, xlab = "Ingresos", ylab = "Consumo")
-abline(regresion)
+regresion=lm(y ~ x)  # estimacion del modelo por MCO
+summary(regresion)   #  resumen del modelo
+```
+
+<br/><br/>
+
+En el resumen se puede visializar la siguiente informacion :
+
+<br/>
+
++ Resumen de los residuales : 
+
+  + mínimo (-4.19), 
+
+  + $Q_{1}$ (-0.54), 
+
+  + $Me$ (0.0088), 
+
+  + $Q_{3}$ (0.85) y 
+
+  + maximo (3.56).
+
+<br/>
+
++ Estimacion de los coeficientes : 
+
+  + $\widehat{\beta_{_{0}}} = 1.77788$ y 
+
+  + $\widehat{\beta_{_{1}}} = 0.55817$
+
+<br/>
+
++ Pruebas de significancia individuales
+
+| Ho                        | Ha                             | valor-p         | Decisión    |
+|:-------------------------:|:------------------------------:|:---------------:|:------------|
+| $H_{o} : \beta_{_{0}} =0$ | $H_{a} : \beta_{_{0}} \neq 0$  | $0.288$         | Se asume que $\beta_{_{0}}=0$
+| $H_{o}  : \beta_{_{1}} =0$ | $H_{a} : \beta_{_{1}} \neq 0$  | $0.0000$       | $\beta_{_{1}} \neq 0$
+
+Aunque el resultado indique que $\beta_{_{0}} =0$, el intercepto no debe excluirse del modelo dado que el forzar que la linea de regresión pase por el origen, genera un sesgo en la estimación de la pendiente $\beta_{_{1}}$
+
+De estos resultados se tienen que el modelo estimado es :
+
+$$\widehat{y} = 1.77788 + 0.55827 x$$
+
+<br/><br/>
+
+```{r}
+plot(x,y, xlab = "Ingresos", ylab = "Consumo") # grafico de dispersion
+abline(regresion)                              # grafica de la linea de regresion
 ```
 <br/><br/><br/>
 
 ### **ANOVA ( Análisis de Varianza )**
+
+El analisis de varianza se utiiza para determinar la significancia global del modelo cuando existen varias variables independientes ( mas de una pendiente) y se emplea para derminar si de manera conjunta todas las pendientes son cero ($Ho: \beta_{i} =0$) o se por el contario al menos una de ellas es diferente de cero ($Ha$)
+
+En este caso se construye unna prueba F mediante la separacion de las sumas de cuadrados totales en dos parates :  Suma de cuadrados debia a la regresion (SCReg) y la suma de cuadrados de los residuales (SCRes)  : SCT = SCReg + SCRes. (326.2425 = 275.590 + 50.652 )
+
+Con estos valores divididos entre sus respectivos grados de libertad se encentranlos cuadrados medios, que corresponden a dos varianzas.  La division de estos dos valores genera el estadistico F de esta prueba (F= 275.590/5.0652 = 54.408). Finalmente se puede calcular el valor-p (`pf(54.408,1,10, lower.tail=FALSE)`)  
+
+<br/><br/>
 
 Fuentes de variación |grados de libertad | Suma de Cuadrados | Cuadrados  Medios         |  F                     |  Valor-p |
 |:-------------------|------------------:|------------------:|--------------------------:|-----------------------:|---------:|
@@ -236,10 +290,31 @@ Fuentes de variación |grados de libertad | Suma de Cuadrados | Cuadrados  Medio
 Residuales           | $n-k$             |$S_{yy}-b_{1} S_{xy}$ | $\dfrac{SCRes}{(n-k)}$ |                                    |          |
 |                    | $12-1$            |   50.652             |    5.0652              |                                    |          |             
 |Total               | $n-1$             |$S_{yy}$              |                        |                                    |          |
-|                    | $12-1$            | 326.2425             |                        |                                    |          |
+|                    | $12-1$            | 326.2425             |                        |                                    |          |. 
 
 <br/><br/>
+
 
 ```{r}
 anova(regresion)
 ```
+
+<br/><br/>
+
+Para el caso de la regresión lineal simple esta prueba (ANOVA), genera los mismos resultados que la prueba t realizada sobre $\beta_{_{1}}$.  
+
+Se presenta una equivalencia de : $t^2 = F$
+
+<br/><br/>
+
+Despues de realizar la estimación y las pruebas de significancia individuales es necesario la validación de los supuestos sobre los errores :
+
+
++ Valor esperado de los erroes igual a cero
++ Varianza constante de los errores (homoscedasticidad)
++ Normalidad de los errores
++ Independencia de los errores (no autocorrelacion de errores)  
+
+Despues de esto se puede utilizar el modelo para la estimación de la variable dependiente o para la interprestacion de las pendientes como valoración del efecto que genera un cambio unitario de la variable independiente sobre la variable dependiente.
+
+En esta caso podemos decir que un incremento de un peso en los ingresos genera un increento de 0.55 sobre el consumo
