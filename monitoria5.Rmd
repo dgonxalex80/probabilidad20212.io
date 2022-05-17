@@ -355,11 +355,164 @@ Sea $\beta_{_{0}}$ la longitud del resorte en reposo y $\beta_{_{1}}$ el aumento
 + Determine un intervalo de confianza del 99% para la longitud del resorte bajo una carga de 1.5 $lb$.
 
 
+Tomado de Navidi(2006)
 <br/><br/><br/>
 
 ## **Problema 3**
+
+Para muchos compuestos químicos, la cantidad que se disolverá en un volumen de  agua específico depende de la temperatura. El siguiente resultado describe un modelo lineal $y = \beta_{_{0}} + \beta_{_{1}} x + u$   que expresa el número de granos de cierto compuesto químico disuelto por litro de agua ($Y$) con respecto a la temperatura en grados centigrados ($X$) para un total de n=6 observaciones.
+
+| Predictor    | Coeficiente      |  SE Coef         | t                 |  valor-p    |
+|:-------------|-----------------:|-----------------:|------------------:|------------:|
+|Intercepto    |           1.43810|           0.62459|               2.30|        0.083|
+| Temperatura  |           0.30714|           0.02063|              14.90|        0.000|
+
+
++ Cuantos grados de libertad tiene el estadístico t de Student?
+
++ Determine un intervalo de confianza del 95% para $\beta_{_{1}}$ 
+
++ Alguien afirma que si la temperatura del agua aunenta en un grado centigrado, la media del número de gramos disueltos aumentará en exacatente 0.40 . Utilice el resultado para realizar una prueba de hipótesis con elfin de determinar si esta afirmación puede ser rechazada
+
 
 
 <br/><br/><br/>
 
 ## **Problema 4**
+
+<br/>
+
+
+Se requiere modelar el número de días que un trabajador se ausenta de su puesto de trabajo durante un año, para lo cual se tienen en cuenta las siguientes variables :
+
+|            |                                                   |
+|:-----------|:--------------------------------------------------|
+|ausentismo  | núero de dias que un trabajar falta durante un año|
+| Taller     | si la persona trabaja en el taller (1) o no(0)    |
+| sexo       | hombre (1) , mujer (0)                            |
+| edad       | edad del trabajador en año                        |    
+| antigüedad | años de trabajo en la empresa                     |  
+| salario    | cuanto devenga el trabajador (U$)                 |
+
+<br/>
+
+$$y_{i} = \beta_{0} + \beta_{1} Taller_{i} + \beta_{2} sexo_{i} + \beta_{3} edad_{i} + \beta_{4} antiguedad_{i} + \beta_{5} salario_{i} + u$$ 
+
+para $i=1,.....n$
+
+<br/>
+
+### **Matriz de Covarianzas **
+
+```{r}
+library(readr)
+data=paqueteDEG::ausentismo
+data=data[,2:7]
+round(cov(data), 2) # matriz de varianzas-covarianzas
+```
+
+<br/><br/>
+
+### **Matriz de correlaciones**
+
+```{r}
+library(psych)
+library(corrplot)
+round(cor(data), 3) # matriz de correlaciones
+cor.plot(cor(data),
+         main="Mapa de Calor",
+         diag=F,
+         show.legend = TRUE)
+
+corrplot.mixed(cor(data),
+ upper = "square",
+ lower = "number",
+ addgrid.col = "black",
+ tl.col = "black")
+```
+<br/><br/>
+
+### **Estimación MCO Modelo1**
+
+```{r}
+# Estimación del modelo
+attach(data)
+modelo1=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
+summary(modelo1)
+```
+
+<br/><br/>
+
+### Diagnóstico del modelo 1
+
+```{r}
+# diagnostico
+coefficients(modelo1) # coeficientes estimados
+yhat=fitted(modelo1) # valores estimados
+u=residuals(modelo1) # residuales
+anova(modelo1) # tabla de anova
+vcov(modelo1) # matriz de varianzas covarianza de parámetros ( de los betas)
+```
+
+<br/><br/>
+
+### **Modelación paso a paso**
+
+```{r}
+# Stepwise Regression
+library(MASS)
+modelo2=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
+step=stepAIC(modelo2, direction="both")
+step$anova # display results
+```
+
+<br/><br/>
+
+### **Modelo 3**
+
+```{r}
+modelo3=lm(ausen ~ taller + sexo + antg + sala , data=data)
+summary(modelo3)
+```
+
+
+### **Modelo 4**
+
+```{r}
+modelo4=lm(ausen ~ sexo + antg + sala , data=data)
+summary(modelo4)
+
+uhat=modelo4$residuals
+#-----------------------------------------------------------------
+# Examen de normalidad de errores
+shapiro.test(uhat)
+
+# Supuesto de no autocorrelacion
+# install.packages("lmtest")
+library(lmtest)
+# Prueba de D-W  - autocorrelacion
+# Ho: los erreres no estan autocorrelacionados
+dwtest(modelo4)
+
+# Supuesto de homoscedasticidad
+# Prueba de Goldfeld-Quandt
+# Ho no existe heteroscedasticidad
+gqtest(modelo4)
+
+# Supuesto de correcta especificacion
+# Prueba de especificacion
+# Prueba RESET
+resettest(modelo4, power=2, type="regressor")
+```
+
+### **Modelo 5**
+
+```{r}
+modelo5=lm(ausen ~ antg + sala , data=data)
+summary(modelo5)
+
+```
+
+Modelo final : `ausentismo ~ 11.9557841 - 0.1934922 antiguedad - 0.0034216 salario`
+
+
