@@ -15,11 +15,11 @@ output:
 knitr::opts_chunk$set(echo = TRUE, comment = NA)
 ```
 
-## **Taller Regresión Lineal  Simple**
+# **Taller Regresión Lineal  Simple**
 
 <br/>
 
-### **Problema 1**
+## **Problema 1**
 
 Con el fin  de estimar la relación que exite entre el nivel de ingresos de una persona y el nivel de consumo , un investigador recolectó la siguiente información:
 
@@ -318,3 +318,32 @@ Despues de realizar la estimación y las pruebas de significancia individuales e
 Despues de esto se puede utilizar el modelo para la estimación de la variable dependiente o para la interprestacion de las pendientes como valoración del efecto que genera un cambio unitario de la variable independiente sobre la variable dependiente.
 
 En esta caso podemos decir que un incremento de un peso en los ingresos genera un increento de 0.55 sobre el consumo
+
+
+## **Problema 2**
+
+Se evalua un nuevo reporte. Se han colgado veinticinco pesas $x_{i}$ y se mide para cada una la longitud del resorte $y_{i}$. Los pesos se miden en lobras, y la longitud, en pulgadas. Se registró el siguiente resumen estadístoco:
+
+|                                                 |                                                    |
+|:-----------------------------------------------:|:--------------------------------------------------:|
+| $\bar{x} = 2.40$                                | $\bar{y} = 12.18$                                  |   
+| $\displaystyle\sum_{i=1}^{25} (x_{i} - \bar{x})^{2} = 52.00$ |  $\displaystyle\sum_{i=1}^{25} (y_{i} - \bar{y})^{2} = 498.96$  | 
+|$\displaystyle\sum_{i=1}^{25} (x_{i} - \bar{x})(y_{i} - \bar{y}) = 160.27$|                                         |
+
+Sea $\beta_{_{0}}$ la longitud del resorte en reposo y $\beta_{_{1}}$ el aumento en la longitud ocasionado por una carga de $1$ lb . Suponta que los supuestos sobre los errores con válidos.
+
++ Calcule los estimadores de MCO  $\widehat{\beta_{_{0}}}$ y $\widehat{\beta_{_{1}}}$
++ Calcule la estimación de la varianza del error $s^{2}_{u}$
++ Determine los intervalos de confianza del 95% para $\beta_{_{0}}$ y $\beta_{_{1}}$
++ El fabricante del resorte afirma que la constante del resorte no es mayor de $3 pulg/lb$ ¿Los datos proporcionan evidencias suficientes para rechazar esta afirmación?
++ Tambien se afirma que la longitud sin carga del resorte es de al menos $5.5 pulg$.  ¿Los datos proporcionan pruebas suficientes para rechazar esta afirmación?
++Determine un intervalo de confianza del 99% para la longitud del resorte bajo una carga de 1.5 lb.
+
+
+
+
+## **Problema 3**
+
+
+
+## **Problema 4**
