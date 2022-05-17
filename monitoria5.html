@@ -650,8 +650,12 @@ recolectó la siguiente información:</p>
 </tr>
 </tbody>
 </table>
-<p>Donde : + Id: identificador del hogar + Ing : Ingresos familiares +
-Con : Consumo en viveres</p>
+<p>Donde :</p>
+<ul>
+<li><p>Id: identificador del hogar</p></li>
+<li><p>Ing : Ingresos familiares</p></li>
+<li><p>Con : Consumo en viveres</p></li>
+</ul>
 <p>Realice un analisis de regresión que permita estimar la relación
 entre el consumo (Con) y los ingresos familiares (Ing).</p>
 <table>
@@ -796,7 +800,7 @@ x_{i}\)</span></p>
 y_{i} - \widehat{y_{i}}\)</span></p>
 <p><br/></p>
 <p>Suma de cuadrados de los errores : <span class="math inline">\(SCE =
-\sum_{i=1}^{n} e^{2} = \sum_{i=1}^{n} (y_{i} -
+\displaystyle\sum_{i=1}^{n} e^{2} = \displaystyle\sum_{i=1}^{n} (y_{i} -
 \widehat{y_{i}})^{2}\)</span></p>
 <p><br/><br/></p>
 <p><strong>Método de Mínimos Cuadrados Ordinarios (MCO)</strong></p>
@@ -809,15 +813,17 @@ valores de los coeficienes se plantean dos ecuaciones con dos
 incognitas. Estas ecuaciones se obtienen al derivar parcialmente la SCR
 con respecto a los dos coeficentes.</p>
 <p><span class="math display">\[\dfrac{\partial SCE}{\partial \beta_{0}}
-= -2 \sum_{i=1}^{n}(y_{i}- \beta_{0}-\beta_{1} x_{i}) = 0 \]</span></p>
+= -2 \displaystyle\sum_{i=1}^{n}(y_{i}- \beta_{0}-\beta_{1} x_{i}) = 0
+\]</span></p>
 <p><span class="math display">\[\dfrac{\partial SCE}{\partial \beta_{1}}
 = -2 \sum_{i=1}^{n}(y_{i}- \beta_{0}-\beta_{1} x_{i}) x_{i} =
 0\]</span></p>
-<p><span class="math display">\[n \beta_{0} + \beta_{1} \sum_{i=1}^{n}
-x_{i} = \sum_{i=1}^{n} y_{i}\]</span></p>
-<p><span class="math display">\[\beta_{0} \sum_{i=1}^{n} x_{i} +
-\beta_{1} \sum_{i=1}^{n} x_{1}^{2} = \sum_{i=1}^{n}
-x_{i}y_{i}\]</span></p>
+<p><span class="math display">\[n \beta_{0} + \beta_{1}
+\displaystyle\sum_{i=1}^{n} x_{i} = \displaystyle\sum_{i=1}^{n}
+y_{i}\]</span></p>
+<p><span class="math display">\[\beta_{0} \displaystyle\sum_{i=1}^{n}
+x_{i} + \beta_{1} \displaystyle\sum_{i=1}^{n} x_{1}^{2} =
+\displaystyle\sum_{i=1}^{n} x_{i}y_{i}\]</span></p>
 <p><br/><br/></p>
 <div id="solución" class="section level4">
 <h4><strong>Solución</strong> :</h4>
@@ -1048,8 +1054,9 @@ las pendientes son cero (<span class="math inline">\(Ho: \beta_{i}
 cero (<span class="math inline">\(Ha\)</span>)</p>
 <p>En este caso se construye unna prueba F mediante la separacion de las
 sumas de cuadrados totales en dos parates : Suma de cuadrados debia a la
-regresion (SCReg) y la suma de cuadrados de los residuales (SCRes) : SCT
-= SCReg + SCRes. (326.2425 = 275.590 + 50.652 )</p>
+regresion (SCReg) y la suma de cuadrados de los residuales (SCRes) :</p>
+<p><span class="math display">\[SCT = SCReg + SCRes\]</span></p>
+<p><span class="math display">\[326.2425 = 275.590 + 50.652\]</span></p>
 <p>Con estos valores divididos entre sus respectivos grados de libertad
 se encentranlos cuadrados medios, que corresponden a dos varianzas. La
 division de estos dos valores genera el estadistico F de esta prueba (F=
@@ -1068,66 +1075,82 @@ division de estos dos valores genera el estadistico F de esta prueba (F=
 <thead>
 <tr class="header">
 <th align="left">Fuentes de variación</th>
-<th align="right">grados de libertad</th>
-<th align="right">Suma de Cuadrados</th>
-<th align="right">Cuadrados Medios</th>
-<th align="right">F</th>
-<th align="right">Valor-p</th>
+<th align="center">grados de libertad</th>
+<th align="center">Suma de Cuadrados</th>
+<th align="center">Cuadrados Medios</th>
+<th align="center">F</th>
+<th align="center">Valor-p</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td align="left">Regresión</td>
-<td align="right"><span class="math inline">\(k-1\)</span></td>
-<td align="right"><span class="math inline">\(b_{1} S_{xy}\)</span></td>
-<td align="right"><span
+<td align="center"><span class="math inline">\(k-1\)</span></td>
+<td align="center"><span class="math inline">\(b_{1}
+S_{xy}\)</span></td>
+<td align="center"><span
 class="math inline">\(\dfrac{SCReg}{(k-1)}\)</span></td>
-<td align="right"><span
+<td align="center"><span
 class="math inline">\(\dfrac{CMReg}{CMRes}\)</span></td>
-<td align="right"><span class="math inline">\(1-pf\)</span></td>
+<td align="center"><span class="math inline">\(1-pf\)</span></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="right"><span class="math inline">\(2-1\)</span></td>
-<td align="right">275.590</td>
-<td align="right">275.590</td>
-<td align="right"><span
-class="math inline">\(\dfrac{275.590}{5.0652}=54.408\)</span></td>
-<td align="right">0.0000</td>
+<td align="center"><span class="math inline">\(2-1\)</span></td>
+<td align="center">275.590</td>
+<td align="center">275.590</td>
+<td align="center">54.408</td>
+<td align="center">0.0000</td>
 </tr>
 <tr class="odd">
+<td align="left"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="even">
 <td align="left">Residuales</td>
-<td align="right"><span class="math inline">\(n-k\)</span></td>
-<td align="right"><span class="math inline">\(S_{yy}-b_{1}
+<td align="center"><span class="math inline">\(n-k\)</span></td>
+<td align="center"><span class="math inline">\(S_{yy}-b_{1}
 S_{xy}\)</span></td>
-<td align="right"><span
+<td align="center"><span
 class="math inline">\(\dfrac{SCRes}{(n-k)}\)</span></td>
-<td align="right"></td>
-<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="center"><span class="math inline">\(12-1\)</span></td>
+<td align="center">50.652</td>
+<td align="center">5.0652</td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="right"><span class="math inline">\(12-1\)</span></td>
-<td align="right">50.652</td>
-<td align="right">5.0652</td>
-<td align="right"></td>
-<td align="right"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr class="odd">
 <td align="left">Total</td>
-<td align="right"><span class="math inline">\(n-1\)</span></td>
-<td align="right"><span class="math inline">\(S_{yy}\)</span></td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
+<td align="center"><span class="math inline">\(n-1\)</span></td>
+<td align="center"><span class="math inline">\(S_{yy}\)</span></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr class="even">
 <td align="left"></td>
-<td align="right"><span class="math inline">\(12-1\)</span></td>
-<td align="right">326.2425</td>
-<td align="right"></td>
-<td align="right"></td>
-<td align="right"></td>
+<td align="center"><span class="math inline">\(12-1\)</span></td>
+<td align="center">326.2425</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 </tbody>
 </table>
@@ -1163,6 +1186,7 @@ valoración del efecto que genera un cambio unitario de la variable
 independiente sobre la variable dependiente.</p>
 <p>En esta caso podemos decir que un incremento de un peso en los
 ingresos genera un increento de 0.55 sobre el consumo</p>
+<p><br/><br/><br/></p>
 </div>
 </div>
 <div id="problema-2" class="section level2">
@@ -1202,30 +1226,34 @@ class="math inline">\(\displaystyle\sum_{i=1}^{25} (x_{i} -
 </table>
 <p>Sea <span class="math inline">\(\beta_{_{0}}\)</span> la longitud del
 resorte en reposo y <span class="math inline">\(\beta_{_{1}}\)</span> el
-aumento en la longitud ocasionado por una carga de <span
-class="math inline">\(1\)</span> lb . Suponta que los supuestos sobre
-los errores con válidos.</p>
+aumento en la longitud ocasionado por una carga de 1 <span
+class="math inline">\(lb\)</span> . Suponta que los supuestos sobre los
+errores con válidos.</p>
 <ul>
-<li>Calcule los estimadores de MCO <span
+<li><p>Calcule los estimadores de MCO <span
 class="math inline">\(\widehat{\beta_{_{0}}}\)</span> y <span
-class="math inline">\(\widehat{\beta_{_{1}}}\)</span></li>
-<li>Calcule la estimación de la varianza del error <span
-class="math inline">\(s^{2}_{u}\)</span></li>
-<li>Determine los intervalos de confianza del 95% para <span
+class="math inline">\(\widehat{\beta_{_{1}}}\)</span></p></li>
+<li><p>Calcule la estimación de la varianza del error <span
+class="math inline">\(s^{2}_{u}\)</span></p></li>
+<li><p>Determine los intervalos de confianza del 95% para <span
 class="math inline">\(\beta_{_{0}}\)</span> y <span
-class="math inline">\(\beta_{_{1}}\)</span></li>
-<li>El fabricante del resorte afirma que la constante del resorte no es
-mayor de <span class="math inline">\(3 pulg/lb\)</span> ¿Los datos
-proporcionan evidencias suficientes para rechazar esta afirmación?</li>
-<li>Tambien se afirma que la longitud sin carga del resorte es de al
-menos <span class="math inline">\(5.5 pulg\)</span>. ¿Los datos
-proporcionan pruebas suficientes para rechazar esta afirmación?
-+Determine un intervalo de confianza del 99% para la longitud del
-resorte bajo una carga de 1.5 lb.</li>
+class="math inline">\(\beta_{_{1}}\)</span></p></li>
+<li><p>El fabricante del resorte afirma que la constante del resorte no
+es mayor de 3 <span class="math inline">\(pulg/lb\)</span> ¿Los datos
+proporcionan evidencias suficientes para rechazar esta
+afirmación?</p></li>
+<li><p>Tambien se afirma que la longitud sin carga del resorte es de al
+menos 5.5 <span class="math inline">\(pulg\)</span>. ¿Los datos
+proporcionan pruebas suficientes para rechazar esta afirmación?</p></li>
+<li><p>Determine un intervalo de confianza del 99% para la longitud del
+resorte bajo una carga de 1.5 <span
+class="math inline">\(lb\)</span>.</p></li>
 </ul>
+<p><br/><br/><br/></p>
 </div>
 <div id="problema-3" class="section level2">
 <h2><strong>Problema 3</strong></h2>
+<p><br/><br/><br/></p>
 </div>
 <div id="problema-4" class="section level2">
 <h2><strong>Problema 4</strong></h2>

@@ -29,8 +29,11 @@ Con el fin  de estimar la relación que exite entre el nivel de ingresos de una 
 |Con |16.2  |8.5   |15.0  |17.0  |24.2  |11.2  | 15.0|  7.1 |  3.5 |  11.5|  10.7 |  9.2  | 
 
 Donde :
+
 + Id: identificador del hogar
+
 + Ing : Ingresos familiares
+
 + Con : Consumo en viveres 
 
 Realice un analisis de regresión que permita estimar la relación entre el consumo (Con) y los ingresos familiares (Ing).
@@ -71,7 +74,7 @@ Residuales : $e_{i} =\widehat{u_{i}} = y_{i} - \widehat{y_{i}}$
 
 <br/>
 
-Suma de cuadrados de los errores : $SCE = \sum_{i=1}^{n} e^{2} = \sum_{i=1}^{n} (y_{i} - \widehat{y_{i}})^{2}$
+Suma de cuadrados de los errores : $SCE = \displaystyle\sum_{i=1}^{n} e^{2} = \displaystyle\sum_{i=1}^{n} (y_{i} - \widehat{y_{i}})^{2}$
 
 <br/><br/>
 
@@ -81,14 +84,14 @@ Suma de cuadrados de los errores : $SCE = \sum_{i=1}^{n} e^{2} = \sum_{i=1}^{n} 
 
 **Ecuaciones normales**: Con el fin de estimar los valores de los coeficienes se plantean dos ecuaciones con dos incognitas. Estas ecuaciones se obtienen al derivar parcialmente la SCR con respecto a los dos coeficentes.
 
-$$\dfrac{\partial SCE}{\partial \beta_{0}} = -2 \sum_{i=1}^{n}(y_{i}- \beta_{0}-\beta_{1} x_{i}) = 0 $$
+$$\dfrac{\partial SCE}{\partial \beta_{0}} = -2 \displaystyle\sum_{i=1}^{n}(y_{i}- \beta_{0}-\beta_{1} x_{i}) = 0 $$
 
 $$\dfrac{\partial SCE}{\partial \beta_{1}} = -2 \sum_{i=1}^{n}(y_{i}- \beta_{0}-\beta_{1} x_{i}) x_{i} = 0$$
 
 
-$$n \beta_{0} + \beta_{1} \sum_{i=1}^{n} x_{i} = \sum_{i=1}^{n} y_{i}$$
+$$n \beta_{0} + \beta_{1} \displaystyle\sum_{i=1}^{n} x_{i} = \displaystyle\sum_{i=1}^{n} y_{i}$$
 
-$$\beta_{0} \sum_{i=1}^{n} x_{i} + \beta_{1} \sum_{i=1}^{n} x_{1}^{2} = \sum_{i=1}^{n} x_{i}y_{i}$$
+$$\beta_{0} \displaystyle\sum_{i=1}^{n} x_{i} + \beta_{1} \displaystyle\sum_{i=1}^{n} x_{1}^{2} = \displaystyle\sum_{i=1}^{n} x_{i}y_{i}$$
 
 <br/><br/>
 
@@ -277,20 +280,26 @@ abline(regresion)                              # grafica de la linea de regresio
 
 El analisis de varianza se utiiza para determinar la significancia global del modelo cuando existen varias variables independientes ( mas de una pendiente) y se emplea para derminar si de manera conjunta todas las pendientes son cero ($Ho: \beta_{i} =0$) o se por el contario al menos una de ellas es diferente de cero ($Ha$)
 
-En este caso se construye unna prueba F mediante la separacion de las sumas de cuadrados totales en dos parates :  Suma de cuadrados debia a la regresion (SCReg) y la suma de cuadrados de los residuales (SCRes)  : SCT = SCReg + SCRes. (326.2425 = 275.590 + 50.652 )
+En este caso se construye unna prueba F mediante la separacion de las sumas de cuadrados totales en dos parates :  Suma de cuadrados debia a la regresion (SCReg) y la suma de cuadrados de los residuales (SCRes)  : 
+
+$$SCT = SCReg + SCRes$$ 
+
+$$326.2425 = 275.590 + 50.652$$
 
 Con estos valores divididos entre sus respectivos grados de libertad se encentranlos cuadrados medios, que corresponden a dos varianzas.  La division de estos dos valores genera el estadistico F de esta prueba (F= 275.590/5.0652 = 54.408). Finalmente se puede calcular el valor-p (`pf(54.408,1,10, lower.tail=FALSE)`)  
 
 <br/><br/>
 
-Fuentes de variación |grados de libertad | Suma de Cuadrados | Cuadrados  Medios         |  F                     |  Valor-p |
-|:-------------------|------------------:|------------------:|--------------------------:|-----------------------:|---------:|
-|Regresión           | $k-1$             |$b_{1} S_{xy}$     |  $\dfrac{SCReg}{(k-1)}$   | $\dfrac{CMReg}{CMRes}$ | $1-pf$   |     
-|                    | $2-1$             |  275.590          |   275.590                 | $\dfrac{275.590}{5.0652}=54.408$   |   0.0000 |
-Residuales           | $n-k$             |$S_{yy}-b_{1} S_{xy}$ | $\dfrac{SCRes}{(n-k)}$ |                                    |          |
-|                    | $12-1$            |   50.652             |    5.0652              |                                    |          |             
-|Total               | $n-1$             |$S_{yy}$              |                        |                                    |          |
-|                    | $12-1$            | 326.2425             |                        |                                    |          |. 
+Fuentes de variación |grados de libertad | Suma de Cuadrados | Cuadrados  Medios         |  F                      |  Valor-p |
+|:-------------------|:-----------------:|:-----------------:|:-------------------------:|:-----------------------:|:--------:|
+|Regresión           | $k-1$             |$b_{1} S_{xy}$     |  $\dfrac{SCReg}{(k-1)}$   | $\dfrac{CMReg}{CMRes}$  | $1-pf$   |     
+|                    | $2-1$             |  275.590          |   275.590                 | 54.408                  |   0.0000 |
+|                    |                   |                   |                           |                         |          |            
+|Residuales          | $n-k$             |$S_{yy}-b_{1} S_{xy}$ | $\dfrac{SCRes}{(n-k)}$ |                         |          |
+|                    | $12-1$            |   50.652          |   5.0652                  |                         |          |             
+|                    |                   |                   |                           |                         |          |
+|Total               | $n-1$             |$S_{yy}$           |                           |                         |          |
+|                    | $12-1$            | 326.2425          |                           |                         |          | 
 
 <br/><br/>
 
@@ -319,6 +328,7 @@ Despues de esto se puede utilizar el modelo para la estimación de la variable d
 
 En esta caso podemos decir que un incremento de un peso en los ingresos genera un increento de 0.55 sobre el consumo
 
+<br/><br/><br/>
 
 ## **Problema 2**
 
@@ -330,20 +340,26 @@ Se evalua un nuevo reporte. Se han colgado veinticinco pesas $x_{i}$ y se mide p
 | $\displaystyle\sum_{i=1}^{25} (x_{i} - \bar{x})^{2} = 52.00$ |  $\displaystyle\sum_{i=1}^{25} (y_{i} - \bar{y})^{2} = 498.96$  | 
 |$\displaystyle\sum_{i=1}^{25} (x_{i} - \bar{x})(y_{i} - \bar{y}) = 160.27$|                                         |
 
-Sea $\beta_{_{0}}$ la longitud del resorte en reposo y $\beta_{_{1}}$ el aumento en la longitud ocasionado por una carga de $1$ lb . Suponta que los supuestos sobre los errores con válidos.
+Sea $\beta_{_{0}}$ la longitud del resorte en reposo y $\beta_{_{1}}$ el aumento en la longitud ocasionado por una carga de 1 $lb$ . Suponta que los supuestos sobre los errores con válidos.
 
 + Calcule los estimadores de MCO  $\widehat{\beta_{_{0}}}$ y $\widehat{\beta_{_{1}}}$
+
 + Calcule la estimación de la varianza del error $s^{2}_{u}$
+
 + Determine los intervalos de confianza del 95% para $\beta_{_{0}}$ y $\beta_{_{1}}$
-+ El fabricante del resorte afirma que la constante del resorte no es mayor de $3 pulg/lb$ ¿Los datos proporcionan evidencias suficientes para rechazar esta afirmación?
-+ Tambien se afirma que la longitud sin carga del resorte es de al menos $5.5 pulg$.  ¿Los datos proporcionan pruebas suficientes para rechazar esta afirmación?
-+Determine un intervalo de confianza del 99% para la longitud del resorte bajo una carga de 1.5 lb.
+
++ El fabricante del resorte afirma que la constante del resorte no es mayor de 3 $pulg/lb$ ¿Los datos proporcionan evidencias suficientes para rechazar esta afirmación?
+
++ Tambien se afirma que la longitud sin carga del resorte es de al menos 5.5 $pulg$.  ¿Los datos proporcionan pruebas suficientes para rechazar esta afirmación?
+
++ Determine un intervalo de confianza del 99% para la longitud del resorte bajo una carga de 1.5 $lb$.
 
 
-
+<br/><br/><br/>
 
 ## **Problema 3**
 
 
+<br/><br/><br/>
 
 ## **Problema 4**
