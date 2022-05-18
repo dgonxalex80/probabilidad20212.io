@@ -93,8 +93,8 @@ Los datos de los tres últimos meses se adjuntan en la base que puede obtener co
 
 <br/><br/>
 
-```{r}
-paqueteDEG::casas
-```
+#### **Carga de datos**
+
+Data: [casas](https://docs.google.com/spreadsheets/d/136K_b9mjaetSWl_-Kk7XvPwd1Y00TemckrqMr-X1Mzg/edit?usp=sharing) 
 
 Adaptado de Weiers, Ronald M, Introducción a la estadística para Negocios., 2006.
