@@ -14,7 +14,7 @@
 
 <title>Monitoria </title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -1310,7 +1310,385 @@ rechazada</p></li>
 </div>
 <div id="problema-4" class="section level2">
 <h2><strong>Problema 4</strong></h2>
-<p><br/></p>
+<p>Un propietario de una pizzeria esta interesado en estudiar la
+relación existente entre : el número de nuncios entregados, el costo de
+los anuncios de publicidad y las ventas obtenidas durante los últimos 12
+meses. Esta información se registra a continuación:</p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">t</th>
+<th align="right">mes</th>
+<th align="right"><span class="math inline">\(X_{1}\)</span></th>
+<th align="right"><span class="math inline">\(X_{2}\)</span></th>
+<th align="right"><span class="math inline">\(Y\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">1</td>
+<td align="right">Mayo</td>
+<td align="right">12</td>
+<td align="right">13.9</td>
+<td align="right">43.6</td>
+</tr>
+<tr class="even">
+<td align="right">2</td>
+<td align="right">Junio</td>
+<td align="right">11</td>
+<td align="right">12.0</td>
+<td align="right">38.0</td>
+</tr>
+<tr class="odd">
+<td align="right">3</td>
+<td align="right">Julio</td>
+<td align="right">9</td>
+<td align="right">9.3</td>
+<td align="right">30.1</td>
+</tr>
+<tr class="even">
+<td align="right">4</td>
+<td align="right">Agosto</td>
+<td align="right">7</td>
+<td align="right">9.7</td>
+<td align="right">35.3</td>
+</tr>
+<tr class="odd">
+<td align="right">5</td>
+<td align="right">Septiembre</td>
+<td align="right">12</td>
+<td align="right">12.3</td>
+<td align="right">46.4</td>
+</tr>
+<tr class="even">
+<td align="right">6</td>
+<td align="right">Octubre</td>
+<td align="right">8</td>
+<td align="right">11.4</td>
+<td align="right">34.2</td>
+</tr>
+<tr class="odd">
+<td align="right">7</td>
+<td align="right">Noviembre</td>
+<td align="right">6</td>
+<td align="right">9.3</td>
+<td align="right">30.2</td>
+</tr>
+<tr class="even">
+<td align="right">8</td>
+<td align="right">Diciembre</td>
+<td align="right">13</td>
+<td align="right">14.3</td>
+<td align="right">40.7</td>
+</tr>
+<tr class="odd">
+<td align="right">9</td>
+<td align="right">Enero</td>
+<td align="right">8</td>
+<td align="right">10.2</td>
+<td align="right">38.5</td>
+</tr>
+<tr class="even">
+<td align="right">10</td>
+<td align="right">Febrero</td>
+<td align="right">6</td>
+<td align="right">8.4</td>
+<td align="right">22.6</td>
+</tr>
+<tr class="odd">
+<td align="right">11</td>
+<td align="right">Marzo</td>
+<td align="right">8</td>
+<td align="right">11.2</td>
+<td align="right">37.6</td>
+</tr>
+<tr class="even">
+<td align="right">12</td>
+<td align="right">Abril</td>
+<td align="right">10</td>
+<td align="right">11.1</td>
+<td align="right">35.2</td>
+</tr>
+</tbody>
+</table>
+<p>Donde:</p>
+<ul>
+<li><p><span class="math inline">\(t\)</span> : identificador del
+mes</p></li>
+<li><p><span class="math inline">\(X_{1}\)</span>: Número de anuncios
+entregados</p></li>
+<li><p><span class="math inline">\(X_{2}\)</span>: Costos de anuncios
+publicados</p></li>
+<li><p><span class="math inline">\(Y\)</span> : Ventas totales</p></li>
+</ul>
+<div id="a.-estime-los-siguiente-modelos-de-regresión"
+class="section level4">
+<h4>a. Estime los siguiente modelos de regresión:</h4>
+<ul>
+<li><span
+class="math inline">\(y_{i}=\beta_{0}+\beta{1}X_{1i}+u_{1i}\)</span></li>
+<li><span
+class="math inline">\(y_{i}=\alpha_{0}+\alpha_{1}X_{2i}+u_{2i}\)</span></li>
+<li><span class="math inline">\(y_{i}=\gamma_{0}+\gamma_{1}
+t_{i}+u_{3i}\)</span></li>
+<li><span
+class="math inline">\(y_{i}=\theta_{0}+\theta_{1}X_{1i}+\theta_{2}X_{2i}+u_{4i}\)</span></li>
+</ul>
+</div>
+<div id="b.-para-cada-uno-de-los-casos" class="section level4">
+<h4>b. Para cada uno de los casos :</h4>
+<ul>
+<li>Estime el modelo, mediante MCO</li>
+<li>Interprete los resultados obtenidos</li>
+<li>Valide los cuatro supuestos sobre los errores</li>
+</ul>
+</div>
+<div id="solución-1" class="section level4">
+<h4>Solución :</h4>
+<pre class="r"><code>t=1:12
+x1=c(12,11,9,7,12,8,6,13,8,6,8,10)
+x2=c(13.9,12.0,9.3,9.7,12.3,11.4,9.3,14.3,10.2,8.4,11.2,11.1)
+y=c(43.6,38.0,30.1,35.3,46.4,34.2,30.2,40.7,38.5,22.6,37.6,35.2)
+data.frame(t,y,x1,x2)</code></pre>
+<pre><code>    t    y x1   x2
+1   1 43.6 12 13.9
+2   2 38.0 11 12.0
+3   3 30.1  9  9.3
+4   4 35.3  7  9.7
+5   5 46.4 12 12.3
+6   6 34.2  8 11.4
+7   7 30.2  6  9.3
+8   8 40.7 13 14.3
+9   9 38.5  8 10.2
+10 10 22.6  6  8.4
+11 11 37.6  8 11.2
+12 12 35.2 10 11.1</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>modelo1=lm(y ~ x1) 
+summary(modelo1)</code></pre>
+<pre><code>
+Call:
+lm(formula = y ~ x1)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-6.8364 -2.7568  0.6804  3.8346  4.8971 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)  16.9369     4.9818   3.400  0.00677 **
+x1            2.0832     0.5271   3.952  0.00272 **
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 4.206 on 10 degrees of freedom
+Multiple R-squared:  0.6097,    Adjusted R-squared:  0.5707 
+F-statistic: 15.62 on 1 and 10 DF,  p-value: 0.00272</code></pre>
+<pre class="r"><code>plot(x1,y, pch=19, col=c1, las=1, xlim = c(0,15), ylim = c(0,50))
+u1=modelo1$residuals
+t.test(u1)</code></pre>
+<pre><code>
+    One Sample t-test
+
+data:  u1
+t = 0, df = 11, p-value = 1
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -2.547816  2.547816
+sample estimates:
+mean of x 
+        0 </code></pre>
+<pre class="r"><code>shapiro.test(u1)</code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  u1
+W = 0.92926, p-value = 0.3723</code></pre>
+<pre class="r"><code>lmtest::bgtest(modelo1)</code></pre>
+<p><img src="monitoria5_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre><code>
+    Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  modelo1
+LM test = 2.9288, df = 1, p-value = 0.08701</code></pre>
+<pre class="r"><code>lmtest::dwtest(modelo1)</code></pre>
+<pre><code>
+    Durbin-Watson test
+
+data:  modelo1
+DW = 2.8936, p-value = 0.9526
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>modelo2=lm(y ~ x2) 
+summary(modelo2)</code></pre>
+<pre><code>
+Call:
+lm(formula = y ~ x2)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-5.7016 -1.3227 -0.6647  1.7577  6.8957 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)   
+(Intercept)    4.173      7.109   0.587  0.57023   
+x2             2.873      0.633   4.538  0.00108 **
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 3.849 on 10 degrees of freedom
+Multiple R-squared:  0.6731,    Adjusted R-squared:  0.6404 
+F-statistic: 20.59 on 1 and 10 DF,  p-value: 0.001079</code></pre>
+<pre class="r"><code>plot(x2,y, pch=19, col=c2, las=1, xlim = c(0,15), ylim = c(0,50))</code></pre>
+<p><img src="monitoria5_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>u2=modelo2$residuals
+t.test(u2)</code></pre>
+<pre><code>
+    One Sample t-test
+
+data:  u2
+t = 3.4979e-17, df = 11, p-value = 1
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -2.331729  2.331729
+sample estimates:
+   mean of x 
+3.705713e-17 </code></pre>
+<pre class="r"><code>shapiro.test(u2)</code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  u2
+W = 0.94755, p-value = 0.6015</code></pre>
+<pre class="r"><code>lmtest::bgtest(modelo2)</code></pre>
+<pre><code>
+    Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  modelo2
+LM test = 1.5305, df = 1, p-value = 0.216</code></pre>
+<pre class="r"><code>lmtest::dwtest(modelo2)</code></pre>
+<pre><code>
+    Durbin-Watson test
+
+data:  modelo2
+DW = 2.7057, p-value = 0.8996
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>modelo3=lm(y ~ t) 
+summary(modelo3)</code></pre>
+<pre><code>
+Call:
+lm(formula = y ~ t)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-11.5536  -2.9676   0.8352   4.1408   9.5611 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  39.5242     3.9502  10.006 1.58e-06 ***
+t            -0.5371     0.5367  -1.001    0.341    
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 6.418 on 10 degrees of freedom
+Multiple R-squared:  0.09101,   Adjusted R-squared:  0.0001156 
+F-statistic: 1.001 on 1 and 10 DF,  p-value: 0.3406</code></pre>
+<pre class="r"><code>plot(t,y, pch=19, col=c3, las=1, xlim = c(0,15), ylim = c(0,50))</code></pre>
+<p><img src="monitoria5_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<pre class="r"><code>u3=modelo3$residuals
+t.test(u3)</code></pre>
+<pre><code>
+    One Sample t-test
+
+data:  u3
+t = 1.6759e-16, df = 11, p-value = 1
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -3.888188  3.888188
+sample estimates:
+   mean of x 
+2.960595e-16 </code></pre>
+<pre class="r"><code>shapiro.test(u3)</code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  u3
+W = 0.96646, p-value = 0.8704</code></pre>
+<pre class="r"><code>lmtest::bgtest(modelo3)</code></pre>
+<pre><code>
+    Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  modelo3
+LM test = 0.74378, df = 1, p-value = 0.3885</code></pre>
+<pre class="r"><code>lmtest::dwtest(modelo3)</code></pre>
+<pre><code>
+    Durbin-Watson test
+
+data:  modelo3
+DW = 2.4316, p-value = 0.6663
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+<p><br/><br/><br/></p>
+<pre class="r"><code>modelo4=lm(y ~ x1 + x2) 
+summary(modelo4)</code></pre>
+<pre><code>
+Call:
+lm(formula = y ~ x1 + x2)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-5.6981 -1.8223 -0.6656  2.4470  6.0123 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)
+(Intercept)   6.5836     8.5422   0.771    0.461
+x1            0.6247     1.1203   0.558    0.591
+x2            2.1389     1.4701   1.455    0.180
+
+Residual standard error: 3.989 on 9 degrees of freedom
+Multiple R-squared:  0.684, Adjusted R-squared:  0.6138 
+F-statistic: 9.741 on 2 and 9 DF,  p-value: 0.005604</code></pre>
+<pre class="r"><code>u4=modelo4$residuals
+t.test(u4)</code></pre>
+<pre><code>
+    One Sample t-test
+
+data:  u4
+t = 2.2285e-17, df = 11, p-value = 1
+alternative hypothesis: true mean is not equal to 0
+95 percent confidence interval:
+ -2.292466  2.292466
+sample estimates:
+   mean of x 
+2.321096e-17 </code></pre>
+<pre class="r"><code>shapiro.test(u4)</code></pre>
+<pre><code>
+    Shapiro-Wilk normality test
+
+data:  u4
+W = 0.95701, p-value = 0.7405</code></pre>
+<pre class="r"><code>lmtest::bgtest(modelo4)</code></pre>
+<pre><code>
+    Breusch-Godfrey test for serial correlation of order up to 1
+
+data:  modelo4
+LM test = 2.2342, df = 1, p-value = 0.135</code></pre>
+<pre class="r"><code>lmtest::dwtest(modelo4)</code></pre>
+<pre><code>
+    Durbin-Watson test
+
+data:  modelo4
+DW = 2.8333, p-value = 0.9497
+alternative hypothesis: true autocorrelation is greater than 0</code></pre>
+<p><br/><br/><br/><br/></p>
+</div>
+</div>
+</div>
+<div id="taller-regresión-lienal-múltiple" class="section level1">
+<h1><strong>Taller Regresión Lienal Múltiple</strong></h1>
+<p><br/><br/></p>
+<div id="problema-1-1" class="section level2">
+<h2><strong>Problema 1</strong></h2>
 <p>Se requiere modelar el número de días que un trabajador se ausenta de
 su puesto de trabajo durante un año, para lo cual se tienen en cuenta
 las siguientes variables :</p>
@@ -1380,13 +1758,13 @@ sala   -0.667 -0.105  0.487  0.316  0.439  1.000</code></pre>
          main=&quot;Mapa de Calor&quot;,
          diag=F,
          show.legend = TRUE)</code></pre>
-<p><img src="monitoria5_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="monitoria5_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <pre class="r"><code>corrplot.mixed(cor(data),
  upper = &quot;square&quot;,
  lower = &quot;number&quot;,
  addgrid.col = &quot;black&quot;,
  tl.col = &quot;black&quot;)</code></pre>
-<p><img src="monitoria5_files/figure-html/unnamed-chunk-7-2.png" width="672" />
+<p><img src="monitoria5_files/figure-html/unnamed-chunk-12-2.png" width="672" />
 <br/><br/></p>
 </div>
 <div id="estimación-mco-modelo1" class="section level3">
@@ -1595,6 +1973,7 @@ resettest(modelo4, power=2, type=&quot;regressor&quot;)</code></pre>
 
 data:  modelo4
 RESET = 1.7756, df1 = 3, df2 = 41, p-value = 0.1669</code></pre>
+<p><br/><br/></p>
 </div>
 <div id="modelo-5" class="section level3">
 <h3><strong>Modelo 5</strong></h3>
@@ -1621,7 +2000,188 @@ Multiple R-squared:  0.6662,    Adjusted R-squared:  0.6514
 F-statistic: 44.91 on 2 and 45 DF,  p-value: 1.898e-11</code></pre>
 <p>Modelo final :
 <code>ausentismo ~ 11.9557841 - 0.1934922 antiguedad - 0.0034216 salario</code></p>
+<p><br/><br/><br/><br/></p>
 </div>
+</div>
+</div>
+<div id="final-2019-1" class="section level1">
+<h1><strong>Final 2019-1</strong></h1>
+<p>Resuelva los siguientes problemas. En cada caso haga explícitos todos
+los pasos necesarios e indique el número del listado utilizado, en caso
+de requerirlo. En todos los puntos suponga que las variables estudiadas
+tienen una distribución normal.</p>
+<p><br/><br/></p>
+<div id="section" class="section level4">
+<h4><strong>1.</strong></h4>
+<p>Un artículo afirma que los estudiantes de pregrado en Latinoamérica
+gastan en promedio más de US$ 75 mensuales en gastos relacionados con el
+estudio (fotocopias, impresiones, pasajes, entre otros). Un estudio
+reciente conformado por 100 estudiantes latinoamericanos arrojó un
+promedio de US$ 80.23 y una desviación estándar de US$ 45.65 . Se puede
+afirmar que el reciente estudio confirma los resultados encontrados en
+el artículo?</p>
+<p><br/><br/></p>
+</div>
+<div id="section-1" class="section level4">
+<h4><strong>2.</strong></h4>
+<p>Una emisión del mes de abril de 2016 de la revista {} cuenta la
+historia sobre los adictos al trabajo, entre los 25 y 43 años, que
+trabajan en el área las ingenierías. El artículo compara la vida laboral
+de estos ingenieros con los trabajadores que dedicaban menos horas a su
+trabajo. Los datos recogidos por la investigación fueron los siguientes
+: Grupo-1 conformado por los jóvenes que dedicaban mucho tiempo al
+trabajo: <span class="math inline">\(\bar{x}_{1}=62.5\)</span> horas ,
+<span class="math inline">\(s_{1}=23.7\)</span> horas, <span
+class="math inline">\(n_{1}=175\)</span> y el Grupo-2 que pasaba menos
+tiempo en el trabajo : <span
+class="math inline">\(\bar{x}_{2}=39.7\)</span> horas , <span
+class="math inline">\(s_{2}=8.9\)</span> horas, <span
+class="math inline">\(n_{2}=168\)</span>. ¿ Qué podemos concluir a
+partir de la información suministrada?</p>
+<p><br/><br/></p>
+</div>
+<div id="section-2" class="section level4">
+<h4><strong>3.</strong></h4>
+<p>Un estudio realizado por MasterCard reveló que 131 de las 468 mujeres
+que efectuaron compras en un almacén lo hicieron utilizando la tarjeta
+de crédito propia del almacén, mientras que 57 de 237 hombres utilizaron
+la misma tarjeta para sus compras en el almacén. ¿ Existe evidencia
+suficiente en los datos que permita concluir que la proporción de
+mujeres es mayor que la proporción de hombres que utilizan la tarjeta de
+crédito propia del almacén para realizar sus compras?</p>
+<p><br/><br/></p>
+</div>
+<div id="section-3" class="section level4">
+<h4><strong>4.</strong></h4>
+<p>En una afamada universidad se cuestiona la calidad de las
+hamburguesas de McDoglas, en especial algunas afirmaciones sobre que su
+producto de un cuarto de libra no contiene el peso establecido. Para
+verificar si dichas afirmaciones son válidas, un profesor realizó un
+estudio con su grupo de 25 estudiantes. Cada uno de sus estudiantes
+compró una hamburguesa y la llevo al salón donde fue pesada con una
+balanza certificada. Los resultados obtenidos fueron: <span
+class="math inline">\(\bar{x}=0.22\)</span> libras y <span
+class="math inline">\(s=0.09\)</span> libras. De acuerdo con la anterior
+información que se puede concluir ?</p>
+<p><br/><br/></p>
+</div>
+<div id="section-4" class="section level4">
+<h4><strong>5.</strong></h4>
+<p>A seis ingenieros que trabajan para el estado se les solicitó
+realizar un pronóstico de la tasa de inflación para el año entrante. La
+misma petición se le realizo a ocho especialistas en finanzas que
+trabajan para el sector privado. Los pronósticos entregado por los
+ingenieros son los siguientes: 4.2%, 5.1%, 3.9%, 4.7%, 4.8%, 5.8%. Por
+su parte los especialistas en finanzas pronosticaron: 5.7%, 6.1%, 5.2%,
+4.9%, 4.6%, 4.5%, 5.2%, 5.5%. ¿Están los especialistas (ingenieros y
+financieros) realizando pronósticos similares?</p>
+<p>Ejercicios tomados de Webster 2000</p>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 1 
+            One-Sample T 
+            Test of mu = 0,25 vs not = 0,25
+            N   Mean  StDev  SE Mean    95% CI         T      P
+            25 0,2200 0,0900 0,0180  (0,1828. 0,2572) -1,67  0,109</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 2
+            Two-Sample T-Test and CI 
+            Sample    N   Mean  StDev  SE Mean
+            1       175   62,5   23,7      1,8
+            2       168  39,70   8,90     0,69
+            Difference = mu (1) - mu (2)
+            Estimate for difference:  22,80
+            95% CI for difference:  (18,97. 26,63)
+            T-Test of difference = 0 (vs not =): T-Value = 11,70  
+            P-Value = 0,000  DF = 341</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 3 
+            Two-Sample T-Test and CI: Ing. Fin 
+            N   Mean  StDev  SE Mean
+            Ing  6  4,750  0,672     0,27
+            Fin  8  5,213  0,546     0,19
+            Difference = mu (Ing) - mu (Fin)
+            Estimate for difference:  -0,463
+            95% CI for difference:  (-1,170. 0,245)
+            T-Test of difference = 0 (vs not =): T-Value = -1,42  
+            P-Value = 0,180  DF = 12
+            Both use Pooled StDev = 0,6016</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 4 
+            One-Sample T 
+            Test of mu = 75 vs not = 75
+            N   Mean  StDev  SE Mean      95% CI         T      P
+            100  80,23  45,65     4,56  (71,17. 89,29)  1,15  0,255</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 5 
+            Test and CI for Two Proportions 
+            Sample    X    N  Sample p
+            1       131  468  0,279915
+            2        57  237  0,240506
+            Difference = p (1) - p (2)
+            Estimate for difference:  0,0394082
+            95% CI for difference:  (-0,0285271. 0,107343)
+            Test for difference = 0 (vs not = 0):  Z = 1,14  P-Value = 0,256
+            Fisher&#39;s exact test: P-Value = 0,280</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 6 
+            Test and CI for One Proportion 
+            Sample    X    N  Sample p         95% CI
+            1       131  468  0,279915  (0,239673. 0,322963)</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 7
+            Two-Sample T-Test and CI 
+            Sample    N   Mean  StDev  SE Mean
+            1       175   62,5   23,7      1,8
+            2       168  39,70   8,90     0,69
+            Difference = mu (1) - mu (2)
+            Estimate for difference:  22,80
+            95% CI for difference:  (19,02. 26,58)
+            T-Test of difference = 0 (vs not =): T-Value = 11,88  
+            P-Value = 0,000  DF = 223</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 8
+            One-Sample Z 
+            Test of mu = 75 vs not = 75
+            The assumed standard deviation = 45,65
+            N   Mean  SE Mean      95% CI         Z      P
+            100  80,23     4,56  (71,28. 89,18)  1,15  0,252</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 9 
+            Test and CI for One Proportion 
+            Sample    X    N  Sample p         95% CI
+            1       131  468  0,279915  (0,239673. 0,322963)</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 10      
+            Test and CI for One Proportion 
+            Sample   X    N  Sample p         95% CI
+            1       57  237  0,240506  (0,187540. 0,300088)</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 11
+            Two-Sample T-Test and CI: Ing. Fin 
+            N   Mean  StDev  SE Mean
+            Ing  6  4,750  0,672     0,27
+            Fin  8  5,213  0,546     0,19
+            Difference = mu (Ing) - mu (Fin)
+            Estimate for difference:  -0,463
+            95% CI for difference:  (-1,221. 0,296)
+            T-Test of difference = 0 (vs not =): T-Value = -1,38  
+            P-Value = 0,201  DF = 9</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 12
+            One-Sample Z 
+            Test of mu = 0,25 vs not = 0,25
+            The assumed standard deviation = 0,09
+            N    Mean  SE Mean       95% CI           Z      P
+            25  0,2200   0,0180  (0,1847. 0,2553)  -1,67  0,096</code></pre>
+<p><br/><br/></p>
+<pre class="r"><code>LISTADO 13 
+            Test for Equal Variances 
+            95% Bonferroni confidence intervals for standard deviations
+            Sample    N    Lower  StDev    Upper
+            1  175  21,1510   23,7  26,9171
+            2  168   7,9251    8,9  10,1364
+            F-Test (Normal Distribution)
+            Test statistic = 7,09. p-value = 0,000</code></pre>
 </div>
 </div>
 

@@ -13,6 +13,13 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, comment = NA)
+
+c0="#0DA5A6" # VERDE CLARO
+c1="#E77C00" # NARANJA
+c2="#6666FF" # AZUL  
+c3="#4CBFBA" # VERDE CLARO  
+c4="#E09600" # AMARILLO  
+c5="#BC2B6A" # MORADO  
 ```
 
 # **Taller Regresión Lineal  Simple**
@@ -374,14 +381,118 @@ Para muchos compuestos químicos, la cantidad que se disolverá en un volumen de
 
 + Alguien afirma que si la temperatura del agua aunenta en un grado centigrado, la media del número de gramos disueltos aumentará en exacatente 0.40 . Utilice el resultado para realizar una prueba de hipótesis con elfin de determinar si esta afirmación puede ser rechazada
 
-
-
 <br/><br/><br/>
+
 
 ## **Problema 4**
 
-<br/>
+Un propietario de una pizzeria esta interesado en estudiar la relación existente entre :  el número de nuncios entregados, el costo de los anuncios de publicidad y las ventas obtenidas durante los últimos 12 meses. Esta información se registra a continuación:
 
+|t    |  mes     | $X_{1}$ | $X_{2}$    | $Y$    |
+|----:|---------:|--------:|-----------:|-------:|            
+|   1 |Mayo      |       12|        13.9| 43.6   | 
+|   2 |Junio     |       11|        12.0| 38.0   |
+|   3 |Julio     |        9|        9.3 | 30.1   |
+|   4 |Agosto    |        7|        9.7 | 35.3   |
+|   5 |Septiembre|       12|        12.3| 46.4   |
+|   6 |Octubre   |        8|        11.4| 34.2   |
+|   7 |Noviembre |        6|        9.3 | 30.2   | 
+|   8 |Diciembre |       13|        14.3| 40.7   |
+|   9 |Enero     |        8|        10.2| 38.5   |
+|  10 |Febrero   |        6|         8.4| 22.6   |
+|  11 |Marzo     |        8|        11.2| 37.6   |
+|  12 |Abril     |       10|        11.1| 35.2   |
+
+
+Donde: 
+
++ $t$ : identificador del mes 
+
++ $X_{1}$: Número de anuncios entregados 
+
++ $X_{2}$: Costos de anuncios publicados 
+
++ $Y$ : Ventas totales  
+
+#### a. Estime los siguiente modelos de regresión:
+
++ $y_{i}=\beta_{0}+\beta{1}X_{1i}+u_{1i}$
++ $y_{i}=\alpha_{0}+\alpha_{1}X_{2i}+u_{2i}$ 
++ $y_{i}=\gamma_{0}+\gamma_{1} t_{i}+u_{3i}$
++ $y_{i}=\theta_{0}+\theta_{1}X_{1i}+\theta_{2}X_{2i}+u_{4i}$
+
+#### b. Para cada uno de los casos :
+
++ Estime el modelo, mediante MCO
++ Interprete los resultados obtenidos
++ Valide los cuatro supuestos sobre los errores	              	
+	 
+#### Solución :
+
+```{r}
+t=1:12
+x1=c(12,11,9,7,12,8,6,13,8,6,8,10)
+x2=c(13.9,12.0,9.3,9.7,12.3,11.4,9.3,14.3,10.2,8.4,11.2,11.1)
+y=c(43.6,38.0,30.1,35.3,46.4,34.2,30.2,40.7,38.5,22.6,37.6,35.2)
+data.frame(t,y,x1,x2)
+```
+
+<br/><br/>
+
+```{r}
+modelo1=lm(y ~ x1) 
+summary(modelo1)
+plot(x1,y, pch=19, col=c1, las=1, xlim = c(0,15), ylim = c(0,50))
+u1=modelo1$residuals
+t.test(u1)
+shapiro.test(u1)
+lmtest::bgtest(modelo1)
+lmtest::dwtest(modelo1)
+
+```
+<br/><br/>
+
+```{r}
+modelo2=lm(y ~ x2) 
+summary(modelo2)
+plot(x2,y, pch=19, col=c2, las=1, xlim = c(0,15), ylim = c(0,50))
+u2=modelo2$residuals
+t.test(u2)
+shapiro.test(u2)
+lmtest::bgtest(modelo2)
+lmtest::dwtest(modelo2)
+```
+<br/><br/>
+
+```{r}
+modelo3=lm(y ~ t) 
+summary(modelo3)
+plot(t,y, pch=19, col=c3, las=1, xlim = c(0,15), ylim = c(0,50))
+u3=modelo3$residuals
+t.test(u3)
+shapiro.test(u3)
+lmtest::bgtest(modelo3)
+lmtest::dwtest(modelo3)
+```
+<br/><br/><br/>
+
+```{r}
+modelo4=lm(y ~ x1 + x2) 
+summary(modelo4)
+u4=modelo4$residuals
+t.test(u4)
+shapiro.test(u4)
+lmtest::bgtest(modelo4)
+lmtest::dwtest(modelo4)
+```
+
+<br/><br/><br/><br/>
+
+# **Taller Regresión Lienal Múltiple**
+
+<br/><br/>
+
+## **Problema 1**
 
 Se requiere modelar el número de días que un trabajador se ausenta de su puesto de trabajo durante un año, para lo cual se tienen en cuenta las siguientes variables :
 
@@ -505,6 +616,8 @@ gqtest(modelo4)
 resettest(modelo4, power=2, type="regressor")
 ```
 
+<br/><br/>
+
 ### **Modelo 5**
 
 ```{r}
@@ -515,4 +628,207 @@ summary(modelo5)
 
 Modelo final : `ausentismo ~ 11.9557841 - 0.1934922 antiguedad - 0.0034216 salario`
 
+
+<br/><br/><br/><br/>
+
+# **Final 2019-1**
+
+Resuelva  los siguientes problemas. En cada caso haga explícitos todos los pasos necesarios e indique el número del listado utilizado, en caso de requerirlo. En todos los puntos suponga que las variables estudiadas tienen una distribución normal.
+
+<br/><br/>
+
+#### **1.** 	
+
+Un artículo afirma que los estudiantes de pregrado en Latinoamérica gastan en promedio más de US\$ 75 mensuales en gastos relacionados con el estudio (fotocopias, impresiones, pasajes, entre otros). Un estudio reciente conformado por 100 estudiantes latinoamericanos arrojó un promedio de US\$ 80.23 y una desviación estándar de US\$ 45.65 . Se puede afirmar que el reciente estudio confirma los resultados encontrados en el artículo?
+
+<br/><br/>
+
+#### **2.**
+
+Una emisión del mes de abril de 2016 de la revista {\bf Fortune} cuenta la historia sobre los adictos al trabajo, entre los 25 y 43 años, que trabajan en el área las ingenierías. El artículo compara la vida laboral de estos ingenieros con los trabajadores que dedicaban menos horas a su trabajo. Los datos recogidos por la investigación fueron los siguientes : Grupo-1  conformado por los jóvenes que dedicaban mucho tiempo al trabajo:  $\bar{x}_{1}=62.5$ horas , $s_{1}=23.7$ horas, $n_{1}=175$ y el Grupo-2 que pasaba menos tiempo en el trabajo : $\bar{x}_{2}=39.7$ horas , $s_{2}=8.9$ horas, $n_{2}=168$. ¿ Qué podemos concluir a partir de la información suministrada?
+				
+<br/><br/>
+
+#### **3.**
+
+Un estudio realizado por MasterCard reveló que 131 de las 468 mujeres que efectuaron compras en un almacén lo hicieron utilizando la tarjeta de crédito propia del almacén, mientras que 57 de 237 hombres utilizaron la misma tarjeta para sus compras en el almacén. ¿ Existe evidencia suficiente en los datos que permita concluir que la proporción de mujeres es mayor que la proporción de hombres que utilizan la tarjeta de crédito propia del almacén para realizar sus compras?
+				
+<br/><br/>
+
+#### **4.** 
+
+En una afamada universidad se cuestiona la calidad de las hamburguesas de McDoglas, en especial algunas afirmaciones sobre que su producto de un cuarto de libra no contiene el peso establecido. Para verificar si dichas afirmaciones son válidas, un profesor realizó un estudio con su grupo de 25 estudiantes. Cada uno de sus estudiantes compró una hamburguesa y la llevo al salón donde fue pesada con una balanza certificada. Los resultados obtenidos fueron: $\bar{x}=0.22$ libras y $s=0.09$ libras. De acuerdo con la anterior información que se puede concluir ?
+				
+<br/><br/>
+
+#### **5.** 
+
+A seis ingenieros que trabajan para el estado se les solicitó realizar un pronóstico de la tasa de inflación para el año entrante. La misma petición se le realizo a ocho especialistas en finanzas que trabajan para el sector privado. Los pronósticos entregado por los ingenieros son los siguientes: 4.2\%, 5.1\%, 3.9\%, 4.7\%, 4.8\%, 5.8\%. Por su parte los especialistas en finanzas pronosticaron: 5.7\%, 6.1\%, 5.2\%, 4.9\%, 4.6\%, 4.5\%, 5.2\%, 5.5\%. ¿Están los especialistas (ingenieros y financieros) realizando pronósticos similares?
+
+Ejercicios tomados de Webster 2000
+
+<br/><br/>
+
+```{r, eval=FALSE}
+LISTADO 1 
+			One-Sample T 
+			Test of mu = 0,25 vs not = 0,25
+			N   Mean  StDev  SE Mean    95% CI         T      P
+			25 0,2200 0,0900 0,0180  (0,1828. 0,2572) -1,67  0,109
+```
+			
+<br/><br/>
+
+```{r, eval=FALSE}
+LISTADO 2
+			Two-Sample T-Test and CI 
+			Sample    N   Mean  StDev  SE Mean
+			1       175   62,5   23,7      1,8
+			2       168  39,70   8,90     0,69
+			Difference = mu (1) - mu (2)
+			Estimate for difference:  22,80
+			95% CI for difference:  (18,97. 26,63)
+			T-Test of difference = 0 (vs not =): T-Value = 11,70  
+			P-Value = 0,000  DF = 341
+```
+
+
+<br/><br/>
+
+```{r, eval=FALSE}
+LISTADO 3 
+			Two-Sample T-Test and CI: Ing. Fin 
+			N   Mean  StDev  SE Mean
+			Ing  6  4,750  0,672     0,27
+			Fin  8  5,213  0,546     0,19
+			Difference = mu (Ing) - mu (Fin)
+			Estimate for difference:  -0,463
+			95% CI for difference:  (-1,170. 0,245)
+			T-Test of difference = 0 (vs not =): T-Value = -1,42  
+			P-Value = 0,180  DF = 12
+			Both use Pooled StDev = 0,6016
+```
+
+<br/><br/>
+
+
+```{r, eval=FALSE}
+LISTADO 4 
+			One-Sample T 
+			Test of mu = 75 vs not = 75
+			N   Mean  StDev  SE Mean      95% CI         T      P
+			100  80,23  45,65     4,56  (71,17. 89,29)  1,15  0,255
+```
+
+<br/><br/>
+
+```{r, eval=FALSE}
+LISTADO 5 
+			Test and CI for Two Proportions 
+			Sample    X    N  Sample p
+			1       131  468  0,279915
+			2        57  237  0,240506
+			Difference = p (1) - p (2)
+			Estimate for difference:  0,0394082
+			95% CI for difference:  (-0,0285271. 0,107343)
+			Test for difference = 0 (vs not = 0):  Z = 1,14  P-Value = 0,256
+			Fisher's exact test: P-Value = 0,280
+```
+
+<br/><br/>
+
+```{r, eval=FALSE}
+LISTADO 6 
+			Test and CI for One Proportion 
+			Sample    X    N  Sample p         95% CI
+			1       131  468  0,279915  (0,239673. 0,322963)
+```
+
+<br/><br/>
+
+```{r, eval=FALSE}
+LISTADO 7
+			Two-Sample T-Test and CI 
+			Sample    N   Mean  StDev  SE Mean
+			1       175   62,5   23,7      1,8
+			2       168  39,70   8,90     0,69
+			Difference = mu (1) - mu (2)
+			Estimate for difference:  22,80
+			95% CI for difference:  (19,02. 26,58)
+			T-Test of difference = 0 (vs not =): T-Value = 11,88  
+			P-Value = 0,000  DF = 223
+```
+
+<br/><br/>
+
+```{r, eval=FALSE}
+LISTADO 8
+			One-Sample Z 
+			Test of mu = 75 vs not = 75
+			The assumed standard deviation = 45,65
+			N   Mean  SE Mean      95% CI         Z      P
+			100  80,23     4,56  (71,28. 89,18)  1,15  0,252
+```
+
+
+<br/><br/>
+
+```{r, eval=FALSE}
+LISTADO 9 
+			Test and CI for One Proportion 
+			Sample    X    N  Sample p         95% CI
+			1       131  468  0,279915  (0,239673. 0,322963)
+```
+	
+<br/><br/>
+
+```{r, eval=FALSE}
+LISTADO 10      
+			Test and CI for One Proportion 
+			Sample   X    N  Sample p         95% CI
+			1       57  237  0,240506  (0,187540. 0,300088)
+```
+
+<br/><br/>
+
+```{r, eval=FALSE}
+LISTADO 11
+			Two-Sample T-Test and CI: Ing. Fin 
+			N   Mean  StDev  SE Mean
+			Ing  6  4,750  0,672     0,27
+			Fin  8  5,213  0,546     0,19
+			Difference = mu (Ing) - mu (Fin)
+			Estimate for difference:  -0,463
+			95% CI for difference:  (-1,221. 0,296)
+			T-Test of difference = 0 (vs not =): T-Value = -1,38  
+			P-Value = 0,201  DF = 9
+```
+
+<br/><br/>
+
+```{r, eval=FALSE}
+LISTADO 12
+			One-Sample Z 
+			Test of mu = 0,25 vs not = 0,25
+			The assumed standard deviation = 0,09
+			N    Mean  SE Mean       95% CI           Z      P
+			25  0,2200   0,0180  (0,1847. 0,2553)  -1,67  0,096
+```
+
+<br/><br/>
+
+```{r, eval=FALSE}
+LISTADO 13 
+			Test for Equal Variances 
+			95% Bonferroni confidence intervals for standard deviations
+			Sample    N    Lower  StDev    Upper
+			1  175  21,1510   23,7  26,9171
+			2  168   7,9251    8,9  10,1364
+			F-Test (Normal Distribution)
+			Test statistic = 7,09. p-value = 0,000
+```
+			
+			
+
+			
 
