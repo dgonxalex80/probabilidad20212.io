@@ -14,7 +14,7 @@
 
 <title>Caso C&amp;A</title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -667,12 +667,23 @@ obtener con el siguiente código en R</p>
 <li><strong>edad</strong> : antiguedad de la vivienda</li>
 </ul>
 <p><br/><br/></p>
-<div id="carga-de-datos" class="section level4">
-<h4><strong>Carga de datos</strong></h4>
+<div id="carga-de-datos" class="section level3">
+<h3><strong>Carga de datos</strong></h3>
+<div id="bajandolos-datos-de-googledrive" class="section level4">
+<h4>bajandolos datos de googledrive</h4>
 <p>Data: <a
 href="https://docs.google.com/spreadsheets/d/136K_b9mjaetSWl_-Kk7XvPwd1Y00TemckrqMr-X1Mzg/edit?usp=sharing">casas</a></p>
+</div>
+<div id="bajando-los-datos-desde-el-paquetedeg" class="section level4">
+<h4>bajando los datos desde el paqueteDEG</h4>
+<pre class="r"><code>library(remotes) 
+library(devtools)  
+install_github(&quot;dgonxalex80/paqueteDEG&quot;, force = TRUE) # bajar paquete
+library(paqueteDEG)
+data=paqueteDEG::casas</code></pre>
 <p>Adaptado de Weiers, Ronald M, Introducción a la estadística para
 Negocios., 2006.</p>
+</div>
 </div>
 </div>
 
