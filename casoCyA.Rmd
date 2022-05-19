@@ -82,8 +82,22 @@ Los datos de los tres últimos meses se adjuntan en la base que puede obtener co
 
 <br/><br/>
 
-#### **Carga de datos**
+### **Carga de datos**
+
+#### bajandolos datos de googledrive
 
 Data: [casas](https://docs.google.com/spreadsheets/d/136K_b9mjaetSWl_-Kk7XvPwd1Y00TemckrqMr-X1Mzg/edit?usp=sharing) 
+
+
+#### bajando los datos desde el paqueteDEG
+
+```{r, eval=FALSE}
+library(remotes) 
+library(devtools)  
+install_github("dgonxalex80/paqueteDEG", force = TRUE) # bajar paquete
+library(paqueteDEG)
+data=paqueteDEG::casas
+```
+
 
 Adaptado de Weiers, Ronald M, Introducción a la estadística para Negocios., 2006.
