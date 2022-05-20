@@ -639,13 +639,33 @@ Resuelva  los siguientes problemas. En cada caso haga explícitos todos los paso
 
 #### **problema 1.** 	
 
-Un artículo afirma que los estudiantes de pregrado en Latinoamérica gastan en promedio más de US\$ 75 mensuales en gastos relacionados con el estudio (fotocopias, impresiones, pasajes, entre otros). Un estudio reciente conformado por 100 estudiantes latinoamericanos arrojó un promedio de US\$ 80.23 y una desviación estándar de US\$ 45.65 . Se puede afirmar que el reciente estudio confirma los resultados encontrados en el artículo?
+Un artículo afirma que los estudiantes de pregrado en Latinoamérica gastan en promedio más de US\$ 75 mensuales en gastos relacionados con el estudio (fotocopias, impresiones, pasajes, entre otros). Un estudio reciente conformado por 100 estudiantes latinoamericanos arrojó:  
+
++ un promedio de US\$ 80.23 y 
+
++ una desviación estándar de US\$ 45.65 . 
+
+Se puede afirmar que el reciente estudio confirma los resultados encontrados en el artículo?
 
 <br/><br/>
 
 #### **problema 2.**
 
-Una emisión del mes de abril de 2016 de la revista **Fortune** cuenta la historia sobre los adictos al trabajo, entre los 25 y 43 años, que trabajan en el área las ingenierías. El artículo compara la vida laboral de estos ingenieros con los trabajadores que dedicaban menos horas a su trabajo. Los datos recogidos por la investigación fueron los siguientes : Grupo-1  conformado por los jóvenes que dedicaban mucho tiempo al trabajo:  $\bar{x}_{1}=62.5$ horas , $s_{1}=23.7$ horas, $n_{1}=175$ y el Grupo-2 que pasaba menos tiempo en el trabajo : $\bar{x}_{2}=39.7$ horas , $s_{2}=8.9$ horas, $n_{2}=168$. ¿ Qué podemos concluir a partir de la información suministrada?
+Una emisión del mes de abril de 2016 de la revista **Fortune** cuenta la historia sobre los adictos al trabajo, entre los 25 y 43 años, que trabajan en el área las ingenierías. El artículo compara la vida laboral de estos ingenieros con los trabajadores que dedicaban menos horas a su trabajo. Los datos recogidos por la investigación fueron los siguientes : 
+
++ Grupo-1  conformado por los jóvenes que dedicaban mucho tiempo al trabajo:  
+  + $\bar{x}_{1}=62.5$ horas , 
+  + $s_{1}=23.7$ horas, 
+  + $n_{1}=175$  
+
+<br/>
+
++ Grupo-2 que pasaba menos tiempo en el trabajo : 
+  + $\bar{x}_{2}=39.7$ horas , 
+  + $s_{2}=8.9$ horas, 
+  + $n_{2}=168$. 
+
+¿ Qué podemos concluir a partir de la información suministrada?
 				
 <br/><br/>
 
@@ -657,7 +677,12 @@ Un estudio realizado por MasterCard reveló que 131 de las 468 mujeres que efect
 
 #### **problema 4.** 
 
-En una afamada universidad se cuestiona la calidad de las hamburguesas de McDoglas, en especial algunas afirmaciones sobre que su producto de un cuarto de libra no contiene el peso establecido. Para verificar si dichas afirmaciones son válidas, un profesor realizó un estudio con su grupo de 25 estudiantes. Cada uno de sus estudiantes compró una hamburguesa y la llevo al salón donde fue pesada con una balanza certificada. Los resultados obtenidos fueron: $\bar{x}=0.22$ libras y $s=0.09$ libras. De acuerdo con la anterior información que se puede concluir ?
+En una afamada universidad se cuestiona la calidad de las hamburguesas de McDoglas, en especial algunas afirmaciones sobre que su producto de un cuarto de libra no contiene el peso establecido. Para verificar si dichas afirmaciones son válidas, un profesor realizó un estudio con su grupo de 25 estudiantes. Cada uno de sus estudiantes compró una hamburguesa y la llevo al salón donde fue pesada con una balanza certificada. Los resultados obtenidos fueron: 
+
++ $\bar{x}=0.22$ lb  
++ $s=0.09$ lb 
+
+De acuerdo con la anterior información que se puede concluir ?
 				
 <br/><br/>
 
@@ -672,6 +697,8 @@ especialistas en finanzas :5.7   6.1  5.2  4.9  4.6  4.5  5.2  5.5
 
 
 ¿Están los especialistas (ingenieros y financieros) realizando pronósticos similares?
+
+<br/>
 
 *Ejercicios tomados de Webster 2000*
 
