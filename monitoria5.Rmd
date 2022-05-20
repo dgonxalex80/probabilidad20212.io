@@ -530,10 +530,10 @@ round(cov(data), 2) # matriz de varianzas-covarianzas
 library(psych)
 library(corrplot)
 round(cor(data), 3) # matriz de correlaciones
-cor.plot(cor(data),
-         main="Mapa de Calor",
-         diag=F,
-         show.legend = TRUE)
+# cor.plot(cor(data),
+#          main="Mapa de Calor",
+#          diag=F,
+#          show.legend = TRUE)
 
 corrplot.mixed(cor(data),
  upper = "square",

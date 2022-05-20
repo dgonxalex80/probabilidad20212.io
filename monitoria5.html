@@ -1754,17 +1754,17 @@ sexo   -0.106  0.073  1.000  0.035  0.258  0.487
 edad   -0.675 -0.149  0.035  1.000  0.872  0.316
 antg   -0.715 -0.112  0.258  0.872  1.000  0.439
 sala   -0.667 -0.105  0.487  0.316  0.439  1.000</code></pre>
-<pre class="r"><code>cor.plot(cor(data),
-         main=&quot;Mapa de Calor&quot;,
-         diag=F,
-         show.legend = TRUE)</code></pre>
-<p><img src="monitoria5_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<pre class="r"><code>corrplot.mixed(cor(data),
+<pre class="r"><code># cor.plot(cor(data),
+#          main=&quot;Mapa de Calor&quot;,
+#          diag=F,
+#          show.legend = TRUE)
+
+corrplot.mixed(cor(data),
  upper = &quot;square&quot;,
  lower = &quot;number&quot;,
  addgrid.col = &quot;black&quot;,
  tl.col = &quot;black&quot;)</code></pre>
-<p><img src="monitoria5_files/figure-html/unnamed-chunk-12-2.png" width="672" />
+<p><img src="monitoria5_files/figure-html/unnamed-chunk-12-1.png" width="672" />
 <br/><br/></p>
 </div>
 <div id="estimación-mco-modelo1" class="section level3">
