@@ -1,7 +1,7 @@
 ---
-title: "**Modelo de regresión lineal simple**"
-author: "dgonzalez"
-subtitle: "**Módulo 5- Unidad 5.1**" 
+title: <span style="color:#db524f">**Probabilidad y Estadística**</span>
+author: "dgonzalez "
+subtitle: <span style="color:#db524f">**Unidad 5.1**</span>
 output:
   html_document:
     toc: yes
@@ -15,25 +15,26 @@ knitr::opts_chunk$set(echo = TRUE,comment = NA)
 library(lmtest)
 ausentismo<-paqueteDEG::ausentismo
 # colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO  
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f" 
 
 ```
 
 
+
+![](img/banner5.png)
+
+<br/><br/>
+
 # **Guía de aprendizaje 5.1**
 
-![](img/baner5.png)
-
 <br/><br/>
 
-<br/><br/>
-
-## **1. Introducción**
+## **Introducción**
 
 Una de las aplicaciones mas importantes de la estadística corresponde a al modelo de regresión lineal. Esta técnica permite medir la relación que pueda existir entre una variable llamada variable respuesta  y un conjunto de variables independientes. Casos como la estimación de las ventas a partir de los gastos en publicidad, el consumo de un producto a partir de su precio, el precio de una casa a partir de sus características, la relación entre la resistencia a la compresión de un determinado concreto y la cantidad de uno de sus componentes,  entre otros
 
@@ -41,13 +42,13 @@ El siguiente documento contiene los pasos que deberá realizar para  alcanzar el
 
 <br/><br/>
 
-## **2. Objetivos de la unidad**
+## **Objetivos de la unidad**
 
 Al finalizar la unidad el estudiante estará en capacidad de PROPONER soluciones mediante la CONSTRUCCIÓN, VALIDACIÓN DE SUPUESTOS e INTERPRETACIÓN de resultados obtenidos de modelos de regresión en situaciones reales que permitan la toma de decisiones informadas y la generación de políticas o conclusiones.
 
 <br/><br/>
 
-## **3. Duración**
+## **Duración**
 
 La presente  unidad será desarrollada durante la comprendida entre 16  y el 22 de mayo.    
 Ademas del material suministrado  contaran con el acompañamiento del profesor en tres sesiones (Lunes, Miércoles y Viernes) y de manera asincrónica con  foro de actividades académicas. Los entegables para esta unidad podrán enviarse a través de la plataforma Blackboard hasta el  22 de mayo.
@@ -56,7 +57,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **4. Cronograma de trabajo**
+## **Cronograma de trabajo**
 
 
 |Actividad      | Descripción                    | 
@@ -73,14 +74,14 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **5. Criterios de evaluación**
+## **Criterios de evaluación**
 
 + Plantea el modelo correcto para dar solución a la situación planteada	+ Realiza los procesos de estimación y validación de los supuestos correspondiente al modelo de regresión 
 + Realiza de manera correcta la interpretación de los resultados obtenidos y plantea recomendaciones 
 
 <br/><br/>
 
-## **6. Entregables** 
+## **Entregables** 
 
 |                   |                                       |
 |:------------------|:--------------------------------------|
@@ -88,7 +89,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 |                   |                                       |
 <br/><br/><br/><br/>
 
-## **7. Presentaciones**
+## **Presentaciones**
 
 <br/><br/><br/><br/>
 

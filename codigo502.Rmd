@@ -1,7 +1,7 @@
 ---
-title: "Código"
+title: <span style="color:#db524f"> **Código 5.2**</span>  
 author: "dgonzalez "
-subtitle: "Módulo 1- Unidad 1.1" 
+subtitle: <span style="color:#db524f">**Módulo 5- Unidad 5.2**</span> 
 output:
   html_document:
     toc: yes
@@ -9,21 +9,24 @@ output:
     toc_float: yes
     theme: cosmo
 ---
+
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, comment = NA)
 library(psych)
 library(summarytools)
 
 # colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO  
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 
 ```
 
+![](img/banner5.png)
 
 ### <span style="color:#BC2B6A">**EN CONSTRUCCION**</span>
 

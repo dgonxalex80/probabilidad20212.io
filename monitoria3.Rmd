@@ -1,7 +1,6 @@
 ---
-title: "**Monitoria 3**"
-author: "dgonzalez80"
-date: " "
+title: <span style="color:#8acfe6"> **Monitoría 3**</span>  
+author: "dgonzalez "
 output:
   html_document:
     toc: yes
@@ -12,13 +11,25 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE,comment = NA)
+knitr::opts_chunk$set(comment = NA)
+
+# colores
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 ```
 
-# <span style="color:#104E8B">**Ejercicios propuestos U3.1**</span>
+![](img/banner3.png)
+
+<br/><br/>
+
+# **Ejercicios propuestos U3.1**
 <br/>
 
-## <span style="color:#104E8B">**Taller 312**</span>
+## **Taller 312**
 <br/><br/>
 
  **1** Clasifique las siguientes variables aleatorias como discretas o continuas:
@@ -132,7 +143,7 @@ Problemas tomado de walpole (2006)
 
 <br/><br/>
 
-## <span style="color:#104E8B">**Taller 313**</span>
+## **Taller 313**
 
 <br/>
 
@@ -248,7 +259,7 @@ Cuando el profesor de Probabilidad y Estadística se preparaba para imprimir el 
 ### [**Solución**](https://github.com/dgonxalex80/probabilidad20212.io/blob/main/talleres/Solucion_Taller_303.pdf)
 <br/><br/>
 
-## <span style="color:#104E8B">**Taller 314**</span>
+## **Taller 314**
 
 <br/><br/>
 
@@ -341,11 +352,11 @@ El estudio afirma también que los jóvenes en promedio reciben al rededor de 12
 
 <br/><br/><br/>
 
-# <span style="color:#104E8B">**Ejercicios propuestos U3.2**</span>
+# **Ejercicios propuestos U3.2**
 
 <br/><br/>
 
-## <span style="color:#104E8B">**Taller 321**</span>
+## **Taller 321**
 
 <br/><br/>
 
@@ -395,7 +406,7 @@ c. Determine  $Cor[XY]$ ,  interprete su resultado
 
 <br/><br/><br/>
 
-## <span style="color:#104E8B">**Taller 322**</span>
+## **Taller 322**
 
 <br/><br/>
 
@@ -452,7 +463,7 @@ d. Doscientos paquetes seleccionados aleatoriamente contienen cinco kilogramos d
 [**Solución Taller 322**](https://github.com/dgonzalez80/pye20221.io/blob/main/talleres/Solucion_Taller322.pdf)
 
 
-# <span style="color:#104E8B">**Ejercicios propuestos U3.3**</span>
+# **Ejercicios propuestos U3.3**
 
 
 <br/><br/><br/>
@@ -654,7 +665,7 @@ c. Se presenten menos de 2 grietas en 500 m
 
 <br/><br/><br/>
 
-## <span style="color:#104E8B">**Taller 332**</span>
+## **Taller 332**
 
 **1. Modelo uniforme** Para una variable aleatoria $X\sim unif(x,a,b)$  con $a=10$ y $b=20$ determine:
 
@@ -806,7 +817,7 @@ La organización mundial de la salud ha establecido rangos para este indice y lo
 			
 <br/><br/><br/>
 
-## <span style="color:#104E8B">**Taller 333**</span>
+## **Taller 333**
 
 <br/><br/>
 
@@ -897,7 +908,7 @@ h. $P(3 < X < x) = 0.99$
 
 <br/><br/><br/>
 
-## <span style="color:#104E8B">**Taller 334**</span>
+## **Taller 334**
 
 Modelos especiales - Simulación 
 

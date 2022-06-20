@@ -9,10 +9,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="dgonzalez80" />
+<meta name="author" content="dgonzalez" />
 
 
-<title>Monitoria </title>
+<title> Monitoría 5</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -569,13 +569,15 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><strong>Monitoria </strong></h1>
-<h4 class="author">dgonzalez80</h4>
+<h1 class="title toc-ignore"><span style="color:#db524f">
+<strong>Monitoría 5</strong></span></h1>
+<h4 class="author">dgonzalez</h4>
 
 </div>
 
 
-<hr />
+<p><img src="img/banner5.png" /></p>
+<p><br/><br/></p>
 <div id="taller-regresión-lineal-simple" class="section level1">
 <h1><strong>Taller Regresión Lineal Simple</strong></h1>
 <p><br/></p>
@@ -1484,8 +1486,9 @@ Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&
 Residual standard error: 4.206 on 10 degrees of freedom
 Multiple R-squared:  0.6097,    Adjusted R-squared:  0.5707 
 F-statistic: 15.62 on 1 and 10 DF,  p-value: 0.00272</code></pre>
-<pre class="r"><code>plot(x1,y, pch=19, col=c1, las=1, xlim = c(0,15), ylim = c(0,50))
-u1=modelo1$residuals
+<pre class="r"><code>plot(x1,y, pch=19, col=c1, las=1, xlim = c(0,15), ylim = c(0,50))</code></pre>
+<p><img src="monitoria5_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<pre class="r"><code>u1=modelo1$residuals
 t.test(u1)</code></pre>
 <pre><code>
     One Sample t-test
@@ -1505,7 +1508,6 @@ mean of x
 data:  u1
 W = 0.92926, p-value = 0.3723</code></pre>
 <pre class="r"><code>lmtest::bgtest(modelo1)</code></pre>
-<p><img src="monitoria5_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <pre><code>
     Breusch-Godfrey test for serial correlation of order up to 1
 
@@ -1547,13 +1549,13 @@ t.test(u2)</code></pre>
     One Sample t-test
 
 data:  u2
-t = 3.4979e-17, df = 11, p-value = 1
+t = 1.31e-16, df = 11, p-value = 1
 alternative hypothesis: true mean is not equal to 0
 95 percent confidence interval:
  -2.331729  2.331729
 sample estimates:
    mean of x 
-3.705713e-17 </code></pre>
+1.387779e-16 </code></pre>
 <pre class="r"><code>shapiro.test(u2)</code></pre>
 <pre><code>
     Shapiro-Wilk normality test
@@ -1654,13 +1656,13 @@ t.test(u4)</code></pre>
     One Sample t-test
 
 data:  u4
-t = 2.2285e-17, df = 11, p-value = 1
+t = 8.3908e-17, df = 11, p-value = 1
 alternative hypothesis: true mean is not equal to 0
 95 percent confidence interval:
  -2.292466  2.292466
 sample estimates:
    mean of x 
-2.321096e-17 </code></pre>
+8.739573e-17 </code></pre>
 <pre class="r"><code>shapiro.test(u4)</code></pre>
 <pre><code>
     Shapiro-Wilk normality test
@@ -1770,8 +1772,11 @@ corrplot.mixed(cor(data),
 <div id="estimación-mco-modelo1" class="section level3">
 <h3><strong>Estimación MCO Modelo1</strong></h3>
 <pre class="r"><code># Estimación del modelo
-attach(data)
-modelo1=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
+attach(data)</code></pre>
+<pre><code>The following objects are masked from data (pos = 5):
+
+    antg, ausen, edad, sala, sexo, taller</code></pre>
+<pre class="r"><code>modelo1=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
 summary(modelo1)</code></pre>
 <pre><code>
 Call:
@@ -1938,14 +1943,8 @@ data:  uhat
 W = 0.92696, p-value = 0.005279</code></pre>
 <pre class="r"><code># Supuesto de no autocorrelacion
 # install.packages(&quot;lmtest&quot;)
-library(lmtest)</code></pre>
-<pre><code>Loading required package: zoo</code></pre>
-<pre><code>
-Attaching package: &#39;zoo&#39;</code></pre>
-<pre><code>The following objects are masked from &#39;package:base&#39;:
-
-    as.Date, as.Date.numeric</code></pre>
-<pre class="r"><code># Prueba de D-W  - autocorrelacion
+library(lmtest)
+# Prueba de D-W  - autocorrelacion
 # Ho: los erreres no estan autocorrelacionados
 dwtest(modelo4)</code></pre>
 <pre><code>

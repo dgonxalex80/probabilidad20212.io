@@ -1,7 +1,7 @@
 ---
-title: "Código 3.1"
+title: <span style="color:#8acfe6"> **Código 3.1**</span>  
 author: "dgonzalez "
-subtitle: "Módulo 3- Unidad 3.1" 
+subtitle: <span style="color:#8acfe6">**Módulo 3- Unidad 3.1**</span> 
 output:
   html_document:
     toc: yes
@@ -15,18 +15,22 @@ library(psych)
 library(summarytools)
 
 # colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO  
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 
 ```
 
+![](img/banner3.png)
+ 
+ <br/><br/>
+ 
+# **1. Variable Discreta**
 
-
-# **Variables discretas**
+<br/><br/>
 
 En el caso de las variables discretas la función de distribución de probabilidad $f(x)$ debe cumplir las siguientes propiedades
 
@@ -101,8 +105,7 @@ cat("V[X] = ",Vx)
 
 
 
-
-# **Variables continuas**
+# **Variables continuas**  
 
 ## **Integración** 
 

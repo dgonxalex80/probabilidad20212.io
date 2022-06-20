@@ -1,7 +1,7 @@
 ---
-title: "Código"
+title: <span style="color:#646420"> **Código 4.1**</span>  
 author: "dgonzalez "
-subtitle: "Módulo 1- Unidad 1.1" 
+subtitle: <span style="color:#646420">**Módulo 4- Unidad 4.1**</span> 
 output:
   html_document:
     toc: yes
@@ -9,6 +9,7 @@ output:
     toc_float: yes
     theme: cosmo
 ---
+
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE, comment = NA)
 library(psych)
@@ -19,12 +20,12 @@ devtools::install_github("dgonxalex80/paqueteDEG")
 library(paqueteDEG)
 
 # colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO  
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f" 
 # install.packages('gtools')
 # install.packages("TeachingSampling")
 
@@ -38,7 +39,13 @@ base_muestreo <- read_delim("data/base_muestreo.csv",
 
 ```
 
+![](img/banner4.png)
+
+<br/><br/>
+
 # **Propiedad de los estimadores**
+
+<br/><br/>
 
 Para una variable con distribución uniforme $unif(a=0, b=20)$ se desea determinar las propiedades de los siguientes  estimadores del parámetro $b$
 

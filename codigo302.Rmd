@@ -1,7 +1,7 @@
 ---
-title: "Código 3.2"
+title: <span style="color:#8acfe6"> **Código 3.2**</span>  
 author: "dgonzalez "
-subtitle: "Módulo 3- Unidad 3.2" 
+subtitle: <span style="color:#8acfe6">**Módulo 3- Unidad 3.2**</span> 
 output:
   html_document:
     toc: yes
@@ -14,13 +14,22 @@ output:
 knitr::opts_chunk$set(echo = TRUE, comment = NA)
 library(tidyverse)
 
-
+# colores
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 ```
 
+![](img/banner3.png)
 
-# **Caso Discreto-Discreto**
+<br/><br/>
 
-<br/><br/><br/>
+# **Caso Discreto-Discreto** 
+
+<br/><br/>
 
 ### **Ejemplo 1**
 
@@ -158,7 +167,7 @@ cat("Rho     = ", Rho, "\n")
 
 <br/><br/><br/>
 
-# **Caso Continuo-continuo**
+# **Caso Continuo-continuo**  
 
 <br/><br/>
 

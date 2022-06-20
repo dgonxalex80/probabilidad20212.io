@@ -1,7 +1,7 @@
 ---
-title: "**Variable aleatoria**"
-author: "dgonzalez"
-subtitle: "**Módulo 3- Unidad 3.1**" 
+title: <span style="color:#8acfe6">**Probabilidad y Estadística**</span>
+author: "dgonzalez "
+subtitle: <span style="color:#8acfe6">**Unidad 3.1**</span> 
 output:
   html_document:
     toc: yes
@@ -14,20 +14,22 @@ output:
 knitr::opts_chunk$set(echo = TRUE,comment = NA)
 
 # colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO  
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 
 ```
 
-# **Guía de aprendizaje 3.1**
 
-![](img/baner3.png)
+
+![](img/banner3.png)
 
 <br/><br/>
+
+# **Guía de aprendizaje 3.1** 
 
 <br/><br/>
 
@@ -84,7 +86,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 <br/><br/><br/><br/>
 
 
-# **Recursos **
+# **Recursos**
 
 ![](img/variables1.png)
 <br/><br/>
@@ -530,21 +532,21 @@ Esto nos indica que el valor esperado correspondiente al tiempo en que una lavad
 
 <br/><br/><br/><br/>
 
-# **Videos**
+## **Videos**
 
 
-## **Variables aleatorias**
+### **Variables aleatorias**
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ABhDYVIfF0w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br/><br/>
 
-## **Variables discretas**
+### **Variables discretas**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/CUMJ-MUiMaY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 <br/><br/>
 
-## **3.3 Variables continuas**
+### **Variables continuas**
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rlBxuLdOUt0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

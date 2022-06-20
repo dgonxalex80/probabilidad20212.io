@@ -1,7 +1,7 @@
 ---
-title: "**Modelos de probabilidad especiales**"
-author: "dgonzalez"
-subtitle: "**Módulo 3- Unidad 3.3**" 
+title: <span style="color:#8acfe6">**Probabilidad y Estadística**</span>
+author: "dgonzalez "
+subtitle: <span style="color:#8acfe6">**Unidad 3.3**</span> 
 output:
   html_document:
     toc: yes
@@ -14,22 +14,23 @@ output:
 knitr::opts_chunk$set(echo = TRUE,comment = NA)
 
 # colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO 
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 
 library(ggplot2)
 
 ```
 
 
-# **Guía de aprendizaje 3.3**
 
-![](img/baner3.png)
+![](img/banner3.png)
 <br/><br/>
+
+# **Guía de aprendizaje 3.3**
 
 <br/><br/>
 

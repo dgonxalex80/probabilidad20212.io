@@ -1,7 +1,6 @@
 ---
-title: "**Sumatorias y Productoria**"
+title: <span style="color:#b0394a">**Unidad 0.1**</span> 
 author: "dgonzalez"
-subtitle: "**Módulo 0- Unidad 0.1**" 
 output:
   html_document:
     toc: yes
@@ -14,19 +13,16 @@ output:
 knitr::opts_chunk$set(echo = TRUE,comment = NA)
 
 # colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO  
-
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 ```
 
-# **Guía 0.1**
-
 <br/>
-![](img/baner0.png)
+![](img/banner0.png)
 
 <br/><br/>
 

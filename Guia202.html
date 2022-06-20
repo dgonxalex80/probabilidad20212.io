@@ -12,9 +12,9 @@
 <meta name="author" content="dgonzalez" />
 
 
-<title>Tipos de probabilidad y sus aplicaciones</title>
+<title>Probabilidad y Estadística</title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -569,18 +569,20 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><strong>Tipos de probabilidad y sus
-aplicaciones</strong></h1>
-<h3 class="subtitle"><strong>Módulo 2- Unidad 2.2</strong></h3>
+<h1 class="title toc-ignore"><span
+style="color:#a391c4"><strong>Probabilidad y
+Estadística</strong></span></h1>
+<h3 class="subtitle"><span style="color:#a391c4"><strong>Unidad
+2.2</strong></span></h3>
 <h4 class="author">dgonzalez</h4>
 
 </div>
 
 
+<p><img src="img/banner2.png" /></p>
+<p><br/><br/></p>
 <div id="guía-de-aprendizaje-2.2" class="section level1">
 <h1><strong>Guía de aprendizaje 2.2</strong></h1>
-<p><img src="img/baner2.png" /></p>
-<p><br/><br/></p>
 <p><br/><br/></p>
 <div id="introducción" class="section level2">
 <h2><strong>Introducción</strong></h2>
@@ -992,8 +994,17 @@ data(titanic_train)  # cargar los datos
 #install.packages(&quot;rpart.plot&quot;)
 
 library(rpart)
-library(rattle)
-library(rpart.plot)
+library(rattle)</code></pre>
+<pre><code>Loading required package: bitops</code></pre>
+<pre><code>Rattle: A free graphical interface for data science with R.
+Versión 5.5.1 Copyright (c) 2006-2021 Togaware Pty Ltd.
+Escriba &#39;rattle()&#39; para agitar, sacudir y  rotar sus datos.</code></pre>
+<pre><code>
+Attaching package: &#39;rattle&#39;</code></pre>
+<pre><code>The following object is masked from &#39;package:highcharter&#39;:
+
+    weather</code></pre>
+<pre class="r"><code>library(rpart.plot)
 
 arbol=rpart( formula = Survived ~ Sex,
              data = titanic_train,

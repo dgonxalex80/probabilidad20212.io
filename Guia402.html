@@ -12,9 +12,9 @@
 <meta name="author" content="dgonzalez" />
 
 
-<title>Estimación por intervalos de confianza</title>
+<title>Probabilidad y Estadística</title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -569,21 +569,23 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><strong>Estimación por intervalos de
-confianza</strong></h1>
-<h3 class="subtitle"><strong>Módulo 4- Unidad 4.2</strong></h3>
+<h1 class="title toc-ignore"><span
+style="color:#646420"><strong>Probabilidad y
+Estadística</strong></span></h1>
+<h3 class="subtitle"><span style="color:#646420"><strong>Unidad
+4.2</strong></span></h3>
 <h4 class="author">dgonzalez</h4>
 
 </div>
 
 
+<p><img src="img/banner4.png" /></p>
+<p><br/><br/></p>
 <div id="guía-de-aprendizaje-4.2" class="section level1">
 <h1><strong>Guía de aprendizaje 4.2</strong></h1>
-<p><img src="img/baner4.png" /></p>
-<p><br/><br/></p>
 <p><br/><br/></p>
 <div id="introducción" class="section level2">
-<h2><strong>1. Introducción</strong></h2>
+<h2><strong>Introducción</strong></h2>
 <p>La inferencia estadística constituye una de las principales
 componentes de la metodologia estadistica, encaminados a generar
 procedimiento para el avance de la ciencia. Con ella se pueden
@@ -601,7 +603,7 @@ alcanzar el objetivo planteado</p>
 <p><br/><br/></p>
 </div>
 <div id="objetivos-de-la-unidad" class="section level2">
-<h2><strong>2. Objetivos de la unidad</strong></h2>
+<h2><strong>Objetivos de la unidad</strong></h2>
 <p>Al finalizar la unidad el estudiante estará en capacidad de
 IDENTIFICAR, CALCULAR, INTERPRETAR e INFERIR sobre un intervalo de
 confianza para estimadores de una y dos poblaciones, que le permita
@@ -610,7 +612,7 @@ poblacional, orientados a la toma de decisiones informadas.</p>
 <p><br/><br/></p>
 </div>
 <div id="duración" class="section level2">
-<h2><strong>3. Duración</strong></h2>
+<h2><strong>Duración</strong></h2>
 <p>La presente unidad será desarrollada del 25 de abril al 1 de mayo
 2022 . Ademas del material suministrado contaran con el acompañamiento
 del profesor durante las sesiones de clase y de manera asincrónica con
@@ -622,7 +624,7 @@ siguientes actividades</p>
 <p><br/><br/></p>
 </div>
 <div id="cronograma-de-trabajo" class="section level2">
-<h2><strong>4. Cronograma de trabajo</strong></h2>
+<h2><strong>Cronograma de trabajo</strong></h2>
 <table>
 <colgroup>
 <col width="33%" />
@@ -676,11 +678,11 @@ correspondiente de Brightspace</td>
 </table>
 </div>
 <div id="criterios-de-evaluación" class="section level2">
-<h2><strong>5. Criterios de evaluación</strong></h2>
+<h2><strong>Criterios de evaluación</strong></h2>
 <p><br/><br/></p>
 </div>
 <div id="entregables" class="section level2">
-<h2><strong>6. Entregables</strong></h2>
+<h2><strong>Entregables</strong></h2>
 <table>
 <colgroup>
 <col width="33%" />
@@ -709,7 +711,7 @@ de confianza</td>
 <p><br/><br/><br/><br/></p>
 </div>
 <div id="presentaciones" class="section level2">
-<h2><strong>7. Presentaciones</strong></h2>
+<h2><strong>Presentaciones</strong></h2>
 <p><a
 href="https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_IC.pdf"><strong>P-Intervalos
 de confianza</strong></a></p>
@@ -926,7 +928,7 @@ e=3 # personas
 # tamaño de muestra
 n=paqueteDEG::sizemu(qnorm(1-a/2),s2.nota,e)
 round(n,0)  # redondeo a entero</code></pre>
-<pre><code>[1] 158</code></pre>
+<pre><code>[1] 207</code></pre>
 <p><br/><br/><br/></p>
 </div>
 <div id="intervalos-de-confianza-para-la-proporción"
@@ -1575,12 +1577,12 @@ mx=apply(b,1,mean)                 # se calculan m medias por fila</code></pre>
 <pre class="r"><code>ic1=quantile(mx, probs=c(0.025, 0.975)) # se calcula IC método 1
 ic1</code></pre>
 <pre><code>    2.5%    97.5% 
-4.716857 6.444286 </code></pre>
+4.779607 6.460000 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>ic2=c(2*mean(mx)-ic1[2], 2*mean(mx)-ic1[1]) # se calcula IC método 2
 ic2</code></pre>
 <pre><code>   97.5%     2.5% 
-4.610060 6.337489 </code></pre>
+4.643314 6.323707 </code></pre>
 <p><br/><br/></p>
 <pre class="r"><code>hist(mx, las=1, main=&quot; &quot;, ylab = &quot; &quot;, xlab = &quot; &quot;, col=c3)
 abline(v=ic1, col=&quot;red&quot;)
@@ -1589,12 +1591,11 @@ abline(v=ic2, col=&quot;blue&quot;)</code></pre>
 <p>Como se puede observar, el segundo estimador corrige el intervalo</p>
 <p><br/><br/><br/><br/></p>
 </div>
-</div>
-<div id="conceptos" class="section level1">
-<h1><strong>Conceptos</strong></h1>
+<div id="conceptos" class="section level2">
+<h2><strong>Conceptos</strong></h2>
 <p><br/><br/></p>
-<div id="confianza" class="section level2">
-<h2><strong>Confianza</strong></h2>
+<div id="confianza" class="section level3">
+<h3><strong>Confianza</strong></h3>
 <p>Para explicar el concepto de confianza se simula 100 intervalos para
 la estimación de una media con valor de <span
 class="math inline">\(\mu=100\)</span>, como se ve en la gráfica no
@@ -1612,8 +1613,8 @@ class="math inline">\(1-\alpha =0.95\)</span>) y se de nota por : <span
 class="math inline">\(IC_{\mu; 1-\alpha=0.95}\)</span></p>
 <p><br/><br/><br/></p>
 </div>
-<div id="grados-de-libertad" class="section level2">
-<h2><strong>Grados de libertad</strong></h2>
+<div id="grados-de-libertad" class="section level3">
+<h3><strong>Grados de libertad</strong></h3>
 <p>Una definicion de grados de libertad encontrada: <a
 href="https://psicologiaexperimental.files.wordpress.com/2010/04/grados-de-libertad.pdf">¿Qué
 son los llamados “grados de libertad”?</a> escrito por : Roberto Behar y
@@ -1651,8 +1652,8 @@ determinado por el valor de la media.</p>
 <p><br/><br/><br/><br/></p>
 </div>
 </div>
-<div id="formulario" class="section level1">
-<h1><strong>Formulario</strong></h1>
+<div id="formulario" class="section level2">
+<h2><strong>Formulario</strong></h2>
 <table>
 <colgroup>
 <col width="2%" />
@@ -1789,6 +1790,7 @@ class="math inline">\(X_{2}\sim norm(\mu_{2},
 </tbody>
 </table>
 <p><br/><br/><br/></p>
+</div>
 <div id="tamaño-de-muestra" class="section level2">
 <h2><strong>Tamaño de muestra</strong></h2>
 <p><br/><br/></p>
@@ -1922,15 +1924,14 @@ align="left"><code>paqueteDEG::adjusted_size(385,2000) # adjusted_size(n,N)</cod
 <p><br/><br/><br/><br/></p>
 </div>
 </div>
-</div>
-<div id="video" class="section level1">
-<h1><strong>Video</strong></h1>
+<div id="video" class="section level2">
+<h2><strong>Video</strong></h2>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5y7MJiPXIjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>
 <p><br/><br/><br/><br/></p>
 </div>
-<div id="tutoriales" class="section level1">
-<h1><strong>Tutoriales</strong></h1>
+<div id="tutoriales" class="section level2">
+<h2><strong>Tutoriales</strong></h2>
 <p><br/><br/></p>
 <p>El siguiente código permite la activación de tutoriales :</p>
 <ul>
@@ -1951,6 +1952,7 @@ library(remotes) # solo una vez
 install_github(&quot;dgonxalex80/paqueteDEG&quot;, force = TRUE) # solo una vez
 
 learnr::run_tutorial(&quot;Taller-Intervalos2&quot;, &quot;paqueteDEG&quot;)</code></pre>
+</div>
 </div>
 
 

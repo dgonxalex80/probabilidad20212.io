@@ -12,7 +12,7 @@
 <meta name="author" content="dgonzalez" />
 
 
-<title>Modelo de regresión lineal simple</title>
+<title>Probabilidad y Estadística</title>
 
 <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -569,21 +569,23 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore"><strong>Modelo de regresión lineal
-simple</strong></h1>
-<h3 class="subtitle"><strong>Módulo 5- Unidad 5.1</strong></h3>
+<h1 class="title toc-ignore"><span
+style="color:#db524f"><strong>Probabilidad y
+Estadística</strong></span></h1>
+<h3 class="subtitle"><span style="color:#db524f"><strong>Unidad
+5.1</strong></span></h3>
 <h4 class="author">dgonzalez</h4>
 
 </div>
 
 
+<p><img src="img/banner5.png" /></p>
+<p><br/><br/></p>
 <div id="guía-de-aprendizaje-5.1" class="section level1">
 <h1><strong>Guía de aprendizaje 5.1</strong></h1>
-<p><img src="img/baner5.png" /></p>
-<p><br/><br/></p>
 <p><br/><br/></p>
 <div id="introducción" class="section level2">
-<h2><strong>1. Introducción</strong></h2>
+<h2><strong>Introducción</strong></h2>
 <p>Una de las aplicaciones mas importantes de la estadística corresponde
 a al modelo de regresión lineal. Esta técnica permite medir la relación
 que pueda existir entre una variable llamada variable respuesta y un
@@ -598,7 +600,7 @@ alcanzar el objetivo planteado</p>
 <p><br/><br/></p>
 </div>
 <div id="objetivos-de-la-unidad" class="section level2">
-<h2><strong>2. Objetivos de la unidad</strong></h2>
+<h2><strong>Objetivos de la unidad</strong></h2>
 <p>Al finalizar la unidad el estudiante estará en capacidad de PROPONER
 soluciones mediante la CONSTRUCCIÓN, VALIDACIÓN DE SUPUESTOS e
 INTERPRETACIÓN de resultados obtenidos de modelos de regresión en
@@ -607,7 +609,7 @@ generación de políticas o conclusiones.</p>
 <p><br/><br/></p>
 </div>
 <div id="duración" class="section level2">
-<h2><strong>3. Duración</strong></h2>
+<h2><strong>Duración</strong></h2>
 <p>La presente unidad será desarrollada durante la comprendida entre 16
 y el 22 de mayo.<br />
 Ademas del material suministrado contaran con el acompañamiento del
@@ -620,7 +622,7 @@ siguientes actividades</p>
 <p><br/><br/></p>
 </div>
 <div id="cronograma-de-trabajo" class="section level2">
-<h2><strong>4. Cronograma de trabajo</strong></h2>
+<h2><strong>Cronograma de trabajo</strong></h2>
 <table>
 <colgroup>
 <col width="33%" />
@@ -666,7 +668,7 @@ href="https://github.com/dgonzalez80/probabilidad20212.io/blob/main/talleres/Gui
 <p><br/><br/></p>
 </div>
 <div id="criterios-de-evaluación" class="section level2">
-<h2><strong>5. Criterios de evaluación</strong></h2>
+<h2><strong>Criterios de evaluación</strong></h2>
 <ul>
 <li>Plantea el modelo correcto para dar solución a la situación
 planteada + Realiza los procesos de estimación y validación de los
@@ -677,7 +679,7 @@ obtenidos y plantea recomendaciones</li>
 <p><br/><br/></p>
 </div>
 <div id="entregables" class="section level2">
-<h2><strong>6. Entregables</strong></h2>
+<h2><strong>Entregables</strong></h2>
 <table>
 <colgroup>
 <col width="32%" />
@@ -698,7 +700,7 @@ obtenidos y plantea recomendaciones</li>
 <p><br/><br/><br/><br/></p>
 </div>
 <div id="presentaciones" class="section level2">
-<h2><strong>7. Presentaciones</strong></h2>
+<h2><strong>Presentaciones</strong></h2>
 <p><br/><br/><br/><br/></p>
 </div>
 </div>
@@ -1630,13 +1632,13 @@ summary(residuos)</code></pre>
     One Sample t-test
 
 data:  residuos
-t = 1.2232e-16, df = 24, p-value = 1
+t = 8.8708e-17, df = 24, p-value = 1
 alternative hypothesis: true mean is not equal to 0
 95 percent confidence interval:
  -0.00645138  0.00645138
 sample estimates:
    mean of x 
-3.823507e-19 </code></pre>
+2.772847e-19 </code></pre>
 <p>Por un lado el promedio de los residuales es cercano a cero y por
 otro lado la prueba de hipótesis Ho: <span
 class="math inline">\(\mu_{u}=0\)</span> vs Ha: <span
@@ -1811,8 +1813,16 @@ edad        -2.692865e-03 -6.131445e-07
 antg         4.261912e-03 -7.447761e-06
 sala        -7.447761e-06  5.399159e-07</code></pre>
 <pre class="r"><code># Stepwise Regression
-library(MASS)
-modelo2=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
+library(MASS)</code></pre>
+<pre><code>
+Attaching package: &#39;MASS&#39;</code></pre>
+<pre><code>The following objects are masked from &#39;package:raster&#39;:
+
+    area, select</code></pre>
+<pre><code>The following object is masked from &#39;package:dplyr&#39;:
+
+    select</code></pre>
+<pre class="r"><code>modelo2=lm(ausen ~ taller + sexo + edad + antg + sala , data=data)
 step=stepAIC(modelo2, direction=&quot;both&quot;)</code></pre>
 <pre><code>Start:  AIC=70.37
 ausen ~ taller + sexo + edad + antg + sala

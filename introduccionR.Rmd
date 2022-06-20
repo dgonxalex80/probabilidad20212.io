@@ -10,6 +10,21 @@ output:
     theme: cosmo
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# colores
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
+```
+
+![](img/bannerG.png)
+
+
 <img src="img/logoR.png" width="100">
 
 # **Que es R** 

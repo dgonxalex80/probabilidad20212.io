@@ -12,9 +12,9 @@
 <meta name="author" content="dgonzalez" />
 
 
-<title>Código</title>
+<title> Código 4.1</title>
 
-<script src="site_libs/header-attrs-2.13/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
@@ -569,15 +569,20 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Código</h1>
-<h3 class="subtitle">Módulo 1- Unidad 1.1</h3>
+<h1 class="title toc-ignore"><span style="color:#646420"> <strong>Código
+4.1</strong></span></h1>
+<h3 class="subtitle"><span style="color:#646420"><strong>Módulo 4-
+Unidad 4.1</strong></span></h3>
 <h4 class="author">dgonzalez</h4>
 
 </div>
 
 
+<p><img src="img/banner4.png" /></p>
+<p><br/><br/></p>
 <div id="propiedad-de-los-estimadores" class="section level1">
 <h1><strong>Propiedad de los estimadores</strong></h1>
+<p><br/><br/></p>
 <p>Para una variable con distribución uniforme <span
 class="math inline">\(unif(a=0, b=20)\)</span> se desea determinar las
 propiedades de los siguientes estimadores del parámetro <span
@@ -619,7 +624,7 @@ abline(h=20,  col=&quot;red&quot;)</code></pre>
 <p><img src="codigo401_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <pre class="r"><code>apply(T123,2,mean)</code></pre>
 <pre><code>      T1       T2       T3 
-19.96035 18.08392 19.89231 </code></pre>
+20.03827 18.12129 19.93342 </code></pre>
 <p>Para un tamaño de muestra n=10 se observa que los mejores resultados
 se obtienen con T3. Este estimador se puede clasificar como INSESGADO y
 EFICIENTE, pues ademas que su promedio está muy cerca de 20, tiene la
@@ -639,7 +644,7 @@ abline(h=20,  col=&quot;red&quot;)</code></pre>
 <p><img src="codigo401_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 <pre class="r"><code>apply(T123,2,mean)</code></pre>
 <pre><code>      T1       T2       T3 
-20.00661 19.80206 20.00008 </code></pre>
+20.00570 19.80233 20.00035 </code></pre>
 <p>Los resutados indican que el mejor estimador de b corresponde a T3.
 Sin embargo el estimador T2 que era insesgado al aumentar el tamaño de
 la muestra pasando de n=10 a n=100 se observa que su promedio se acerca
@@ -1007,8 +1012,8 @@ distinguen por un Id del 1 al 1000, utilizamos la funcion
 <strong>sample</strong> para seleccionar la muestra:</p>
 <pre class="r"><code>x&lt;-seq(1,1000,1)
 sample(x, 20)</code></pre>
-<pre><code> [1] 750 175 984 670 518 442 883 403 269 245 654 754 103 895 190 707 211 272 908
-[20] 156</code></pre>
+<pre><code> [1] 604 123 206 235 180 852  84 405 145 639 808 849 409 734 137 163 234 769 780
+[20] 748</code></pre>
 <p>En este caso se ha seleccionado una muestra de tamaño <span
 class="math inline">\(n=10\)</span> de una población de <span
 class="math inline">\(N=1000\)</span> unidades. Dato que la población es
@@ -1019,7 +1024,7 @@ población sea demasiado pequeña (este tipo de muestreos se llaman
 bootstrap o remuestreo) :</p>
 <pre class="r"><code>x&lt;-1:10
 sample(x, 20, replace = TRUE)</code></pre>
-<pre><code> [1]  5  4  6  4 10  4  6  3  5  6  2  6  2  3  9  5  2  6  4  3</code></pre>
+<pre><code> [1]  4  1  5  7  9  8  1  9  5  8  7  8  7  4  4  6  7  6 10  9</code></pre>
 <p><br/><br/></p>
 </div>
 <div id="muestreo-sistemático" class="section level3">
@@ -1087,31 +1092,31 @@ a=N/n
 ids=S.SY(N, a)
 ids</code></pre>
 <pre><code>      [,1]
- [1,]    5
- [2,]   23
- [3,]   41
- [4,]   59
- [5,]   77
- [6,]   95
- [7,]  113
- [8,]  131
- [9,]  149
-[10,]  167</code></pre>
+ [1,]   11
+ [2,]   29
+ [3,]   47
+ [4,]   65
+ [5,]   83
+ [6,]  101
+ [7,]  119
+ [8,]  137
+ [9,]  155
+[10,]  173</code></pre>
 <pre class="r"><code>base2=base_muestreo[ids,]
 base2</code></pre>
 <pre><code># A tibble: 10 × 3
       ID CAR      NF
    &lt;int&gt; &lt;chr&gt; &lt;dbl&gt;
- 1     5 ELE     4.2
- 2    23 IND     3.8
- 3    41 CIV     3.1
- 4    59 IND     0.8
- 5    77 BIO     3.2
- 6    95 BIO     3  
- 7   113 IND     3.3
- 8   131 IND     3  
- 9   149 CIV     3.6
-10   167 CIV     1.4</code></pre>
+ 1    11 SIS     3.5
+ 2    29 IND     2.5
+ 3    47 MAT     4.3
+ 4    65 IND     4.1
+ 5    83 BIO     4.1
+ 6   101 IND     3.1
+ 7   119 IND     4.3
+ 8   137 CIV     3.2
+ 9   155 CIV     2.4
+10   173 CIV     2.3</code></pre>
 <p><br/><br/></p>
 <p>Para los casos de los muestreos estratificado y muestreo por
 conglomerados se utiliza el muestreo aleatorio simple como base.</p>

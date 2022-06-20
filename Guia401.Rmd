@@ -1,7 +1,7 @@
 ---
-title: "Introducción a inferencia estadística"
-author: "dgonzalez"
-subtitle: "Modulo 4- Unidad 4.1" 
+title: <span style="color:#646420">**Probabilidad y Estadística**</span>
+author: "dgonzalez "
+subtitle: <span style="color:#646420">**Unidad 4.1**</span> 
 output:
   html_document:
     toc: yes
@@ -17,25 +17,28 @@ knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
 library(ggfortify)
 # colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO  
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 
 ```
 
 
 
+
+
+![](img/banner4.png)
+<br/><br/>
+
 # **Guía de aprendizaje 4.1**
 
-![](img/baner4.png)
 <br/><br/>
 
-<br/><br/>
 
-## **1. Introducción**
+## **Introducción**
 
 La inferencia estadística permite generalizar lo hallado en una muestra a toda la población. Para realizar este proceso contamos con dos opciones: Estimación y las Pruebas de hipótesis. El fundamento de estos procesos está relacionado con varios conceptos que se describen y se discuten en esta unidad. En algunos casos serán apoyados con procesos de simulación que permitirán la verificación de cada uno de ellos. 
  
@@ -43,13 +46,13 @@ Dentro de estos conceptos se destacan: población, muestra, censo, muestreo, par
 
 <br/><br/>
 
-## **2. Objetivos de la unidad**
+## **Objetivos de la unidad**
 
 Al finalizar esta unidad el estudiante estará en capacidad de RECONOCER los elementos, conceptos y propiedades que intervienen en la inferencia estadística, de tal manera que pueda INFERIR de manera adecuada los resultados obtenidos para la toma de decisiones informadas
 
 <br/><br/>
 
-## **3. Duración**
+## **Duración**
 
 La presente  unidad será desarrollada durante la comprendida entre 4 y el 18 de abril .    
 Ademas del material suministrado  contaran con el acompañamiento del profesor en 3 sesiones (Lunes, Miércoles y Viernes) y de manera asincrónica con  foro de actividades académicas. Los entegables para esta unidad podrán enviarse a través de la plataforma Brightspace hasta el 10 de octubre.
@@ -58,7 +61,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **4. Cronograma de trabajo**
+## **Cronograma de trabajo**
 
 
 |Actividad           | Descripción                    | 
@@ -75,7 +78,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **5. Criterios de evaluación**
+## **Criterios de evaluación**
 
 * Reconoce los modelos especiales asociados a contextos  y problemas reales
 
@@ -86,7 +89,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **6. Entregables** 
+## **Entregables** 
 |              |                  |                                         |
 |:-------------|:-----------------|:----------------------------------------|
 |Entregable 1  | Actividad411.pdf |  mapa mental                            |
@@ -97,7 +100,7 @@ Los entregables completos y enviados dentro de los tiempos establecidos  otorgar
 
 <br/><br/><br/><br/>
 
-## **7. Presentaciones**
+## **Presentaciones**
 
 
 [Presentacion A](talleres/P_intro_inferencia_A.pdf) <br/><br/>

@@ -1,7 +1,7 @@
 ---
-title: "Código 9"
+title: <span style="color:#646420"> **Código 4.3**</span>  
 author: "dgonzalez "
-subtitle: "Módulo 4- Unidad 4.3" 
+subtitle: <span style="color:#646420">**Módulo 4- Unidad 4.3**</span> 
 output:
   html_document:
     toc: yes
@@ -16,11 +16,21 @@ knitr::opts_chunk$set(echo = TRUE, comment = NA)
 library(readr)
 Valle <- read_csv("data/VALLE.csv")
 
+# colores
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 ```
+
+![](img/banner4.png)
+<br/><br/>
 
 # **Pruebas paramétricas**
 
-<br/>
+<br/><br/>
 
 Supongamos las hipótesis:
 
@@ -117,7 +127,6 @@ t.test(t,mu=5, alternative="less")
 <br/>
 
 ```{r}
-#-------------------------------------------------------------------------------
 #Problema 3
 z=(24/40-.76)/(sqrt(.76*(1-.76)/40))
 
@@ -134,7 +143,6 @@ prop.test(24,40,0.76,alternative="less")
 <br/>
 
 ```{r}
-#---------------------------------------------------------------------------------
 # Problema 4
 n1=36 ; mx1=6 ; sx1=4
 n2=40 ; mx2=8.2; sx2=4.3
@@ -255,7 +263,6 @@ t.test(pa,pd,paired = TRUE)
 <br/>
 
 ```{r}
-#-----------------------------------------------------------------------
 # Problema 10
 g1=c(37,19,21,35,16,4,0,12,63,25,12,15)
 g2=c(24,42,18,15,0,9,10,20,22,13)
@@ -273,7 +280,9 @@ t.test(g1,g2)
 
 # **Pruebas no paramétricas**
 
-**de rachas**
+<br/><br/>
+
+**Prueba de rachas**
 
 ```{r}
 
@@ -329,18 +338,10 @@ Las siguientes pruebas requieren instalar y cargar el paquete: `normtest`
 
 <br/><br/>
 
-**Jarque-Bera ajustado**
+**Jarque-Bera**
 
 ```{r}
-ajb.norm.test(x)	
-```
-
-<br/><br/>
-
-**Frosini**
-
-```{r}
-frosini.norm.test(x)	
+normtest::jb.norm.test(x)	
 ```
 
 <br/><br/>
@@ -375,29 +376,6 @@ hegazy2.norm.test(x)
 jb.norm.test(x)	
 ```
 
-<br/><br/>
-
-**de kurtosis**
-
-```{r}
-kurtosis.norm.test(x)
-```
-
-<br/><br/>
-
-**de sesgo**
-
-```{r}
-skewness.norm.test(x)	
-```
-
-<br/><br/>
-
-**Spiegelhalter**
-
-```{r}
-spiegelhalter.norm.test(x)	
-```
 
 <br/><br/>
 

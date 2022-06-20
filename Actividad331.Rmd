@@ -1,5 +1,5 @@
 ---
-title: "**Actividad 331**"
+title: <span style="color:#8acfe6">**Actividad 331**</span>
 author: "dgonzalez"
 subtitle: " " 
 output:
@@ -12,10 +12,19 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+
+# colores
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 ```
 
+![](img/banner3.png)
 
-# **Descripción actividad **
+#  **Descripción actividad ** 
 
 <br/><br/>
 
@@ -41,7 +50,7 @@ Para cada uno de los modelos asignados que contenga sus principales caracteristi
 
 <br/><br/><br/>
 
-# **Asignación de distribuciones**
+# **Asignación de distribuciones** 
 
 <br/><br/>
 

@@ -1,7 +1,7 @@
 ---
-title: "Código 8"
+title: <span style="color:#646420"> **Código 4.2**</span>  
 author: "dgonzalez "
-subtitle: "Módulo 4- Unidad 4.2" 
+subtitle: <span style="color:#646420">**Módulo 4- Unidad 4.2**</span> 
 output:
   html_document:
     toc: yes
@@ -15,9 +15,21 @@ knitr::opts_chunk$set(echo = TRUE)
 library(readr)
 muestra1<- read_delim("data/base_muestreo.csv",delim = ";",escape_double = FALSE, trim_ws = TRUE)
 
+# colores
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 ```
 
+![](img/banner4.png)
+<br/><br/>
+
 # **Simulación**
+
+<br/><br/>
 
 Con el fin de entender el concepto de confianza se propone la simulacion como estrategia. Inicialmente se genera de manera simulada un conjunto de 100 muestras (m=100) cada una de tamaño n=200, de una población con distribución normal con $\mu=30$ y varianza $\sigma^2=10$ y un valor de confianza del 95% ($\alpha=0.05$)
 

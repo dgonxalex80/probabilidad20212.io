@@ -1,7 +1,7 @@
 ---
-title: "**Estimación por intervalos de confianza**"
-author: "dgonzalez"
-subtitle: "**Módulo 4- Unidad 4.2**" 
+title: <span style="color:#646420">**Probabilidad y Estadística**</span>
+author: "dgonzalez "
+subtitle: <span style="color:#646420">**Unidad 4.2**</span>
 output:
   html_document:
     toc: yes
@@ -15,12 +15,12 @@ knitr::opts_chunk$set(echo = TRUE,comment = NA)
 library(readr)
 library(paqueteDEG)
 # colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 ```
 
 
@@ -33,15 +33,17 @@ Colombia <- read_csv("data/Colombia.csv")
 
 ```
 
+
+
+![](img/banner4.png)
+
+<br/><br/>
+
 # **Guía de aprendizaje 4.2**
 
-![](img/baner4.png)
-
 <br/><br/>
 
-<br/><br/>
-
-## **1. Introducción**
+## **Introducción**
 
 La inferencia estadística constituye una de las principales componentes de la metodologia estadistica, encaminados a generar procedimiento para el avance de la ciencia. Con ella se pueden generalizar los
 resultados obtenidos en una muestra a toda la población, previo cumplimiento de supuestos establecidos por la estadística (llamada paramétrica) .
@@ -52,7 +54,7 @@ El siguiente documento te  oriente sobre los pasos a seguir para alcanzar el obj
 
 <br/><br/>
 
-## **2. Objetivos de la unidad**
+## **Objetivos de la unidad**
 
 Al finalizar la unidad el estudiante estará en capacidad de IDENTIFICAR, CALCULAR, INTERPRETAR e INFERIR sobre un intervalo de confianza para estimadores de una y dos poblaciones,
 que le permita seleccionar la mejor alternativa para la estimación de un parámetro poblacional, orientados a la toma de decisiones  informadas.
@@ -61,7 +63,7 @@ que le permita seleccionar la mejor alternativa para la estimación de un parám
 
 
 
-## **3. Duración**
+## **Duración**
 
 La presente  unidad será desarrollada del 25 de abril al 1 de mayo 2022 . Ademas del material suministrado  contaran con el acompañamiento del profesor durante las sesiones de clase  y de manera asincrónica con  foro de actividades académicas. Los entegables para esta unidad podrán enviarse a través de la plataforma Brightspace hasta el  2 de octubre de 2022 
 
@@ -69,7 +71,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **4. Cronograma de trabajo**
+## **Cronograma de trabajo**
 
 
 |Actividad      | Descripción                    | 
@@ -86,11 +88,11 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 
 
-## **5. Criterios de evaluación**
+## **Criterios de evaluación**
 
 <br/><br/>
 
-## **6. Entregables** 
+## **Entregables** 
 
 |               |                              | 
 |:--------------|:-----------------------------|
@@ -101,7 +103,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/><br/><br/>
 
-## **7. Presentaciones**
+## **Presentaciones**
 
 [**P-Intervalos de confianza**](https://github.com/dgonzalez80/pye2021.io/blob/main/talleres/P_IC.pdf)
 
@@ -712,11 +714,11 @@ Como se puede observar, el segundo estimador corrige el intervalo
 
 <br/><br/><br/><br/>
 
-# **Conceptos**
+## **Conceptos**
 
 <br/><br/>
 
-## **Confianza**
+### **Confianza**
 
 Para explicar el concepto de confianza se simula 100 intervalos para la estimación de una media con valor de $\mu=100$, como se ve en la gráfica no todos los intervalos (representados por una línea) contienen el valor del parámetro, solo de color negro lo contiene.
 
@@ -727,7 +729,7 @@ Este valor se integra al concepto de intervalo de confianza mediante el término
 
 <br/><br/><br/>
 
-## **Grados de libertad**
+### **Grados de libertad**
 
 Una definicion de grados de libertad encontrada: [¿Qué son los llamados “grados de libertad”?](https://psicologiaexperimental.files.wordpress.com/2010/04/grados-de-libertad.pdf) escrito por : Roberto Behar y Pere Grima, los define como el número de dimensiones en los que se puede mover un valor por asignar. En el caso de una variable X, solo tenemos un grado de libertad para asignar este valor. En el caso de tener una variable bidimensional (X,Y), al momento de asignar valores a esta variable tenemos dos dimensiones = dos grados de libertad. Sin embargo que colocamos la restricción de que X+Y=10, perdemos un grado de libertad, dado que al colocar el primero, el segundo queda asignado por la restricción.
 
@@ -737,7 +739,7 @@ Como ejemplo supongamos que tenemos una muestras de datos formado por : $X_{1}$,
 
 <br/><br/><br/><br/>
 
-# **Formulario**
+## **Formulario**
 
 |   |**parámetro** |**Estimador por IC **                                                            | **Supuestos** |
 |:-:|:------------:|:-------------------------------------------------------------------------------:|:---------------------:|
@@ -830,14 +832,14 @@ $$n = \dfrac{N n_{0}}{N+n_{0}-1}$$
 <br/><br/><br/><br/>
 
 
-# **Video**
+## **Video**
 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5y7MJiPXIjw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <br/><br/><br/><br/>
 
-# **Tutoriales**
+## **Tutoriales**
 
 <br/><br/>
 

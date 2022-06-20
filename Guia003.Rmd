@@ -1,7 +1,6 @@
 ---
-title: "**Función exponencial y función logarítmica**"
+title: <span style="color:#b0394a">**Módulo 0- Unidad 0.3**</span> 
 author: "dgonzalez"
-subtitle: "**Módulo 0- Unidad 0.3**" 
 output:
   html_document:
     toc: yes
@@ -14,23 +13,25 @@ output:
 knitr::opts_chunk$set(echo = TRUE,comment = NA)
 
 # colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO  
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f" 
 
 ```
 
- <span style="color:#E77C00">**En construcción**</span>
+ <span style="color:#b0394a">**En construcción**</span>
 
-# **Guía 0.3**
 
-<br/>
-![](img/baner0.png)
+![](img/banner0.png)
+
+<br/><br/>
 
 # **Introducción**
+
+<br/>
 
 Unas de las funciones más utilizadas en Estadística son :la exponencial y logaritmica, de allí que es de mucha importancia recordar sus diferentes formas y propiedades al igual que su representación gráfica  
 

@@ -1,7 +1,7 @@
 ---
-title: "**Representación gráfica**"
-author: "dgonzalez"
-subtitle: "**Módulo 1- Unidad 1.3**" 
+title: <span style="color:#ad6395">**Probabilidad y Estadística**</span>
+author: "dgonzalez "
+subtitle: <span style="color:#ad6395">**Unidad 1.3**</span>
 output:
   html_document:
     toc: yes
@@ -24,20 +24,22 @@ bpe=bpe[,c(1,2,4,5)]
 
 
 # colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO  
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 
 ```
 
-# **Guía de aprendizaje 1.3**
 
-![](img/baner1.png)
+
+![](img/banner1.png)
 
 <br/><br/>
+
+# **Guía de aprendizaje 1.3**
 
 <br/><br/>
 

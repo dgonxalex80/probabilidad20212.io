@@ -1,7 +1,7 @@
 ---
-title: "**Bases de datos**"
-author: "dgonzalez"
-subtitle: "**Módulo 1- Unidad 1.1**" 
+title: <span style="color:#ad6395">**Probabilidad y Estadística**</span>
+author: "dgonzalez "
+subtitle: <span style="color:#ad6395">**Unidad 1.1**</span>
 output:
   html_document:
     toc: yes
@@ -15,12 +15,12 @@ knitr::opts_chunk$set(echo = TRUE,comment = NA)
 library(ggplot2)
 
 # colores
-c0="#0DA5A6" # VERDE CLARO
-c1="#E77C00" # NARANJA
-c2="#6666FF" # AZUL  
-c3="#4CBFBA" # VERDE CLARO  
-c4="#E09600" # AMARILLO  
-c5="#BC2B6A" # MORADO  
+c0= "#b0394a"
+c1= "#ad6395"
+c2= "#a391c4"
+c3= "#8acfe6"
+c4= "#646420"
+c5= "#db524f"
 
 
 # ---------paletas de colores -------------------------------------------------
@@ -55,16 +55,15 @@ bpe20221 <- read_delim("/home/deg/Documentos/Javeriana/Escuela/probabilidad20212
 
 
 
-# **Guía de aprendizaje 1.1**
-
-
-![](img/baner1.png)
-
-
+![](img/banner1.png)
 
 <br/><br/>
 
-## **1. Introducción**
+# **Guía de aprendizaje 1.1**
+
+<br/><br/>
+
+## **Introducción**
 
 <br/>
 
@@ -90,7 +89,7 @@ Con este ropósito se hará uso del portal **Bases de Datos Abiertos Colombia**,
 
 <br/><br/>
 
-## **2. Objetivos de la unidad**
+## **Objetivos de la unidad**
 
 <br/>
 
@@ -98,7 +97,7 @@ Al finalizar la unidad los estudiantes estarán  en  capacidad de  RECONOCER los
 
 <br/><br/>
 
-## **3. Duración**
+## **Duración**
 
 <br/>
 
@@ -108,7 +107,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **4. Cronograma de trabajo**
+## **Cronograma de trabajo**
 
 <br/>
 
@@ -144,7 +143,7 @@ Para alcanzar los objetivos planteados se propone realizar las siguientes activi
 
 <br/><br/>
 
-## **5. Criterios de evaluación**
+## **Criterios de evaluación**
 
 <br/>
 
@@ -161,7 +160,7 @@ Los entregables completos y enviados dentro de los tiempos establecidos  otorgar
 
 <br/><br/>
 
-## **6. Entregables** 
+## **Entregables** 
 
 <br/>
 
@@ -188,7 +187,7 @@ Con el fin de tener una idea inicial del propósito de este módulo, se presenta
 
 <br/><br/>
 
-## **1. Grupos 2022- 1**
+## **Grupos 2022- 1**
 
 
 ```{r, echo=FALSE}
@@ -227,7 +226,7 @@ ggplot(bpe20221, aes(x = promedio, fill = grup)) +
 <br/><br/>
 
 
-## **2. Metodología estadística**
+## **Metodología estadística**
 
 <br/><br/>
 
@@ -755,7 +754,7 @@ Continuaremos con una parte importante de esta metodología que está relacionad
 
 <br/><br/><br/>
 
-## **3. Base de datos**
+## **Base de datos**
 
 <br/>
 
@@ -851,7 +850,7 @@ DT::datatable(head(iris, 150),fillContainer = FALSE, options = list(pageLength =
 
 <br/><br/>
 
-## **4. Etapas del proceso de datos**
+## **Etapas del proceso de datos**
 
 <br/>
 
@@ -869,7 +868,7 @@ Utilizaremos para este proceso el lenguaje estadístico **R** , bajo **RStudio**
 
 <br/><br/>
 
-## **5. Importar datos**
+## **Importar datos**
 
 <br/><br/>
 
@@ -924,7 +923,7 @@ En nuestro caso haremos uso del lenguaje estadístico **R*
 
 <br/><br/>
 
-## **6. Limpieza de datos**
+## **Limpieza de datos**
 
 <br/>
 
@@ -941,7 +940,7 @@ Existen metodologías para corregir estos problemas sin afectar la información 
 
 <br/><br/>
 
-## **7. Ficha técnica**
+## **Ficha técnica**
 
 <br/>
 
@@ -953,7 +952,7 @@ Las bases de datos debe estar acompañadas de una ficha técnica donde si indica
 
 <br/><br/><br/>
 
-## **8. Importar bases de datos**
+## **Importar bases de datos**
 
 <br/>
 
@@ -1056,7 +1055,7 @@ Cargar la base de datos de COVID-19 Colombia
 
 <br/><br/><br/>
 
-## **9. Actividades a realizar**
+## **Actividades a realizar**
 <br/><br/>
 **A1 Metodología estadística** : Formular un  problema que le permita  desarrollar un  ejercicio académico durante  el  semestre a través de  la recolección  de información (primaria o secundaria), Ademas deberá establecer los  objetivos y las  variables de  interés , para las  cuales  deberá  identificar el tipo de  variable  y su  escala  de medición.  El resultado  de esta actividad deberá se entregado  en archivo pdf con  nombre: **actividad1.pdf**
 <br/><br/><br/>
