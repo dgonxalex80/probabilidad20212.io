@@ -805,7 +805,7 @@ La organización mundial de la salud ha establecido rangos para este indice y lo
 
 <br/><br/>
 
-**12.**	Un fabricante manifiesta que su producto principal (un ventilador para el  hogar ) dura más de 9000 horas.de uso. Que si algún cliente presenta una avería en su producto antes de este tiempo,el garantiza la entrega de otro de similares condiciones como parte de su estrategia de venta. Uno de  sus asesores le indica que no es adecuado realizar esta promoción y que será muy costosa realizarla. Con  el fin de validad quien tiene la razón, le entregan a Usted la siguiente información:  La variable  tiempo de vida de un ventilador de similares condiciones se puede modelar mediante una distribución Weibull con parámetros : $\alpha=1.5$ y $\beta=0.0001$ . ¿quien tiene la razón?
+**12.**	Un fabricante manifiesta que su producto principal (un ventilador para el  hogar ) dura en uso más de 9000 horas. Además manifiesta que si algún cliente presenta un reclamo por alguna avería en su producto antes de este tiempo, éll garantiza la entrega de otro de similares condiciones como parte de su estrategia de venta. Uno de  sus asesores le indica que no es conveniente  realizar esta promoción y que será muy costosa poderla cumplir. Con  el fin de validad quien tiene la razón, le entregan a Usted la siguiente información:  La variable  tiempo de vida de un ventilador de similares condiciones se puede modelar mediante una distribución Weibull con parámetros : $\alpha=1.5$ y $\beta=0.0001$ . ¿quien tiene la razón?
 
 <br/><br/>
 
